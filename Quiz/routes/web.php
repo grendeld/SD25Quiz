@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('admin');
-});
+});*/
+Route::get('/', 'AdminsController@show');
 
 Route::get('/admin/add', function(){
     return view('newadmin');

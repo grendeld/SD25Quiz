@@ -6,4 +6,10 @@
 
 <a href="/admin/add">Add new admin</a>
 
+<ul>
+@foreach($admins as $a)
+<li>{{$a->AdminName}}</li>
+@endforeach
+</ul>
+
 @stop <!-- end of section -->
