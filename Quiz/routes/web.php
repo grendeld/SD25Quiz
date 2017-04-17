@@ -14,10 +14,30 @@
 /*Route::get('/', function () {
     return view('admin');
 });*/
-Route::get('/', 'AdminsController@show');
+
+Route::get('/admin', 'AdminsController@show'); 
 
 Route::get('/admin/add', function(){
     return view('newadmin');
 });
 
 Route::post('/admin/add', 'AdminsController@create');
+
+Route::get('/program', 'ProgramsController@show'); 
+
+Route::get('/program/add', function(){
+    return view('newProgram');
+});
+
+Route::post('/program/add', 'ProgramsController@create');
+
+Route::get('/program/{program}', 'ProgramsController@showedit'); 
+
+// Route::get('/program/add', function(){
+//     return view('newProgram');
+// });
+
+
+ Route::patch('/program/{program}/edit', 'ProgramsController@edit');
+
+Route::get('/program/{program}/delete', 'ProgramsController@delete');
