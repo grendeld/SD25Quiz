@@ -2,7 +2,9 @@
 
 @section ('content')
 
-<a href="/program">Back</a>
+<div id="divEditProgram">
+<a href="/program">Back to Programs</a>
+
 <h1>Edit Program</h1>
 
 <form method = "POST" action ="../program/{{$program->ProgramID}}/edit">
@@ -53,12 +55,8 @@ Active:
 ?>"> {{$m->ModuleName}} </td>
         <td>{{$m->Active}}</td>
         <td>
-      <form method='get' >
-        <button type = 'submit' formaction='{{$program->ProgramID}}/module/{{$m->ModuleID}}/edit'>Edit module</button>
+        <button type = 'submit' form="form2" formaction='{{$program->ProgramID}}/module/{{$m->ModuleID}}/edit'>Edit module</button>
         <button type = 'submit' id='btnDel' onclick="return ModuleDelete('{{$m->ModuleID}}')"> Delete module </button>
-<!-- onclick="return ModuleDelete('{{$m->ModuleID}}')" -->
-{!! csrf_field() !!}
-      </form>
     </td>
     </tr>
     @endforeach
@@ -68,14 +66,42 @@ Active:
       <td>
   </tr>
 </table>
-
-
   <button type = 'submit'>Save</button>
 {!! csrf_field() !!}
-
 </form>
 
+<form method="get" id="form2">
+</form>
+
+<button onclick="showNewModule()">Add new module</button>
+</div>
+
+<div id="divNewModule" style="display:none">
+<form method="POST">
+<textarea name="ModuleName"></textarea>
+<br/>
+<button type="submit" formaction="/program/{{$program->ProgramID}}/newModule">Add Module</button>
+<button form="form2" onclick="cancelNewModule()">Cancel</button>
+{!! csrf_field() !!}
+</form>
+
+</div>
+
+
 <script >
+
+function cancelNewModule()
+{
+  document.getElementById('divNewModule').style.display = "none";
+  document.getElementById('divEditProgram').style.display = "block";
+}
+function showNewModule()
+{
+  document.getElementById('divNewModule').style.display = "block";
+  document.getElementById('divEditProgram').style.display = "none";
+}
+
+
 function ModuleDelete(moduleID)
 {
   //alert(moduleID);
@@ -93,7 +119,7 @@ function ModuleDelete(moduleID)
       type: "post",
       data:{'ModID': moduleID,'_token':token},
       success: function(data){
-        alert(data);
+        location.reload();
       }
     });
 
