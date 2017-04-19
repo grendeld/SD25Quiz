@@ -30,6 +30,6 @@ Route::get('/program/{program}', 'ProgramsController@showedit');
 Route::patch('/program/{program}/edit', 'ProgramsController@edit');
 
 Route::get('/program/{program}/delete', 'ProgramsController@delete');
-Route::post('/module','ProgramsController@deleteMod');
+Route::post('/module','ModulesController@deleteMod');
 
 // Route::post('/program/{program}/module/{module}/delete', 'ProgramsController@deleteModule');
