@@ -14,8 +14,9 @@
 <th>Modules</th>
 </tr>
 
-<tr>
+
 @foreach($programs as $program)
+<tr>
 <td>{{$program->ProgramID}}</td>
 <td>{{$program->ProgramName}}</td>
 <td>{{$program->ProgramType}}</td>
