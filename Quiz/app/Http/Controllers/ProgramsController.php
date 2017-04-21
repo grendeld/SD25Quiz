@@ -13,6 +13,7 @@ class ProgramsController extends Controller
     $programs = program::all();
     return view ('program', compact('programs'));
   }
+  
     public function create(Request $request)
     {
       $program = new Program;

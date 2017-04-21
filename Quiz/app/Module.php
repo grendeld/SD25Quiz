@@ -15,4 +15,9 @@ public function Program()
     {
         return $this->belongsTo(Program::class,'ProgramID','ProgramID');
     }
+
+public function quizzes()
+    {
+        return $this->hasMany(Quize::class,'ModuleID','ModuleID');
+    }
 }
