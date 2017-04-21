@@ -22,41 +22,14 @@ class StudentsController extends Controller
      $student->IntakeID = $request->IntakeID;
      $student->save();
 
-      return back();
+      return redirect('/student');
     }
-public  function upload()
-{
-return view('upload');
-}
-public  function store(Request $request)
-{
- $photo = new Photo();
-        $this->validate($request, [
-            'Photo' => 'required'
-        ]);
-        
-        $student->Photo = $request->Photo;
-		if($request->hasFile('Photo')) {
-            $file = Input::file('Photo');
-            //getting timestamp
-            $timestamp = str_replace([' ', ':'], '-', Carbon::now()->toDateTimeString());
-            
-            $name = $timestamp. '-' .$file->getClientOriginalName();
-            
-            $photo->filePath = $name;
-
-            $file->move(public_path().'/images/', $name);
-        }
-        $image->save();
-        return $this->create()->with('success', 'Image Uploaded Successfully');
-}
-
-    public function showedit($id )
+public function showedit($id )
 
     { $student = Student::find($id);
       return view ('editStudent', compact('student'));
     }
-    public function edit(Request $request , $id )
+public function edit(Request $request , $id )
 
     { $student = Student::find($id);
       
@@ -66,10 +39,8 @@ public  function store(Request $request)
     }
     public function delete(Student $student)
     {
-      $student = DB::table('students')->where('StudentID','=',$student->StudentID)->count();
-      
+      $student = DB::table('students')->where('StudentID','=',$student->StudentID);
       $student->delete();
       return redirect('/student');
     }
-
-}
+    }
