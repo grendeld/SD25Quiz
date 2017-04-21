@@ -13,27 +13,27 @@ class QuizSeeder extends Seeder
     {
       DB::table('quizzes')->insert([
           'ModuleID' => '1',
-          'Description' => 'Quiz on Intro to Programming Concepts',
+          'QuizName'=>'Quiz on Intro to Programming Concepts',
           'Active' => 'Yes'
       ]);
       DB::table('quizzes')->insert([
           'ModuleID' => '2',
-          'Description' => 'Quiz on C# & .NET Framework',
+          'QuizName' => 'Quiz on C# & .NET Framework',
           'Active' => 'Yes'
       ]);
       DB::table('quizzes')->insert([
           'ModuleID' => '3',
-          'Description' => 'Quiz on Databases',
+          'QuizName' => 'Quiz on Databases',
           'Active' => 'Yes'
       ]);
       DB::table('quizzes')->insert([
           'ModuleID' => '4',
-          'Description' => 'Quiz on Accounting',
+          'QuizName' => 'Quiz on Accounting',
           'Active' => 'Yes'
       ]);
       DB::table('quizzes')->insert([
           'ModuleID' => '5',
-          'Description' => 'Quiz on Intro to computers',
+          'QuizName' => 'Quiz on Intro to computers',
           'Active' => 'Yes'
       ]);
 
