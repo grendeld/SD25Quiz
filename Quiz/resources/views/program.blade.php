@@ -29,8 +29,8 @@
   @endforeach
 </ul>
 </td>
-<td><form method='get' action='program/{{$program->ProgramID}}'><button type = 'submit'>Edit</button></form></td>
-<td><form method='get' action='program/{{$program->ProgramID}}/delete'><button type = 'submit'>Delete</button></form></td>
+<td><form method='get' action='program/{{$program->ProgramID}}'><button type = 'submit'>Edit Program</button></form></td>
+<td><form method='get' action='program/{{$program->ProgramID}}/delete'><button type = 'submit'>Delete/Hide Program</button></form></td>
 </tr>
 @endforeach
 <tr>

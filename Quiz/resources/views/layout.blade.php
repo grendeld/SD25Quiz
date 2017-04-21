@@ -8,6 +8,9 @@
     </head>
     <body>
         From Master Page
+        <br/>
+        <a href="../student">Students</a>
+        <a href="../quizzes">Quizzes</a>
         <hr>
 @yield('content')
 @yield('footer')

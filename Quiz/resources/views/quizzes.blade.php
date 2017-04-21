@@ -7,12 +7,14 @@
     <th>Program</th>
     <th>Module</th>
     <th>Quiz</th>
+    <th>Description</th>
   </tr>
 
 @foreach($quizzes as $q)
   <tr>
     <td>{{$q->ProgramName}}</td>
     <td>{{$q->ModuleName}}</td>
+    <td>{{$q->QuizName}}</td>
     <td>{{$q->Description}}</td>
     <td><a href="/quiz/{{$q->QuizID}}">Show Quiz</a></td>
   </tr>

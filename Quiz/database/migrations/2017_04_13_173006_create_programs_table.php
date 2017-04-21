@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ChangeModelsTable extends Migration
+class CreateProgramsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class ChangeModelsTable extends Migration
      */
     public function up()
     {
-      Schema::table('modules', function($table)
-      {
-        $table->string('Active')->default('Yes')->change();
-      });
+        Schema::create('programs', function (Blueprint $table) {
+            $table->increments('ProgramID');
+            $table->string('ProgramName');
+            $table->string('ProgramType');
+            $table->string('Active')->default('Yes');
+            });
     }
 
     /**
@@ -26,6 +28,6 @@ class ChangeModelsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('programs');
     }
 }

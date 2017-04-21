@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Quiz;
+use App\Question;
 use DB;
 
 class QuizController extends Controller
@@ -23,4 +24,19 @@ $quizzes=DB::table('quizzes')
 //             ->get();
       return view('quizzes',compact('quizzes'));
     }
+
+    public function showOne($q)
+    {
+      $quiz=Quiz::find($q);
+      $questions=Question::where('QuizID','=',$q)->get();
+      $answers=DB::table('answers')
+                ->join('questions', 'answers.QuestionID', '=', 'questions.QuestionID')
+                ->select('answers.*')
+                ->where('questions.QuizID','=', $q)
+                ->get();
+      return view('quiz',compact('quiz','questions','answers'));
+
+    }
+
+
 }
