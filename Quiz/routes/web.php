@@ -37,3 +37,13 @@ Route::get('/quiz/{quiz}','QuizController@showOne');
 Route::get('/student', 'StudentsController@show');
 Route::get('/student/add', function(){ return view('newStudent');});
 Route::post('/student/add', 'StudentsController@create');
+Route::get('/student/{student}', 'StudentsController@showedit');
+Route::patch('/student/{student}/edit', 'StudentsController@edit');
+Route::get('/student/{student}/delete', 'StudentsController@delete');
+//---Instructor
+Route::get('/instructor', 'InstructorsController@show');
+Route::get('/instructor/add', function(){ return view('newInstructor');});
+Route::post('/instructor/add', 'InstructorsController@create');
+Route::get('/instructor/{instructor}', 'InstructorsController@showedit');
+Route::patch('/instructor/{instructor}/edit', 'InstructorsController@edit');
+Route::get('/instructor/{instructor}/delete', 'InstructorsController@delete');
