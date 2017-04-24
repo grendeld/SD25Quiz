@@ -13,15 +13,15 @@ class ProgramsController extends Controller
     $programs = program::all();
     return view ('program', compact('programs'));
   }
-  
+
     public function create(Request $request)
     {
       $program = new Program;
       $program->ProgramName = $request->ProgramName;
       $program->ProgramType = $request->ProgramType;
       $program->ProgramName = $request->ProgramName;
-     $program->Active = $request->Active;
-     $program->save();
+      $program->Active = $request->Active;
+      $program->save();
 
       return back();
     }

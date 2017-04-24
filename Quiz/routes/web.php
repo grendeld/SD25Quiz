@@ -33,6 +33,7 @@ Route::post('/program/{program}/newModule', 'ModulesController@NewModule');
 //---Quizzes
 Route::get('/quizzes', 'QuizController@showAll');
 Route::get('/quiz/{quiz}','QuizController@showOne');
+Route::post('/newQuiz','QuizController@saveTemplate');
 //---Students
 Route::get('/student', 'StudentsController@show');
 Route::get('/student/add', function(){ return view('newStudent');});

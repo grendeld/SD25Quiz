@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Quiz;
 use App\Question;
+use App\Test;
 use DB;
 
 class QuizController extends Controller
@@ -14,15 +15,16 @@ class QuizController extends Controller
 $quizzes=DB::table('quizzes')
               ->join('modules','quizzes.ModuleID','=','modules.ModuleID')
               ->join('programs','modules.ProgramID','=','programs.ProgramID')
-              ->select('quizzes.*','modules.ModuleName','programs.ProgramName')
+              ->select('quizzes.*','modules.ModuleID','modules.ModuleName','programs.ProgramName')
               ->get();
 
+$tests=Test::all();
 // $users = DB::table('users')
 //             ->join('contacts', 'users.id', '=', 'contacts.user_id')
 //             ->join('orders', 'users.id', '=', 'orders.user_id')
 //             ->select('users.*', 'contacts.phone', 'orders.price')
 //             ->get();
-      return view('quizzes',compact('quizzes'));
+      return view('quizzes',compact('quizzes', 'tests'));
     }
 
     public function showOne($q)
@@ -36,6 +38,18 @@ $quizzes=DB::table('quizzes')
                 ->get();
       return view('quiz',compact('quiz','questions','answers'));
 
+    }
+
+    public function saveTemplate (Request $request)
+    {
+    $quiz= new Quiz;
+    $quiz->QuizName = $request->QuizName;
+    $quiz->Description = $request ->Description;
+    $quiz->ModuleID = $request->ModuleID;
+    $quiz->Active = "No";
+    $quiz->save($request->all());
+
+    return back();
     }
 
 
