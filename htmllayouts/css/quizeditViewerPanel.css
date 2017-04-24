@@ -1,0 +1,53 @@
+body{
+
+}
+.quizViewSection{
+    height:6em;
+    width: 100%;
+    padding: 20px;
+    background-color: lightgrey;
+}
+.MyquizViewSection{
+    height:6em;
+    width: 100%;
+    padding: 20px;
+    background-color: darkgrey;
+}
+.QuizViewer{
+    height:15em;
+    width: 100%;
+    padding: 20px;
+    background-color: lightblue;
+}
+.QuizListSegment{
+    height: 3em;
+    width:100%;
+    padding: 15px;
+    margin-top: 15px;
+    background-color: rgba(160,160,160,0.6);
+}
+.QuizNameView{
+    height:4em;
+    width: auto;
+    padding: 10px;
+    background-color: darkgrey;
+}
+
+.QViewselect{
+    height: 100%;
+    float: left;
+    width:50%;
+    margin: 0 auto;
+
+}
+.MyQViewselect{
+    height: 100%;
+    float: left;
+    width:50%;
+    margin: 0 auto;
+
+}
+.viewSpacer{
+  margin-top: 5px;
+
+}
