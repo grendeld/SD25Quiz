@@ -70,9 +70,7 @@ Active:
 {!! csrf_field() !!}
 </form>
 
-<form method="get" id="form2">
-</form>
-
+<form method="get" id="form2"></form>
 <button onclick="showNewModule()">Add new module</button>
 </div>
 
@@ -89,18 +87,17 @@ Active:
 
 
 <script >
-
 function cancelNewModule()
 {
   document.getElementById('divNewModule').style.display = "none";
   document.getElementById('divEditProgram').style.display = "block";
 }
+
 function showNewModule()
 {
   document.getElementById('divNewModule').style.display = "block";
   document.getElementById('divEditProgram').style.display = "none";
 }
-
 
 function ModuleDelete(moduleID)
 {
@@ -120,8 +117,8 @@ function ModuleDelete(moduleID)
       data:{'ModID': moduleID,'_token':token},
       success: function(data){
         location.reload();
-      }
-    });
+            }
+        });
 
   return false;
 }
