@@ -16,7 +16,6 @@ class CreateQuizzesTable extends Migration
         Schema::enableForeignKeyConstraints();
         Schema::create('quizzes', function (Blueprint $table) {
           $table->increments('QuizID');
-          $table->string('QuizName');
           $table->string('Description')->default('No description');
           $table->integer('ModuleID')->unsigned();
           $table->foreign('ModuleID')->references('ModuleID')->on('modules');

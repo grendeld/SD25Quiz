@@ -41,3 +41,4 @@ Active:
 
 {!! csrf_field() !!}
 </form>
+@stop

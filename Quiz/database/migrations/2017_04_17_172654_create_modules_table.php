@@ -19,7 +19,7 @@ class CreateModulesTable extends Migration
             $table->string('ModuleName');
             $table->integer('ProgramID')->unsigned();
             $table->foreign('ProgramID')->references('ProgramID')->on('programs');
-            $table->string('Active')->default('Yes');
+            $table->string('Active');
         });
 
     }

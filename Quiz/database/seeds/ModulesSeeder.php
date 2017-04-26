@@ -12,27 +12,22 @@ class ModulesSeeder extends Seeder
     public function run()
     {
       DB::table('modules')->insert([
-          'ModuleName' => 'Module 1 - Intro to Programming Concepts',
+          'ModuleName' => 'Databases.Introduction.',
           'ProgramID' => '1',
           'Active' => 'Yes'
       ]);
       DB::table('modules')->insert([
-          'ModuleName' => 'Module 2 - C# & .NET Framework',
+          'ModuleName' => 'JavaScript.',
           'ProgramID' => '1',
           'Active' => 'Yes'
       ]);
       DB::table('modules')->insert([
-          'ModuleName' => 'Module 3 - Databases',
+          'ModuleName' => 'XML',
           'ProgramID' => '1',
           'Active' => 'Yes'
       ]);
       DB::table('modules')->insert([
           'ModuleName' => 'Accounting',
-          'ProgramID' => '2',
-          'Active' => 'Yes'
-      ]);
-      DB::table('modules')->insert([
-          'ModuleName' => 'Intro to Computers',
           'ProgramID' => '2',
           'Active' => 'Yes'
       ]);

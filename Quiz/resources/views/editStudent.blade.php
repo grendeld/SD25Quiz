@@ -54,7 +54,7 @@ Intake Id
   <option value='SD26' @if($student->IntakeID =="SD26"){{"selected"}} @endif>SD26</option>
  </select>
  </td>
- <tr>
+ </tr>
 </table>
 <br/>
 <button type="submit" formaction="/student/{{$student->StudentID}}/edit">Save changes</button>
