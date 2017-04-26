@@ -70,28 +70,46 @@ divQuiz.style.display = "none";
 divNewQA.style.display = "block";
 return false;
 }
+
+
+
 function showEditQA($QuestionID){
 divQuiz.style.display = "none";
 divNewQA.style.display = "block";
-alert($QuestionID);
 
-var options = ['First','Second','',''];
 
-for (var i=0, i<4, i++)
-{
-   if($answers->QuestionID == $QuestionID)
-      options[i] = $answers->Answer;
-}
-// foreach($answers as $a){
-// if($a->QuestionID == $QuestionID)
-// options = options + $a->Answer;
+//  $.ajax({
+//    url: '/question',
+//    type: "get",
+//    data:{'QuestionID': $QuestionID},
+//    success: function(data){
+//      alert(data);
 // }
+// });
 
-Option1.value = options[0];
+alert ($QuestionID);
 
+var answers = <?php echo json_encode($answers); ?>;
+var A = [];
+var j = 0;
+
+for (var i=0; i<answers.length; i++)
+{
+if (answers[i].QuestionID == $QuestionID){
+  A[j] = answers[i].Answer;
+  j++;
+}
+
+}
+
+Option1.value = A[0];
+Option2.value = A[1];
+Option3.value = A[2];
+Option4.value = A[3];
 
 return false;
 }
+
 
 function hideNewQA(){
 divQuiz.style.display = "block";
