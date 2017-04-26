@@ -34,11 +34,13 @@
 <hr>
 <table>
   <tr>
+    <th>Quiz</th>
     <th>Start</th>
     <th>Stop</th>
   </tr>
 @foreach($tests as $t)
 <tr>
+  <td>{{$t->QuizName}}</td>
   <td>{{$t->StartDateTime}}</td>
   <td>{{$t->StopDateTime}}</td>
 </tr>
@@ -52,8 +54,8 @@
   <br/>
   <form method="POST" action="/newQuiz">
   <select name='ModuleID'>
-    @foreach($quizzes as $q)
-      <option value="{{$q->ModuleID}}"> {{$q->ModuleName}}</option>
+    @foreach($modules as $m)
+      <option value="{{$m->ModuleID}}"> {{$m->ModuleName}}</option>
     @endforeach
   </select>
 <br/>

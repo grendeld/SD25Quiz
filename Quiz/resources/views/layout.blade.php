@@ -23,13 +23,14 @@
         <div class="container-fluid">
             <div class="row">
               <div class="col-md-12 banner">
-                <a href="../student">Students</a>
-                <a href="../quizzes">Quizzes</a>
-                <a href="../instructor">Instructors</a>
+                <a href="/student">Students</a>
+                <a href="/quizzes">Quizzes</a>
+                <a href="/instructor">Instructors</a>
+                <a href="/program">Programs</a>
               </div>
             </div>
 
-        
+
 @yield('content')
 @yield('footer')
 <hr>
