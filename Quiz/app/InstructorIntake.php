@@ -9,4 +9,4 @@ class InstructorIntake extends Model
     protected $fillable=['IntakID','InstructorID'];
     public $timestamps=false;
 }
-}
+

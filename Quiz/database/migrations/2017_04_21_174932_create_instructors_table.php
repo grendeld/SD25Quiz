@@ -14,7 +14,7 @@ class CreateInstructorsTable extends Migration
     public function up()
     {
         Schema::create('instructors', function (Blueprint $table) {
-            $table->increments('InstructorID');
+            $table->increments('InstructorID')->unique();
             $table->string('FirstName');
             $table->string('LastName');
             $table->integer('id')->unsigned()->nullable();

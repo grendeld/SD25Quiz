@@ -3,14 +3,27 @@
 namespace App\Http\Controllers;
 use DB;
 use App\Instructor;
+use App\Program;
+use App\Intake;
+use App\InstructorIntake;
 use Illuminate\Http\Request;
 
 class InstructorsController extends Controller
 {
     public function show()
   {
-      $instructors = Instructor::all();
-        return view ('instructor', compact('instructors'));
+    $instructors = DB::table('instructorIntakes')
+    ->join('instructors','instructorIntakes.InstructorID','=','instructors.InstructorID')
+    ->join('intakes','instructorIntakes.IntakeID','=','intakes.IntakeID')
+    ->join('programs','programs.ProgramID','=','intakes.ProgramID')
+    ->select('instructorIntakes.*','instructors.FirstName','instructors.LastName','intakes.IntakeName','intakes.ProgramID','programs.ProgramName')
+    ->get();
+      $intakes = Intake::all();
+      // $programs = DB::table('programs')
+      // ->join('intakes','programs.ProgramID','=','intakes.ProgramID')
+      // ->select('intakes.ProgramID','programs.ProgramName')
+      // ->get();
+      return view ('instructor', compact('instructors','intakes','programs'));
   }
   public function create(Request $request)
     {

@@ -56,3 +56,7 @@ Route::post('/intake/add', 'IntakesController@create');
 Route::get('/intake/{intake}', 'IntakesController@showedit');
 Route::patch('/intake/{intake}/edit', 'IntakesController@edit');
 Route::get('/intake/{intake}/delete', 'IntakesController@delete');
+//InstructorIntake
+Route::get('/instructorIntake', 'InstructorIntakesController@show');
+Route::get('/instructorIntake/add', function(){ return view('newInstructorIntake');});
+Route::post('/instructorIntake/add', 'InstructorIntakesController@create');

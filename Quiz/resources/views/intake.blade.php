@@ -11,6 +11,7 @@
 <th>Intake Name</th>
 <th>Program Id</th>
 <th>Instructor Id</th>
+
 </tr>
 
 @foreach($intakes as $intake)

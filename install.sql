@@ -19,9 +19,9 @@ SET time_zone = "+00:00";
 --
 -- Database: `SD25quiz`
 --
-use master;
---drop database SD25quiz;
-create databse SD25quiz;
+
+-- drop database SD25quiz;
+create database SD25quiz;
 use SD25quiz;
 -- --------------------------------------------------------
 
