@@ -56,27 +56,14 @@ $tests= DB::table('tests')
 
     public function newQA (Request $request, $quizID)
     {
-      // $question = new Question;
-      // $question->QuizID = $quizID;
-      // $question->Question = $request->Question;
-      // $question->CorrectAnswer = 0;
+
+      if ($request->QuestionID =="new"){
       $question=Question::create(array('QuizID'=>$quizID, 'Question' => $request->Question, 'CorrectAnswer'=>0));
-
-      //$options=[$request->Option1,$request->Option2,$request->Option3,$request->Option4];
-
-      //foreach ($options as $o)
-    //  {
-        //$a = new Answer;
-      //  $a->QuestionID=$id;
-      //  $a->Answer=$o
-      //  $a->save();
-      //}
 
       $option1=Answer::create(array('QuestionID'=>$question->QuestionID, 'Answer'=>$request->Option1));
       $option2=Answer::create(array('QuestionID'=>$question->QuestionID, 'Answer'=>$request->Option2));
       $option3=Answer::create(array('QuestionID'=>$question->QuestionID, 'Answer'=>$request->Option3));
       $option4=Answer::create(array('QuestionID'=>$question->QuestionID, 'Answer'=>$request->Option4));
-
 
       switch($request->Correct){
         case 'A':
@@ -92,9 +79,27 @@ $tests= DB::table('tests')
         $question->CorrectAnswer = $option4->AnswerID;
         break;
       }
-
-
       $question->save();
+}
+else
+{
+$question=Question::find($request->QuestionID);
+$question->Question = $request->Question;
+
+if ($request->txtCorrectAnswer != ''){
+$question->CorrectAnswer = $request->txtCorrectAnswer;
+}
+$question->save();
+
+$answer1=Answer::find($request->Option1ID)->update(['Answer' => $request->Option1]);
+$answer2=Answer::find($request->Option2ID)->update(['Answer' => $request->Option2]);
+$answer3=Answer::find($request->Option3ID)->update(['Answer' => $request->Option3]);
+$answer4=Answer::find($request->Option4ID)->update(['Answer' => $request->Option4]);
+
+
+}
+
+
 
       return back();
 

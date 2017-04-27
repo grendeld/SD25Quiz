@@ -5,11 +5,11 @@
       <meta name="viewport" content="width=device-width, initial-scale=1"/>
       <meta name="description" content="">
       <meta name="keywords" content="">
-      <link rel="stylesheet" href="css/styles.css">
-      <link rel="stylesheet" href="css/bootstrap.min.css">
-      <link rel="stylesheet" href="css/bootstrap.css">
-      <link rel="stylesheet" href="css/bootstrap-grid.css">
-      <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+      <link rel="stylesheet" href="/css/styles.css">
+      <link rel="stylesheet" href="/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/css/bootstrap.css">
+      <link rel="stylesheet" href="/css/bootstrap-grid.css">
+      <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
 
 <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
