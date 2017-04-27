@@ -16,7 +16,7 @@ echo what is your email?
 
 read input
 
-git config --global user.emal $input
+git config --global user.email $input
 
 git clone https://github.com/douglashughjackson/SD25Quiz
 
