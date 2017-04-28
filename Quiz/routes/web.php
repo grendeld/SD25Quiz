@@ -35,6 +35,7 @@ Route::get('/quizzes', 'QuizController@showAll');
 Route::get('/quiz/{quiz}','QuizController@showOne');
 Route::post('/newQuiz','QuizController@saveTemplate');
 Route::post('/quiz/{quiz}/newQA', 'QuizController@newQA');
+Route::patch('/quiz/{quiz}/editQuiz', 'QuizController@EditQuiz');
 //---Students
 Route::get('/student', 'StudentsController@show');
 Route::get('/student/add', function(){ return view('newStudent');});
