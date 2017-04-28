@@ -109,10 +109,34 @@ Quiz::find($quizID)->update(['QuizName' => $request->QuizName, 'Description' => 
 
 public function DeleteQuestion(Question $question)
 {
-  $question->answers->delete();
+  $questions = $question->answers;
+  foreach ($questions as $q) {
+    $q->delete();}
+
   $question->delete();
+
+  return back();
 }
-///question/{{$q->QuestionID}}/delete
+
+public function deleteQuiz(Quiz $quiz)
+{
+  $quiz->delete();
+  return back();
+
+
+}
+
+public function copyQuiz(Quiz $quiz)
+{
+  $quizcopy = $quiz->replicate();
+  $quizcopy -> push();
+  $newName = $quiz->QuizName."v2";
+
+  $quizcopy-> update(['QuizName'=> $newName]);
+  $quiz->questions-> update(['quizID'=> $quizcopy->quizID]);
+  return redirect('/quizzes');
+}
+
 
 
 

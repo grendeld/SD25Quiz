@@ -36,6 +36,10 @@ Route::get('/quiz/{quiz}','QuizController@showOne');
 Route::post('/newQuiz','QuizController@saveTemplate');
 Route::post('/quiz/{quiz}/newQA', 'QuizController@newQA');
 Route::patch('/quiz/{quiz}/editQuiz', 'QuizController@EditQuiz');
+Route::get('/question/{question}/delete','QuizController@DeleteQuestion');
+Route::get('/quiz/{quiz}/copy','QuizController@copyQuiz');
+Route::get('/quiz/{quiz}/delete','QuizController@deleteQuiz');
+
 //---Students
 Route::get('/student', 'StudentsController@show');
 Route::get('/student/add', function(){ return view('newStudent');});

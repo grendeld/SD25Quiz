@@ -6,7 +6,7 @@
 <div id="divQuizHead">
 <h1>{{$quiz->QuizName}}</h1>
 <p>{{$quiz->Description}}</p>
-<button onclick="return showEditQuiz()">Edit Quiz</button> <button onclick="return showEditQuiz()">Copy Quiz</button>
+<button onclick="return showEditQuiz()">Edit Quiz</button> <form method="get"> <button formaction="/quiz/{{$quiz->QuizID}}/copy">Copy Quiz</button> </form>
 </div>
 
 <form name="edit" action="/quiz/{{$quiz->QuizID}}/editQuiz" method="post" style="display:none">
@@ -15,7 +15,7 @@
   Description:<br/>
   <textarea name="Description" rows="3" cols="30">{{$quiz->Description}}</textarea><br/>
   <button type="submit">Save</button>
-  <button type="button">Cancel</button>
+  <button type="button" onclick="return hideEditQuiz()">Cancel</button>
 {{method_field('PATCH')}}
 {!! csrf_field() !!}
 </form>
@@ -35,7 +35,7 @@
       </ul>
       </td>
 <td><button id="EditQuestion" type="button" name="edit" style="display:none" onclick="return showEditQA({{$q->QuestionID}})">Edit question</button></td>
-<td><form method="post"><button id = "DeleteQuestion" type="submit" name="edit" style="display:none" formaction="/question/{{$q->QuestionID}}/delete">Delete question</button></form></td>
+<td><form method="get"><button id = "DeleteQuestion" type="submit" name="edit" style="display:none" formaction="/question/{{$q->QuestionID}}/delete">Delete question</button></form></td>
   </tr>
 @endforeach
 </table>
@@ -101,6 +101,20 @@ for (var i = 0; i < x.length; i++)
   }
 
 }
+
+function hideEditQuiz()
+{
+divQuizHead.style.display = "block";
+
+var x = document.getElementsByName("edit");
+
+for (var i = 0; i < x.length; i++)
+ {
+   x[i].style.display = "none";
+  }
+
+}
+
 
 
 

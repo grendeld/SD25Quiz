@@ -23,6 +23,7 @@
     <td>{{$q->Description}}</td>
     <td>{{$q->Active}}</td>
     <td><a href="/quiz/{{$q->QuizID}}">Show Quiz</a></td>
+    <td><a href="/quiz/{{$q->QuizID}}/delete">Delete Quiz</a></td>
   </tr>
 @endforeach
 </table>
