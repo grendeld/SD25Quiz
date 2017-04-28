@@ -1,9 +1,26 @@
 @extends('layout')
 
 @section ('content')
+<!-- Show Quiz with questions and answers -->
 <div id="divQuiz">
-
+<div id="divQuizHead">
 <h1>{{$quiz->QuizName}}</h1>
+<p>{{$quiz->Description}}</p>
+<button onclick="return showEditQuiz()">Edit Quiz</button> <button onclick="return showEditQuiz()">Copy Quiz</button>
+</div>
+
+<form name="edit" action="/quiz/{{$quiz->QuizID}}/editQuiz" method="post" style="display:none">
+  Quiz Name:<br/>
+  <input type="text" name="QuizName" value="{{$quiz->QuizName}}"/><br/>
+  Description:<br/>
+  <textarea name="Description" rows="3" cols="30">{{$quiz->Description}}</textarea><br/>
+  <button type="submit">Save</button>
+  <button type="button">Cancel</button>
+{{method_field('PATCH')}}
+{!! csrf_field() !!}
+</form>
+
+
 <table>
 @foreach($questions as $q)
   <tr>
@@ -17,20 +34,20 @@
         @endforeach
       </ul>
       </td>
-<td><button type="button" name="button" onclick="return showEditQA({{$q->QuestionID}})">Modify question</button></td>
+<td><button id="EditQuestion" type="button" name="edit" style="display:none" onclick="return showEditQA({{$q->QuestionID}})">Edit question</button></td>
+<td><form method="post"><button id = "DeleteQuestion" type="submit" name="edit" style="display:none" formaction="/question/{{$q->QuestionID}}/delete">Delete question</button></form></td>
   </tr>
 @endforeach
 </table>
-<button onclick="return showNewQA()">Add new question</button>
+<button name="edit" style="display:none" onclick="return showNewQA()">Add new question</button>
 </div>
 
+<!-- Add or edit question with answers -->
 <div id="divNewQA" style="display:none;">
 <form action="/quiz/{{$quiz->QuizID}}/newQA" method="post" name="formQA">
 
               <table>
-              <tr>
-              <td colspan="2" >Type Your Question Below</td>
-              </tr>
+              <tr>  </tr>
               <tr>
               <td></td>
               <td colspan="2"><textarea id="Question" type="textarea" rows="5" cols="50" row="5" placeholder="Question" name="Question"></textarea><td>
@@ -64,13 +81,29 @@
               <input id = 'QuestionID' type="hidden" name="QuestionID" value="new">
               <input id = 'txtCorrectAnswer' type="hidden" name="txtCorrectAnswer" value="">
 
-  <button type="submit">Save</button>
-  <button onclick="return hideNewQA()">Cancel</button>
+  <button type="submit">Save</button>   <button onclick="return hideNewQA()">Cancel</button>
   {!! csrf_field() !!}
 </form>
 </div>
 
+<!--                                        JAVASCRIPT                                                         -->
 <script type="text/javascript">
+
+function showEditQuiz()
+{
+divQuizHead.style.display = "none";
+
+var x = document.getElementsByName("edit");
+
+for (var i = 0; i < x.length; i++)
+ {
+   x[i].style.display = "block";
+  }
+
+}
+
+
+
 
 function showNewQA(){
 divQuiz.style.display = "none";
@@ -91,12 +124,9 @@ document.formQA.Correct[1].checked = false;
 document.formQA.Correct[2].checked = false;
 document.formQA.Correct[3].checked = false;
 
-
 divNewQA.style.display = "block";
 return false;
 }
-
-
 
 function showEditQA($QuestionID){
 divQuiz.style.display = "none";

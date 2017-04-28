@@ -54,10 +54,11 @@ $tests= DB::table('tests')
     }
 
 
-    public function newQA (Request $request, $quizID)
+public function newQA (Request $request, $quizID)
     {
 
-      if ($request->QuestionID =="new"){
+if ($request->QuestionID =="new") // Create New Question
+      {
       $question=Question::create(array('QuizID'=>$quizID, 'Question' => $request->Question, 'CorrectAnswer'=>0));
 
       $option1=Answer::create(array('QuestionID'=>$question->QuestionID, 'Answer'=>$request->Option1));
@@ -81,32 +82,40 @@ $tests= DB::table('tests')
       }
       $question->save();
 }
-else
+else // Edit existing question
 {
-$question=Question::find($request->QuestionID);
-$question->Question = $request->Question;
+  $question=Question::find($request->QuestionID);
+  $question->Question = $request->Question;
 
-if ($request->txtCorrectAnswer != ''){
-$question->CorrectAnswer = $request->txtCorrectAnswer;
-}
-$question->save();
+  if ($request->txtCorrectAnswer != ''){ $question->CorrectAnswer = $request->txtCorrectAnswer;}
 
-$answer1=Answer::find($request->Option1ID)->update(['Answer' => $request->Option1]);
-$answer2=Answer::find($request->Option2ID)->update(['Answer' => $request->Option2]);
-$answer3=Answer::find($request->Option3ID)->update(['Answer' => $request->Option3]);
-$answer4=Answer::find($request->Option4ID)->update(['Answer' => $request->Option4]);
+  $question->save();
 
+  $answer1=Answer::find($request->Option1ID)->update(['Answer' => $request->Option1]);
+  $answer2=Answer::find($request->Option2ID)->update(['Answer' => $request->Option2]);
+  $answer3=Answer::find($request->Option3ID)->update(['Answer' => $request->Option3]);
+  $answer4=Answer::find($request->Option4ID)->update(['Answer' => $request->Option4]);
 
 }
-
-
-
       return back();
-
-
-
-
      }
+
+
+public function EditQuiz(Request $request, $quizID)
+{
+Quiz::find($quizID)->update(['QuizName' => $request->QuizName, 'Description' => $request->Description]);
+    return back();
+}
+
+public function DeleteQuestion(Question $question)
+{
+  $question->answers->delete();
+  $question->delete();
+}
+///question/{{$q->QuestionID}}/delete
+
+
+
 
 
 }
