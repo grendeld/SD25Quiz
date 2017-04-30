@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Quiz extends Model
 {
+  protected $table = 'quizzes';
   protected $primaryKey = 'QuizID';
   protected $fillable=['QuizName','Description','ModuleID','Active'];
   public $timestamps = false;
@@ -19,8 +20,7 @@ class Quiz extends Model
       {
       return $this->hasMany('App\Question','QuizID','QuizID');
       }
-
-
+    
 
 
 }

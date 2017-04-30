@@ -31,11 +31,6 @@ class QuizSeeder extends Seeder
           'Description' => 'Quiz on Accounting',
           'Active' => 'Yes'
       ]);
-      DB::table('quizzes')->insert([
-          'ModuleID' => '5',
-          'Description' => 'Quiz on Intro to computers',
-          'Active' => 'Yes'
-      ]);
-
+ 
     }
 }

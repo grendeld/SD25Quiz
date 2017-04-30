@@ -1,15 +1,16 @@
 <?php
 namespace App\Test\Providers;
 class Question{
-    /**
+    /*
+        <Purpose>
+            A class for the Questions for the test
+        </Purpose>
     */
     function __construct($question){
+        $this->id = $question->QuestionID;
         $this->question = $question->Question;
-        $this->options = array();
-        foreach($question->answers as $answer)
-            $this->options[] = $answer->Answer;
+        $this->options = $question->answers->pluck('Answer','AnswerID')->toArray();
     }
-    //student response
     public $response;
 }
 ?>

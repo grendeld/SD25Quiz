@@ -18,6 +18,6 @@ public function Program()
 
 public function quizzes()
     {
-        return $this->hasMany(Quize::class,'ModuleID','ModuleID');
+        return $this->hasMany(Quiz::class,'ModuleID','ModuleID');
     }
 }

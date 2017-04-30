@@ -18,7 +18,8 @@ class CreateQuestionsTable extends Migration
           $table->increments('QuestionID');
           $table->string('Question');
           $table->string('Link')->nullable();
-          $table->integer('CorrectAnswer')->unsigned();
+          //Should be another table
+          //$table->integer('CorrectAnswer')->unsigned();
           $table->integer('QuizID')->unsigned();
           $table->foreign('QuizID')->references('QuizID')->on('quizzes');
           $table->string('Active',3)->default('Yes');
