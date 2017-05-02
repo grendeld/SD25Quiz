@@ -128,12 +128,15 @@ public function deleteQuiz(Quiz $quiz)
 
 public function copyQuiz(Quiz $quiz)
 {
-  $quizcopy = $quiz->replicate();
-  $quizcopy -> push();
-  $newName = $quiz->QuizName."v2";
+  $quizCopy = $quiz->replicate();
+  //$quizcopy -> push();
+  $newName = $quiz->QuizName."_".($quiz->Version + 1);
+  $NewID=$quizCopy->QuizID;
+  $quizCopy->QuizName = $newName;
+  $quizCopy->Version = ($quiz->Version + 1);
+  $quizCopy->ParentQuizID = $quiz->QuizID;
+  $quizCopy->save();
 
-  $quizcopy-> update(['QuizName'=> $newName]);
-  $quiz->questions-> update(['quizID'=> $quizcopy->quizID]);
   return redirect('/quizzes');
 }
 

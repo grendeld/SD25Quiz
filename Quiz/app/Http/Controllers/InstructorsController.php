@@ -4,12 +4,23 @@ namespace App\Http\Controllers;
 use DB;
 use App\Instructor;
 use App\Program;
+use App\Module;
 use App\Intake;
 use App\InstructorIntake;
 use Illuminate\Http\Request;
 
 class InstructorsController extends Controller
 {
+    public function main()
+    {
+      $programs = Program::all();
+      $modules = Module::all();
+      return view ('InstructorHome', compact('programs', 'modules'));
+
+    }
+
+
+
     public function show()
   {
     $instructors = DB::table('instructorIntakes')
@@ -41,7 +52,7 @@ class InstructorsController extends Controller
 public function edit(Request $request , $id )
 
     { $instructor = Instructor::find($id);
-      
+
       $instructor->update($request->all());
       return redirect('/instructor');
 
@@ -52,5 +63,5 @@ public function edit(Request $request , $id )
       $instructor->delete();
       return redirect('/instructor');
     }
-    
+
 }

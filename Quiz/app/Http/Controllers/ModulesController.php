@@ -13,7 +13,7 @@ class ModulesController extends Controller
   {
     $id=$_POST['ModID'];
     Module::where('ModuleID',$id) -> update(['Active'=>'No']);
-    return 'done';
+    return back();
   }
 
   public function showEdit($p, $m)
@@ -37,5 +37,14 @@ class ModulesController extends Controller
     $program=Program::find($p);
     $program->modules()->save($module);
     return redirect("/program/$p");
+  }
+
+  public function AddModule(Request $request) //2
+  {
+    $module=new Module;
+    $module->ModuleName = $request->ModuleName;
+    $program=Program::find($request->ProgramID);
+    $program->modules()->save($module);
+    return back();
   }
 }

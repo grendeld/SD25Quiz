@@ -19,7 +19,11 @@ class DatabaseSeeder extends Seeder
        $this->call(QuestionSeeder::class);
        //$this->call(AnswersSeeder::class);
        $this->call(InstructorsSeeder::class);
+<<<<<<< Updated upstream
        // $this->call(TestsSeeder::class);
+=======
+      $this->call(TestsSeeder::class);
+>>>>>>> Stashed changes
     $this->call(IntakesSeeder::class);
 //$this->call(InstructorIntakeSeeder::class);
     }

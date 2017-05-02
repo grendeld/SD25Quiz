@@ -1,6 +1,55 @@
 body {
         background-color: green;
  }
+ #moduleTABcontainer{
+   display: none;
+ }
+ #quizadminTABcontainer{
+   display: none;
+ }
+ #quiztemplateViewTABcontainer{
+   display: none;
+ }
+ #quizshareTABcontainer{
+   display: none;
+ }
+ #quizdeployTABcontainer{
+   display: none;
+ }
+
+/*List View Panel Containers Start*/
+#ModuleListViewTABcontainer{
+   display: none;
+ }
+#QuestionListViewTABcontainer{
+  display: none;
+}
+#TemplateListViewTABcontainer{
+  display: none;
+}
+#QuizListViewTABcontainer{
+  display: none;
+}
+#StudentListViewTABcontainer{
+  display: none;
+}
+/*List View Panel Containers End*/
+
+
+
+
+ #QuestionbuildContainer{
+   display: none;
+ }
+#templatebuildcontainer{
+  display: none;
+}
+
+#quizSavecontainer{
+  display: none;
+}
+
+
 
  .scale-image
  {
@@ -32,45 +81,49 @@ body {
   width:50%;
 }
 .banner{
-  height: 8em;
+  height: 4em;
   width: 100%;
   color: white;
   font-weight: bold;
-  background-color: black;
+  background-color: aliceblue;
   padding: 15px;
 }
-.LeftPanel{
+.selectPanel{
   width: 100%;
-  
+  height: 6em;
+  background-color: rgba(170,180,190,0.9);
+
 }
 .workarea{
-  background-color: aliceblue;
-  height: 33em;
+  height: auto;
+
   color: black;
   font-weight: bold;
     padding: 15px;
 }
-.questionarea{
-  background-color: aliceblue;
-  height: 33em;
-  color: black;
-  font-weight: bold;
-    padding: 15px;
-}
+
 .workview{
-  background-color: blue;
-  color: white;
+
+  color: black;
+  background-color: aliceblue;
   height: 33em;
   font-weight: bold;
     padding: 15px;
 }
-.templateBuild{
-  height:8em;
+.quizbuildcontainer{
+
+  height: 15em;
   width:100%;
-  background-color: green;
-  color: white;
-  font-weight: bold;
-    padding: 15px;
+}
+.QuestionbuildContainer{
+  background-color: aliceblue;
+  height: 40em;
+  padding:10px;
+}
+.QnASetViewcontainer{
+  background-color: rgba(160,160,199,0.6);
+  color: black;
+  padding: 20px;
 }
 .questionSelect{
   height:33em;
@@ -107,20 +160,34 @@ body {
 
 }
 .Question{
-  height: 60%;
   width: 100%;
   float: left;
-  color: white;
+  color: black;
+  margin-bottom: 10px;
   font-weight: bold;
-  background-color:red;
+
 }
-.AnswerOption{
-    height: 30%;
+.Answer{
+    margin-top: 5px;
+    height: 4em;
     width:100%;
     float: left;
-    color: white;
+    color: black;
     font-weight: bold;
-    background-color: blue;
+}
+.answerSet{
+  margin-bottom: 30px;
+  background-color: aliceblue;
+  height: 3em;
+}
+.AnswerNumber{
+  float: left;
+  height: 100%;
+  padding-right: 10px;
+}
+.AnswerTextInput{
+  float: left;
+  height: 100%;
 }
 .NextQuestion{
   height: 10%;
@@ -130,6 +197,7 @@ body {
   font-weight: bold;
   background-color: aliceblue;
 }
+
 .testsessionUI{
   background-color: yellow;
   height: 30em;
@@ -160,15 +228,6 @@ body {
   float: left;
   padding: 15px;
 
-}
-
-.quizbuildcontainer{
-    height: 40em;
-    width:100%;
-    background-color: aliceblue;
-}
-.template{
-    margin-top: 2em;
 }
 .QBsections1{
     height:4em;
@@ -225,15 +284,20 @@ body {
   width: 50px;
 
 }
+.QuestionListView{
+  padding:20px;
+}
 .questionSetup{
   margin-top: 5px;
 }
 .QListSegment{
-    height: 10em;
+    background-color: aliceblue;
+    height: 6em;
     width:100%;
     padding: 15px;
     margin-top: 15px;
-    background-color: rgba(160,160,160,0.6);
+    color: black;
+
 }
 .QListQuestion{
     height: 100%;
@@ -270,6 +334,13 @@ body {
 }
 .stdConnect{
   height:100%;
+  width: 15%;
+  float: left;
+  background-color: rgba(133,193,233,0.4);
+}
+.stdListSelect{
+  height:100%;
+  padding: 30px;
   width: 15%;
   float: left;
   background-color: rgba(133,193,233,0.4);
