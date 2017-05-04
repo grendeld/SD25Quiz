@@ -45,7 +45,7 @@ $tests= DB::table('tests')
     {
     $quiz= new Quiz;
     $quiz->QuizName = $request->QuizName;
-    $quiz->Description = $request ->Description;
+    //$quiz->Description = $request ->Description;
     $quiz->ModuleID = $request->ModuleID;
     $quiz->Active = "No";
     $quiz->save($request->all());

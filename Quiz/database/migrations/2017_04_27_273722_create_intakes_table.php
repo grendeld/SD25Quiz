@@ -17,11 +17,9 @@ class CreateIntakesTable extends Migration
             $table->increments('IntakeID');
             $table->string('IntakeName');
             $table->integer('ProgramID')->unsigned();
-            $table->integer('InstructorID')->unsigned();
             $table->foreign('ProgramID')->references('ProgramID')->on('programs');
-            $table->foreign('InstructorID')->references('InstructorID')->on('instructors');
 
-            
+
         });
     }
 

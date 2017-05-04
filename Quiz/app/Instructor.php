@@ -9,12 +9,10 @@ class Instructor extends Model
     protected $primaryKey='InstructorID';
     protected $fillable=['FirstName','LastName','id'];
     public $timestamps=false;
-public function Intakes()
+
+
+public function intakes()
 {
-   return $this->hasMany('App\Intake','IntakeID','IntakeID');
-}
-public function Programs()
-{
-    return $this->hasMany('App\Program','ProgramID','ProgramID');
+return $this->belongsToMany('App\Intake','InstructorIntakes','InstructorID','IntakeID');
 }
 }

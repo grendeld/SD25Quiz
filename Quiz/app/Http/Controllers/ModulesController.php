@@ -9,11 +9,16 @@ use DB;
 
 class ModulesController extends Controller
 {
-  public function deleteMod()
+  public function deleteModule() //new // Set module inactive
   {
     $id=$_POST['ModID'];
     Module::where('ModuleID',$id) -> update(['Active'=>'No']);
     return back();
+  }
+
+  public function editModule() //new
+  {
+
   }
 
   public function showEdit($p, $m)
@@ -39,7 +44,7 @@ class ModulesController extends Controller
     return redirect("/program/$p");
   }
 
-  public function AddModule(Request $request) //2
+  public function AddModule(Request $request) //new
   {
     $module=new Module;
     $module->ModuleName = $request->ModuleName;

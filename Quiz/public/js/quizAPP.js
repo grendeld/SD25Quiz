@@ -35,23 +35,16 @@ function quizdeploy() {
 
 
 function QnABuilder() {
-    $(function () {
-        $("#QnA").click(function () {
+   
             $("#TemplateSelectcontainer").fadeOut(400);
               $("#templateViewcontainer").fadeOut(400);
             $("#QuestionbuildContainer").fadeIn(400);
 
-        });
-    });
-
 }
 
 function QnASetView() {
-    $(function () {
-        $("#enterQuestion").click(function () {
+   
             $("#QuestionListViewTABcontainer").fadeIn(400);
-        });
-    });
 
 }
 

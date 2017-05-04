@@ -11,15 +11,15 @@ class InstructorIntakeSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('instructorIntakes')->insert([
+        DB::table('InstructorIntakes')->insert([
             'IntakeID'=>'1',
             'InstructorID'=>'1',
 ]);
-DB::table('instructorIntakes')->insert([
+DB::table('InstructorIntakes')->insert([
     'IntakeID'=>'2',
     'InstructorID'=>'1',
 ]);
-DB::table('instructorIntakes')->insert([
+DB::table('InstructorIntakes')->insert([
     'IntakeID'=>'3',
    'InstructorID'=>'2',
 ]);

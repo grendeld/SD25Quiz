@@ -6,6 +6,7 @@ use App\Instructor;
 use App\Program;
 use App\Module;
 use App\Intake;
+use App\Quiz;
 use App\InstructorIntake;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class InstructorsController extends Controller
     {
       $programs = Program::all();
       $modules = Module::all();
-      return view ('InstructorHome', compact('programs', 'modules'));
+      $quizzes = Quiz::all();
+      return view ('InstructorHome', compact('programs', 'modules', 'quizzes'));
 
     }
 

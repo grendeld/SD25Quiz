@@ -11,8 +11,20 @@
 |
 */
 
-Route::get('/', 'ProgramsController@show');
+Route::get('/', 'InstructorsController@main');
 
+Route::post('/moduleDelete','ModulesController@deleteModule');
+Route::post('/saveTemplate','QuizController@saveTemplate');
+
+
+
+
+
+
+
+
+
+//--------------------------------------OLD------------------------------------------------------------------
 Route::get('/admin', 'AdminsController@show');
 
 Route::get('/admin/add', function(){ return view('newadmin'); });
@@ -30,6 +42,7 @@ Route::post('/module','ModulesController@deleteMod');
 Route::get('/program/{program}/module/{module}/edit', 'ModulesController@showEdit');
 Route::patch('/{program}/{module}', 'ModulesController@edit');
 Route::post('/program/{program}/newModule', 'ModulesController@NewModule');
+Route::post('/newModule','ModulesController@AddModule');
 //---Quizzes
 Route::get('/quizzes', 'QuizController@showAll');
 Route::get('/quiz/{quiz}','QuizController@showOne');
