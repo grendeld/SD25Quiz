@@ -23,16 +23,18 @@ class IntakesController extends Controller
 return redirect('/intake');
 
     }
-     public function showedit($id )
+public function showedit($id )
 
     { $intake = Intake::find($id);
-      
+
       return view ('editIntake', compact('intake'));
  }
+
+
  public function edit(Request $request , $id )
 
     { $intake = Intake::find($id);
-      
+
       $intake->update($request->all());
       return redirect('/intake');
 

@@ -5,14 +5,27 @@ namespace App\Http\Controllers;
 use DB;
 use Illuminate\Http\Request;
 use App\Student;
+use App\Intake;
 
 class StudentsController extends Controller
 {
     public function show()
   {
       $students = Student::all();
-        return view ('student', compact('students'));
+    return view ('student', compact('students'));
   }
+
+public function IntakeStudents()
+{
+$IntakeID=$_GET['IntakeID'];
+$students=Intake::find($IntakeID)->students;
+return $students;
+
+
+
+
+}
+
   public function create(Request $request)
     {
       $student = new Student;
@@ -32,7 +45,7 @@ public function showedit($id )
 public function edit(Request $request , $id )
 
     { $student = Student::find($id);
-      
+
       $student->update($request->all());
       return redirect('/student');
 

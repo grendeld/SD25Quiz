@@ -23,6 +23,9 @@
     <![endif]-->
   </head>
   <body>
+    <?php
+    $Panel = Session::get('Panel');
+    ?>
   <div class="container-fluid">
     <!---INSTRUCTOR HOME PAGE START--->
         <div class="row">
@@ -95,12 +98,12 @@
                   <!---QUESTIONLIST VIEW END--->
                   <!---TEMPLATE LIST VIEW START--->
                   <div id="TemplateListViewTABcontainer">
-
+Templates:
                   </div>
                   <!---TEMPLATE LIST VIEW END--->
                   <!---QUIZ LIST VIEW START--->
                   <div id="QuizListViewTABcontainer">
-
+Quizzes:
                   </div>
                   <!---QUIZ LIST VIEW END--->
                   <!---STUDENT LIST VIEW START---->

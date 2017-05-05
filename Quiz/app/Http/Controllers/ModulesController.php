@@ -16,6 +16,17 @@ class ModulesController extends Controller
     return back();
   }
 
+  public function saveModule(Request $request) //new
+  {
+    $id=$request->ModuleID;
+    $module = Module::find($id);
+    $module->ModuleName = $request->ModuleName;
+    $module->Active=$request->Active;
+    $module->save();
+    session(['Panel' => '1']); //show ModuleListViewTABcontainer
+    return back();
+  }
+
   public function editModule() //new
   {
 

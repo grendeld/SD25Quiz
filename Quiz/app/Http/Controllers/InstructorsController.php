@@ -17,7 +17,10 @@ class InstructorsController extends Controller
       $programs = Program::all();
       $modules = Module::all();
       $quizzes = Quiz::all();
-      return view ('InstructorHome', compact('programs', 'modules', 'quizzes'));
+      $id=1;
+      $instructor = Instructor::find($id);
+      $intakes = $instructor->intakes;
+      return view ('InstructorHome', compact('programs', 'modules', 'quizzes', 'intakes'));
 
     }
 

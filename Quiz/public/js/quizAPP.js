@@ -4,7 +4,7 @@ var currentPanel = null;
 function modulebuilder() {
     if(currentPanel)
         currentPanel.fadeOut(100);
-  
+
           currentPanel = $("#moduleTABcontainer").fadeIn(400);
 }
 
@@ -35,7 +35,7 @@ function quizdeploy() {
 
 
 function QnABuilder() {
-   
+
             $("#TemplateSelectcontainer").fadeOut(400);
               $("#templateViewcontainer").fadeOut(400);
             $("#QuestionbuildContainer").fadeIn(400);
@@ -43,7 +43,7 @@ function QnABuilder() {
 }
 
 function QnASetView() {
-   
+
             $("#QuestionListViewTABcontainer").fadeIn(400);
 
 }
@@ -71,10 +71,68 @@ if(currentPanel)
 
 function MyModulesView(){
  if(currentPanel)
-        currentPanel.fadeOut(100); 
+        currentPanel.fadeOut(100);
         $("#ModuleListViewTABcontainer").fadeIn(400);
 
 }
+
+function MyModulesView(){
+  $(function(){
+    $("#MymoduleView").click(function(){
+        $("#ModuleListViewTABcontainer").fadeIn(400);
+    });
+  });
+
+}
+
+function ViewMyQuizes(){
+  $(function(){
+    $("#ListMyQuizes").click(function(){
+      $("#moduleTABcontainer").fadeOut(400);
+      $("#quizadminTABcontainer").fadeOut(400);
+      $("#QuizListViewTABcontainer").fadeIn(400);
+    });
+  });
+
+}
+
+function PublicQuizListView(){
+  $(function(){
+      $("#ViewPublicQuizes").click(function(){
+          $("#MySelectedQuiz").fadeOut(400);
+          $("#SelectedPublicQuiz").fadeIn(400);
+
+      });
+  });
+
+
+}
+
+
+
+
+
+function getStudents(){
+  var ddl = document.getElementById("selectIntake");
+  var intake = ddl.options[ddl.selectedIndex].value;
+  //var doc = document.getElementById("divStudents");
+$("#divStudents").empty();
+
+    $.ajax({
+    url:'/getStudents',
+    type:'get',
+    data:{'IntakeID':intake},
+    success:function(data){
+      $.each(data,function(i,item){
+        $("#divStudents").append("<p>" + item.FirstName + "</p>");
+
+      });
+
+    }
+  });
+
+}
+
 
 // function PostQuestion() {
 //

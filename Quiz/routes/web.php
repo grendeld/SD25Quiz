@@ -15,6 +15,8 @@ Route::get('/', 'InstructorsController@main');
 
 Route::post('/moduleDelete','ModulesController@deleteModule');
 Route::post('/saveTemplate','QuizController@saveTemplate');
+Route::post('/moduleSave', 'ModulesController@saveModule');
+Route::get('/getStudents','StudentsController@IntakeStudents');
 
 
 
