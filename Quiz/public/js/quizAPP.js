@@ -124,7 +124,7 @@ $("#divStudents").empty();
     data:{'IntakeID':intake},
     success:function(data){
       $.each(data,function(i,item){
-        $("#divStudents").append("<p>" + item.FirstName + "</p>");
+        $("#divStudents").append("<input type='checkbox' name='CheckedStudent' onclick = 'StudentChecked()' value = '"+item.StudentID+"'/> " + item.FirstName +" "+ item.LastName +"<br/>");
 
       });
 
@@ -133,6 +133,25 @@ $("#divStudents").empty();
 
 }
 
+
+
+function StudentChecked()
+{
+  var checkboxes = document.getElementsByName('CheckedStudent');
+  var CheckedStudentsID = [];
+
+for (var i = 0; i<checkboxes.length; i++)
+{
+  if (checkboxes[i].checked)
+  CheckedStudentsID.push(checkboxes[i]);
+  }
+
+if (CheckedStudentsID.length>0)
+btnStart.style.display = "block";
+else
+btnStart.style.display = "none";
+
+}
 
 // function PostQuestion() {
 //

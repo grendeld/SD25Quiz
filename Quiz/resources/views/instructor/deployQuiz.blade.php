@@ -11,5 +11,7 @@
 
     </div>
 
+    <button type="button" onclick='javascript: StudentChecked();' id="btnStart" style="display:none;">Start test</button>
+
 
 </div>
