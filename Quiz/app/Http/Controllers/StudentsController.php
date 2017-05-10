@@ -6,6 +6,9 @@ use DB;
 use Illuminate\Http\Request;
 use App\Student;
 use App\Intake;
+use App\Program;
+use App\Module;
+use App\Quiz;
 
 class StudentsController extends Controller
 {
@@ -18,13 +21,12 @@ class StudentsController extends Controller
 public function IntakeStudents()
 {
 $IntakeID=$_GET['IntakeID'];
-$students=Intake::find($IntakeID)->students;
+$intake= Intake::find($IntakeID);
+$students=$intake->students;
 return $students;
-
-
-
-
 }
+
+
 
   public function create(Request $request)
     {

@@ -17,8 +17,12 @@ Route::post('/moduleDelete','ModulesController@deleteModule');
 Route::post('/saveTemplate','QuizController@saveTemplate');
 Route::post('/moduleSave', 'ModulesController@saveModule');
 Route::get('/getStudents','StudentsController@IntakeStudents');
+Route::get('/getQuizList','QuizController@IntakeQuiz');
+Route::get('/startTest','QuizController@StartTest');
 
 
+
+//function(){return "test";}
 
 
 

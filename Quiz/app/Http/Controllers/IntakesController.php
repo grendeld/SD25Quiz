@@ -39,6 +39,7 @@ public function showedit($id )
       return redirect('/intake');
 
     }
+
     public function delete(Intake $intake)
     {
       $intake = DB::table('intakes')->where('IntakeID','=',$intake->IntakeID);

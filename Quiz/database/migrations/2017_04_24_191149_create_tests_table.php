@@ -21,7 +21,7 @@ class CreateTestsTable extends Migration
           $table->integer('StudentID')->unsigned();
           $table->foreign('StudentID')->references('StudentID')->on('students');
           $table->DateTime('StartDateTime');
-          $table->DateTime('StopDateTime');
+          $table->DateTime('StopDateTime')->nullable();
 
 
         });

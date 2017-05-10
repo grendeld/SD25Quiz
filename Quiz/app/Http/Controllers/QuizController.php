@@ -7,6 +7,8 @@ use App\Quiz;
 use App\Module;
 use App\Question;
 use App\Answer;
+use App\Intake;
+use App\Program;
 use App\Test;
 use DB;
 
@@ -122,8 +124,6 @@ public function deleteQuiz(Quiz $quiz)
 {
   $quiz->delete();
   return back();
-
-
 }
 
 public function copyQuiz(Quiz $quiz)
@@ -140,6 +140,30 @@ public function copyQuiz(Quiz $quiz)
   return redirect('/quizzes');
 }
 
+public function IntakeQuiz()
+{
+  $IntakeID=$_GET['IntakeID'];
+  $intake= Intake::find($IntakeID);
+  //$modules = Program::find($intake->ProgramID)->modules;
+   $intakequizzes = DB::table('quizzes')
+               ->join('modules','modules.ModuleID','=','quizzes.ModuleID')
+               ->select('quizzes.*')
+               ->where('modules.ProgramID','=',$intake->ProgramID)
+               ->get();
+    return $intakequizzes;
+
+}
+
+public function StartTest()
+{
+  date_default_timezone_set('America/Winnipeg');
+  $test = Test::create(array('StudentID'=>$_GET['StudentID'],
+                                  'QuizID'=>$_GET['QuizID'],
+                                'StartDateTime'=>\Carbon\Carbon::now()
+                        )    );
+
+  return "done";
+}
 
 
 

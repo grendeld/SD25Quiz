@@ -15,19 +15,31 @@ class StudentsSeeder extends Seeder
           'FirstName' => 'Jane',
           'LastName' => 'Doe',
           'Photo' => '1.jpg',
-          'IntakeID'=>'SD25'
+          'IntakeID'=>'1'
       ]);
+      DB::table('students')->insert([
+            'FirstName' => 'Fred',
+            'LastName' => 'Tompson',
+            'Photo' => '1.jpg',
+            'IntakeID'=>'1'
+        ]);
       DB::table('students')->insert([
           'FirstName' => 'David',
           'LastName' => 'Smith',
           'Photo' => '2.jpg',
-          'IntakeID'=>'SD26'
+          'IntakeID'=>'2'
       ]);
       DB::table('students')->insert([
           'FirstName' => 'Allice',
           'LastName' => 'Xu',
           'Photo' => '3.jpg',
-          'IntakeID'=>'SD24'
+          'IntakeID'=>'2'
+      ]);
+      DB::table('students')->insert([
+          'FirstName' => 'Randy',
+          'LastName' => 'Lang',
+          'Photo' => '3.jpg',
+          'IntakeID'=>'2'
       ]);
     }
 }

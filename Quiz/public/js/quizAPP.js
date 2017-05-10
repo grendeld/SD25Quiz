@@ -104,19 +104,28 @@ function PublicQuizListView(){
 
       });
   });
-
-
 }
 
 
-
-
-
-function getStudents(){
+function getQuizzesAndStudents(){
   var ddl = document.getElementById("selectIntake");
   var intake = ddl.options[ddl.selectedIndex].value;
   //var doc = document.getElementById("divStudents");
-$("#divStudents").empty();
+$("#divStudentsForTest").empty();
+$("#divQuizForTest").empty();
+
+
+$.ajax({
+url:'/getQuizList',
+type:'get',
+data:{'IntakeID':intake},
+success:function(data){
+  $.each(data,function(i,item){
+    $("#divQuizForTest").append("<input type='radio' name='SelectedQuiz' value='" + item.QuizID + "'/> "+ item.QuizName + "<br/>");
+ });
+}
+});
+
 
     $.ajax({
     url:'/getStudents',
@@ -124,21 +133,17 @@ $("#divStudents").empty();
     data:{'IntakeID':intake},
     success:function(data){
       $.each(data,function(i,item){
-        $("#divStudents").append("<input type='checkbox' name='CheckedStudent' onclick = 'StudentChecked()' value = '"+item.StudentID+"'/> " + item.FirstName +" "+ item.LastName +"<br/>");
-
+        $("#divStudentsForTest").append("<br/><input type='checkbox' name='CheckedStudent' onclick = 'StudentChecked()' value = '"+item.StudentID+"'/> " + item.FirstName +" "+ item.LastName +"<br/>");
       });
-
     }
   });
-
 }
-
 
 
 function StudentChecked()
 {
   var checkboxes = document.getElementsByName('CheckedStudent');
-  var CheckedStudentsID = [];
+  CheckedStudentsID = [];
 
 for (var i = 0; i<checkboxes.length; i++)
 {
@@ -150,8 +155,43 @@ if (CheckedStudentsID.length>0)
 btnStart.style.display = "block";
 else
 btnStart.style.display = "none";
+}
+
+
+
+function StartTest()
+{
+
+  var radio = document.getElementsByName("SelectedQuiz");
+  var SelectedQuizID =-1;
+  for (var i=0; i<radio.length; i++)
+  {
+    if (radio[i].checked){
+      SelectedQuizID = radio[i].value;
+      break;
+    }
+  }
+
+for (var i=0; i<CheckedStudentsID.length; i++)
+{
+  $.ajax({
+  url:'/startTest',
+  type:'get',
+  data:{'QuizID':SelectedQuizID, 'StudentID':CheckedStudentsID[i].value},
+  success:function(data){
+    alert(data);
+  }
+});
 
 }
+
+
+
+
+
+}
+
+
 
 // function PostQuestion() {
 //
