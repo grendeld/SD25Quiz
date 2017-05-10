@@ -1,0 +1,60 @@
+<!---Module Build & Edit start--->
+  <div id="moduleTABcontainer">
+      <div class="col-md-6">
+        <!---MODULE BUILDER START--->
+            <div class="modbuildcontainer">
+              <form action="ModuleCreator.php" method="post">
+                  <div class="modbuild">
+                    <div class="QMSelectors">
+                      <input type="button" id="MymoduleView" value="My Modules"
+                      onclick="javascript: MyModulesView();"/>
+                    </div>
+                  </div>
+                  <div class="modbuildd">
+                    <div class="QMSelectors">
+                      <label for="modulename">Module Name: </label>
+                      <input type="text" id="moduleName"/>
+                    </div>
+                    <div class="QMSelectorss">
+                      <input type="button" value="Save Module" id="btnModuleEnter"/>
+                    </div>
+                  </div>
+                  <div class="modbuild">
+                    <div class="QMSelectors">
+                      <p>saved module name here</p>
+                    </div>
+                  </div>
+              </form>
+            </div>
+        <!---MODULE BUILDER ENDS--->
+      </div>
+
+
+
+
+
+
+      
+
+      <div class="col-md-6">
+        <!---MODULE LIST START--->
+        <div id="ModuleListViewTABcontainer">
+        <form action="ListModules.php" method="get">
+          <!---MODULE LIST VIEW START--->
+            <div class="moduleListcontainer" id="moduleListcontainer">
+              <div class="QuizListCell">
+                  <div class="QuizListCellSelect" id="ModuleListCellName">
+                      <input type="checkbox" id="ModuleListItem" />
+                  </div>
+                  <div class="QuizListCellName" id="ModuleListSelect">
+                      <h3>Module Name</h3>
+                  </div>
+              </div>
+            </div>
+          <!---MODULE LIST VIEW END--->
+        </form>
+        </div>
+        <!---MODULE LIST END--->
+      </div>
+  </div>
+<!--Module build & Edit End--->
