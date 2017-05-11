@@ -17,8 +17,9 @@
 <script type="text/javascript" src="js/quizAPP.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
 
-        <title>SD25Quize app</title>
+
 @yield('header')
+<title>SD25Quize app</title>
     </head>
     <body>
 
