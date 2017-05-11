@@ -84,3 +84,5 @@ Route::get('/intake/{intake}/delete', 'IntakesController@delete');
 Route::get('/instructorIntake', 'InstructorIntakesController@show');
 Route::get('/instructorIntake/add', function(){ return view('newInstructorIntake');});
 Route::post('/instructorIntake/add', 'InstructorIntakesController@create');
+
+

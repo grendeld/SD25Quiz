@@ -17,6 +17,7 @@ class InstructorsController extends Controller
       $programs = Program::all();
       $modules = Module::all();
       $quizzes = Quiz::all();
+        //dd($quizzes);
       $id=1;
       $instructor = Instructor::find($id);
       $intakes = $instructor->intakes;

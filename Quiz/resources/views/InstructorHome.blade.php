@@ -73,8 +73,9 @@
                   <!---QUIZ ADMIN END--->
                   <!---QUIZ VIEW SHARE START--->
                   <div id="quizshareTABcontainer">
+                      
 
-@foreach($quizzes as $q)
+@foreach($quizzes as $q)                  
 <p>{{$q->QuizName}}</p>
 
 @endforeach
