@@ -14,6 +14,12 @@
                 <div class="col-md-12 AdminSidePanelInput">
                     <p>Select Input/edit Programs List Panel</p>
                     <p>Select Input/edit Instructor List Panel</p>
+                    @foreach ($instructors as $i)
+                    <p>{{$i->FirstName}}</p>
+                    @foreach ($i->intakes as $b)
+                    {{$b->IntakeName}}
+                    @endforeach
+                    @endforeach
                 </div>
                 <div class="col-md-12 AdminSidePanelView">
                     <p>Select View Instructor Details and Reports Panel</p>

@@ -17,7 +17,6 @@ class InstructorsController extends Controller
       $programs = Program::all();
       $modules = Module::all();
       $quizzes = Quiz::all();
-        //dd($quizzes);
       $id=1;
       $instructor = Instructor::find($id);
       $intakes = $instructor->intakes;
@@ -29,11 +28,11 @@ class InstructorsController extends Controller
 
     public function show()
   {
-    $instructors = DB::table('instructorIntakes')
-    ->join('instructors','instructorIntakes.InstructorID','=','instructors.InstructorID')
-    ->join('intakes','instructorIntakes.IntakeID','=','intakes.IntakeID')
+    $instructors = DB::table('InstructorIntakes')
+    ->join('instructors','InstructorIntakes.InstructorID','=','instructors.InstructorID')
+    ->join('intakes','InstructorIntakes.IntakeID','=','intakes.IntakeID')
     ->join('programs','programs.ProgramID','=','intakes.ProgramID')
-    ->select('instructorIntakes.*','instructors.FirstName','instructors.LastName','intakes.IntakeName','intakes.ProgramID','programs.ProgramName')
+    ->select('InstructorIntakes.*','instructors.FirstName','instructors.LastName','intakes.IntakeName','intakes.ProgramID','programs.ProgramName')
     ->get();
       $intakes = Intake::all();
       // $programs = DB::table('programs')

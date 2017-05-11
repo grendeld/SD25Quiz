@@ -14,6 +14,8 @@
 <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/quizAPP.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
 
         <title>SD25Quize app</title>
 @yield('header')
@@ -27,6 +29,8 @@
                 <a href="/quizzes">Quizzes</a>
                 <a href="/instructor">Instructors</a>
                 <a href="/program">Programs</a>
+                <a href="/adminHome">AdminHome</a>
+                <a href="/instructorHome">InstructorHome</a>
               </div>
             </div>
 

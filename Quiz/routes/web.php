@@ -10,8 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', 'InstructorsController@main');
+Route::get('/instructorHome', 'InstructorsController@main');
+Route::get('/adminHome', 'AdminsController@main');
 
 Route::post('/moduleDelete','ModulesController@deleteModule');
 Route::post('/saveTemplate','QuizController@saveTemplate');
@@ -84,5 +85,3 @@ Route::get('/intake/{intake}/delete', 'IntakesController@delete');
 Route::get('/instructorIntake', 'InstructorIntakesController@show');
 Route::get('/instructorIntake/add', function(){ return view('newInstructorIntake');});
 Route::post('/instructorIntake/add', 'InstructorIntakesController@create');
-
-

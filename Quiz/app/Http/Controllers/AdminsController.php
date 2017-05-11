@@ -4,9 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Admin;
+use App\Instructor;
 
 class AdminsController extends Controller
 {
+
+public function main(){
+$instructors = Instructor::all();
+
+  return view('AdminHome',compact ('instructors'));
+}
+
 
   public function show()
   {

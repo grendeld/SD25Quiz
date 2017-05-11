@@ -1,28 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <title>Quiz Builder</title>
-  	<link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/quizeditViewerPanel.css">
-    <link rel="stylesheet" href="css/ModuleBuilder.css">
-  	<link rel="stylesheet" href="css/bootstrap.min.css">
-  	<link rel="stylesheet" href="css/bootstrap.css">
-  	<link rel="stylesheet" href="css/bootstrap-grid.css">
-  	<link rel="stylesheet" href="css/bootstrap-grid.min.css">
 
-	<script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="js/quizAPP.js"></script>
 
-    <!--[if IE]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
+  @extends('layout')
+  @section ('header')
+  <title>InstructorHome</title>
+  <!--[if IE]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  @stop
+  @section ('content')
     <?php
     $Panel = Session::get('Panel');
     ?>
@@ -73,9 +58,8 @@
                   <!---QUIZ ADMIN END--->
                   <!---QUIZ VIEW SHARE START--->
                   <div id="quizshareTABcontainer">
-                      
 
-@foreach($quizzes as $q)                  
+@foreach($quizzes as $q)
 <p>{{$q->QuizName}}</p>
 
 @endforeach
@@ -119,5 +103,4 @@ Quizzes:
         </div>
   <!---INSTRUCTOR HOME PAGE END--->
 </div>
-  </body>
-  </html>
+  @stop

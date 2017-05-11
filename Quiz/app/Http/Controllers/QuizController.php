@@ -29,6 +29,7 @@ $tests= DB::table('tests')
                 ->get();
       return view('quizzes',compact('quizzes', 'tests','modules'));
     }
+
     public function showOne($q)
     {
       $quiz=Quiz::find($q);

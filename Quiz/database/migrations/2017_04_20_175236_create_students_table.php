@@ -19,7 +19,7 @@ class CreateStudentsTable extends Migration
             $table->string('LastName');
             $table->string('Photo');
             $table->integer('IntakeID')->unsigned();
-            //$table->foreign('IntakeID')->references('IntakeID')->on('intakes');
+            $table->foreign('IntakeID')->references('IntakeID')->on('intakes');
             $table->integer('id')->unsigned()->nullable();
             $table->foreign('id')->references('id')->on('users');
 
