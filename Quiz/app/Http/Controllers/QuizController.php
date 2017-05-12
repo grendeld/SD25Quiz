@@ -36,7 +36,7 @@ $tests= DB::table('tests')
       $questions=Question::where('QuizID','=',$q)->get();
       $answers=DB::table('answers')
                 ->join('questions', 'answers.QuestionID', '=', 'questions.QuestionID')
-                ->select('answers.*','questions.CorrectAnswer')
+                ->select('answers.*'/*,'questions.CorrectAnswer'*/)
                 ->where('questions.QuizID','=', $q)
                 ->get();
       return view('quiz',compact('quiz','questions','answers'));

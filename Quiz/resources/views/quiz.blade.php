@@ -29,7 +29,7 @@
         <ul>
         @foreach($answers as $a)
         @if($a->QuestionID == $q->QuestionID)
-        <li <?php if($a->AnswerID == $q->CorrectAnswer) echo('style="color:red;"'); ?> >{{$a->Answer}}</li>
+        <li <?php //if($a->AnswerID == $q->CorrectAnswer) echo('style="color:red;"'); ?> >{{$a->Answer}}</li>
         @endif
         @endforeach
       </ul>

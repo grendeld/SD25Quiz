@@ -30,6 +30,10 @@ class CreateIntakesTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('tests');
+        Schema::dropIfExists('students');
+        Schema::dropIfExists('InstructorIntakes');
         Schema::dropIfExists('intakes');
+        
     }
 }
