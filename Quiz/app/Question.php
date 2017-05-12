@@ -7,11 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Question extends Model
 {
   protected $primaryKey = 'QuestionID';
-<<<<<<< Updated upstream
-  protected $fillable=['Question','Link','QuizID','Active'];
-=======
+
   protected $fillable=['Question','Link','CorrectAnswerID','QuizID','Active'];
->>>>>>> Stashed changes
+
   public $timestamps = false;
 
   public function Quiz()
@@ -25,11 +23,6 @@ class Question extends Model
     public function CorrectAnswer(){
         return $this->belongsTo('App\Answer','CorrectAnswerID','AnswerID');
     }
-
-public function CorrectAnswer()
-{
-  return $this->hasOne('App\Answer', 'CorrectAnswer');
-}
 
 }
 

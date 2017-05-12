@@ -14,18 +14,5 @@ class Answer extends Model
       {
           return $this->belongsTo(Question::class,'QuestionID','QuestionID');
       }
-<<<<<<< Updated upstream
-// public function CorrectAnswer()
-//       {
-//         return $this->belongsTo('App\Question', 'CorrectAnswer','AnswerID','QuestionID');
-//       }
 
-
-
-
-=======
-    //public function CorrectQuestion(){
-      //  return $this->hasOne('App\Question','CorrectAnswerID','AnswerID');
-    //}
->>>>>>> Stashed changes
 }
