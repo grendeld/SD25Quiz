@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Question extends Model
 {
   protected $primaryKey = 'QuestionID';
-  protected $fillable=['Question','Link','CorrectAnswer','QuizID','Active'];
+  protected $fillable=['Question','Link','QuizID','Active'];
   public $timestamps = false;
 
   public function Quiz()
@@ -18,6 +18,11 @@ class Question extends Model
           {
           return $this->hasMany('App\Answer','QuestionID','QuestionID');
           }
+
+public function CorrectAnswer()
+{
+  return $this->hasOne('App\Answer', 'CorrectAnswer');
+}
 
 }
 

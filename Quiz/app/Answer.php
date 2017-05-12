@@ -14,4 +14,12 @@ class Answer extends Model
       {
           return $this->belongsTo(Question::class,'QuestionID','QuestionID');
       }
+// public function CorrectAnswer()
+//       {
+//         return $this->belongsTo('App\Question', 'CorrectAnswer','AnswerID','QuestionID');
+//       }
+
+
+
+
 }
