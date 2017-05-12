@@ -9,7 +9,7 @@
 require(__DIR__."/Server/Server.php");
 
 require(__DIR__."/Server/WS_Helper.php");
-use \App\WatchDog\Server\Server;
+use \WatchDog\Server;
 
 echo "\n\n\nProcessID = ".posix_getppid()."\n\n\n";
 //posix_kill(posix_getppid(),SIGCHLD);
