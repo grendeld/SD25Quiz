@@ -1,7 +1,6 @@
 <?php
-namespace App\WatchDog\Server;
+namespace WatchDog;
 use Symfony\Component\Process\Process;
-use App\Jobs\WatchDog;
 class Server{
     private $mainSock;
     private $portSock;
