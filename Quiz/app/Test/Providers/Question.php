@@ -12,5 +12,7 @@ class Question{
         $this->options = $question->answers->pluck('Answer','AnswerID')->toArray();
     }
     public $response;
+    private $id;
+    
 }
 ?>
