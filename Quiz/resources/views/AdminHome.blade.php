@@ -1,6 +1,7 @@
 @extends('layout')
 @section ('header')
 <title>Admin home</title>
+<link rel="stylesheet" href="css/adminstyles.css">
 <!--[if IE]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->

@@ -1,0 +1,42 @@
+.modbuild{
+  height: 6em;
+  background-color: darkgrey;
+  width: 100%;
+  padding: 30px;
+}
+.modbuildd{
+  height: 8em;
+  background-color: lightgrey;
+  width: 100%;
+  padding: 30px;
+}
+
+.QMSelectors{
+  height: 100%;
+  width: 60%;
+  float: left;
+
+}
+.QMSelectorss{
+  height:100%;
+  float: left;
+  width: 20%;
+}
+.modlistCell{
+  height: 6em;
+  background-color: aliceblue;
+  color: black;
+}
+.modselectA{
+  height: 100%;
+  background-color: rgba(170,170,170,0.8);
+  width: 10%;
+  float: left;
+
+}
+.modselectB{
+  height: 100%;
+  width: 90%;
+  background-color: rgba(160,160,160,0.5);
+  float: left;
+}

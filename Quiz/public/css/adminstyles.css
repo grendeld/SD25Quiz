@@ -1,0 +1,16 @@
+.AdminSidePanelInput{
+      height: 15em;
+      width: 100%;
+      background-color: cornsilk;
+}
+
+.AdminSidePanelView{
+      height: 15em;
+      width:100%;
+      background-color: #A6ACAF  ;
+
+}
+.AdminLeftSide{
+    height:90vh;
+    background-color: lightgrey;
+}
