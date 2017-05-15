@@ -21,7 +21,9 @@ Route::get('/getStudents','StudentsController@IntakeStudents');
 Route::get('/getQuizList','QuizController@IntakeQuiz');
 Route::get('/startTest','QuizController@StartTest');
 
-
+//d3 charts Routes
+Route::get('/intakesd3','d3@getIntakes');
+Route::get('/d3Test',function(){ return view('chartTest');});
 
 //function(){return "test";}
 
