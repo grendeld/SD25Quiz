@@ -15,4 +15,12 @@ class Program extends Model
     return $this->hasMany('App\Module','ProgramID','ProgramID');
     }
 
+
+    public function intakes()
+    {
+    return $this->hasMany('App\Intake','ProgramID','ProgramID');
+    }
+
+
+
 }

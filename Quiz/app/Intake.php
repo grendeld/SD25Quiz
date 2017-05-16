@@ -10,6 +10,11 @@ class Intake extends Model
     protected $fillable=['IntakeName','ProgramID'];
     public $timestamps=false;
 
+    public function Program()
+    {
+      return $this->belongsTo('App\Program','ProgramID','ProgramID');
+    }
+
      public function Instructor(){
        return $this->belongsToMany('App\Instructor', 'InstructorIntakes', 'InstructorID', 'InstructorID');
      }

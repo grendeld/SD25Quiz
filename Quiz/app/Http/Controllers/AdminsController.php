@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Admin;
+use App\Program;
 use App\Instructor;
 
 class AdminsController extends Controller
@@ -11,8 +12,9 @@ class AdminsController extends Controller
 
 public function main(){
 $instructors = Instructor::all();
+$programs = Program::all();
 
-  return view('AdminHome',compact ('instructors'));
+  return view('AdminHome',compact ('instructors', 'programs'));
 }
 
 

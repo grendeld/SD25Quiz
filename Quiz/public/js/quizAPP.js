@@ -121,7 +121,7 @@ type:'get',
 data:{'IntakeID':intake},
 success:function(data){
   $.each(data,function(i,item){
-    $("#divQuizForTest").append("<input type='radio' name='SelectedQuiz' value='" + item.QuizID + "'/> "+ item.QuizName + "<br/>");
+    $("#divQuizForTest").append("<input type='radio' name='SelectedQuiz' onclick = 'StudentChecked()' value='" + item.QuizID + "'/> "+ item.QuizName + "<br/>");
  });
 }
 });
@@ -151,19 +151,8 @@ for (var i = 0; i<checkboxes.length; i++)
   CheckedStudentsID.push(checkboxes[i]);
   }
 
-if (CheckedStudentsID.length>0)
-btnStart.style.display = "block";
-else
-btnStart.style.display = "none";
-}
-
-
-
-function StartTest()
-{
-
   var radio = document.getElementsByName("SelectedQuiz");
-  var SelectedQuizID =-1;
+  SelectedQuizID =-1;
   for (var i=0; i<radio.length; i++)
   {
     if (radio[i].checked){
@@ -171,6 +160,21 @@ function StartTest()
       break;
     }
   }
+ShowStartButton();
+}
+
+function ShowStartButton()
+{
+  if (CheckedStudentsID.length>0 && SelectedQuizID>-1)
+  btnStart.style.display = "block";
+  else
+  btnStart.style.display = "none";
+}
+
+
+
+function StartTest()
+{
 
 for (var i=0; i<CheckedStudentsID.length; i++)
 {
