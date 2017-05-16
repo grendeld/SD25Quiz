@@ -9,7 +9,7 @@ class Question{
     function __construct($question){
         $this->id = $question->QuestionID;
         $this->question = $question->Question;
-        $this->options = $question->answers->pluck('Answer','AnswerID')->toArray();
+        $this->options = $question->answers->shuffle()->pluck('Answer','AnswerID')->toArray();
     }
     public $response;
     private $id;
