@@ -3,6 +3,8 @@
 <title>Admin home</title>
 <link rel="stylesheet" href="css/adminstyles.css">
 <script type="text/javascript" src="js/adminHome.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 
 <!--[if IE]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -15,14 +17,12 @@
                 <div class="col-md-12 AdminSidePanelInput">
                     <p>Select Input/edit Programs List Panel</p>
                     <p>Select Input/edit Instructor List Panel</p>
-                    <select id="selectInstructor" >
-                      <option value="-1" selected>--Instructors--</option>
+                    <label for="selectInstructor">Instructors:</label>
+                    <select id="selectInstructor" autocomplete="off" >
+                      <option value="-1" selected >Choose instructor...</option>
                       @foreach ($instructors as $i)
                       <option value="{{$i->InstructorID}}" onclick="javascript:divInstructorShow({{$i->load('intakes')}})">
                         {{$i->FirstName}} {{$i->LastName}}
-                        @foreach ($i->intakes as $b)
-                           {{$b->IntakeName}}
-                        @endforeach
                       </option>
                     @endforeach
                     </select>
@@ -43,22 +43,26 @@
               <div id="divInstructor" style="display:none">
                 <h3 id='h3instructorName'></h3>
                 <br/>
+                <label for="IntakesList">Intakes:</label>
                 <ul id="IntakesList"></ul>
                 <button onclick="javascript:showAddIntake()">Add Intake</button>
                 <br/>
               </div>
 
               <div id="divSelectIntake" style="display:none">
-                <select>
+                <select >
                   <option value="-1">--Select Intake--</option>
                   @foreach($programs as $p)
                   <option disabled>--{{$p->ProgramName}}--</option>
                   @foreach($p->intakes as $int)
-                  <option value = "{{$int->IntakeID}}">{{$int->IntakeName}}</option>
+                  <option value = "{{$int->IntakeID}}" onclick ="javascript:selectNewIntake({{$int}})">{{$int->IntakeName}}</option>
                   @endforeach
                   @endforeach
                 </select>
               </div>
+
+              <div id="dialog" title="Add new intake"></div>
+
 <hr>
                 View selected functions in individual panels
                 <br/><br/>

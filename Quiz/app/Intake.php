@@ -16,7 +16,7 @@ class Intake extends Model
     }
 
      public function Instructor(){
-       return $this->belongsToMany('App\Instructor', 'InstructorIntakes', 'InstructorID', 'InstructorID');
+       return $this->belongsToMany('App\Instructor', 'InstructorIntakes', 'IntakeID', 'InstructorID');
      }
 
     public function Students()

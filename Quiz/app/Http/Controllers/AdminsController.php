@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Admin;
 use App\Program;
 use App\Instructor;
+use App\Intake;
 
 class AdminsController extends Controller
 {
@@ -17,6 +18,24 @@ $programs = Program::all();
   return view('AdminHome',compact ('instructors', 'programs'));
 }
 
+public function InstrIntAdd(){
+
+$instructor=Instructor::find($_GET['InstructorID']);
+$intake=Intake::find($_GET['IntakeID']);
+try{
+  $hey[0]=true;
+  $instructor->intakes()->attach($intake);
+
+//dd("hi");
+}catch(\Exception $e){
+  $hey[0]=false;
+  //dd("hi");
+}
+$hey[1] = $instructor->load('intakes');
+  return $hey;
+
+
+}
 
   public function show()
   {

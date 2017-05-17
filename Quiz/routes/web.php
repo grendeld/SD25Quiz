@@ -12,14 +12,16 @@
 */
 Route::get('/', 'InstructorsController@main');
 Route::get('/instructorHome', 'InstructorsController@main');
-Route::get('/adminHome', 'AdminsController@main');
-
 Route::post('/moduleDelete','ModulesController@deleteModule');
 Route::post('/saveTemplate','QuizController@saveTemplate');
 Route::post('/moduleSave', 'ModulesController@saveModule');
 Route::get('/getStudents','StudentsController@IntakeStudents');
 Route::get('/getQuizList','QuizController@IntakeQuiz');
 Route::get('/startTest','QuizController@StartTest');
+
+//AdminHome
+Route::get('/adminHome', 'AdminsController@main');
+Route::get('/InstrIntAdd','AdminsController@InstrIntAdd');
 
 //d3 charts Routes
 Route::get('/intakesd3','d3@getIntakes');

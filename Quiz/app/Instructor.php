@@ -13,6 +13,13 @@ class Instructor extends Model
 
 public function intakes()
 {
+  //return $this->HasMany('App\Intake','InstructorIntakes','InstructorID','IntakeID');
+
 return $this->belongsToMany('App\Intake','InstructorIntakes','InstructorID','IntakeID');
 }
+
+
+
+
+
 }

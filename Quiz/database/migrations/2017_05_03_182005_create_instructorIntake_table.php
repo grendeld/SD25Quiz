@@ -19,6 +19,7 @@ class CreateInstructorIntakeTable extends Migration
               $table->foreign('InstructorID')->references('InstructorID')->on('instructors');
               $table->integer('IntakeID')->unsigned();
               $table->foreign('IntakeID')->references('IntakeID')->on('intakes');
+              $table->unique(['InstructorID','IntakeID']);
           });
       }
 
@@ -31,5 +32,5 @@ class CreateInstructorIntakeTable extends Migration
       {
           Schema::dropIfExists('InstructorIntakes');
       }
-  
+
 }
