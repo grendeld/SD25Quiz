@@ -22,6 +22,8 @@ Route::get('/startTest','QuizController@StartTest');
 //AdminHome
 Route::get('/adminHome', 'AdminsController@main');
 Route::get('/InstrIntAdd','AdminsController@InstrIntAdd');
+Route::get('/InstrIntRemove','AdminsController@InstrIntRemove');
+
 
 //d3 charts Routes
 Route::get('/intakesd3','d3@getIntakes');

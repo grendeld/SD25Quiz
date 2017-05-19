@@ -18,10 +18,10 @@
                     <p>Select Input/edit Programs List Panel</p>
                     <p>Select Input/edit Instructor List Panel</p>
                     <label for="selectInstructor">Instructors:</label>
-                    <select id="selectInstructor" autocomplete="off" >
-                      <option value="-1" selected >Choose instructor...</option>
+                    <select id="selectInstructor" autocomplete="off" onchange="javascript:divInstructorShow(this.value)" >
+                      <option value="-1" selected disabled>Choose instructor...</option>
                       @foreach ($instructors as $i)
-                      <option value="{{$i->InstructorID}}" onclick="javascript:divInstructorShow({{$i->load('intakes')}})">
+                      <option value="{{$i->load('intakes')}}">
                         {{$i->FirstName}} {{$i->LastName}}
                       </option>
                     @endforeach
@@ -50,17 +50,19 @@
               </div>
 
               <div id="divSelectIntake" style="display:none">
-                <select >
-                  <option value="-1">--Select Intake--</option>
+                <select id="selectIntake" autocomplete="off" >
+                  <option value="-1" selected disabled>--Select Intake--</option>
                   @foreach($programs as $p)
                   <option disabled>--{{$p->ProgramName}}--</option>
                   @foreach($p->intakes as $int)
-                  <option value = "{{$int->IntakeID}}" onclick ="javascript:selectNewIntake({{$int}})">{{$int->IntakeName}}</option>
+                  <option value = "{{$int}}">{{$int->IntakeName}}</option>
                   @endforeach
                   @endforeach
                 </select>
-              </div>
 
+              <button onclick ="javascript:AddIntake(selectIntake.value)">Add</button>
+              <button onclick ="javascript:RemoveIntake(selectIntake.value)">Remove</button>
+</div>
               <div id="dialog" title="Add new intake"></div>
 
 <hr>
