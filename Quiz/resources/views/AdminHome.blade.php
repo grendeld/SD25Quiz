@@ -15,8 +15,21 @@
             <!---PANEL SELECT AREA START--->
             <div class="col-md-4 AdminLeftSide">
                 <div class="col-md-12 AdminSidePanelInput">
-                    <p>Select Input/edit Programs List Panel</p>
-                    <p>Select Input/edit Instructor List Panel</p>
+
+                    <label for="selectProgram">Programs:</label>
+                    <select id="selectProgram" autocomplete="off" onchange="javascript:divProgramShow(this.value)" >
+                      <option value="-1" selected disabled>Choose program...</option>
+                      @foreach ($programs as $p)
+                      <option value="{{$p->load('modules')}}">
+                        {{$p->ProgramName}}
+                      </option>
+                    @endforeach
+                    </select>
+                    <br/>
+                    <a href="/program/add">Add new progam</a>
+                    <br/>
+
+
                     <label for="selectInstructor">Instructors:</label>
                     <select id="selectInstructor" autocomplete="off" onchange="javascript:divInstructorShow(this.value)" >
                       <option value="-1" selected disabled>Choose instructor...</option>
@@ -26,6 +39,8 @@
                       </option>
                     @endforeach
                     </select>
+                    <br/>
+                    <a href="/instructor/add">Add new instructor</a>
                 </div>
 
                 <div class="col-md-12 AdminSidePanelView">
@@ -39,6 +54,15 @@
             <!---PANEL VIEW AREA START--->
             <div class="col-md-8">
 
+              <div id="divProgram" style="display:none">
+                <h3 id='h3ProgramName'></h3>
+                <br/>
+                <label for="ModulesList">Modules:</label>
+                <ul id="ModulesList"></ul>
+                <button onclick="">Add Module</button>
+                <button onclick="" >Edit Program</button>
+                <button onclick=""> Delete Program</button>
+                </div>
 
               <div id="divInstructor" style="display:none">
                 <h3 id='h3instructorName'></h3>
@@ -46,8 +70,9 @@
                 <label for="IntakesList">Intakes:</label>
                 <ul id="IntakesList"></ul>
                 <button onclick="javascript:showAddIntake()">Add Intake</button>
-                <br/>
-              </div>
+                <button onclick="javascript:EditInstructor()" >Edit Instructor</button>
+                <button onclick="javascript:DeleteInstructor()"> Delete Instructor</button>
+                </div>
 
               <div id="divSelectIntake" style="display:none">
                 <select id="selectIntake" autocomplete="off" >
@@ -63,7 +88,10 @@
               <button onclick ="javascript:AddIntake(selectIntake.value)">Add</button>
               <button onclick ="javascript:RemoveIntake(selectIntake.value)">Remove</button>
 </div>
-              <div id="dialog" title="Add new intake"></div>
+              <div id="dialog" title="Message"></div>
+
+
+
 
 <hr>
                 View selected functions in individual panels

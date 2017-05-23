@@ -23,6 +23,11 @@ Route::get('/startTest','QuizController@StartTest');
 Route::get('/adminHome', 'AdminsController@main');
 Route::get('/InstrIntAdd','AdminsController@InstrIntAdd');
 Route::get('/InstrIntRemove','AdminsController@InstrIntRemove');
+Route::get('/instructor/add', function(){ return view('newInstructor');});
+Route::get('/instructor/{instructor}', 'InstructorsController@showedit');
+Route::patch('/instructor/{instructor}/edit', 'InstructorsController@edit');
+Route::get('/instructor/{instructor}/delete', 'InstructorsController@delete');
+
 
 
 //d3 charts Routes
@@ -77,9 +82,6 @@ Route::get('/student/{student}/delete', 'StudentsController@delete');
 Route::get('/instructor', 'InstructorsController@show');
 Route::get('/instructor/add', function(){ return view('newInstructor');});
 Route::post('/instructor/add', 'InstructorsController@create');
-Route::get('/instructor/{instructor}', 'InstructorsController@showedit');
-Route::patch('/instructor/{instructor}/edit', 'InstructorsController@edit');
-Route::get('/instructor/{instructor}/delete', 'InstructorsController@delete');
 //---Intake
 Route::get('/intake', 'IntakesController@show');
 Route::get('/intake/add', function(){ return view('newIntake');});

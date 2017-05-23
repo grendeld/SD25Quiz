@@ -1,4 +1,8 @@
-<a href="/program">Back</a>
+@extends('layout')
+
+@section ('content')
+
+
 <h1>Add Program</h1>
 
 <form method = "POST" action ="/program/add">

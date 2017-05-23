@@ -17,7 +17,7 @@ class InstructorsController extends Controller
       $programs = Program::all();
       $modules = Module::all();
       $quizzes = Quiz::all();
-      $id=1;
+      $id=2;
       $instructor = Instructor::find($id);
       $intakes = $instructor->intakes;
       return view ('InstructorHome', compact('programs', 'modules', 'quizzes', 'intakes'));
@@ -41,32 +41,45 @@ class InstructorsController extends Controller
       // ->get();
       return view ('instructor', compact('instructors','intakes','programs'));
   }
+
+
   public function create(Request $request)
     {
-      $instructor = new Instructor;
-      $instructor->FirstName = $request->FirstName;
-      $instructor->LastName = $request->LastName;
-      $instructor->save();
-      return redirect('/instructor');
+      // Retrieve flight by name, or create it with the name and delayed attributes...
+      Instructor::firstOrCreate(
+        ['FirstName' => $request->FirstName],
+        ['LastName' => $request->LastName]
+      );
+      return redirect('/adminHome');
     }
+
+
     public function showedit($id )
 
     { $instructor = Instructor::find($id);
       return view ('editInstructor', compact('instructor'));
     }
-public function edit(Request $request , $id )
+
+    public function edit(Request $request , $id )
 
     { $instructor = Instructor::find($id);
 
       $instructor->update($request->all());
-      return redirect('/instructor');
-
+      return redirect('/adminHome');
     }
+
     public function delete(Instructor $instructor)
     {
-      $instructor = DB::table('instructors')->where('InstructorID','=',$instructor->InstructorID);
+      // $instructor->detach(Intake::all());
+      // $instructor = DB::table('instructors')->where('InstructorID','=',$instructor->InstructorID);
+      try{
       $instructor->delete();
-      return redirect('/instructor');
+      }
+    catch(\Exception $e)
+    {
     }
+    return redirect('/adminHome');
+
+  }
 
 }
