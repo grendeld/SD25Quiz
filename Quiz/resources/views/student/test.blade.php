@@ -15,12 +15,28 @@
 	<script src="js/bootstrap.min.js"></script>
 <script>
     var currentQuestion;
+    var prevQuestion;
     var frame = document.getElementsByTagName("iframe")[0];
     function getQuestion(div){
         if(!frame){
-           var frame = document.getElementsByTagName("iframe")[0]; 
+           var frame = document.getElementsByTagName("iframe")[0];
         }
         frame.src="/test/Page/" + div.attributes['questionId'].value;
+    }
+    function getCurrent(){
+      var ques = document.getElementsByClassName("TestQuestionStatus")[currentQuestion];
+      if(!prevQuestion)
+      {
+        prevQuestion = [];
+
+      }
+      else{
+          document.getElementsByClassName("TestQuestionStatus")[prevQuestion[0]].setAttribute("style",prevQuestion[1]);
+
+      }
+      prevQuestion[0] = currentQuestion;
+      prevQuestion[1] = ques.getAttribute("style");
+      ques.setAttribute("style","background-color: red;");
     }
 </script>
 @stop
@@ -38,7 +54,7 @@
                                 <div class="TestQuestionName" >
                                     <p>{{$question}}</p>
                                 </div>
-                                <div class="TestQuestionStatus" 
+                                <div class="TestQuestionStatus"
                                      <?php if($provider->isAnswered($key)){
                                 echo 'style="background-color: blue;"';}
                                     ?>></div>
@@ -46,7 +62,7 @@
                                 </div>
                           @endforeach
 
-                           
+
                             </div>
 
                       </div>

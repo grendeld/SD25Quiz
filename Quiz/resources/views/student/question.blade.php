@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="css/bootstrap-grid.min.css">
 
 	<script src="js/bootstrap.min.js"></script>
-      
+
     <!--[if IE]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -45,7 +45,7 @@
               </div>
 
               <div class="col-md-12 TestNavSet">
-                
+
                   <input type="submit" id="sub" value="Next"/>
 
               </div>
@@ -54,15 +54,16 @@
           <script>
             var QuestionNum = {{session()->get("testProvider")->getCurrentQuestionP()}};
           parent.currentQuestion = QuestionNum;
+          parent.getCurrent();
             document.getElementById("sub").onclick= function(){
                 var Qlist = window.parent.document.getElementsByClassName('TestListCell');
                 Qlist[QuestionNum].getElementsByClassName('TestQuestionStatus')[0].setAttribute('style','background-color: blue');
                 return true;
             }
       </script>
-          
+
       </form>
-      
+
 
   </body>
   </html>
