@@ -44,6 +44,7 @@ class TestProvider{
     /*
         <Purpose> 
             Gets the next unanswered Question
+            returns the first Question if there isn't any
         </Purpose>
     */
     function next(){
@@ -52,8 +53,8 @@ class TestProvider{
                 $this->currentQuestion = $key;
                  return $question;
             }
-               
-        }      
+        }    
+        return $this->questions[0];
     }
     /*
         <Purpose> 
