@@ -8,42 +8,87 @@
     </div>
     <!---QUESTIONSET SECTION END--->
     <!---ANSWERSET SECTION START--->
-    <div class="Answer">
-      <div class="AnswerNumber"><h3>A</h3></div>
-      <div class="AnswerTextInput">
-        <input type="text" placeholder="Option A" id="A"/>
-      </div>
-    </div>
-    <div class="Answer">
-      <div class="AnswerNumber"><h3>B</h3></div>
-      <div class="AnswerTextInput">
-        <input type="text" placeholder="Option B" id="B"/>
-      </div>
-    </div>
-    <div class="Answer">
-      <div class="AnswerNumber"><h3>C</h3></div>
-      <div class="AnswerTextInput">
-        <input type="text" placeholder="Option C" id="C"/>
-      </div>
-    </div>
-    <div class="Answer">
-      <div class="AnswerNumber"><h3>D</h3></div>
-      <div class="AnswerTextInput">
-        <input type="text" placeholder="Option D" id="D"/>
-      </div>
-    </div>
-    <div class="Answer">
-      <div class="AnswerNumber"><h3>E</h3></div>
-      <div class="AnswerTextInput">
-        <input type="text" placeholder="Option E" id="E"/>
-      </div>
-    </div>
-    <div class="Answer">
-      <div class="AnswerNumber"><h3>F</h3></div>
-      <div class="AnswerTextInput">
-        <input type="text" placeholder="Option F" id="F"/>
-      </div>
-    </div>
+        <style>
+            ol#list{
+                display:inline;
+                
+            }
+        ol#list li{
+    list-style: none;
+            margin-top: 5px;
+height: 4em;
+width: 100%;
+float: left;
+    counter-increment: myIndex;
+            
+}
+
+ol#list li:before{
+    content:counter(myIndex,upper-alpha)" ";
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+font-family: inherit;
+font-weight: 500;
+line-height: 1.1;
+color: inherit;
+
+}
+        </style>
+    <div>
+        <ol id="list">
+					<li>
+						<input type="text" name="Answer[]" oninput='loader(this)' placeholder="First Option"/>
+                    </li>
+        </ol>
+        </div>
+        <script>
+			var list = document.getElementById('list');
+			function loader(textBox){
+                if(!list){
+                    var list = document.getElementById('list');
+                }
+                textBox.oninput = null;
+                list.appendChild(createItem());
+                var q = [document.createElement('button'),
+                        document.createElement('input')];
+                q[0].setAttribute('class','btn btn-danger btn-sm');
+                q[0].innerHTML="Delete";
+                q[0].setAttribute('onclick','del(this)');
+                q[1].setAttribute('type','radio');
+                q[1].setAttribute('name','radio');
+                var par = textBox.parentElement;
+                par.insertBefore(q[1],textBox);
+                par.appendChild(q[0]);
+			}
+            function createItem(){
+                var item = document.createElement('li');
+                var q = document.createElement('input');
+                q.setAttribute('type','text');
+                q.setAttribute('name','Answer[]');
+                q.setAttribute('oninput','loader(this)');
+                q.setAttribute('placeholder','Next Option');
+                item.appendChild(q);
+                return item;
+            }
+            function del(check){
+                var li = check.parentElement;
+                var ul = li.parentElement;
+                li.parentElement.removeChild(li);
+            }
+            function sub(){
+                var radio = document.getElementsByName('radio');
+                for(rad in radio){
+                    if(radio[rad].checked == true)
+                        {
+                            radio[rad].value = rad;
+                            break;
+                        }
+                }
+                var par = radio[0].parentElement.parentElement;
+                par.removeChild(par.lastElementChild);
+            }
+            //createItem();
+		</script>
     <!---ANSWERSET SECTION END--->
     <!---CORRECTANSWERSET SECTION START--->
     <div class="AnswerSet">

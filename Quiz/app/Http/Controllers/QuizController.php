@@ -165,8 +165,21 @@ public function StartTest()
   return "done";
 }
 
-
-
+public function TakeTest(Request $request){
+    //dd("hey");
+    
+    if(session()->has('testProvider')){
+        $provider = session()->get("testProvider");
+    }
+    else{
+        $provider = new \App\Test\Providers\TestProvider(2);
+    }
+    $provider->answer(28);
+    session(['testProvider'=>$provider]);
+   // dd(session()->get("testProvider"));
+    //dd($provider->questions);
+    return view('student.test',compact('provider'));
+}
 
 
 }

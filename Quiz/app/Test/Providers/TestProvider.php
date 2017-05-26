@@ -80,7 +80,23 @@ class TestProvider{
         }
         return false;
     }
-    private $questions;
+    function isAnswered(int $pos){
+        //dd($pos);
+        //if(isset($this->questions[$pos]->reponse))
+          //  dd(isset($this->questions[$pos]->reponse));
+        return($this->questions[$pos]->response != null);
+    }
+    function questions(){
+        $q = array();
+        foreach($this->questions as $question){
+            $q[] = $question->question;
+        }
+        return $q;
+    }
+    function getCurrentQuestionP(){
+        return $this->currentQuestion;
+    }
+    public $questions;
     private $currentQuestion;
     
     
