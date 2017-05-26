@@ -4,14 +4,14 @@ use App\Quiz;
 /*
     <Purpose>
     A class to manage the test/quiz questions,
-    possible answers and the students responses to be stored in the 
+    possible answers and the students responses to be stored in the
     Session
     </Purpose>
 */
 
 class TestProvider{
     /*
-        <Purpose> 
+        <Purpose>
             Gets the answers and questions from the database
             and sets them as class properties
             Students get exact Same questions but in different order
@@ -26,10 +26,10 @@ class TestProvider{
         $this->questions = array();
         foreach($question as $question)
             $this->questions[] = new Question($question);
-            
+
     }
     /*
-        <Purpose> 
+        <Purpose>
             Gets the question at that position from the
             questions array
         </Purpose>
@@ -42,22 +42,23 @@ class TestProvider{
        return false;
     }
     /*
-        <Purpose> 
+        <Purpose>
             Gets the next unanswered Question
             returns the first Question if there isn't any
         </Purpose>
     */
     function next(){
         foreach($this->questions as $key => $question){
-            if($question->response == null){
+            if($question->response == null && $key > $this->currentQuestion){
                 $this->currentQuestion = $key;
                  return $question;
             }
-        }    
+        }
+        $this->currentQuestion = 0;
         return $this->questions[0];
     }
     /*
-        <Purpose> 
+        <Purpose>
             Checks if all questions are answered
         </Purpose>
     */
@@ -70,7 +71,7 @@ class TestProvider{
         return true;
     }
      /*
-        <Purpose> 
+        <Purpose>
             Answers the curent question with the answerId
         </Purpose>
     */
@@ -99,7 +100,7 @@ class TestProvider{
     }
     public $questions;
     private $currentQuestion;
-    
-    
+
+
 }
 ?>
