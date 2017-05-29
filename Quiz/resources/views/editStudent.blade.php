@@ -53,6 +53,13 @@ Intake Id
   <option value='SD25' @if($student->IntakeID =="SD25"){{"selected"}} @endif>SD25</option>
   <option value='SD26' @if($student->IntakeID =="SD26"){{"selected"}} @endif>SD26</option>
  </select>
+ <select name='IntakeID' required>
+   @foreach ($intakes as $i)
+   <option value="{{$i->IntakeID}}">
+     {{$i->IntakeName}}
+   </option>
+ @endforeach
+   </select>
  </td>
  </tr>
 </table>
@@ -60,7 +67,7 @@ Intake Id
 <button type="submit" formaction="/student/{{$student->StudentID}}/edit">Save changes</button>
 <button type="submit" form="Cancel" formaction="/student/{{$student->StudentID}}">Cancel</button>
 {{method_field('PATCH')}}
-  
+
 {!! csrf_field() !!}
 </form>
 <form method="get" id="Cancel">

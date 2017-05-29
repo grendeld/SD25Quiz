@@ -27,7 +27,7 @@ Route::get('/instructor/add', function(){ return view('newInstructor');});
 Route::get('/instructor/{instructor}', 'InstructorsController@showedit');
 Route::patch('/instructor/{instructor}/edit', 'InstructorsController@edit');
 Route::get('/instructor/{instructor}/delete', 'InstructorsController@delete');
-
+Route::post('/newintake','IntakesController@create');
 
 
 //d3 charts Routes
@@ -73,7 +73,7 @@ Route::get('/quiz/{quiz}/delete','QuizController@deleteQuiz');
 
 //---Students
 Route::get('/student', 'StudentsController@show');
-Route::get('/student/add', function(){ return view('newStudent');});
+Route::get('/newStudent', 'StudentsController@newStudent');
 Route::post('/student/add', 'StudentsController@create');
 Route::get('/student/{student}', 'StudentsController@showedit');
 Route::patch('/student/{student}/edit', 'StudentsController@edit');

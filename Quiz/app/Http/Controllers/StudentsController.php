@@ -26,6 +26,12 @@ $students=$intake->students;
 return $students;
 }
 
+public function newStudent()
+{
+  $intakes = Intake::all();
+  return view('newStudent', compact('intakes'));
+
+}
 
 
   public function create(Request $request)
@@ -42,7 +48,8 @@ return $students;
 public function showedit($id )
 
     { $student = Student::find($id);
-      return view ('editStudent', compact('student'));
+      $intakes = Intake::all();
+      return view ('editStudent', compact('student', 'intakes'));
     }
 public function edit(Request $request , $id )
 

@@ -45,7 +45,6 @@ class InstructorsController extends Controller
 
   public function create(Request $request)
     {
-      // Retrieve flight by name, or create it with the name and delayed attributes...
       Instructor::firstOrCreate(
         ['FirstName' => $request->FirstName],
         ['LastName' => $request->LastName]

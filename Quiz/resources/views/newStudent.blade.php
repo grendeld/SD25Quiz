@@ -11,7 +11,7 @@
 First Name:
 </td>
 <td>
-<textarea name="FirstName"></textarea>
+<textarea name="FirstName" required ></textarea>
 </td>
 </tr>
 
@@ -20,7 +20,7 @@ First Name:
 Last Name:
 </td>
 <td>
-<textarea name="LastName"></textarea>
+<textarea name="LastName" required ></textarea>
 </td>
 </tr>
 <tr>
@@ -34,10 +34,12 @@ Photo:
 Intake Id
 </td>
 <td>
-<select name='IntakeID'>
-  <option value='SD24'>SD24</option>
-   <option value='SD25'>SD25</option>
-    <option value='SD2'>SD26</option>
+<select name='IntakeID' required>
+  @foreach ($intakes as $i)
+  <option value="{{$i->IntakeID}}">
+    {{$i->IntakeName}}
+  </option>
+@endforeach
   </select>
   </td>
   </tr>

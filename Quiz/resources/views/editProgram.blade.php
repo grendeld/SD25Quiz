@@ -3,7 +3,6 @@
 @section ('content')
 
 <div id="divEditProgram">
-<a href="/program">Back to Programs</a>
 
 <h1>Edit Program</h1>
 
@@ -66,7 +65,7 @@ Active:
       <td>
   </tr>
 </table>
-  <button type = 'submit'>Save</button>
+  <button type = 'submit'>Save</button> <button type = "button"onclick="BackToAdminHome()">Back</button>
 {!! csrf_field() !!}
 </form>
 
@@ -87,6 +86,11 @@ Active:
 
 
 <script >
+function BackToAdminHome()
+{
+window.location.replace('/adminHome');
+}
+
 function cancelNewModule()
 {
   document.getElementById('divNewModule').style.display = "none";
@@ -101,15 +105,6 @@ function showNewModule()
 
 function ModuleDelete(moduleID)
 {
-  //alert(moduleID);
-    // $.ajax({
-    //   url: '/module',
-    //   type: "get",
-    //
-    //
-    //   data:{'ModID': moduleID},
-    //   success: function(data){
-    //     alert(data);
      var token = document.getElementsByName("_token")[0].value;
     $.ajax({
       url: '/module',

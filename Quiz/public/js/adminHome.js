@@ -1,8 +1,23 @@
+
+function clear()
+{
+  divProgram.style.display = "none";
+  divInstructor.style.display = "none";
+  divIntakes.style.display = "none";
+  divEditIntructorIntake.style.display = "none";
+  divOneIntake.style.display = "none";
+  divNewIntake.style.display = "none";
+
+}
+
+
 function divProgramShow(programJSONstring)
 {
 program = JSON.parse(programJSONstring);
-//alert(instructor.FirstName);
+
+  clear();
   divProgram.style.display = "block";
+  selectInstructor.selectedIndex = "0";
 
 h3ProgramName.innerHTML = program.ProgramName ;
 
@@ -16,13 +31,60 @@ h3ProgramName.innerHTML = program.ProgramName ;
 prog = program;
 }
 
+function EditProgram(){
+window.location.replace('/program/' + prog.ProgramID);
+Session["Program"] = prog;
+}
+
+function DeleteProgram(){
+  dialog.setAttribute("title","Delete Program");
+
+if (prog.modules.length>0){
+  dialog.innerHTML = "Cannot delete program with modules. Disactivate program " + prog.ProgramName + "?";
+  $( "#dialog" ).dialog({
+   modal:true,
+   buttons: [
+     { text: "No",
+       click: function() {
+         $( this ).dialog( "close" );
+       }},
+
+       { text:"Yes",
+     click:function(){
+       $( this ).dialog( "close" );
+       window.location.replace('program/' + prog.ProgramID + '/delete');
+     }}
+   ] // buttons
+   });
+  }
+  else{
+    dialog.innerHTML = "Delete program " + prog.ProgramName + "?";
+    $( "#dialog" ).dialog({
+     modal:true,
+     buttons: [
+       { text: "No",
+         click: function() {
+           $( this ).dialog( "close" );
+         }},
+         { text:"Yes",
+       click:function(){
+         $( this ).dialog( "close" );
+         window.location.replace('program/' + prog.ProgramID + '/delete');
+       }}
+     ] // buttons
+     });
+  }
+}
+
+
 
 
 function divInstructorShow(instructorJSONstring)
 {
 instructor = JSON.parse(instructorJSONstring);
-//alert(instructor.FirstName);
+clear();
   divInstructor.style.display = "block";
+  selectProgram.selectedIndex = "0";
 
 h3instructorName.innerHTML = instructor.FirstName + ' ' + instructor.LastName;
 
@@ -75,15 +137,13 @@ function DeleteInstructor(){
 }
 
 function EditInstructor(){
-
 window.location.replace('/instructor/' + instr.InstructorID);
-
 }
 
 
-function showAddIntake()
+function showdivEditIntructorIntake()
 {
-divSelectIntake.style.display = "block";
+divEditIntructorIntake.style.display = "block";
 }
 
 function AddIntake(intakeJSONstring)
@@ -111,7 +171,6 @@ function AddIntake(intakeJSONstring)
             else {
               alert('Instructor already has this intake.');
             }
-            //window.location.reload();
           }
         });
       //  window.location.reload();
@@ -154,4 +213,46 @@ function RemoveIntake(intakeJSONstring)
   }}
 ] // buttons
 });
+}
+
+
+function showDivIntakes()
+{
+  clear();
+  selectProgram.selectedIndex = "0";
+  selectInstructor.selectedIndex = "0";
+
+$("#divIntakes").slideToggle(100);
+document.getElementById("selectProgramID").selectedIndex = "0";
+}
+
+function divOneIntakeShow(intake)
+{
+$("#divOneIntake").slideToggle(100);
+  //intake = JSON.parse(intake);
+  list=document.getElementById("StudentsList");
+  list.innerHTML="";
+  for (var i=0; i<intake.students.length; i++)
+  {
+    list.innerHTML += ('<li>' + intake.students[i].FirstName + " " + intake.students[i].LastName + '</li>');
+  }
+}
+
+function Add_new_intake()
+{
+$("#divIntakes").slideToggle(100);
+$("#divNewIntake").slideToggle(100);
+}
+
+function validateNewIntake()
+{
+  alert("false");
+  IntakeName=document.getElementById('txtIntakeName');
+  ProgramID=document.getElementById('selectProgramID');
+
+  if (IntakeName.value == "")
+  {
+    alert("false");
+  }
+  return false;
 }

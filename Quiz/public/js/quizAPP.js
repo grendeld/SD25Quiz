@@ -194,32 +194,3 @@ for (var i=0; i<CheckedStudentsID.length; i++)
 
 
 }
-
-
-
-// function PostQuestion() {
-//
-//         var forumPost = {};
-//         forumPost.title = $('#txbxTitle').val();
-//         forumPost.question = $('#txtAskQuestion').val();
-//         var jsonData = JSON.stringify(forumPost);
-//
-//         $.ajax({
-//             url: '/index.aspx?saveForumQuestion',
-//             contentType: 'application/json; charset=utf-8',
-//             type: 'POST',
-//             data: jsonData,
-//             success: function (data) {
-//                 $('#txbxTitle').val('');
-//                 $('txtAskQuestion').val('');
-//                 alert("Post Successful");
-//             },
-//             error: function () {
-//                 alert("Something went Wrong");
-//             }
-//
-//
-//
-//         });
-//
-//     }

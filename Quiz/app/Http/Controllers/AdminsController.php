@@ -14,8 +14,9 @@ class AdminsController extends Controller
 public function main(){
 $instructors = Instructor::all();
 $programs = Program::all();
+$intakes = Intake::all();
 
-  return view('AdminHome',compact ('instructors', 'programs'));
+  return view('AdminHome',compact ('instructors', 'programs', 'intakes'));
 }
 
 public function InstrIntAdd(){

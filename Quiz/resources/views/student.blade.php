@@ -31,8 +31,8 @@
 
 </table>
 
-<a href="/student/add">Add new student</a>
+<a href="/newStudent">Add new student</a>
 
 
 
-@stop 
+@stop

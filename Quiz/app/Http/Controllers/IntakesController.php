@@ -13,14 +13,15 @@ class IntakesController extends Controller
     $intakes = Intake::all();
     return view ('intake', compact('intakes'));
   }
+
   public function create(Request $request)
     {
-      $intake = new Intake;
-      $intake->IntakeName = $request->IntakeName;
-      $intake->ProgramID = $request->ProgramID;
-      $intake->InstructorID = $request->InstructorID;
- $intake->save();
-return redirect('/intake');
+      Intake::firstOrCreate(
+        ['IntakeName' => $request->IntakeName],
+        ['ProgramID' => $request->ProgramID]
+      );
+
+return back();
 
     }
 public function showedit($id )
