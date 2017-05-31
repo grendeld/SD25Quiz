@@ -32,6 +32,7 @@ Route::post('/newintake','IntakesController@create');
 
 //d3 charts Routes
 Route::get('/intakesd3','d3@getIntakes');
+Route::get('/programByType','d3@getProgramsByType');
 Route::get('/d3Test',function(){ return view('chartTest');});
 
 //function(){return "test";}
@@ -93,12 +94,12 @@ Route::get('/intake/{intake}/delete', 'IntakesController@delete');
 Route::get('/instructorIntake', 'InstructorIntakesController@show');
 Route::get('/instructorIntake/add', function(){ return view('newInstructorIntake');});
 Route::post('/instructorIntake/add', 'InstructorIntakesController@create');
-Route::get('test/Student','QuizController@TakeTest');
+Route::get('test/Student','QuizController@TakeTest'); //page for doing test
 // ------------Should be in a controller
 Route::get('test/Page',function(){ return view('student.question');});
 Route::get('test/Page/{int}',function($int){
     $quest = session()->get('testProvider')->get($int);
     return view('student.question',compact('quest'));});
-Route::post('test/Page',function(){ 
+Route::post('test/Page',function(){
     session()->get('testProvider')->answer($_POST["answer"]);
     return view('student.question');});
