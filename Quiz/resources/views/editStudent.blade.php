@@ -48,11 +48,6 @@ Photo
 Intake Id
 </td>
 <td>
-<select name='IntakeID' selected = '{{}}'>
-  <option value='SD24' <?php if($student->IntakeID =="SD24") echo "selected"; ?>>SD24</option>
-  <option value='SD25' @if($student->IntakeID =="SD25"){{"selected"}} @endif>SD25</option>
-  <option value='SD26' @if($student->IntakeID =="SD26"){{"selected"}} @endif>SD26</option>
- </select>
  <select name='IntakeID' required>
    @foreach ($intakes as $i)
    <option value="{{$i->IntakeID}}">

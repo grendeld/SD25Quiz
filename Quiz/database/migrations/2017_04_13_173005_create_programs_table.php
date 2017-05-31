@@ -28,6 +28,8 @@ class CreateProgramsTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('quizzes');
+        Schema::dropIfExists('modules');
         Schema::dropIfExists('programs');
     }
 }

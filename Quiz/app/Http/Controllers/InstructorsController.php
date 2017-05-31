@@ -46,10 +46,10 @@ class InstructorsController extends Controller
   public function create(Request $request)
     {
       Instructor::firstOrCreate(
-        ['FirstName' => $request->FirstName],
-        ['LastName' => $request->LastName]
+        ['FirstName' => $request->FirstName,'LastName' => $request->LastName]
       );
-      return redirect('/adminHome');
+      //return back();
+      //redirect('/adminHome');
     }
 
 

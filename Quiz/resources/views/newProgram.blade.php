@@ -42,6 +42,7 @@ Active:
   </tr>
 </table>
   <button type = 'submit'>submit</button>
+  <a class="btn btn-default" href="/adminHome" role="button">Back</a>
 
 {!! csrf_field() !!}
 </form>

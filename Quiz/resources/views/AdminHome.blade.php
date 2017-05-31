@@ -15,16 +15,20 @@
   <div class="row">
     <div class="selectPanel">
         <div class="col-md-3">
-          <input type="button" value="Programs" id="Modulebuilder"
-          onclick="javascript: modulebuilder();"/>
+          <input type="button" value="Programs"
+          onclick="javascript: showProgramsPanel()"/>
         </div>
         <div class="col-md-3">
-            <input type="button" value="Instructors" id="Quizbuilder"
-            onclick="javascript: quizbuilder();" />
+            <input type="button" value="Instructors"
+            onclick="javascript: showInstructorsPanel()" />
         </div>
         <div class="col-md-3">
-            <input type="button" value="Intakes" id="QuizView"
-            onclick="javascript: quizviewshare();"/>
+            <input type="button" value="Intakes"
+            onclick="javascript: showIntakesPanel()"/>
+        </div>
+        <div class="col-md-3">
+            <input type="button" value="Students"
+            onclick="javascript: showStudentsPanel();"/>
         </div>
 
     </div>
@@ -33,19 +37,22 @@
             <div class="col-md-4 AdminLeftSide">
                 <div class="col-md-12 AdminSidePanelInput">
 
-                    <label for="selectProgram">Programs:</label>
-                    <select id="selectProgram" autocomplete="off" onchange="javascript:divProgramShow(this.value)" >
-                      <option value="-1" selected disabled>Choose program...</option>
-                      @foreach ($programs as $p)
-                      <option value="{{$p->load('modules')}}">
-                        {{$p->ProgramName}}
-                      </option>
-                    @endforeach
-                    </select>
-                    <br/>
-                    <a href="/program/add">Add new progam</a>
-                    <br/>
+<div id="ProgramsPanel" style="display:none">
+                      <label for="selectProgram">Programs:</label>
+                      <select id="selectProgram" autocomplete="off" onchange="javascript:divProgramShow(this.value)" >
+                        <option value="-1" selected disabled>Choose program...</option>
+                        @foreach ($programs as $p)
+                        <option value="{{$p->load('modules')}}">
+                          {{$p->ProgramName}}
+                        </option>
+                      @endforeach
+                      </select>
+                      <br/>
+                      <a href="/program/add">Add new progam</a>
+                      <br/>
 
+</div>
+<div id="InstructorsPanel" style="display:none">
                     <label for="selectInstructor">Instructors:</label>
                     <select id="selectInstructor" autocomplete="off" onchange="javascript:divInstructorShow(this.value)" >
                       <option value="-1" selected disabled>Choose instructor...</option>
@@ -57,10 +64,26 @@
                     </select>
                     <br/>
                     <a href="/instructor/add">Add new instructor</a>
-<br/>
-<button onclick="javascript:showDivIntakes()">Intakes</button>
-                </div>
+                    <br/>
+</div>
 
+<div id="IntakesPanel" style="display:none">
+                    <label for="selectIntake">Intakes:</label>
+                    <select id="selectIntake" autocomplete="off" onchange="javascript:divIntakeShow(this.value)" >
+                      <option value="-1" selected disabled>Choose intake...</option>
+                      @foreach ($intakes as $int)
+                      <option value="{{$int->load('students')}}">
+                        {{$int->IntakeName}}
+                      </option>
+                    @endforeach
+                    </select>
+                    <br/>
+                    <a href="/instructor/add">Add new intake</a>
+                    <br/>
+</div>
+
+
+</div>
                 <div class="col-md-12 AdminSidePanelView">
                     <p>Select View Instructor Details and Reports Panel</p>
                 </div>
@@ -71,7 +94,6 @@
               <!---PANEL SELECT AREA END--->
             <!---PANEL VIEW AREA START--->
             <div class="col-md-8">
-
               <div id="divProgram" style="display:none">
                 <h3 id='h3ProgramName'></h3>
                 <br/>
@@ -88,6 +110,14 @@
                 <ul id="IntakesList"></ul>
                 <button onclick="javascript:showdivEditIntructorIntake()">Edit Intakes</button>                <button onclick="javascript:EditInstructor()" >Edit Instructor</button>
                 <button onclick="javascript:DeleteInstructor()"> Delete Instructor</button>
+              </div>
+
+
+                <div id="divIntake" style="display:block">
+                <h3 id='h3IntakeName'></h3>
+                <ul id = "StudentsList"></ul>
+                </div>
+
 
               <div id="divEditIntructorIntake" style="display:none">
                 <select id="selectIntake" autocomplete="off" >
@@ -100,15 +130,15 @@
                   @endforeach
                 </select>
 
-              <button onclick ="javascript:AddIntake(selectIntake.value)">Add</button>
-              <button onclick ="javascript:RemoveIntake(selectIntake.value)">Remove</button>
+              <button onclick ="javascript:AddInstructorIntake(selectIntake.value)">Add</button>
+              <button onclick ="javascript:RemoveInstructorIntake(selectIntake.value)">Remove</button>
             </div>
           </div>
 
-<div id="divIntakes" style="display:none">
 
+
+<!-- <div id="divIntakes" style="display:none">
   <button onclick="javascript:Add_new_intake()">Add new intake</button>
-
   <table>
     <tr>
       <th>Intake</th><th>Program</th>
@@ -120,11 +150,9 @@
       </tr>
       @endforeach
   </table>
-</div>
+</div> -->
 
-<div id="divOneIntake">
-<ul id = "StudentsList"></ul>
-</div>
+
 
 <div id="divNewIntake" style="display:none">
   <form action="/newintake" method="post">
@@ -144,14 +172,10 @@
   </form>
 
 </div>
-
               <div id="dialog" title="Message"></div>
-
-<hr>
-
-            </div>
+</div>
             <!---PANEL VIEW AREA END--->
-          </div>
-      </div>
+</div>
+</div>
 
   @stop

@@ -19,7 +19,12 @@ class CreateInstructorsTable extends Migration
             $table->string('LastName');
             $table->integer('id')->unsigned()->nullable();
             $table->foreign('id')->references('id')->on('users');
-            
+          });
+
+            Schema::table('quizzes', function ($table) {
+              $table->integer('InstructorID')->unsigned();
+              $table->foreign('InstructorID')->references('InstructorID')->on('instructors');
+
         });
     }
 
@@ -30,6 +35,11 @@ class CreateInstructorsTable extends Migration
      */
     public function down()
     {
+      //Schema::dropIfExists('students');
+      Schema::dropIfExists('questions');
+      Schema::dropIfExists('quizzes');
         Schema::dropIfExists('instructors');
+
+        //schema::dropIfExists('users');
     }
 }

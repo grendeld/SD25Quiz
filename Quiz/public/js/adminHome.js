@@ -1,26 +1,47 @@
 
-function clear()
-{
-  divProgram.style.display = "none";
-  divInstructor.style.display = "none";
-  divIntakes.style.display = "none";
-  divEditIntructorIntake.style.display = "none";
-  divOneIntake.style.display = "none";
-  divNewIntake.style.display = "none";
+// function clear()
+// {
+//   divProgram.style.display = "none";
+//   divInstructor.style.display = "none";
+//   divIntakes.style.display = "none";
+//   divEditIntructorIntake.style.display = "none";
+//   divOneIntake.style.display = "none";
+//   divNewIntake.style.display = "none";
+//
+// }
+var currentPanel = null;
 
+function showProgramsPanel()
+{
+  if(currentPanel)
+      currentPanel.fadeOut(100);
+        currentPanel = $("#ProgramsPanel").fadeIn(10);
+}
+
+function showInstructorsPanel()
+{
+  if(currentPanel)
+      currentPanel.fadeOut(100);
+        currentPanel = $("#InstructorsPanel").fadeIn(10);
+}
+
+function showIntakesPanel()
+{
+  if(currentPanel)
+      currentPanel.fadeOut(100);
+        currentPanel = $("#IntakesPanel").fadeIn(10);
 }
 
 
 function divProgramShow(programJSONstring)
 {
-program = JSON.parse(programJSONstring);
+  program = JSON.parse(programJSONstring);
 
-  clear();
+  //clear();
   divProgram.style.display = "block";
-  selectInstructor.selectedIndex = "0";
+  //selectInstructor.selectedIndex = "0";
 
-h3ProgramName.innerHTML = program.ProgramName ;
-
+  h3ProgramName.innerHTML = program.ProgramName ;
   list= document.getElementById('ModulesList');
   list.innerHTML = '';
   for (var i=0; i<program.modules.length; i++)
@@ -30,6 +51,46 @@ h3ProgramName.innerHTML = program.ProgramName ;
 
 prog = program;
 }
+
+function divInstructorShow(instructorJSONstring)
+{
+instructor = JSON.parse(instructorJSONstring);
+//clear();
+  divInstructor.style.display = "block";
+  selectProgram.selectedIndex = "0";
+
+h3instructorName.innerHTML = instructor.FirstName + ' ' + instructor.LastName;
+
+  list= document.getElementById('IntakesList');
+  list.innerHTML = '';
+  for (var i=0; i<instructor.intakes.length; i++)
+  {
+    list.innerHTML += ('<li>' + instructor.intakes[i].IntakeName + '</li>');
+  }
+
+instr = instructor;
+}
+
+function divIntakeShow(intake)
+{
+  intake = JSON.parse(intake);
+  //$("#divIntake").slideDown(100);
+  h3IntakeName.innerHTML = intake.IntakeName ;
+  list=document.getElementById("StudentsList");
+  list.innerHTML="";
+  for (var i=0; i<intake.students.length; i++)
+  {
+    list.innerHTML += ('<li>' + intake.students[i].FirstName + " " + intake.students[i].LastName + '</li>');
+  }
+}
+
+
+
+
+
+
+
+
 
 function EditProgram(){
 window.location.replace('/program/' + prog.ProgramID);
@@ -79,24 +140,10 @@ if (prog.modules.length>0){
 
 
 
-function divInstructorShow(instructorJSONstring)
-{
-instructor = JSON.parse(instructorJSONstring);
-clear();
-  divInstructor.style.display = "block";
-  selectProgram.selectedIndex = "0";
 
-h3instructorName.innerHTML = instructor.FirstName + ' ' + instructor.LastName;
 
-  list= document.getElementById('IntakesList');
-  list.innerHTML = '';
-  for (var i=0; i<instructor.intakes.length; i++)
-  {
-    list.innerHTML += ('<li>' + instructor.intakes[i].IntakeName + '</li>');
-  }
 
-instr = instructor;
-}
+
 
 function DeleteInstructor(){
   dialog.setAttribute("title","Delete Instructor");
@@ -146,7 +193,7 @@ function showdivEditIntructorIntake()
 divEditIntructorIntake.style.display = "block";
 }
 
-function AddIntake(intakeJSONstring)
+function AddInstructorIntake(intakeJSONstring)
 {
   intake = JSON.parse(intakeJSONstring);
  $('#dialog').html("Add intake " + intake.IntakeName + " to instructor " + instr.FirstName + " " + instr.LastName + "?");
@@ -173,7 +220,6 @@ function AddIntake(intakeJSONstring)
             }
           }
         });
-      //  window.location.reload();
   }}
 ] // buttons
 });
@@ -181,7 +227,7 @@ function AddIntake(intakeJSONstring)
 
 
 
-function RemoveIntake(intakeJSONstring)
+function RemoveInstructorIntake(intakeJSONstring)
 {
   intake = JSON.parse(intakeJSONstring);
  $('#dialog').html("Remove intake " + intake.IntakeName + " from instructor " + instr.FirstName + " " + instr.LastName + "?");
@@ -206,37 +252,34 @@ function RemoveIntake(intakeJSONstring)
             else {
               alert("The instructor doesn't have such intake" );
             }
-            //window.location.reload();
           }
         });
-      //  window.location.reload();
   }}
 ] // buttons
 });
 }
 
 
-function showDivIntakes()
-{
-  clear();
-  selectProgram.selectedIndex = "0";
-  selectInstructor.selectedIndex = "0";
+// function showDivIntakes()
+// {
+//   clear();
+//   selectProgram.selectedIndex = "0";
+//   selectInstructor.selectedIndex = "0";
+//
+// $("#divIntakes").slideToggle(100);
+// document.getElementById("selectProgramID").selectedIndex = "0";
+// }
 
-$("#divIntakes").slideToggle(100);
-document.getElementById("selectProgramID").selectedIndex = "0";
-}
-
-function divOneIntakeShow(intake)
-{
-$("#divOneIntake").slideToggle(100);
-  //intake = JSON.parse(intake);
-  list=document.getElementById("StudentsList");
-  list.innerHTML="";
-  for (var i=0; i<intake.students.length; i++)
-  {
-    list.innerHTML += ('<li>' + intake.students[i].FirstName + " " + intake.students[i].LastName + '</li>');
-  }
-}
+// function divIntakeShow(intake)
+// {
+// $("#divIntake").slideDown(100);
+//   list=document.getElementById("StudentsList");
+//   list.innerHTML="";
+//   for (var i=0; i<intake.students.length; i++)
+//   {
+//     list.innerHTML += ('<li>' + intake.students[i].FirstName + " " + intake.students[i].LastName + '</li>');
+//   }
+// }
 
 function Add_new_intake()
 {
@@ -244,15 +287,15 @@ $("#divIntakes").slideToggle(100);
 $("#divNewIntake").slideToggle(100);
 }
 
-function validateNewIntake()
-{
-  alert("false");
-  IntakeName=document.getElementById('txtIntakeName');
-  ProgramID=document.getElementById('selectProgramID');
-
-  if (IntakeName.value == "")
-  {
-    alert("false");
-  }
-  return false;
-}
+// function validateNewIntake()
+// {
+//   alert("false");
+//   IntakeName=document.getElementById('txtIntakeName');
+//   ProgramID=document.getElementById('selectProgramID');
+//
+//   if (IntakeName.value == "")
+//   {
+//     alert("false");
+//   }
+//   return false;
+// }

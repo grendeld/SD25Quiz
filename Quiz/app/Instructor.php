@@ -18,6 +18,11 @@ public function intakes()
 return $this->belongsToMany('App\Intake','InstructorIntakes','InstructorID','IntakeID');
 }
 
+public function quizzes()
+{
+  return $this->HasMany('App\Quiz','InstructorID','InstructorID');
+}
+
 
 
 
