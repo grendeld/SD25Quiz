@@ -1,0 +1,85 @@
+.AdminSidePanelInput{
+      height: 15em;
+      width: 100%;
+      background-color: rgba(229, 231, 233 ,0.7);
+      border-color: black;
+      border-style: solid;
+      border-width: 1px;
+      padding: 20px;
+      padding-right: 20px;
+      margin-top: 5px;
+}
+
+.AdminSidePanelView{
+      height: 15em;
+      width:100%;
+      background-color: rgba(229, 231, 233 ,0.7);
+      border-color: black;
+      border-style: solid;
+      border-width: 1px;
+      padding: 20px;
+      padding-right: 20px;
+      margin-top: 5px;
+}
+.AdminLeftSide{
+    height:90vh;
+    background-color:rgba(215, 219, 221 ,0.9);
+}
+.AdminProgramsView{
+  background-color:rgba(229, 231, 233 ,0.7);
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  padding: 20px;
+  padding-right: 20px;
+  margin-top: 5px;
+  height: auto;
+
+}
+.AdminInstructorView{
+  background-color:rgba(229, 231, 233 ,0.7);
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  padding: 20px;
+  padding-right: 20px;
+  margin-top: 5px;
+}
+.AdminInstructorView ul{
+  background-color:rgba(215, 219, 221 ,0.7);
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  width: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+}
+.AdminInstructorView li{
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.AdminProgramsView ul{
+  background-color:rgba(215, 219, 221 ,0.7);
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  width: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+}
+.AdminProgramsView li{
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.AdminAddInstructor{
+  background-color:rgba(215, 219, 221 ,0.7);
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  width: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+}

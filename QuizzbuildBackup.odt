@@ -1,0 +1,28 @@
+<h1>Tests View</h1>
+<div class="TestView">
+  <div class="TestViewRow">
+        <div class="TestViewItem">
+          <h4>Quiz</h4>
+        </div>
+        <div class="TestViewItem">
+          <h4>Start</h4>
+        </div>
+        <div class="TestViewItem">
+          <h4>End</h4>
+        </div>
+  </div>
+
+  <div class="TestViewRow">
+    @foreach($tests as $t)
+        <div class="TestViewItem">
+          {{$t->QuizName}}
+        </div>
+        <div class="TestViewItem">
+          {{$t->StartDateTime}}
+        </div>
+        <div class="TestViewItem">
+          {{$t->StopDateTime}}
+        </div>
+    @endforeach
+  </div>
+<?div>

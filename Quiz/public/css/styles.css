@@ -1,0 +1,965 @@
+body {
+        background-color: rgba(160,160,160,0.1);
+ }
+ input[type=checkbox]
+ {
+   /* Double-sized Checkboxes */
+   -ms-transform: scale(1.5); /* IE */
+   -moz-transform: scale(1.5); /* FF */
+   -webkit-transform: scale(1.5); /* Safari and Chrome */
+   -o-transform: scale(1.5); /* Opera */
+
+ }
+ input[type=radio]
+ {
+   /* Double-sized Checkboxes */
+   -ms-transform: scale(1.5); /* IE */
+   -moz-transform: scale(1.5); /* FF */
+   -webkit-transform: scale(1.5); /* Safari and Chrome */
+   -o-transform: scale(1.5); /* Opera */
+ }
+
+ #moduleTABcontainer{
+   display: none;
+ }
+ #quizadminTABcontainer{
+   display: none;
+ }
+ #quiztemplateViewTABcontainer{
+   display:none;
+ }
+ #quizshareTABcontainer{
+   display: none;
+ }
+ #quizdeployTABcontainer{
+   display: none;
+ }
+
+/*List View Panel Containers Start*/
+#ModuleListViewTABcontainer{
+   display: none;
+ }
+#QuestionListViewTABcontainer{
+  display: none;
+}
+#TemplateListViewTABcontainer{
+  display: none;
+}
+#QuizListViewTABcontainer{
+  display: none;
+}
+#StudentListViewTABcontainer{
+  display: none;
+}
+#StudentAdmin{
+  display: none;
+}
+/*List View Panel Containers End*/
+
+
+#SelectedPublicQuiz{
+  display: none;
+}
+
+ #QuestionbuildContainer{
+   display: none;
+ }
+#templatebuildcontainer{
+
+}
+#QnASetViewcontainer{
+  display: none;
+
+}
+#quizSavecontainer{
+  display: none;
+}
+/*NEW LARAVEL FORMATTING START */
+.MainMenu{
+  background-color: #F7F9F9;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: black;
+}
+
+.AdminTables th{
+    background-color: darkgrey;
+    padding: 20px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+}
+.AdminTables td{
+    background-color:rgba(215, 219, 221 ,0.9);
+    padding: 20px;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    margin-bottom: 10px;
+}
+
+.AdminStudentIframe{
+    width: 100%;
+    height: 80vh;
+    border:none;
+}
+.MainMenu{
+  text-align: center;
+
+
+}
+.MainMenuItem {
+padding: 20px;
+margin-top: 10px;
+}
+
+.selectPanel{
+  width: 100%;
+  height: 6rem;
+  background-color: rgba(170,180,190,0.8);
+
+}
+.selectPanell{
+  width: 100%;
+  height: 6rem;
+  overflow: hidden;
+
+  box-shadow: 5px 10px 10px rgba(160,160,160,0.4);
+  background-color: rgba(170,180,190,0.2);
+
+}
+
+div.selectPanel button{
+    height:6rem;
+    width:100%;
+    float:left;
+    border: none;
+
+    background-color:rgba(213, 219, 219  ,0.6);
+    -webkit-transition: background .5s ease-out;
+    -moz-transition: background .5s ease-out;
+    -o-transition: background .5s ease-out;
+    transition: background .5s ease-out;
+    -webkit-transition: border .5s ease-in;
+    -moz-transition: border .5s ease-in;
+    -o-transition: border .5s ease-in;
+    transition: border .5s ease-in;
+
+}
+div.selectPanel button:hover{
+    height:6rem;
+    width:100%;
+    float:left;
+
+    background-color:rgba(229, 232, 232  ,0.9);
+    border-top-width:10px;
+    border-top-style: solid;
+    border-top-color:rgba(93, 173, 226,0.7);
+
+}
+div.selectPanel button:active{
+  height:6rem;
+  width:100%;
+  float:left;
+
+  background-color:rgba(229, 232, 232  ,0.9);
+  border-top-width:10px;
+  border-top-style: solid;
+  border-top-color:rgba(212, 230, 241,0.7);
+}
+
+div.selectPanell a{
+    height:6rem;
+    width:100%;
+    float:left;
+    margin-bottom:20px;
+    margin-top: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    background-color:rgba(213, 219, 219  ,0.7);
+    -webkit-transition: background .5s ease-out;
+    -moz-transition: background .5s ease-out;
+    -o-transition: background .5s ease-out;
+    transition: background .5s ease-out;
+
+}
+div.selectPanell a:hover{
+    height:6rem;
+    width:100%;
+    float:left;
+    margin-top: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    margin-bottom:20px;
+    background-color:rgba(229, 232, 232  ,0.4);
+
+
+}
+div.selectPanell a:active{
+  height:6rem;
+  width:100%;
+  float:left;
+  background-color:rgba(229, 232, 232  ,0.9);
+
+}
+.AdminPanel{
+  height:2rem;
+  width:100%;
+  float:left;
+  background-color:rgba(229, 232, 232  ,0.9);
+}
+
+
+.ModuleListCell{
+  height: 4em;
+  width: 100%;
+  margin-top: 10px;
+  padding: 20px;
+  background-color: rgba(170, 183, 184 ,0.2);
+}
+.QuizAdminTable{
+  height: 10vh;
+  width:100%;
+  background-color: cornsilk;
+
+}
+.QuizAdminRow{
+  height: 100%;
+  width: 25%;
+  float: left;
+}
+.QuizBuildStart{
+    height: 5em;
+    width: 100%;
+
+}
+.QuizBuildStartCell{
+    height: 100%;
+    width:50%;
+    float: left;
+
+}
+.Quizedit{
+    background-color: lightgrey;
+    height: 5em;
+    width: 100%;
+    padding: 10px;
+}
+.QuizeditDescript{
+    background-color: darkgrey;
+    height: 10em;
+    width: 100%;
+    padding: 10px;
+}
+.QuizeditSelect{
+    background-color: darkgrey;
+    height: 6em;
+    width: 100%;
+    padding: 10px;
+}
+.QuizeditCell2{
+    height: 100%;
+    width: 33%;
+    float: left;
+    padding: 5px;
+}
+.QuizeditCell{
+    height: 100%;
+    width: 40%;
+    float: left;
+
+}
+.QuizeditCell1{
+    height: 100%;
+    width: 30%;
+    float: left;
+}
+.QuestionListSection{
+    height: auto;
+    width:100%;
+    background-color: #BFC9CA ;
+}
+.QuestBuildCell{
+    height: 5em;
+    margin-top: 10px;
+    width:100%;
+    background-color: #BFC9CA ;
+}
+.QuestBuildCelll{
+    height: 15em;
+    margin-top: 10px;
+    width:100%;
+    background-color: #BFC9CA ;
+}
+.QeditQnA{
+   height:auto;
+   width:50%;
+   float: left;
+}
+.QeditAnswers{
+  height: auto;
+  width: 50%;
+  float: left;
+}
+.QeditButtons{
+  height: auto;
+  width: 100%;
+  float: left;
+  background-color: darkgrey;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.QeditControl{
+  height: auto;
+  width: 25%;
+  float: left;
+}
+.QuestionSection{
+  height:auto;
+  width:100%;
+  background-color: darkgrey;
+}
+
+.TestView{
+  height:10em;
+  width:100%;
+  background-color: green;
+}
+.TestViewRow{
+  height: 50%;
+  width:100%;
+}
+.TestViewItem{
+  height: 100%;
+  width: 33%;
+  float: left;
+
+}
+
+.QuizListCell{
+  background-color: rgba(170, 183, 184 ,0.2);
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  height: 10em;
+  width: 100%;
+  color: black;
+  padding: 5px;
+  margin-top: 5px;
+}
+.QuizListCellName_Mod{
+  height: 100%;
+  float: left;
+  width:59%;
+  background-color: rgba(234, 237, 237 ,0.7);
+
+}
+.QuizListCellControl{
+  height: 100%;
+  float: left;
+  width:38%;
+}
+.QuizListCellSelect{
+  padding: 2px;
+  height: 50%;
+  float: left;
+  width:100%;
+  border-bottom-width: 1px;
+  border-bottom-color: black;
+  border-bottom-style: solid;
+  border-right-color: black;
+  border-right-style: solid;
+  border-right-width: 1px;
+
+}
+.QuizDetail{
+  background-color: rgba(213, 219, 219  ,0.7);
+  border-bottom-width: 1px;
+  border-bottom-color: black;
+  border-bottom-style: solid;
+  height: 50%;
+  width:100%;
+}
+.QuizEditt{
+  padding: 10px;
+  height:100%;
+  width:50%;
+  float: left;
+  background-color: rgba(213, 219, 219  ,0.7);
+}
+.QuizEdit{
+  padding: 10px;
+  border-right-color: black;
+  border-right-style: solid;
+  border-right-width: 1px;
+  height:100%;
+  width:50%;
+  float: left;
+  background-color: rgba(191, 201, 202    ,0.9);
+}
+
+.modbuild{
+  height: 6em;
+  background-color: darkgrey;
+  width: 100%;
+  padding: 30px;
+}
+.modbuildd{
+  height: 8em;
+  background-color: lightgrey;
+  width: 100%;
+  padding: 30px;
+}
+
+.QMSelectors{
+  height: 100%;
+  width: 60%;
+  float: left;
+
+}
+.QMSelectorss{
+  height:100%;
+  float: left;
+  width: 20%;
+}
+.modlistCell{
+  height: 6em;
+  background-color: aliceblue;
+  color: black;
+}
+.modselectA{
+  height: 100%;
+  background-color: rgba(170,170,170,0.8);
+  width: 10%;
+  float: left;
+
+}
+.modselectB{
+  height: 100%;
+  width: 90%;
+  background-color: rgba(160,160,160,0.5);
+  float: left;
+}
+
+.deployQuizCell{
+    height:4rem;
+}
+.deployQuizCelll{
+    padding:20px;
+    height:auto;
+
+}
+.deployQuizItem{
+    padding: 15px;
+    color: white;
+    height: 100%;
+    width: 100%;
+    float: left;
+    background-color: darkgrey;
+}
+.deployQuizItem1{
+    color: white;
+    height: 100%;
+    width: 50%;
+    float: left;
+    background-color: darkgrey;
+}
+.deployQuizItem2{
+    padding:15px;
+    height: 100%;
+    width: 50%;
+    float: left;
+    background-color: lightgrey;
+}
+.deployTest{
+    font-size: 26px;;
+}
+/*NEW LARAVEL FORMATTING END */
+
+
+ .scale-image
+ {
+      display: block;
+      width: auto;
+      max-width: 100%;
+ }
+
+.stdLogin{
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  height: 33em;
+  padding: 20px;
+}
+.SplashPage{
+  background-color: aliceblue;
+  color:black;
+  padding: 20px;
+  font-weight: bold;
+  height: 33em;
+}
+.InputForm{
+  background-color: blue;
+  margin: 0 auto;
+  margin-top: 10%;
+  margin-bottom: auto;
+  height: 20em;
+  width:50%;
+}
+.banner{
+  height: 4em;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  background-color: aliceblue;
+  padding: 15px;
+}
+
+.workarea{
+  height: auto;
+  color: black;
+  font-weight: bold;
+    padding: 15px;
+}
+
+.workview{
+  color: black;
+  background-color: aliceblue;
+  height: auto;
+  font-weight: bold;
+    padding: 15px;
+}
+.quizbuildcontainer{
+
+  height: 15em;
+  width:100%;
+}
+.QuestionbuildContainer{
+  background-color: aliceblue;
+  height: 40em;
+  padding:10px;
+}
+.QnASetViewcontainer{
+  background-color: rgba(160,160,199,0.6);
+  color: black;
+  padding: 20px;
+}
+.questionSelect{
+  height:33em;
+  width:100%;
+  background-color: green;
+  color: white;
+  font-weight: bold;
+    padding: 15px;
+}
+.quizViewer{
+  height:8em;
+  width:100%;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+    padding: 15px;
+}
+.quizDeploy{
+  height:8em;
+  width:100%;
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+    padding: 15px;
+}
+.QuestionPanel{
+  height:100vh;
+  width:100vw;
+
+
+}
+.QuestionPanell{
+  height:75vh;
+  width:100%;
+  margin-top: 10px;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+
+
+}
+.questionframe{
+  width: 100%;
+  height: 100%;
+}
+.Question{
+  width: 100%;
+  height: 60%;
+  background-color: rgba(160,160,160,0.5);
+  float: left;
+  color: black;
+  font-weight: bold;
+
+
+}
+.AnswerSet{
+    height: 90%;
+    width: 100%;
+
+    background-color: aliceblue;
+
+}
+.TestQuestion{
+  height: 90%;
+  width: 100%;
+  background-color: cornsilk;
+
+}
+.CurrentTestQuestion{
+  text-align: center;
+  margin-top: 35%;
+  color: blue;
+  font-weight: bolder;
+}
+#prevquestion{
+  float: left;
+}
+#nextquestion{
+  float: right;
+}
+.TestNavSet{
+  height: 10%;
+  width: 100%;
+  background-color: white;
+  padding: 10px;
+}
+
+.TestQuestionSelect{
+  height: 80vh;
+  width: 100%;
+  margin-top: 10px;
+  background-color: rgba(160,160,160,0.4);
+}
+.TestListCell{
+  height: 3em;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10px;
+  background-color: rgba(160,160,160,0.7);
+}
+
+.TestListTop{
+  height: 3em;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10px;
+  background-color: rgba(160,160,160,0.7);
+}
+
+.TestQuestionStatus{
+  height: 100%;
+  width: 10%;
+  float: left;
+  background-color: green;
+}
+.TestQuestionName{
+  height: 100%;
+  width: 90%;
+  padding: 5px;
+  float: left;
+  background-color: rgba(160,160,160,0.7);
+}
+.TestAnswerListCell{
+    height: 4em;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: rgba(160,160,160,0.6);
+}
+.TestAnswerName{
+    height: 100%;
+    width: 80%;
+    padding: 8px;
+    float: left;
+}
+.TestAnswerSelect{
+    height: 100%;
+    width: 20%;
+    padding: 10px;
+    float: left;
+}
+
+.AnswerOption{
+  width: 100%;
+  height: 25%;
+  background-color: rgba(166,166,160,0.7);
+  float: left;
+  color: black;
+  margin-top:5px;
+  font-weight: bold;
+
+}
+.NextQuestion{
+  height: 10%;
+  width:100%;
+  float: left;
+  margin-top: 5px;
+  color: black;
+  font-weight: bold;
+  background-color: aliceblue;
+}
+.Answer{
+    margin-top: 5px;
+    height: 4em;
+    width:100%;
+    float: left;
+    color: black;
+    font-weight: bold;
+}
+.answerSet{
+  margin-bottom: 30px;
+  background-color: aliceblue;
+  height: 3em;
+}
+.AnswerNumber{
+  float: left;
+  height: 100%;
+  padding-right: 10px;
+}
+.AnswerTextInput{
+  float: left;
+  height: 100%;
+}
+
+
+.testsessionUI{
+  background-color: rgba(160,160,160,0.3);
+  height: 70vh;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 4em;
+}
+.testSessionChart{
+  background-color: rgba(160,160,160,0.1);
+  height: 100%;
+  width: 100%;
+  float: left;
+  margin-top: 10px;
+
+
+}
+.TestCompletion{
+  background-color: rgba(160,160,160,0.4);
+  height: 100%;
+  width: 100%;
+  float: left;
+  padding: 15px;
+
+}
+.TestSessionTimer{
+  background-color: rgba(160,160,160,0.3);
+  height: 100%;
+  width: 100%;
+  float: left;
+  padding: 15px;
+
+}
+.QBsections1{
+    height:4em;
+    width: auto;
+    padding: 10px;
+    background-color: lightgrey;
+}
+.QBsections2{
+    height:6em;
+    width: auto;
+    padding: 10px;
+    background-color: darkgrey;
+}
+.QBsections3{
+    height:auto;
+    width: auto;
+    padding: 20px;
+    background-color: #D5DBDB  ;
+}
+
+.QBsections4{
+    height:auto;
+    width: auto;
+    padding: 20px;
+    background-color: #4EAF8A;
+}
+.QBsections5{
+    height:auto;
+    width: auto;
+    padding: 20px;
+    background-color: #4EAFFA;
+}
+
+.QBSelectors{
+    height: 100%;
+    width: 50%;
+    float: left;
+
+}
+.QBSelectorss{
+    height: 100%;
+    width: 100%;
+    float: left;
+
+}
+.QBsegment{
+    height: 100%;
+    width: 100%;
+    float: left;
+
+}
+
+.questionTotal{
+  width: 50px;
+
+}
+.QuestionListView{
+  padding:20px;
+}
+.questionSetup{
+  margin-top: 5px;
+}
+.QListSegment{
+    background-color: aliceblue;
+    height: 6em;
+    width:100%;
+    padding: 15px;
+    margin-top: 15px;
+    color: black;
+
+}
+.QListQuestion{
+    height: 100%;
+    float: left;
+    width: 50%;
+
+}
+.QlistchkbxSelect{
+    height: 100%;
+    float: left;
+    margin-right: 20px;
+    width:5%;
+
+}
+.studentBar{
+    height:105px;
+    width: 100%;
+    padding: 10px;
+
+}
+.stdIMG{
+    height:100%;
+
+    width: 20%;
+    float: left;
+    background-color: rgba(133,193,233,0.6);
+
+}
+.stdName{
+  height:100%;
+  width: 50%;
+  float: left;
+  background-color: rgba(133,193,233,0.5);
+}
+.stdConnect{
+  height:100%;
+  width: 15%;
+  float: left;
+  background-color: rgba(133,193,233,0.4);
+}
+.stdListSelect{
+  height:100%;
+  padding: 30px;
+  width: 15%;
+  float: left;
+  background-color: rgba(133,193,233,0.4);
+}
+.stdStatus{
+  height:100%;
+  width: 15%;
+  float: left;
+  background-color: rgba(133,193,233,0.4);
+}
+.profile{
+  width: 80px;
+	height:80px;
+  margin: 0 auto;
+  overflow: hidden;
+	background: red;
+	-moz-border-radius: 40px;
+	-webkit-border-radius: 40px;
+	border-radius: 40px;
+}
+.testStatus{
+  width: 40px;
+	height:40px;
+	background: black;
+  margin: 0 auto;
+  margin-top: 25%;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+}
+.testStatuss{
+  width: 40px;
+	height:40px;
+	background: rgba(160,160,160,0.1);
+  border-width: 5px;
+  border-style: solid;
+  border-color: black;
+  margin: 0 auto;
+  margin-top: 25%;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+}
+.connectStatus{
+  width: 40px;
+	height:40px;
+	background: rgba(160,160,160,0.1);
+  border-width: 5px;
+  border-style: solid;
+  border-color: green;
+  margin: 0 auto;
+  margin-top: 25%;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+}
+.connectStatuss{
+  width: 40px;
+	height:40px;
+	background: rgba(160,160,160,0.1);
+  border-width: 5px;
+  border-style: solid;
+  border-color: red;
+  margin: 0 auto;
+  margin-top: 25%;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+}
+
+.TestCompleteTotal{
+  height:75px;
+  width: 100%;
+  padding: 10px;
+  margin: 0 auto;
+  background-color: rgba(160,160,160,0.5);
+}
+.completeTEXT{
+  height: 100%;
+  width:50%;
+  float: left;
+
+}
+.completeRatio{
+  height: 100%;
+  width:50%;
+  float: left;
+
+}

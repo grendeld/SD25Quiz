@@ -1,0 +1,86 @@
+@extends('layout')
+
+@section ('content')
+
+  <div class="row">
+    <div class="col-md-6">
+        <div class="workarea">
+                    <!---MODULE  SELECT QUIZ CREATE SECTION START--->
+                    <div class="quizCreateStart" id="quizCreateStart">
+                      <h3>Build Quiz Template</h3>
+                    <div class="QBsections3">
+                      <!---BUILD NEW QUIZ START--->
+                        <form method="POST" action="/newQuiz">
+                          <div class="QuizBuildStart">
+                              <div class="QuizBuildStartCell">
+                                <select name='ModuleID'>
+                                  @foreach($modules as $m)
+                                    <option value="{{$m->ModuleID}}"> {{$m->ModuleName}}</option>
+                                  @endforeach
+                                </select>
+                              </div>
+                              <div class="QuizBuildStartCell">
+                                Quiz Name:
+                                <input type="text" name="QuizName">
+                              </div>
+                          </div>
+                          <div class="QuizBuildStart">
+                              <div class="QuizBuildStartCell">
+                                  <button type="submit">Save Template</button>
+                              </div>
+                              <div class="QuizBuildStartCell">
+                                <button onclick="return hideNewQuiz()">Cancel</button>
+                                {!! csrf_field() !!}
+                              </div>
+                          </div>
+                        </form>
+                      <!---BUILD NEW QUIZ END--->
+                    </div>
+                  </div>
+                    <!---MODULE  SELECT QUIZ CREATE SECTION END--->
+
+
+        </div>
+    </div>
+    <!---WORK PANEL ENDS--->
+    <!---vIEW PANEL START--->
+    <div class="col-md-6">
+        <!---MODULE LIST VIEW START--->
+                <div class="moduleListcontainer" id="moduleListcontainer">
+                  @foreach($quizzes as $q)
+                  <div class="QuizListCell">
+                      <div class="QuizListCellSelect" id="ModuleListCellName">
+                            <a href="/quiz/{{$q->QuizID}}">Edit Quiz</a>
+                      </div>
+                      <div class="QuizListCellName" id="ModuleListSelect">
+                            <h4>{{$q->QuizName}}</h4>
+                      </div>
+                      <div class="QuizListCellSelect" id="ModuleListCellName">
+                            <a href="/quiz/{{$q->QuizID}}/delete">Delete</a>
+                      </div>
+                  </div>
+                  @endforeach
+                </div>
+            </div>
+        <!---MOBILE LIST VIEW END--->
+    </div>
+  </div>
+
+
+  <script type="text/javascript">
+
+  function showNewQuiz(){
+  divQuizzez.style.display = "none";
+  divNewQuiz.style.display = "block";
+  return false;
+  }
+
+  function hideNewQuiz(){
+  divQuizzez.style.display = "block";
+  divNewQuiz.style.display = "none";
+  return false;
+  }
+  </script>
+
+
+  @stop
