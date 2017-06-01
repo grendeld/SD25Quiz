@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+<<<<<<< HEAD
         factory(App\User::class, 50)->create();
       $this->call(ProgramsSeeder::class);
        $this->call(ModulesSeeder::class);
@@ -21,5 +22,9 @@ class DatabaseSeeder extends Seeder
        $this->call(AnswersSeeder::class);
        $this->call(InstructorsSeeder::class);
 $this->call(InstructorIntakeSeeder::class);
+=======
+       $this->call(ProgramsSeeder::class);
+       $this->call(ModulesSeeder::class);
+>>>>>>> 05b55c3a9c8be72a0d51d24f723c78aaddd62cb8
     }
 }

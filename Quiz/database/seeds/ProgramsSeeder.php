@@ -21,6 +21,9 @@ class ProgramsSeeder extends Seeder
           'ProgramType' => 'Business',
           'Active' => 'Yes'
       ]);
+<<<<<<< HEAD
         
+=======
+>>>>>>> 05b55c3a9c8be72a0d51d24f723c78aaddd62cb8
     }
 }

@@ -13,15 +13,23 @@ class ProgramsController extends Controller
     $programs = program::all();
     return view ('program', compact('programs'));
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 05b55c3a9c8be72a0d51d24f723c78aaddd62cb8
     public function create(Request $request)
     {
       $program = new Program;
       $program->ProgramName = $request->ProgramName;
       $program->ProgramType = $request->ProgramType;
       $program->ProgramName = $request->ProgramName;
+<<<<<<< HEAD
       $program->Active = $request->Active;
       $program->save();
+=======
+     $program->Active = $request->Active;
+     $program->save();
+>>>>>>> 05b55c3a9c8be72a0d51d24f723c78aaddd62cb8
 
       return back();
     }

@@ -15,6 +15,7 @@ class Program extends Model
     return $this->hasMany('App\Module','ProgramID','ProgramID');
     }
 
+<<<<<<< HEAD
 
     public function intakes()
     {
@@ -23,4 +24,6 @@ class Program extends Model
 
 
 
+=======
+>>>>>>> 05b55c3a9c8be72a0d51d24f723c78aaddd62cb8
 }

@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+<<<<<<< HEAD
 Route::get('/', 'InstructorsController@main');
 Route::get('/instructorHome', 'InstructorsController@main');
 Route::post('/moduleDelete','ModulesController@deleteModule');
@@ -43,11 +44,17 @@ Route::get('/d3Test',function(){ return view('chartTest');});
 
 
 //--------------------------------------OLD------------------------------------------------------------------
+=======
+
+Route::get('/', 'ProgramsController@show');
+
+>>>>>>> 05b55c3a9c8be72a0d51d24f723c78aaddd62cb8
 Route::get('/admin', 'AdminsController@show');
 
 Route::get('/admin/add', function(){ return view('newadmin'); });
 
 Route::post('/admin/add', 'AdminsController@create');
+<<<<<<< HEAD
 //---Programs
 Route::get('/program', 'ProgramsController@show');
 Route::get('/program/add', function(){ return view('newProgram'); });
@@ -102,3 +109,24 @@ Route::get('test/Page/{int}',function($int){
 Route::post('test/Page',function(){ 
     session()->get('testProvider')->answer($_POST["answer"]);
     return view('student.question');});
+=======
+
+Route::get('/program', 'ProgramsController@show');
+
+Route::get('/program/add', function(){ return view('newProgram'); });
+
+Route::post('/program/add', 'ProgramsController@create');
+
+Route::get('/program/{program}', 'ProgramsController@showedit');
+
+Route::patch('/program/{program}/edit', 'ProgramsController@edit');
+
+Route::get('/program/{program}/delete', 'ProgramsController@delete');
+Route::post('/module','ModulesController@deleteMod');
+Route::get('/program/{program}/module/{module}/edit', 'ModulesController@showEdit');
+Route::patch('/{program}/{module}', 'ModulesController@edit');
+
+Route::post('/program/{program}/newModule', 'ModulesController@NewModule');
+
+// Route::post('/program/{program}/module/{module}/delete', 'ProgramsController@deleteModule');
+>>>>>>> 05b55c3a9c8be72a0d51d24f723c78aaddd62cb8

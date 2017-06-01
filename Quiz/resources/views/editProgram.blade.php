@@ -3,7 +3,12 @@
 @section ('content')
 
 <div id="divEditProgram">
+<<<<<<< HEAD
 <div class="AdminTables">
+=======
+<a href="/program">Back to Programs</a>
+
+>>>>>>> 05b55c3a9c8be72a0d51d24f723c78aaddd62cb8
 <h1>Edit Program</h1>
 
 <form method = "POST" action ="../program/{{$program->ProgramID}}/edit">
@@ -65,11 +70,21 @@ Active:
       <td>
   </tr>
 </table>
+<<<<<<< HEAD
   <button type = 'submit'>Save</button> <button type = "button"onclick="BackToAdminHome()">Back</button>
 {!! csrf_field() !!}
 </form>
 </div>
 <form method="get" id="form2"></form>
+=======
+  <button type = 'submit'>Save</button>
+{!! csrf_field() !!}
+</form>
+
+<form method="get" id="form2">
+</form>
+
+>>>>>>> 05b55c3a9c8be72a0d51d24f723c78aaddd62cb8
 <button onclick="showNewModule()">Add new module</button>
 </div>
 
@@ -86,25 +101,46 @@ Active:
 
 
 <script >
+<<<<<<< HEAD
 function BackToAdminHome()
 {
 window.location.replace('/adminHome');
 }
+=======
+>>>>>>> 05b55c3a9c8be72a0d51d24f723c78aaddd62cb8
 
 function cancelNewModule()
 {
   document.getElementById('divNewModule').style.display = "none";
   document.getElementById('divEditProgram').style.display = "block";
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 05b55c3a9c8be72a0d51d24f723c78aaddd62cb8
 function showNewModule()
 {
   document.getElementById('divNewModule').style.display = "block";
   document.getElementById('divEditProgram').style.display = "none";
 }
 
+<<<<<<< HEAD
 function ModuleDelete(moduleID)
 {
+=======
+
+function ModuleDelete(moduleID)
+{
+  //alert(moduleID);
+    // $.ajax({
+    //   url: '/module',
+    //   type: "get",
+    //
+    //
+    //   data:{'ModID': moduleID},
+    //   success: function(data){
+    //     alert(data);
+>>>>>>> 05b55c3a9c8be72a0d51d24f723c78aaddd62cb8
      var token = document.getElementsByName("_token")[0].value;
     $.ajax({
       url: '/module',
@@ -112,8 +148,13 @@ function ModuleDelete(moduleID)
       data:{'ModID': moduleID,'_token':token},
       success: function(data){
         location.reload();
+<<<<<<< HEAD
             }
         });
+=======
+      }
+    });
+>>>>>>> 05b55c3a9c8be72a0d51d24f723c78aaddd62cb8
 
   return false;
 }

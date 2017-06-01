@@ -41,4 +41,7 @@ Active:
 
 {!! csrf_field() !!}
 </form>
+<<<<<<< HEAD
 @stop
+=======
+>>>>>>> 05b55c3a9c8be72a0d51d24f723c78aaddd62cb8

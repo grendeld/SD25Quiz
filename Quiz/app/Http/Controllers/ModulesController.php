@@ -9,6 +9,7 @@ use DB;
 
 class ModulesController extends Controller
 {
+<<<<<<< HEAD
   public function deleteModule() //new // Set module inactive
   {
     $id=$_POST['ModID'];
@@ -30,6 +31,13 @@ class ModulesController extends Controller
   public function editModule() //new
   {
 
+=======
+  public function deleteMod()
+  {
+    $id=$_POST['ModID'];
+    Module::where('ModuleID',$id) -> update(['Active'=>'No']);
+    return 'done';
+>>>>>>> 05b55c3a9c8be72a0d51d24f723c78aaddd62cb8
   }
 
   public function showEdit($p, $m)
@@ -54,6 +62,7 @@ class ModulesController extends Controller
     $program->modules()->save($module);
     return redirect("/program/$p");
   }
+<<<<<<< HEAD
 
   public function AddModule(Request $request) //new
   {
@@ -63,4 +72,6 @@ class ModulesController extends Controller
     $program->modules()->save($module);
     return back();
   }
+=======
+>>>>>>> 05b55c3a9c8be72a0d51d24f723c78aaddd62cb8
 }

@@ -1,0 +1,65 @@
+.quizbuildcontainer{
+    height: 40em;
+    width:100%;
+    background-color: aliceblue;
+}
+.QBsections1{
+    height:4em;
+    width: auto;
+    padding: 10px;
+    background-color: lightgrey;
+}
+.QBsections2{
+    height:4em;
+    width: auto;
+    padding: 10px;
+    background-color: darkgrey;
+}
+.QBsections3{
+    height:auto;
+    width: auto;
+    padding: 20px;
+    background-color: #9BD4BE;
+}
+
+.QBsections4{
+    height:auto;
+    width: auto;
+    padding: 20px;
+    background-color: #4EAF8A;
+}
+.QBsections5{
+    height:auto;
+    width: auto;
+    padding: 20px;
+    background-color: #4EAFFA;
+}
+
+.QBSelectors{
+    height: 100%;
+    width: 33%;
+    float: left;
+
+}
+.QBSelectorss{
+    height: 100%;
+    width: 100%;
+    float: left;
+
+}
+.QBsegment1{
+    height: 100%;
+    width: 100%;
+    float: left;
+
+}
+.template{
+    margin-top: 2em;
+}
+.questionTotal{
+  width: 50px;
+
+}
+.questionSetup{
+  margin-top: 5px;
+}

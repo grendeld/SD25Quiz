@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
     <head>
+<<<<<<< HEAD
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1"/>
       <meta name="description" content="">
@@ -63,6 +64,16 @@
             </div>
 
 
+=======
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <title>SD25Quize app</title>
+@yield('header')
+    </head>
+    <body>
+        From Master Page
+        <hr>
+>>>>>>> 05b55c3a9c8be72a0d51d24f723c78aaddd62cb8
 @yield('content')
 @yield('footer')
 <hr>
