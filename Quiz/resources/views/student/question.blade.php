@@ -46,7 +46,7 @@
 
               <div class="col-md-12 TestNavSet">
 
-                  <input type="submit" id="sub" value="Next"/>
+                  <input type="submit" id="sub" value="Save Answer"/>
 
               </div>
           </div>
@@ -57,7 +57,7 @@
           parent.getCurrent();
             document.getElementById("sub").onclick= function(){
                 var Qlist = window.parent.document.getElementsByClassName('TestListCell');
-                Qlist[QuestionNum].getElementsByClassName('TestQuestionStatus')[0].setAttribute('style','background-color: blue');
+                parent.prevQuestion[1] = 'background-color: blue';
                 return true;
             }
       </script>
