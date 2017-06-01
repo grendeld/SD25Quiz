@@ -4,20 +4,62 @@
 <!-- Show Quiz with questions and answers -->
 <div id="divQuiz">
 <div id="divQuizHead">
-<h1>{{$quiz->QuizName}}</h1>
-<p>{{$quiz->Description}}</p>
-<button onclick="return showEditQuiz()">Edit Quiz</button> <form method="get"> <button formaction="/quiz/{{$quiz->QuizID}}/copy">Copy Quiz</button> </form>
+  <div class="Quizedit">
+    <div class="QuizeditCell1">
+        <p>Quiz Name:</p>
+    </div>
+    <div class="QuizeditCell">
+        <h4 style="background-color:white;">{{$quiz->QuizName}}</h4>
+    </div>
+  </div>
+  <div class="Quizedit">
+    <div class="QuizeditCell1">
+        <p>Quiz Description:</p>
+    </div>
+    <div class="QuizeditCell">
+        <h4 style="background-color:white;">{{$quiz->Description}}</h4>
+    </div>
+  </div>
+    <div class="QuizeditSelect">
+        <div class="QuizeditCell2">
+            <button onclick="return showEditQuiz()">Edit Quiz</button>
+        </div>
+        <div class="QuizeditCell2">
+          <form method="get">
+            <button formaction="/quiz/{{$quiz->QuizID}}/copy">Copy Quiz</button>
+          </form>
+        </div>
+    </div>
+  </div>
 </div>
 
 <form name="edit" action="/quiz/{{$quiz->QuizID}}/editQuiz" method="post" style="display:none">
-  Quiz Name:<br/>
-  <input type="text" name="QuizName" value="{{$quiz->QuizName}}"/><br/>
-  Description:<br/>
-  <textarea name="Description" rows="3" cols="30">{{$quiz->Description}}</textarea><br/>
-  <button type="submit">Save</button>
-  <button type="button" onclick="return hideEditQuiz()">Cancel</button>
-{{method_field('PATCH')}}
-{!! csrf_field() !!}
+    <div class="Quizedit">
+        <div class="QuizeditCell1">
+            <p>Quiz Name :</p>
+        </div>
+        <div class="QuizeditCell1">
+            <input type="text" name="QuizName" value="{{$quiz->QuizName}}"/>
+        </div>
+    </div>
+    <div class="QuizeditDescript">
+        <div class="QuizeditCell1">
+            <p>Description :</p>
+        </div>
+        <div class="QuizeditCell1">
+            <textarea name="Description" rows="3" cols="30">{{$quiz->Description}}</textarea>
+        </div>
+    </div>
+    <div class="Quizedit">
+        <div class="QuizeditCell1">
+            <button type="submit">Save</button>
+        </div>
+        <div class="QuizeditCell1">
+          <button type="button" onclick="return hideEditQuiz()">Cancel</button>
+        {{method_field('PATCH')}}
+        {!! csrf_field() !!}
+        </div>
+    </div>
 </form>
 
 
@@ -29,7 +71,7 @@
         <ul>
         @foreach($answers as $a)
         @if($a->QuestionID == $q->QuestionID)
-        <li <?php //if($a->AnswerID == $q->CorrectAnswer) echo('style="color:red;"'); ?> >{{$a->Answer}}</li>
+        <li <?php if($a->AnswerID == $q->CorrectAnswer) echo('style="color:red;"'); ?> >{{$a->Answer}}</li>
         @endif
         @endforeach
       </ul>

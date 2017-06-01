@@ -1,0 +1,236 @@
+body {
+        background-color: green;
+ }
+
+.stdLogin{
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  height: 33em;
+  padding: 20px;
+}
+.SplashPage{
+  background-color: aliceblue;
+  color:black;
+  padding: 20px;
+  font-weight: bold;
+  height: 33em;
+}
+.InputForm{
+  background-color: blue;
+  margin: 0 auto;
+  margin-top: 10%;
+  margin-bottom: auto;
+  height: 20em;
+  width:50%;
+}
+.banner{
+  height: 8em;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  background-color: black;
+  padding: 15px;
+}
+.workarea{
+  background-color: aliceblue;
+  height: 33em;
+  color: black;
+  font-weight: bold;
+    padding: 15px;
+}
+.questionarea{
+  background-color: aliceblue;
+  height: 33em;
+  color: black;
+  font-weight: bold;
+    padding: 15px;
+}
+.workview{
+  background-color: blue;
+  color: white;
+  height: 33em;
+  font-weight: bold;
+    padding: 15px;
+}
+.templateSelect{
+  height:11em;
+  width:100%;
+  background-color: green;
+  color: white;
+  font-weight: bold;
+    padding: 15px;
+}
+.questionSelect{
+  height:33em;
+  width:100%;
+  background-color: green;
+  color: white;
+  font-weight: bold;
+    padding: 15px;
+}
+.quizSelect{
+  height:11em;
+  width:100%;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+    padding: 15px;
+}
+.sendQuiz{
+  height:11em;
+  width:100%;
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+    padding: 15px;
+}
+.QuestionPanel{
+  height:30em;
+  width:90%;
+  margin: 0 auto;
+  margin-top: 2%;
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+
+}
+.Question{
+  height: 60%;
+  width: 100%;
+  float: left;
+  color: white;
+  font-weight: bold;
+  background-color:red;
+}
+.AnswerOption{
+    height: 30%;
+    width:100%;
+    float: left;
+    color: white;
+    font-weight: bold;
+    background-color: blue;
+}
+.NextQuestion{
+  height: 10%;
+  width:100%;
+  float: left;
+  color: black;
+  font-weight: bold;
+  background-color: aliceblue;
+}
+.testsessionUI{
+  background-color: yellow;
+  height: 25em;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 4em;
+}
+.testSessionChart{
+  height: 100%;
+  width: 33%;
+  float: left;
+  padding: 15px;
+
+}
+.TestCompletion{
+  height: 100%;
+  width: 33%;
+  float: left;
+  padding: 15px;
+
+}
+.TestSessionActions{
+  height: 100%;
+  width: 33%;
+  float: left;
+  padding: 15px;
+
+}
+
+.quizbuildcontainer{
+    height: 40em;
+    width:100%;
+    background-color: aliceblue;
+}
+.template{
+    margin-top: 2em;
+}
+.QBsections1{
+    height:4em;
+    width: auto;
+    padding: 10px;
+    background-color: lightgrey;
+}
+.QBsections2{
+    height:4em;
+    width: auto;
+    padding: 10px;
+    background-color: darkgrey;
+}
+.QBsections3{
+    height:auto;
+    width: auto;
+    padding: 20px;
+    background-color: #9BD4BE;
+}
+
+.QBsections4{
+    height:auto;
+    width: auto;
+    padding: 20px;
+    background-color: #4EAF8A;
+}
+.QBsections5{
+    height:auto;
+    width: auto;
+    padding: 20px;
+    background-color: #4EAFFA;
+}
+
+.QBSelectors{
+    height: 100%;
+    width: 33%;
+    float: left;
+
+}
+.QBSelectorss{
+    height: 100%;
+    width: 100%;
+    float: left;
+
+}
+.QBsegment1{
+    height: 100%;
+    width: 100%;
+    float: left;
+
+}
+
+.questionTotal{
+  width: 50px;
+
+}
+.questionSetup{
+  margin-top: 5px;
+}
+.QListSegment{
+    height: 10em;
+    width:100%;
+    padding: 15px;
+    margin-top: 15px;
+    background-color: rgba(160,160,160,0.6);
+}
+.QListQuestion{
+    height: 100%;
+    float: left;
+    width: 50%;
+
+}
+.QlistchkbxSelect{
+    height: 100%;
+    float: left;
+    margin-right: 20px;
+    width:5%;
+
+}
