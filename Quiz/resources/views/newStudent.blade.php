@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section ('content')
-<a href="/student">Back</a>
+<a href="/adminHome">Back</a>
 <h1>Add Student</h1>
 
 <form method = "POST" action ="/student/add">

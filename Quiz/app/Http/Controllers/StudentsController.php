@@ -12,6 +12,32 @@ use App\Quiz;
 
 class StudentsController extends Controller
 {
+
+public function StudentSearch()
+{
+
+//get the q parameter from URL
+$searchString=$_GET["q"];
+
+//lookup all links from the xml file if length of q>0
+
+if (strlen($searchString)>0) {
+  $result=Student::where('FirstName','like','%'.$searchString.'%')->orWhere('LastName','like','%'.$searchString.'%')->get();
+}
+
+
+return $result;
+//output the response
+
+}
+
+
+
+
+
+
+
+
     public function show()
   {
       $students = Student::all();
@@ -65,4 +91,11 @@ public function edit(Request $request , $id )
       $student->delete();
       return redirect('/student');
     }
+
+
+
+
+
+
+
     }

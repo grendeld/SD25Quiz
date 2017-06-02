@@ -28,6 +28,7 @@ Route::get('/instructor/{instructor}', 'InstructorsController@showedit');
 Route::patch('/instructor/{instructor}/edit', 'InstructorsController@edit');
 Route::get('/instructor/{instructor}/delete', 'InstructorsController@delete');
 Route::post('/newintake','IntakesController@create');
+Route::get('/StudentSearch','StudentsController@StudentSearch');
 
 
 //d3 charts Routes

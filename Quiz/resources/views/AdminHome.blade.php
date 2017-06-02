@@ -28,7 +28,7 @@
         </div>
         <div class="col-md-3">
             <input type="button" value="Students"
-            onclick="javascript: showStudentsPanel();"/>
+            onclick="javascript: showStudentsPanel()"/>
         </div>
 
     </div>
@@ -83,6 +83,20 @@
 </div>
 
 
+<div id="StudentsPanel" style="display:none">
+  <br/>
+                    <input type="text" id="txtSearchStudent" value="" placeholder="Search for a student...">
+                    <button type="button" onclick="javascript:SearchStudent()">Search</button>
+                    <div id="divSearchResult">
+                    </div>
+                    <br/>
+                    <a href="/newStudent">Add new student</a>
+                    <br/>
+
+
+</div>
+
+
 </div>
                 <div class="col-md-12 AdminSidePanelView">
                     <p>Select View Instructor Details and Reports Panel</p>
@@ -94,6 +108,7 @@
               <!---PANEL SELECT AREA END--->
             <!---PANEL VIEW AREA START--->
             <div class="col-md-8">
+
               <div id="divProgram" style="display:none">
                 <h3 id='h3ProgramName'></h3>
                 <br/>
@@ -117,6 +132,15 @@
                 <h3 id='h3IntakeName'></h3>
                 <ul id = "StudentsList"></ul>
                 </div>
+
+                <div id="divStudent" style="display:none">
+                  <h3 id='h3StudentName'></h3>
+                  <br/>
+
+                  <button onclick="javascript:EditStudent()">Edit Student</button>
+                  <button onclick="javascript:DeleteStudent()"> Delete Student</button>
+                </div>
+
 
 
               <div id="divEditIntructorIntake" style="display:none">

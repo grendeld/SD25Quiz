@@ -10,6 +10,7 @@
 //
 // }
 var currentPanel = null;
+var currentDiv = null;
 
 function showProgramsPanel()
 {
@@ -32,13 +33,24 @@ function showIntakesPanel()
         currentPanel = $("#IntakesPanel").fadeIn(10);
 }
 
+function showStudentsPanel()
+{
+  if(currentPanel)
+      currentPanel.fadeOut(100);
+        currentPanel = $("#StudentsPanel").fadeIn(10);
+}
+
 
 function divProgramShow(programJSONstring)
 {
+  if(currentDiv)
+      currentDiv.fadeOut(100);
+        currentDiv = $("#divProgram").fadeIn(10);
+
   program = JSON.parse(programJSONstring);
 
   //clear();
-  divProgram.style.display = "block";
+  //divProgram.style.display = "block";
   //selectInstructor.selectedIndex = "0";
 
   h3ProgramName.innerHTML = program.ProgramName ;
@@ -48,18 +60,22 @@ function divProgramShow(programJSONstring)
   {
     list.innerHTML += ('<li>' + program.modules[i].ModuleName + '</li>');
   }
-
-prog = program;
+  prog = program;
 }
 
 function divInstructorShow(instructorJSONstring)
 {
-instructor = JSON.parse(instructorJSONstring);
-//clear();
-  divInstructor.style.display = "block";
-  selectProgram.selectedIndex = "0";
 
-h3instructorName.innerHTML = instructor.FirstName + ' ' + instructor.LastName;
+  if(currentDiv)
+      currentDiv.fadeOut(100);
+        currentDiv = $("#divInstructor").fadeIn(10);
+
+ instructor = JSON.parse(instructorJSONstring);
+ //clear();
+  //divInstructor.style.display = "block";
+  //selectProgram.selectedIndex = "0";
+
+  h3instructorName.innerHTML = instructor.FirstName + ' ' + instructor.LastName;
 
   list= document.getElementById('IntakesList');
   list.innerHTML = '';
@@ -68,11 +84,15 @@ h3instructorName.innerHTML = instructor.FirstName + ' ' + instructor.LastName;
     list.innerHTML += ('<li>' + instructor.intakes[i].IntakeName + '</li>');
   }
 
-instr = instructor;
+  instr = instructor;
 }
 
 function divIntakeShow(intake)
 {
+  if(currentDiv)
+      currentDiv.fadeOut(100);
+        currentDiv = $("#divIntake").fadeIn(10);
+
   intake = JSON.parse(intake);
   //$("#divIntake").slideDown(100);
   h3IntakeName.innerHTML = intake.IntakeName ;
@@ -84,7 +104,60 @@ function divIntakeShow(intake)
   }
 }
 
+function SearchStudent()
+{
+  $('#divSearchResult').empty();
+  $.ajax({
+    url:'/StudentSearch',
+    type:'get',
+    data:{'q':txtSearchStudent.value},
+    success:function(data){
+      if(data.length>0)
+      {
+        $.each(data,function(i,student){
+          var p = document.createElement("p");
+          p.setAttribute('class','SearchResultString');
+          p.onclick = function(object){
+            return function(){
+              divStudentShow(object);
+            }
+          }(student);
+          p.innerHTML = student.FirstName + " " + student.LastName;
+          $('#divSearchResult').append(p);
+        });
+        //divSearchResult.innerHTML = data;
+      }
+      else
+      {
+        $('#divSearchResult').append('No results');
+      }
+    }
+  });
 
+}
+
+function divStudentShow(student)
+{
+  if(currentDiv)
+      currentDiv.fadeOut(100);
+        currentDiv = $("#divStudent").fadeIn(10);
+
+  //student = JSON.parse(student);
+  //clear();
+   //divStudent.style.display = "block";
+   //selectProgram.selectedIndex = "0";
+
+   h3StudentName.innerHTML = student.FirstName + ' ' + student.LastName;
+
+  //  list= document.getElementById('IntakesList');
+  //  list.innerHTML = '';
+  //  for (var i=0; i<instructor.intakes.length; i++)
+  //  {
+  //    list.innerHTML += ('<li>' + instructor.intakes[i].IntakeName + '</li>');
+  //  }
+
+   stud = student;
+}
 
 
 
