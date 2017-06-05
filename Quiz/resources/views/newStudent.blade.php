@@ -4,7 +4,8 @@
 <a href="/adminHome">Back</a>
 <h1>Add Student</h1>
 
-<form method = "POST" action ="/student/add">
+<form method = "POST" action ="/student">
+  {{method_field('PUT')}}
 <table>
 <tr>
 <td>

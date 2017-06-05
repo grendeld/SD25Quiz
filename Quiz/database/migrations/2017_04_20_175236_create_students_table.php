@@ -17,7 +17,7 @@ class CreateStudentsTable extends Migration
             $table->increments('StudentID')->unique();
             $table->string('FirstName');
             $table->string('LastName');
-            $table->string('Photo');
+            $table->string('Photo')->default('NoPhoto.gif');
             $table->integer('IntakeID')->unsigned();
            // $table->foreign('IntakeID')->references('IntakeID')->on('intakes');
             $table->integer('id')->unsigned()->nullable();
