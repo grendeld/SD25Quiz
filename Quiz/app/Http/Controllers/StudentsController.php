@@ -15,14 +15,22 @@ class StudentsController extends Controller
 
 public function StudentSearch()
 {
-
 //get the q parameter from URL
 $searchString=$_GET["q"];
+if (strlen($searchString)==0)
+return;
+$words = explode(' ',trim($searchString),2);
 
-//lookup all links from the xml file if length of q>0
-
-if (strlen($searchString)>0) {
-  $result=Student::where('FirstName','like','%'.$searchString.'%')->orWhere('LastName','like','%'.$searchString.'%')->get();
+if(isset($words[1]))
+{
+   //lookup all links from the xml file if length of q>0
+  $result = Student::where('FirstName','=',$words[0])
+                    ->where('LastName','like',$words[1].'%')->get();
+}
+else{
+$result = Student::where('FirstName','like','%'.$words[0].'%')
+                ->orWhere('LastName','like','%'.$words[0].'%')
+                ->get();
 }
 
 
@@ -65,11 +73,14 @@ public function newStudent()
       $student = new Student;
       $student->FirstName = $request->FirstName;
       $student->LastName = $request->LastName;
-      $student->Photo = $request->Photo;
      $student->IntakeID = $request->IntakeID;
+
+     if(isset($request->Photo))
+     $student->Photo = $request->Photo;
+
      $student->save();
 
-      return redirect('/student');
+      return redirect('/adminHome');
     }
 public function showedit($id )
 
@@ -77,19 +88,22 @@ public function showedit($id )
       $intakes = Intake::all();
       return view ('editStudent', compact('student', 'intakes'));
     }
+
 public function edit(Request $request , $id )
 
     { $student = Student::find($id);
 
       $student->update($request->all());
-      return redirect('/student');
+      return redirect('/adminHome');
 
     }
-    public function delete(Student $student)
+
+
+    public function delete ()
     {
-      $student = DB::table('students')->where('StudentID','=',$student->StudentID);
+      $student = DB::table('students')->where('StudentID','=',$_POST['StudentID']);
       $student->delete();
-      return redirect('/student');
+      return "deleted";
     }
 
 

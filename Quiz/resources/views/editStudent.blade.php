@@ -3,7 +3,7 @@
 @section ('content')
 
 <div id="divEditStudent">
-<a href="/student">Back to Programs</a>
+
 
 <h1>Edit Student</h1>
 
@@ -60,11 +60,10 @@ Intake Id
 </table>
 <br/>
 <button type="submit" formaction="/student/{{$student->StudentID}}/edit">Save changes</button>
-<button type="submit" form="Cancel" formaction="/student/{{$student->StudentID}}">Cancel</button>
+<button type = "button" onclick="window.location.href='/adminHome'">Cancel</button>
 {{method_field('PATCH')}}
 
 {!! csrf_field() !!}
 </form>
-<form method="get" id="Cancel">
-</form>
+
 @stop

@@ -8,9 +8,44 @@
 <!--[if IE]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+
+<style >
+.divSearchResult:empty{
+  border:none;
+}
+
+.divSearchResult{
+  border:1px solid black;
+  background-color: lightgrey;
+  margin:0;
+  padding:0;
+}
+.SearchResultString:hover {
+  color:navy;
+  background-color:grey;
+}
+
+.AddNewIntake{
+  color:blue;
+}
+
+.AddNewIntake:hover{
+  text-decoration: underline;
+}
+
+#imgStudent{
+  width:200px;
+  height: 250px;
+}
+
+
+
+</style>
 </head>
 @stop
 @section ('content')
+
+
 
   <div class="row">
     <div class="selectPanel">
@@ -78,17 +113,16 @@
                     @endforeach
                     </select>
                     <br/>
-                    <a href="/instructor/add">Add new intake</a>
+                    <span class="AddNewIntake" onclick="Add_new_intake()">Add new intake</span>
                     <br/>
 </div>
 
 
 <div id="StudentsPanel" style="display:none">
   <br/>
-                    <input type="text" id="txtSearchStudent" value="" placeholder="Search for a student...">
+                    <input type="text" id="txtSearchStudent" value="" onkeyup="javascript:SearchStudent()" placeholder="Search for a student...">
                     <button type="button" onclick="javascript:SearchStudent()">Search</button>
-                    <div id="divSearchResult">
-                    </div>
+                    <div id="divSearchResult" class="divSearchResult"></div>
                     <br/>
                     <a href="/newStudent">Add new student</a>
                     <br/>
@@ -107,7 +141,7 @@
             </div>
               <!---PANEL SELECT AREA END--->
             <!---PANEL VIEW AREA START--->
-            <div class="col-md-8">
+            <div id="divs" class="col-md-8">
 
               <div id="divProgram" style="display:none">
                 <h3 id='h3ProgramName'></h3>
@@ -127,7 +161,6 @@
                 <button onclick="javascript:DeleteInstructor()"> Delete Instructor</button>
               </div>
 
-
                 <div id="divIntake" style="display:block">
                 <h3 id='h3IntakeName'></h3>
                 <ul id = "StudentsList"></ul>
@@ -136,11 +169,31 @@
                 <div id="divStudent" style="display:none">
                   <h3 id='h3StudentName'></h3>
                   <br/>
+                  <img id='imgStudent'/>
 
                   <button onclick="javascript:EditStudent()">Edit Student</button>
                   <button onclick="javascript:DeleteStudent()"> Delete Student</button>
                 </div>
 
+
+                <div id="divNewIntake" style="display:none">
+                  <form action="/newintake" method="post">
+                    Program:
+                    <select id="selectProgramID" name="ProgramID" autocomplete="off" required="">
+                      <option value="-1" selected disabled>--Select Program--</option>
+                      @foreach($programs as $p)
+                      <option value="{{$p->ProgramID}}">{{$p->ProgramName}}</option>
+                      @endforeach
+                    </select>
+                    <br/>
+                    Intake Name: <input type = "text" id="txtIntakeName" name="IntakeName" required>
+                    <br/>
+                    {!! csrf_field() !!}
+                    <button type="submit" >Save</button>
+                    <button type = "button" onclick="javascript:hideDivNewIntake()">Cancel</button>
+                  </form>
+
+                </div>
 
 
               <div id="divEditIntructorIntake" style="display:none">
@@ -178,24 +231,8 @@
 
 
 
-<div id="divNewIntake" style="display:none">
-  <form action="/newintake" method="post">
-    Program:
-    <select id="selectProgramID" name="ProgramID" autocomplete="off" required="">
-      <option value="-1" selected disabled>--Select Program--</option>
-      @foreach($programs as $p)
-      <option value="{{$p->ProgramID}}">{{$p->ProgramName}}</option>
-      @endforeach
-    </select>
-    <br/>
-    Intake Name: <input type = "text" id="txtIntakeName" name="IntakeName" required>
-    <br/>
-    {!! csrf_field() !!}
-    <button type="submit"  ="return javascript:validateNewIntake()">Save</button>
-    <button type = "button" onclick="javascript:showDivIntakes()">Cancel</button>
-  </form>
 
-</div>
+
               <div id="dialog" title="Message"></div>
 </div>
             <!---PANEL VIEW AREA END--->

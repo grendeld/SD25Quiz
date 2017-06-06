@@ -28,7 +28,7 @@ Route::get('/instructor/{instructor}', 'InstructorsController@showedit');
 Route::patch('/instructor/{instructor}/edit', 'InstructorsController@edit');
 Route::get('/instructor/{instructor}/delete', 'InstructorsController@delete');
 Route::post('/newintake','IntakesController@create');
-Route::get('/StudentSearch','StudentsController@StudentSearch');
+
 
 
 //d3 charts Routes
@@ -74,12 +74,13 @@ Route::get('/quiz/{quiz}/copy','QuizController@copyQuiz');
 Route::get('/quiz/{quiz}/delete','QuizController@deleteQuiz');
 
 //---Students
-Route::get('/student', 'StudentsController@show');
-Route::get('/newStudent', 'StudentsController@newStudent');
-Route::post('/student/add', 'StudentsController@create');
-Route::get('/student/{student}', 'StudentsController@showedit');
+Route::get('/student','StudentsController@StudentSearch');
+Route::put('/student', 'StudentsController@create');
 Route::patch('/student/{student}/edit', 'StudentsController@edit');
-Route::get('/student/{student}/delete', 'StudentsController@delete');
+Route::delete('/student','StudentsController@delete');
+Route::get('/newStudent', 'StudentsController@newStudent');
+Route::get('/student/{student}','StudentsController@showedit');
+
 //---Instructor
 Route::get('/instructor', 'InstructorsController@show');
 Route::get('/instructor/add', function(){ return view('newInstructor');});

@@ -1,19 +1,12 @@
 
-// function clear()
-// {
-//   divProgram.style.display = "none";
-//   divInstructor.style.display = "none";
-//   divIntakes.style.display = "none";
-//   divEditIntructorIntake.style.display = "none";
-//   divOneIntake.style.display = "none";
-//   divNewIntake.style.display = "none";
-//
-// }
 var currentPanel = null;
 var currentDiv = null;
 
 function showProgramsPanel()
 {
+  if(currentDiv)
+  currentDiv.fadeOut(100);
+
   if(currentPanel)
       currentPanel.fadeOut(100);
         currentPanel = $("#ProgramsPanel").fadeIn(10);
@@ -21,6 +14,9 @@ function showProgramsPanel()
 
 function showInstructorsPanel()
 {
+  if(currentDiv)
+  currentDiv.fadeOut(100);
+
   if(currentPanel)
       currentPanel.fadeOut(100);
         currentPanel = $("#InstructorsPanel").fadeIn(10);
@@ -28,6 +24,9 @@ function showInstructorsPanel()
 
 function showIntakesPanel()
 {
+  if(currentDiv)
+  currentDiv.fadeOut(100);
+
   if(currentPanel)
       currentPanel.fadeOut(100);
         currentPanel = $("#IntakesPanel").fadeIn(10);
@@ -35,6 +34,9 @@ function showIntakesPanel()
 
 function showStudentsPanel()
 {
+  if(currentDiv)
+  currentDiv.fadeOut(100);
+
   if(currentPanel)
       currentPanel.fadeOut(100);
         currentPanel = $("#StudentsPanel").fadeIn(10);
@@ -49,9 +51,6 @@ function divProgramShow(programJSONstring)
 
   program = JSON.parse(programJSONstring);
 
-  //clear();
-  //divProgram.style.display = "block";
-  //selectInstructor.selectedIndex = "0";
 
   h3ProgramName.innerHTML = program.ProgramName ;
   list= document.getElementById('ModulesList');
@@ -71,9 +70,6 @@ function divInstructorShow(instructorJSONstring)
         currentDiv = $("#divInstructor").fadeIn(10);
 
  instructor = JSON.parse(instructorJSONstring);
- //clear();
-  //divInstructor.style.display = "block";
-  //selectProgram.selectedIndex = "0";
 
   h3instructorName.innerHTML = instructor.FirstName + ' ' + instructor.LastName;
 
@@ -104,11 +100,28 @@ function divIntakeShow(intake)
   }
 }
 
+function Add_new_intake()
+{
+  if(currentDiv)
+      currentDiv.fadeOut(100);
+        currentDiv = $("#divNewIntake").fadeIn(10);
+}
+
+function hideDivNewIntake()
+{
+$("#divNewIntake").fadeOut(10);
+}
+
 function SearchStudent()
 {
-  $('#divSearchResult').empty();
+$('#divSearchResult').empty();
+  if(!txtSearchStudent.value.match(/\S/))
+  {
+    return false;
+  }
+
   $.ajax({
-    url:'/StudentSearch',
+    url:'/student',
     type:'get',
     data:{'q':txtSearchStudent.value},
     success:function(data){
@@ -125,7 +138,6 @@ function SearchStudent()
           p.innerHTML = student.FirstName + " " + student.LastName;
           $('#divSearchResult').append(p);
         });
-        //divSearchResult.innerHTML = data;
       }
       else
       {
@@ -141,29 +153,10 @@ function divStudentShow(student)
   if(currentDiv)
       currentDiv.fadeOut(100);
         currentDiv = $("#divStudent").fadeIn(10);
-
-  //student = JSON.parse(student);
-  //clear();
-   //divStudent.style.display = "block";
-   //selectProgram.selectedIndex = "0";
-
    h3StudentName.innerHTML = student.FirstName + ' ' + student.LastName;
-
-  //  list= document.getElementById('IntakesList');
-  //  list.innerHTML = '';
-  //  for (var i=0; i<instructor.intakes.length; i++)
-  //  {
-  //    list.innerHTML += ('<li>' + instructor.intakes[i].IntakeName + '</li>');
-  //  }
-
+   imgStudent.src = 'storage/' + student.Photo;
    stud = student;
 }
-
-
-
-
-
-
 
 function EditProgram(){
 window.location.replace('/program/' + prog.ProgramID);
@@ -210,14 +203,6 @@ if (prog.modules.length>0){
   }
 }
 
-
-
-
-
-
-
-
-
 function DeleteInstructor(){
   dialog.setAttribute("title","Delete Instructor");
   dialog.innerHTML = "Cannot delete instructor with intakes.";
@@ -261,6 +246,9 @@ window.location.replace('/instructor/' + instr.InstructorID);
 }
 
 
+
+
+
 function showdivEditIntructorIntake()
 {
 divEditIntructorIntake.style.display = "block";
@@ -299,10 +287,10 @@ function AddInstructorIntake(intakeJSONstring)
 }
 
 
-
 function RemoveInstructorIntake(intakeJSONstring)
 {
   intake = JSON.parse(intakeJSONstring);
+
  $('#dialog').html("Remove intake " + intake.IntakeName + " from instructor " + instr.FirstName + " " + instr.LastName + "?");
  $( "#dialog" ).dialog({
   modal:true,
@@ -332,43 +320,32 @@ function RemoveInstructorIntake(intakeJSONstring)
 });
 }
 
-
-// function showDivIntakes()
-// {
-//   clear();
-//   selectProgram.selectedIndex = "0";
-//   selectInstructor.selectedIndex = "0";
-//
-// $("#divIntakes").slideToggle(100);
-// document.getElementById("selectProgramID").selectedIndex = "0";
-// }
-
-// function divIntakeShow(intake)
-// {
-// $("#divIntake").slideDown(100);
-//   list=document.getElementById("StudentsList");
-//   list.innerHTML="";
-//   for (var i=0; i<intake.students.length; i++)
-//   {
-//     list.innerHTML += ('<li>' + intake.students[i].FirstName + " " + intake.students[i].LastName + '</li>');
-//   }
-// }
-
-function Add_new_intake()
-{
-$("#divIntakes").slideToggle(100);
-$("#divNewIntake").slideToggle(100);
+function EditStudent(){
+window.location.replace('/student/' + stud.StudentID);
 }
 
-// function validateNewIntake()
-// {
-//   alert("false");
-//   IntakeName=document.getElementById('txtIntakeName');
-//   ProgramID=document.getElementById('selectProgramID');
-//
-//   if (IntakeName.value == "")
-//   {
-//     alert("false");
-//   }
-//   return false;
-// }
+function DeleteStudent()
+{
+$('#dialog').html("Delete Student " + stud.FirstName + " " + stud.LastName + "?");
+$( "#dialog" ).dialog({
+        modal:true,
+        buttons: [{text: "No",   click: function() { $( this ).dialog( "close" );}  },
+                  { text: "Yes",  click: function() {
+                    $.ajaxSetup({
+                      headers: { 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')}
+                                });
+
+                                $.ajax({
+                                  type:   'POST',
+                                  url:    '/student/',
+                                  data:   { _method: 'delete', StudentID: stud.StudentID},
+                                  success: function(data){
+                                    alert('deleted');
+                                    location.reload();
+                                    }
+                                    });
+                                                      }
+                  }],//button "Yes"
+});//dialog
+
+}
