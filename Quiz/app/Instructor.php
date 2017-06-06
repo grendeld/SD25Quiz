@@ -7,7 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Instructor extends Model
 {
     protected $primaryKey='InstructorID';
-    protected $fillable=['FirstName','LastName','id'];
+    protected $fillable=['FirstName','LastName','id','email', 'password'];
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
     public $timestamps=false;
 
 

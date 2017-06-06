@@ -19,6 +19,10 @@ class CreateInstructorsTable extends Migration
             $table->string('LastName');
             $table->integer('id')->unsigned()->nullable();
             $table->foreign('id')->references('id')->on('users');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->rememberToken();
+            $table->timestamps();
           });
 
             Schema::table('quizzes', function ($table) {

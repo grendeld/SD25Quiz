@@ -13,11 +13,15 @@ class InstructorsSeeder extends Seeder
     {
       DB::table('instructors')->insert([
          'FirstName'=>'Doug',
-         'LastName'=>'Jackson', 
+         'LastName'=>'Jackson',
+          'email' => 'Doug@gmail.com',
+        'password' => bcrypt('password')
       ]);
       DB::table('instructors')->insert([
          'FirstName'=>'Brian',
-         'LastName'=>'Westbrook', 
+         'LastName'=>'Westbrook',
+          'email' => 'Brian@gmail.com',
+        'password' => bcrypt('password')
       ]);
     }
 }

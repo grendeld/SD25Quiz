@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Admin extends Model
 {
-    protected $fillable=['AdminName','Password'];
+    protected $fillable=['AdminName','email', 'password'];
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
 }
