@@ -4,7 +4,7 @@
 
 
   <!---MODULE LIST VIEW START--->
-
+<h4>My Modules:</h4>
   <form method="POST" name="formModuleList">
     {!! csrf_field() !!}
     <button type="button" name="button" onclick="return showModuleEdit()">Edit</button>

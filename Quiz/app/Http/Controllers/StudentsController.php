@@ -9,9 +9,30 @@ use App\Intake;
 use App\Program;
 use App\Module;
 use App\Quiz;
+use App\Test;
 
 class StudentsController extends Controller
 {
+
+  public function main()
+    {   //config(['app.timezone' => 'America/Winnipeg']);
+      $id=3;
+        // $quizId=1;
+        //$programs = Program::find($id);
+        // $quizzes = Quiz::find($quizId);
+        $student = Student::find($id);
+        //$intakes = $student->intake;
+        $tests = Test::where('StudentID','=', $id)
+                     ->where('StartDateTime','<',date("Y/m/d H:i:s"))
+                     ->where('StopDateTime','=',null)
+          ->get();
+
+        return view ('StudentHome', compact('student','tests'));
+
+      }
+
+
+
 
 public function StudentSearch()
 {

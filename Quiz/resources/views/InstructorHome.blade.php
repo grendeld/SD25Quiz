@@ -50,8 +50,6 @@
                   @include('instructor.moduleContainer')
                   <!---MODULE TAB END--->
 
-
-
                   <!---QUIZ ADMIN START--->
                   @include('instructor.quizAdmin')
 

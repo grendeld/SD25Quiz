@@ -17,6 +17,17 @@ class TestProvider{
             Students get exact Same questions but in different order
         </Purpose>
     */
+    static function create(int $id=1){
+      if(session()->has('testProvider')){
+          $provider = session()->get("testProvider");
+      }
+      else{
+          $provider = new \App\Test\Providers\TestProvider($id);
+      }
+        session(['testProvider'=>$provider]);
+      return $provider;
+    }
+
     function __construct(int $quizId,bool $random = false){
         $this->currentQuestion = 0;
         $quiz = Quiz::find($quizId);
@@ -75,7 +86,7 @@ class TestProvider{
             Answers the curent question with the answerId
         </Purpose>
     */
-    function answer(int $answerID){
+    function answer(int $answerID = null){
         if(isset($this->questions[$this->currentQuestion]->options[$answerID])){
             $this->questions[$this->currentQuestion]->response = $answerID;
             return true;

@@ -26,13 +26,18 @@
 
         <div class="container-fluid">
             <div class="row">
-              <div class="col-md-12 banner">
-                <a href="/student">Students</a>
-                <a href="/quizzes">Quizzes</a>
-                <a href="/instructor">Instructors</a>
-                <a href="/program">Programs</a>
+              <div class="col-md-9 banner">
+
                 <a href="/adminHome">AdminHome</a>
                 <a href="/instructorHome">InstructorHome</a>
+                <a href="/StudentHome">StudentHome</a>
+
+
+              </div>
+
+              <div class="col-md-3">
+                {{date("Y/m/d H:i:s")}}
+                {{config('app.timezone')}}
               </div>
             </div>
 

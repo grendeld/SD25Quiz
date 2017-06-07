@@ -165,19 +165,23 @@ public function StartTest()
   return "done";
 }
 
-public function TakeTest(Request $request){
+public function CheckQuiz()
+{
+  $checkString=$_GET["q"];
+  if(strlen($checkString)>0)
+  {
+    $result=Test::where('StudentID','=', $checkString)
+                ->where('StartDateTime','=',date("Y/m/d "))
+                ->where('StopDateTime','=', 'null')
+      ->get();
+  }
+    return $result;
+}
+
+public function TakeTest(int $id){
     //dd("hey");
-    
-    if(session()->has('testProvider')){
-        $provider = session()->get("testProvider");
-    }
-    else{
-        $provider = new \App\Test\Providers\TestProvider(2);
-    }
-    $provider->answer(28);
-    session(['testProvider'=>$provider]);
-   // dd(session()->get("testProvider"));
-    //dd($provider->questions);
+        $provider = \App\Test\Providers\TestProvider::create($id);
+
     return view('student.test',compact('provider'));
 }
 

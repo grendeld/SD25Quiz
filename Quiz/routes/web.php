@@ -29,6 +29,8 @@ Route::patch('/instructor/{instructor}/edit', 'InstructorsController@edit');
 Route::get('/instructor/{instructor}/delete', 'InstructorsController@delete');
 Route::post('/newintake','IntakesController@create');
 
+//StudentHome
+Route::get('/StudentHome', 'StudentsController@main');
 
 
 //d3 charts Routes
@@ -62,7 +64,7 @@ Route::post('/module','ModulesController@deleteMod');
 Route::get('/program/{program}/module/{module}/edit', 'ModulesController@showEdit');
 Route::patch('/{program}/{module}', 'ModulesController@edit');
 Route::post('/program/{program}/newModule', 'ModulesController@NewModule');
-Route::post('/newModule','ModulesController@AddModule');
+Route::put('/newModule','ModulesController@AddModule');
 //---Quizzes
 Route::get('/quizzes', 'QuizController@showAll');
 Route::get('/quiz/{quiz}','QuizController@showOne');
@@ -96,12 +98,12 @@ Route::get('/intake/{intake}/delete', 'IntakesController@delete');
 Route::get('/instructorIntake', 'InstructorIntakesController@show');
 Route::get('/instructorIntake/add', function(){ return view('newInstructorIntake');});
 Route::post('/instructorIntake/add', 'InstructorIntakesController@create');
-Route::get('test/Student','QuizController@TakeTest'); //page for doing test
+Route::get('/test/Student/{id}','QuizController@TakeTest'); //page for doing test
 // ------------Should be in a controller
 Route::get('test/Page',function(){ return view('student.question');});
 Route::get('test/Page/{int}',function($int){
-    $quest = session()->get('testProvider')->get($int);
+    $quest = \App\Test\Providers\TestProvider::create()->get($int);
     return view('student.question',compact('quest'));});
 Route::post('test/Page',function(){
-    session()->get('testProvider')->answer($_POST["answer"]);
+    \App\Test\Providers\TestProvider::create()->answer($_POST["answer"]?? null);
     return view('student.question');});

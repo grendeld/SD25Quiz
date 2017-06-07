@@ -10,7 +10,9 @@
           </div>
           <div class="modbuildd">
             <div class="QMSelectors">
+              <h3>Add New Module:</h3>
               <form method="POST" action="/newModule">
+                {{method_field('PUT')}}
                 <label for="ProgramID">Program:</label>
               <select name='ProgramID'>
                 @foreach($programs as $p)

@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section ('content')
-<a href="/adminHome">Back</a>
+
 <h1>Add Student</h1>
 
 <form method = "POST" action ="/student">
@@ -46,6 +46,7 @@ Intake Id
   </tr>
 </table>
   <button type = 'submit'>submit</button>
+  <a href="/adminHome">Back</a>
 
 {!! csrf_field() !!}
 </form>
