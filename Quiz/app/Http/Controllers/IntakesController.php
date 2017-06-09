@@ -8,6 +8,11 @@ use App\Intake;
 
 class IntakesController extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('auth:instructors');
+  }
+
     public function show()
   {
     $intakes = Intake::all();

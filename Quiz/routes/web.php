@@ -10,7 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'InstructorsController@main');
+
+//home Page
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
+Route::get('/home', 'HomeController@index');
+
+//Route::get('/', 'InstructorsController@main');
 Route::get('/instructorHome', 'InstructorsController@main');
 Route::post('/moduleDelete','ModulesController@deleteModule');
 Route::post('/saveTemplate','QuizController@saveTemplate');
@@ -109,3 +118,7 @@ Route::get('test/Page/{int}',function($int){
 Route::post('test/Page',function(){
     \App\Test\Providers\TestProvider::create()->answer($_POST["answer"]?? null);
     return view('student.question');});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

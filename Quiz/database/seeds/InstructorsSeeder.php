@@ -20,7 +20,7 @@ class InstructorsSeeder extends Seeder
       DB::table('instructors')->insert([
          'FirstName'=>'Brian',
          'LastName'=>'Westbrook',
-          'email' => 'Brian@gmail.com',
+          'email' => 'lol@gmail.com',
         'password' => bcrypt('password')
       ]);
     }

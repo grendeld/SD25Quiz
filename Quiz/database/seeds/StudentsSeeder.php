@@ -51,5 +51,13 @@ class StudentsSeeder extends Seeder
           'email' => 'Radny@gmail.com',
             'password' => bcrypt('password')
       ]);
+      DB::table('students')->insert([
+          'FirstName' => 'Pa',
+          'LastName' => 'Ching',
+          'Photo' => '3.jpg',
+          'IntakeID'=>'2',
+          'email' => 'pbtcameron@gmail.com',
+            'password' => bcrypt('password')
+      ]);
     }
 }

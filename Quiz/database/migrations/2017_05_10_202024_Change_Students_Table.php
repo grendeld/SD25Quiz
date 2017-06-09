@@ -14,7 +14,7 @@ class ChangeStudentsTable extends Migration
     public function up()
     {
       Schema::table('students', function ($table) {
-        $table->integer('IntakeID')->unsigned()->change();
+        $table->integer('IntakeID')->unsigned()->nullable()->change();
         $table->foreign('IntakeID')->references('IntakeID')->on('intakes')->change();
       });
 
