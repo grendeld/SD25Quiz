@@ -161,7 +161,6 @@ public function StartTest()
                                   'QuizID'=>$_GET['QuizID'],
                                 'StartDateTime'=>\Carbon\Carbon::now()
                         )    );
-
   return "done";
 }
 
@@ -185,5 +184,9 @@ public function TakeTest(int $id){
     return view('student.test',compact('provider'));
 }
 
+public function ControlTest(int $id){
+ $quiz = Quiz::find($id);
+   return view ('instructor.test',compact('quiz'));
+ }
 
 }

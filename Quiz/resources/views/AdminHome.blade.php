@@ -154,11 +154,16 @@
 
               <div id="divInstructor" style="display:none">
                 <h3 id='h3instructorName'></h3>
+                <button onclick="javascript:EditInstructor()" >Edit Instructor</button>
+                <button onclick="javascript:DeleteInstructor()"> Delete Instructor</button>
                 <br/>
                 <label for="IntakesList">Intakes:</label>
-                <ul id="IntakesList"></ul>
-                <button onclick="javascript:showdivEditIntructorIntake()">Edit Intakes</button>                <button onclick="javascript:EditInstructor()" >Edit Instructor</button>
-                <button onclick="javascript:DeleteInstructor()"> Delete Instructor</button>
+                <p id="IntakesList"></p>
+
+                <button onclick ="javascript:RemoveInstructorIntake()">Remove</button>
+                    <br/><br/>
+                <button onclick="javascript:showdivEditIntructorIntake()">Add Intake</button>
+
               </div>
 
                 <div id="divIntake" style="display:block">
@@ -197,7 +202,7 @@
 
 
               <div id="divEditIntructorIntake" style="display:none">
-                <select id="selectIntake" autocomplete="off" >
+                <select id="Intake_to_edit" autocomplete="off" >
                   <option value="-1" selected disabled>--Select Intake--</option>
                   @foreach($programs as $p)
                   <option disabled>--{{$p->ProgramName}}--</option>
@@ -207,8 +212,7 @@
                   @endforeach
                 </select>
 
-              <button onclick ="javascript:AddInstructorIntake(selectIntake.value)">Add</button>
-              <button onclick ="javascript:RemoveInstructorIntake(selectIntake.value)">Remove</button>
+              <button onclick ="javascript:AddInstructorIntake(Intake_to_edit.value)">Add</button>
             </div>
           </div>
 

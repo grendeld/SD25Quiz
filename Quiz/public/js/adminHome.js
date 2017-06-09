@@ -77,7 +77,9 @@ function divInstructorShow(instructorJSONstring)
   list.innerHTML = '';
   for (var i=0; i<instructor.intakes.length; i++)
   {
-    list.innerHTML += ('<li>' + instructor.intakes[i].IntakeName + '</li>');
+    //list.innerHTML += ('<li>' + instructor.intakes[i].IntakeName + '</li>');
+    list.innerHTML += ('<input type="radio" name="Intake_to_remove" value = "' + instructor.intakes[i].IntakeID + '" text = "'+ instructor.intakes[i].IntakeName +' ">' + instructor.intakes[i].IntakeName + '</> <br/>');
+
   }
 
   instr = instructor;
@@ -254,9 +256,9 @@ function showdivEditIntructorIntake()
 divEditIntructorIntake.style.display = "block";
 }
 
-function AddInstructorIntake(intakeJSONstring)
+function AddInstructorIntake(intake)
 {
-  intake = JSON.parse(intakeJSONstring);
+  intake = JSON.parse(intake);
  $('#dialog').html("Add intake " + intake.IntakeName + " to instructor " + instr.FirstName + " " + instr.LastName + "?");
  $( "#dialog" ).dialog({
   modal:true,
@@ -287,11 +289,32 @@ function AddInstructorIntake(intakeJSONstring)
 }
 
 
-function RemoveInstructorIntake(intakeJSONstring)
+function RemoveInstructorIntake()
 {
-  intake = JSON.parse(intakeJSONstring);
+  //intake = JSON.parse(intakeJSONstring);
 
- $('#dialog').html("Remove intake " + intake.IntakeName + " from instructor " + instr.FirstName + " " + instr.LastName + "?");
+  var radios = document.getElementsByName('Intake_to_remove');
+
+  for (var i = 0, length = radios.length; i < length; i++) {
+      if (radios[i].checked) {
+          // do whatever you want with the checked radio
+          var intakename = radios[i].getAttribute("text");
+          //alert(intakename);
+          var intake = radios[i].value;
+          // only one radio can be logically checked, don't check the rest
+          break;
+      }
+  }
+
+
+
+
+
+  //intake = $('input[name="Intake_to_remove"]:checked').val();
+
+  //intakename = $('input[name="Intake_to_remove"]:checked').intakename();
+
+ $('#dialog').html("Remove intake " + intakename + " from instructor " + instr.FirstName + " " + instr.LastName + "?");
  $( "#dialog" ).dialog({
   modal:true,
   buttons: [
@@ -305,7 +328,7 @@ function RemoveInstructorIntake(intakeJSONstring)
         $.ajax({
           url:'/InstrIntRemove',
           type:'get',
-          data:{'InstructorID':instr.InstructorID, 'IntakeID':intake.IntakeID},
+          data:{'InstructorID':instr.InstructorID, 'IntakeID':intake},
           success:function(data){
             if(data[0] == true){
               divInstructorShow(JSON.stringify(data[1]));

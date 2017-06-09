@@ -98,7 +98,9 @@ Route::get('/intake/{intake}/delete', 'IntakesController@delete');
 Route::get('/instructorIntake', 'InstructorIntakesController@show');
 Route::get('/instructorIntake/add', function(){ return view('newInstructorIntake');});
 Route::post('/instructorIntake/add', 'InstructorIntakesController@create');
-Route::get('/test/Student/{id}','QuizController@TakeTest'); //page for doing test
+//Pages for doing test
+Route::get('/test/Instructor/{id}','QuizController@ControlTest');//Instructor side
+Route::get('/test/Student/{id}','QuizController@TakeTest'); //Student side
 // ------------Should be in a controller
 Route::get('test/Page',function(){ return view('student.question');});
 Route::get('test/Page/{int}',function($int){

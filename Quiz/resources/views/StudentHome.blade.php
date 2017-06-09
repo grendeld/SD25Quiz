@@ -36,7 +36,7 @@ Intake: {{$student->intake->IntakeName}}
 <h4>Available quizzes:</h4>
 @foreach($tests as $t)
 {{$t->TestID}}
-{{$t->quiz->QuizName}}<input type="button" value="Start Quiz" />
+{{$t->quiz->QuizName}}<input type="button" onclick = "StartQuiz({{$t->TestID}})" value="Start Quiz" />
 <br/>
 @endforeach
 
@@ -51,6 +51,11 @@ Intake: {{$student->intake->IntakeName}}
 
 <script>
 
+
+function StartQuiz(QuizID)
+{
+  window.location.href="test/Student/" + QuizID;
+}
 
 function CheckQuiz()
 {

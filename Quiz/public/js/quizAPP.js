@@ -183,7 +183,8 @@ for (var i=0; i<CheckedStudentsID.length; i++)
   type:'get',
   data:{'QuizID':SelectedQuizID, 'StudentID':CheckedStudentsID[i].value},
   success:function(data){
-    alert(data);
+     alert(data);
+     window.location.href = "test/Instructor/" + SelectedQuizID;
   }
 });
 
