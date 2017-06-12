@@ -29,6 +29,8 @@ class ForgotPasswordController extends Controller
      *
      * @return void
      */
+
+
      //formerly overwrote  broker() from one of the PasswordBroker.php
      //remains here for reference
 
@@ -36,9 +38,8 @@ class ForgotPasswordController extends Controller
      //{
     //   return Password::broker('students');
     // }
+
      //overwritten sendResetLinkEmail
-
-
      public function sendResetLinkEmail(Request $request)
      {
          $this->validateEmail($request);
@@ -46,17 +47,16 @@ class ForgotPasswordController extends Controller
          // We will send the password reset link to this user. Once we have attempted
          // to send the link, we will examine the response then see the message we
          // need to show to the user. Finally, we'll send out a proper response.
+
+         //declaring relevant variables
          $response = PasswordFixer::INVALID_USER;
          $types = ['students','instructors','admins'];
 
-
-        
         for ($i = 0; count($types)>$i && $response == PasswordFixer::INVALID_USER;$i++)
         {
           $response = Password::broker($types[$i])->sendResetLink($request->only('email'));
         }
-
-          //dd($response);
+          //dd($response); (was used for testing)
          return $response == Password::RESET_LINK_SENT
                      ? $this->sendResetLinkResponse($response)
                      : $this->sendResetLinkFailedResponse($request, $response);

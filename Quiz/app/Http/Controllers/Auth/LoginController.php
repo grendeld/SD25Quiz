@@ -42,7 +42,8 @@ class LoginController extends Controller
 
     /*OVERWRITTEN THE attemptLogin from AuthenticatesUsers  in laravel/framework/src/illuminate/foundation/auth
     //Checks which user is to be logged in
-    //TODO refactor to be more smilar to the for loop in resetPassword controller(ref)*/
+    
+    //TODO refactor to be more similar to the for loop in resetPassword controller(ref)*/
 
     protected function attemptLogin(Request $request)
     {

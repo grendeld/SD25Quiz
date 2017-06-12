@@ -36,7 +36,7 @@ class ResetPasswordController extends Controller
 
     protected $redirectTo = '/home';
 
-    
+
     public function reset(Request $request)
     {
       $this->validate($request, $this->rules(), $this->validationErrorMessages());
@@ -64,7 +64,6 @@ class ResetPasswordController extends Controller
         return $response == Password::PASSWORD_RESET
                     ? $this->sendResetResponse($response)
                     : $this->sendResetFailedResponse($request, $response);
-
 
     }
 

@@ -20,6 +20,7 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
+    //SD25QUIZ NOTE: allowing only students to register
 
     use RegistersUsers;
 
