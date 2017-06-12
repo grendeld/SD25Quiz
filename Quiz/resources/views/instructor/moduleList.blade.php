@@ -1,27 +1,29 @@
 
 
-<div id="ModuleListViewTABcontainer" style="display:"none">
+<div id="ModuleListViewTABcontainer" style="display:none">
 
 
   <!---MODULE LIST VIEW START--->
-<h4>My Modules:</h4>
+<h4> My Modules:</h4>
   <form method="POST" name="formModuleList">
     {!! csrf_field() !!}
     <button type="button" name="button" onclick="return showModuleEdit()">Edit</button>
     <button type="submit" name="button" formaction="/moduleDelete">Delete</button>
     <div class="moduleListcontainer" id="moduleListcontainer">
       @foreach($modules as $m)
+
       <div class="QuizListCell">
           <div class="QuizListCellSelect" id="ModuleListCellName">
-              <input type="radio" name="ModID" value="{{$m->ModuleID}}" id="ModuleListItem" text=""/>
+              <input  type="radio" name="ModID" value="{{$m->ModuleID}}" id="ModuleListItem" required />
           </div>
           <div class="QuizListCellName" id="ModuleListSelect" name = "{{$m->ModuleID}}">
               {{$m->ModuleName}}
           </div>
           <div class="QuizListCellActive">
-            {{$m->Active}}
+            Active: {{$m->Active}}
           </div>
       </div>
+
       @endforeach
     </div>
   </form>
@@ -31,8 +33,9 @@
   <form method="POST">
     {!! csrf_field() !!}
     <br/>
+    <h3>Module Name:</h3>
     <input type="text" name="ModuleName" id="txtModuleName"/>
-    <input type="text" name="ModuleID" id="txtModuleID">
+    <input type="hidden" name="ModuleID" id="txtModuleID">
     <h3>Active:</h3>
   <select name='Active'>
     <option id='None' value='None'>Select</option>
@@ -51,8 +54,8 @@
 
 function showModuleEdit()
 {
-var modules = {!! json_encode($modules->toArray()) !!};
 var id = document.querySelector('input[name="ModID"]:checked').value;
+var modules = {!! json_encode($modules) !!};
 var name = modules[id-1].ModuleName;
 
 if (modules[id-1].Active == "Yes"){
@@ -61,7 +64,6 @@ document.getElementById('optionYes').selected = "selected";
 else {
 document.getElementById('optionNo').selected = "selected";
 }
-//document.getElementsbyName('Active')[0].getElementsByTagName('option')[1].selected="selected";
 ModuleListViewTABcontainer.style.display = "none";
 divModuleEdit.style.display = "block";
 txtModuleName.value = name;

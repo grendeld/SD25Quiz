@@ -8,9 +8,7 @@
   <![endif]-->
   @stop
   @section ('content')
-    <?php
-    $Panel = Session::get('Panel');
-    ?>
+
   <div class="container-fluid">
     <!---INSTRUCTOR HOME PAGE START--->
         <div class="row">
@@ -70,6 +68,7 @@
               </div>
             </div>
             <!---WORK AREA END--->
+
             <!---WORK VIEW START--->
             <div class="col-md-6">
               <div class="workview">
@@ -81,8 +80,13 @@
                   @include('instructor.questionList')
                   <!---QUESTIONLIST VIEW END--->
                   <!---TEMPLATE LIST VIEW START--->
-                  <div id="TemplateListViewTABcontainer">
-Templates:
+                  <div id="quiztemplateViewTABcontainer">
+My templates:
+@foreach($quizzes as $q)
+<p>{{$q->QuizName}}</p>
+
+@endforeach
+
                   </div>
                   <!---TEMPLATE LIST VIEW END--->
                   <!---QUIZ LIST VIEW START--->

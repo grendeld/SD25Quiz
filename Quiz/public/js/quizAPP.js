@@ -4,7 +4,6 @@ var currentPanel = null;
 function modulebuilder() {
     if(currentPanel)
         currentPanel.fadeOut(100);
-
           currentPanel = $("#moduleTABcontainer").fadeIn(400);
 }
 
@@ -66,14 +65,12 @@ function templateView(){
 if(currentPanel)
         currentPanel.fadeOut(100);
         $("#quiztemplateViewTABcontainer").fadeIn(400);
-
 }
 
 function MyModulesView(){
  if(currentPanel)
         currentPanel.fadeOut(100);
         $("#ModuleListViewTABcontainer").fadeIn(400);
-
 }
 
 
@@ -94,7 +91,6 @@ function PublicQuizListView(){
       $("#ViewPublicQuizes").click(function(){
           $("#MySelectedQuiz").fadeOut(400);
           $("#SelectedPublicQuiz").fadeIn(400);
-
       });
   });
 }
