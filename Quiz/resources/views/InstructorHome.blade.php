@@ -22,6 +22,7 @@
         <!---MENU PANEL START--->
         <div class="row">
           <div class="selectPanel">
+            <h1>Welcome {{$instructor->FirstName}}</h1>
               <div class="col-md-3">
                 <input type="button" value="Create Modules" id="Modulebuilder"
                 onclick="javascript: modulebuilder();"/>

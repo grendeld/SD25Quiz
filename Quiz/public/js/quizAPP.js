@@ -76,14 +76,7 @@ function MyModulesView(){
 
 }
 
-function MyModulesView(){
-  $(function(){
-    $("#MymoduleView").click(function(){
-        $("#ModuleListViewTABcontainer").fadeIn(400);
-    });
-  });
 
-}
 
 function ViewMyQuizes(){
   $(function(){

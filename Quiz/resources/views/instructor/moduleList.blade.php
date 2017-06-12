@@ -1,6 +1,6 @@
 
 
-<div id="ModuleListViewTABcontainer" style="display: @if($Panel==1) {{"block"}} @else {{"none"}} @endif">
+<div id="ModuleListViewTABcontainer" style="display:"none">
 
 
   <!---MODULE LIST VIEW START--->

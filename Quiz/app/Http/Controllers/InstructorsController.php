@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use DB;
+use Auth;
 use App\Instructor;
 use App\Program;
 use App\Module;
@@ -20,11 +21,12 @@ class InstructorsController extends Controller
     {
       $programs = Program::all();
       $modules = Module::all();
-      $quizzes = Quiz::all();
-      $id=1;
+      $id=Auth::user()->InstructorID;
       $instructor = Instructor::find($id);
+      $quizzes = $instructor->quizzes;
       $intakes = $instructor->intakes;
-      return view ('InstructorHome', compact('programs', 'modules', 'quizzes', 'intakes'));
+      //$programs = $intakes->program;
+      return view ('InstructorHome', compact('instructor','programs', 'modules', 'quizzes', 'intakes'));
 
     }
 
