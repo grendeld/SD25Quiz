@@ -3,6 +3,7 @@
   @extends('layout')
   @section ('header')
   <title>InstructorHome</title>
+  <link rel="icon" href="images/cap.ico">
   <!--[if IE]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->

@@ -1,6 +1,7 @@
 @extends('layout')
 @section ('header')
 <title>Student home</title>
+<link rel="icon" href="images/cap.ico">
 
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">

@@ -4,19 +4,19 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-        @font-face{
-          font-family:"marzo-w00-regular";
-          src: url("https://static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/e947b76a-edcf-4519-bc3d-c2da35865717.woff");
-          }
-        </style>
+
         <title>Quizard</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
+        <link rel="icon" href="images/cap.ico">
         <style>
+        @font-face{
+          font-family:"marzo-w00-regular";
+          src: url("https://static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/e947b76a-edcf-4519-bc3d-c2da35865717.woff");
+          }
             html, body {
                 background-color: #fff;
                 color: #636b6f;
@@ -24,6 +24,15 @@
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
+            }
+            h1{
+              background: #636b6f;
+              background: -webkit-linear-gradient(top, #878787, #000,#00001a);
+	            background: linear-gradient(top, #878787, #000,#00001a);
+              background: -o-linear-gradient(top, #878787, #000,#00001a);
+              background: -moz-linear-gradient(top, #878787, #000,#00001a);
+	            -webkit-background-clip: text;
+	             -webkit-text-fill-color: transparent;
             }
 
             .full-height {

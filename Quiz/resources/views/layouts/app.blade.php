@@ -8,10 +8,26 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Quizard</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="icon" href="images/cap.ico">
+    <style>
+    @font-face{
+      font-family:"marzo-w00-regular";
+      src: url("https://static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/e947b76a-edcf-4519-bc3d-c2da35865717.woff");
+      }
+      a {
+          color: #636b6f;
+          padding: 0 25px;
+          font-size: 12px;
+          font-weight: 600;
+          letter-spacing: .1rem;
+          text-decoration: none;
+          text-transform: uppercase;
+      }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -29,7 +45,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        Quizard
                     </a>
                 </div>
 
@@ -43,8 +59,12 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('login') }}"><font face="marzo-w00-regular, fantasy">
+                              Login
+                          </font></a></li>
+                            <li><a href="{{ route('register') }}"><font face="marzo-w00-regular, fantasy">
+                              Register
+                          </font></a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

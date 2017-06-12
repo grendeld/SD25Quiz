@@ -5,6 +5,7 @@
 <script type="text/javascript" src="js/adminHome.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+<link rel="icon" href="images/cap.ico">
 <!--[if IE]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
