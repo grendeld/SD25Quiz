@@ -1,10 +1,14 @@
 ﻿
 var currentPanel = null;
+var currentView = null;
 
 function modulebuilder() {
     if(currentPanel)
         currentPanel.fadeOut(100);
           currentPanel = $("#moduleTABcontainer").fadeIn(400);
+
+        if(currentView)
+          currentView.fadeOut(100);
 }
 
 function quizbuilder() {
@@ -13,13 +17,20 @@ function quizbuilder() {
         currentPanel.fadeOut(100);
          currentPanel =    $("#quizadminTABcontainer").fadeIn(400);
 
+    if(currentView)
+       currentView.fadeOut(100);
+
+
 }
 
 function quizviewshare() {
     if(currentPanel)
         currentPanel.fadeOut(100);
-
         currentPanel =     $("#quizshareTABcontainer").fadeIn(400);
+
+        if(currentView)
+          currentView.fadeOut(100);
+
 
 }
 
@@ -28,6 +39,10 @@ function quizdeploy() {
         currentPanel.fadeOut(100);
 
             currentPanel = $("#quizdeployTABcontainer").fadeIn(400);
+
+            if(currentView)
+              currentView.fadeOut(100);
+
 }
 
 
@@ -62,15 +77,21 @@ function openTemplate() {
 }
 
 function templateView(){
-if(currentPanel)
-        currentPanel.fadeOut(100);
-        $("#quiztemplateViewTABcontainer").fadeIn(400);
+//if(currentPanel)
+        //currentPanel.fadeOut(100);
+        if(currentView)
+          currentView.fadeOut(100);
+        currentView = $("#TemplateListViewTABcontainer").fadeIn(400);
 }
 
 function MyModulesView(){
- if(currentPanel)
-        currentPanel.fadeOut(100);
-        $("#ModuleListViewTABcontainer").fadeIn(400);
+ //if(currentPanel)
+        //currentPanel.fadeOut(100);
+        if(currentView)
+          currentView.fadeOut(100);
+        currentView = $("#ModuleListViewTABcontainer").fadeIn(400);
+
+
 }
 
 

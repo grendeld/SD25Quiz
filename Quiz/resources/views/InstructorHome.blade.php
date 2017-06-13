@@ -77,7 +77,7 @@
             <!---WORK AREA END--->
             <!---WORK VIEW START--->
             <div class="col-md-6">
-              <div class="workview">
+              <div id="divWorkView" class="workview">
                   <!---MODULE LIST VIEW START--->
                   @include('instructor.moduleList')
                   <!---MODULE LIST VIEW END--->
