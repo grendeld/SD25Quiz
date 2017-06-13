@@ -13,35 +13,40 @@
     $Panel = Session::get('Panel');
     ?>
   <div class="container-fluid">
-    <!---INSTRUCTOR HOME PAGE START--->
-        <div class="row">
-          <div class="banner">
-            top banner display logged in username, program-name and date<br/>
-            TEST SESSION PAGE and LOG OUT PAGE - link buttons will be here
-          </div>
+
+    <div class="row">
+        <div class="selectPanel">
+            <div class="col-md-3 TopMenuInstructor">
+                    <button class="InstructMenu" onclick="modulebuilder(event, 'moduleTABcontainer')" id="Modulebuilder">
+    	             		<span>
+    	               		<h4>Create Modules</h4>
+    	             		</span>
+    	             	</button>
+            </div>
+            <div class="col-md-3 TopMenuInstructor">
+                    <button class="InstructMenu" onclick="quizbuilder(event, 'quizadminTABcontainer')" id="Quizbuilder">
+                      <span>
+                        <h4>Quiz Admin</h4>
+                      </span>
+                    </button>
+            </div>
+            <div class="col-md-3 TopMenuInstructor">
+                    <button class="InstructMenu" onclick="quizviewshare(event, 'quizshareTABcontainer')" id="QuizView">
+                      <span>
+                        <h4>View Quizes</h4>
+                      </span>
+                    </button>
+            </div>
+            <div class="col-md-3 TopMenuInstructor">
+                    <button class="InstructMenu" onclick="quizdeploy(event, 'quizdeployTABcontainer')" id="QuizDeploy">
+                      <span>
+                        <h4>Deploy Quiz</h4>
+                      </span>
+                    </button>
+            </div>
         </div>
-        <!---MENU PANEL START--->
-        <div class="row">
-          <div class="selectPanel">
-              <div class="col-md-3">
-                <input type="button" value="Create Modules" id="Modulebuilder"
-                onclick="javascript: modulebuilder();"/>
-              </div>
-              <div class="col-md-3">
-                  <input type="button" value="Create Quiz" id="Quizbuilder"
-                  onclick="javascript: quizbuilder();" />
-              </div>
-              <div class="col-md-3">
-                  <input type="button" value="View Quizes" id="QuizView"
-                  onclick="javascript: quizviewshare();"/>
-              </div>
-              <div class="col-md-3">
-                  <input type="button" value="Deploy Quiz" id="QuizDeploy"
-                  onclick="javascript: quizdeploy();"/>
-              </div>
-          </div>
-        </div>
-        <!---MENU PANEL END--->
+      </div>
+      <!---MENU PANEL END--->
         <!---INSTRUCTOR HOME PAGE START--->
         <div class="row">
             <!---WORK AREA START--->
@@ -57,11 +62,12 @@
                   <!---QUIZ ADMIN END--->
                   <!---QUIZ VIEW SHARE START--->
                   <div id="quizshareTABcontainer">
+                      <div class="AdminPanell">
+                          @foreach($quizzes as $q)
+                          <p>{{$q->QuizName}}</p>
 
-@foreach($quizzes as $q)
-<p>{{$q->QuizName}}</p>
-
-@endforeach
+                          @endforeach
+                      </div>
                   </div>
                   <!---QUIZ VIEW SHARE END--->
                   <!---QUIZ DEPLOY START--->
@@ -72,7 +78,7 @@
             <!---WORK AREA END--->
             <!---WORK VIEW START--->
             <div class="col-md-6">
-              <div class="workview">
+              <div id="divWorkView" class="workview">
                   <!---MODULE LIST VIEW START--->
                   @include('instructor.moduleList')
                   <!---MODULE LIST VIEW END--->

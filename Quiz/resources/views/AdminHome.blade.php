@@ -47,35 +47,68 @@
 @section ('content')
 
 
+<!---ADMIN HOME MENU START--->
+<div class="row">
+  <div class="selectPanel">
+      <div class="col-md-3 TopMenuInstructor">
+              <button class="InstructMenu"
+              onclick="javascript: showProgramsPanel()">
+                  <span>
+                      <h4>Programs</h4>
+                  </span>
+              </button>
+      </div>
+      <!--<div class="col-md-3">
+        <input type="button" value="Programs"
+        onclick="javascript: showProgramsPanel()"/>
+      </div>-->
+      <div class="col-md-3 TopMenuInstructor">
+              <button class="InstructMenu"
+              onclick="javascript: showInstructorsPanel()">
+                  <span>
+                      <h4>Instructors</h4>
+                  </span>
+              </button>
+      </div>
+      <!---<div class="col-md-3">
+          <input type="button" value="Instructors"
+          onclick="javascript: showInstructorsPanel()" />
+      </div>--->
+      <div class="col-md-3 TopMenuInstructor">
+              <button class="InstructMenu"
+              onclick="javascript: showIntakesPanel()">
+                  <span>
+                      <h4>Intakes</h4>
+                  </span>
+              </button>
+      </div>
+      <!---<div class="col-md-3">
+          <input type="button" value="Intakes"
+          onclick="javascript: showIntakesPanel()"/>
+      </div>--->
+      <div class="col-md-3 TopMenuInstructor">
+              <button class="InstructMenu"
+              onclick="javascript: showStudentsPanel()">
+                  <span>
+                      <h4>Students</h4>
+                  </span>
+              </button>
+      </div>
+      <!---<div class="col-md-3">
+          <input type="button" value="Students"
+          onclick="javascript: showStudentsPanel()"/>
+      </div>--->
 
-  <div class="row">
-    <div class="selectPanel">
-        <div class="col-md-3">
-          <input type="button" value="Programs"
-          onclick="javascript: showProgramsPanel()"/>
-        </div>
-        <div class="col-md-3">
-            <input type="button" value="Instructors"
-            onclick="javascript: showInstructorsPanel()" />
-        </div>
-        <div class="col-md-3">
-            <input type="button" value="Intakes"
-            onclick="javascript: showIntakesPanel()"/>
-        </div>
-        <div class="col-md-3">
-            <input type="button" value="Students"
-            onclick="javascript: showStudentsPanel()"/>
-        </div>
-
-    </div>
   </div>
+</div>
+  <!----ADMIN HOME MENU END--->
             <!---PANEL SELECT AREA START--->
             <div class="col-md-4 AdminLeftSide">
                 <div class="col-md-12 AdminSidePanelInput">
 
-<div id="ProgramsPanel" style="display:none">
+                <div id="ProgramsPanel" style="display:none">
                       <label for="selectProgram">Programs:</label>
-                      <select id="selectProgram" autocomplete="off" onchange="javascript:divProgramShow(this.value)" >
+                      <select class="quizbuttonn" id="selectProgram" autocomplete="off" onchange="javascript:divProgramShow(this.value)" >
                         <option value="-1" selected disabled>Choose program...</option>
                         @foreach ($programs as $p)
                         <option value="{{$p->load('modules')}}">
@@ -84,13 +117,13 @@
                       @endforeach
                       </select>
                       <br/>
-                      <a href="/program/add">Add new progam</a>
+                      <a class="quizbutton" href="/program/add">Add new progam</a>
                       <br/>
 
-</div>
+                  </div>
 <div id="InstructorsPanel" style="display:none">
                     <label for="selectInstructor">Instructors:</label>
-                    <select id="selectInstructor" autocomplete="off" onchange="javascript:divInstructorShow(this.value)" >
+                    <select class="quizbuttonn" id="selectInstructor" autocomplete="off" onchange="javascript:divInstructorShow(this.value)" >
                       <option value="-1" selected disabled>Choose instructor...</option>
                       @foreach ($instructors as $i)
                       <option value="{{$i->load('intakes')}}">
@@ -99,13 +132,13 @@
                     @endforeach
                     </select>
                     <br/>
-                    <a href="/instructor/add">Add new instructor</a>
+                    <a class="quizbutton" href="/instructor/add">Add new instructor</a>
                     <br/>
 </div>
 
 <div id="IntakesPanel" style="display:none">
                     <label for="selectIntake">Intakes:</label>
-                    <select id="selectIntake" autocomplete="off" onchange="javascript:divIntakeShow(this.value)" >
+                    <select class="quizbuttonn" id="selectIntake" autocomplete="off" onchange="javascript:divIntakeShow(this.value)" >
                       <option value="-1" selected disabled>Choose intake...</option>
                       @foreach ($intakes as $int)
                       <option value="{{$int->load('students')}}">
@@ -144,26 +177,26 @@
             <!---PANEL VIEW AREA START--->
             <div id="divs" class="col-md-8">
 
-              <div id="divProgram" style="display:none">
+              <div class="AdminProgramsView" id="divProgram" style="display:none">
                 <h3 id='h3ProgramName'></h3>
                 <br/>
                 <label for="ModulesList">Modules:</label>
                 <ul id="ModulesList"></ul>
-                <button onclick="javascript:EditProgram()" >Edit Program</button>
-                <button onclick="javascript:DeleteProgram()">Delete/Hide Program</button>
+                <button class="quizbutton" onclick="javascript:EditProgram()" >Edit Program</button>
+                <button class="quizbutton" onclick="javascript:DeleteProgram()">Delete/Hide Program</button>
                 </div>
 
               <div id="divInstructor" style="display:none">
                 <h3 id='h3instructorName'></h3>
-                <button onclick="javascript:EditInstructor()" >Edit Instructor</button>
-                <button onclick="javascript:DeleteInstructor()"> Delete Instructor</button>
+                <button class="quizbutton" onclick="javascript:EditInstructor()" >Edit Instructor</button>
+                <button class="quizbutton" onclick="javascript:DeleteInstructor()"> Delete Instructor</button>
                 <br/>
                 <label for="IntakesList">Intakes:</label>
                 <p id="IntakesList"></p>
 
-                <button onclick ="javascript:RemoveInstructorIntake()">Remove</button>
+                <button class="quizbutton" onclick ="javascript:RemoveInstructorIntake()">Remove</button>
                     <br/><br/>
-                <button onclick="javascript:showdivEditIntructorIntake()">Add Intake</button>
+                <button class="quizbutton" onclick="javascript:showdivEditIntructorIntake()">Add Intake</button>
 
               </div>
 
@@ -177,8 +210,8 @@
                   <br/>
                   <img id='imgStudent'/>
 
-                  <button onclick="javascript:EditStudent()">Edit Student</button>
-                  <button onclick="javascript:DeleteStudent()"> Delete Student</button>
+                  <button class="quizbutton" onclick="javascript:EditStudent()">Edit Student</button>
+                  <button class="quizbutton" onclick="javascript:DeleteStudent()"> Delete Student</button>
                 </div>
 
 

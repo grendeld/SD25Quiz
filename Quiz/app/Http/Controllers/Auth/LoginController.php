@@ -42,7 +42,7 @@ class LoginController extends Controller
 
     /*OVERWRITTEN THE attemptLogin from AuthenticatesUsers  in laravel/framework/src/illuminate/foundation/auth
     //Checks which user is to be logged in
-    
+
     //TODO refactor to be more similar to the for loop in resetPassword controller(ref)*/
 
     protected function attemptLogin(Request $request)
@@ -50,11 +50,12 @@ class LoginController extends Controller
       if (Auth::guard('students')->attempt($this->credentials($request), $request->has('remember')))
         {
           Auth::setDefaultDriver('students');
-        $this->redirectTo = '/home';
+        $this->redirectTo = '/StudentHome';
           return true;
         }
       elseif (Auth::guard('admins')->attempt($this->credentials($request), $request->has('remember'))) {
         Auth::setDefaultDriver('admins');
+        $this->redirectTo = '/adminHome';
         return true;
       }
       elseif (Auth::guard('instructors')->attempt($this->credentials($request), $request->has('remember'))) {

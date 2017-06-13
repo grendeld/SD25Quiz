@@ -1,20 +1,24 @@
 .modbuild{
-  height: 6em;
-  background-color: darkgrey;
+  height: 8em;
+  background-color: rgb(169, 204, 227);
   width: 100%;
   padding: 30px;
 }
 .modbuildd{
-  height: 8em;
-  background-color: lightgrey;
+  height: 20em;
+  background-color: rgb(234, 242, 248);
   width: 100%;
   padding: 30px;
 }
 
 .QMSelectors{
-  height: 100%;
-  width: 60%;
+  height: auto;
+  overflow: auto;
+  margin-bottom: 20px;
+  width: 100%;
   float: left;
+
+
 
 }
 .QMSelectorss{

@@ -11,8 +11,13 @@ class ModulesController extends Controller
 {
   public function deleteModule() //new // Set module inactive
   {
+    if (isset($_POST['ModID']))
+    {
+      
     $id=$_POST['ModID'];
-    Module::where('ModuleID',$id) -> update(['Active'=>'No']);
+
+      Module::where('ModuleID',$id) -> update(['Active'=>'No']);
+    }
     return back();
   }
 
