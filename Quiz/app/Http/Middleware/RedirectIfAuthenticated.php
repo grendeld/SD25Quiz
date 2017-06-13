@@ -15,12 +15,39 @@ class RedirectIfAuthenticated
      * @param  string|null  $guard
      * @return mixed
      */
-    public function handle($request, Closure $next, $guard = null)
+    public function handle($request, Closure $next, $guard = ['students','instructors','admins'])
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect('/home');
+        //dd($guard);
+        if(is_array($guard)){
+            foreach( $guard as $g){
+                if (Auth::guard($g)->check()) {
+                    $temp = $g;
+                }
+            }
         }
-
+        else
+        {
+            if (Auth::guard($guard)->check()) {
+                    $temp = $guard;
+                }
+        }
+        
+        if(isset($temp))
+        {
+            switch($temp){
+                    case 'students':
+                        return redirect('/StudentHome');
+                        break;
+                    case 'instructors':
+                        return redirect('/instructorHome');
+                        break;
+                    case 'admins':
+                    return redirect('/adminHome');
+                        break;
+                }
+        }
+        
+     
         return $next($request);
     }
 }

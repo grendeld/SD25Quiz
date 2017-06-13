@@ -28,6 +28,9 @@ public function quizzes()
   return $this->HasMany('App\Quiz','InstructorID','InstructorID');
 }
 
+public function programs(){
+    return $this->hasManyThrough('App\Program','App\Intake','IntakeID','ProgramID','InstructorID');
+}
 
 
 

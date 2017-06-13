@@ -19,20 +19,11 @@ class InstructorsController extends Controller
   }
     public function main()
     {
-      $id=Auth::user()->InstructorID;
-      $instructor = Instructor::find($id);
+      
 
-      $programs = array();
-      foreach ($instructor->intakes as $int)
-      {
-        if (!in_array($int->program, $programs))
-        {
-        array_push($programs, $int->program);
-        }
-      }
 
      $modules = array();
-      foreach($programs as $p)
+      foreach(Auth::user()->programs as $p)
        {
           foreach($p->modules as $m)
           {
@@ -41,8 +32,10 @@ class InstructorsController extends Controller
        }
 
 
-      $quizzes = $instructor->quizzes;
-      $intakes = $instructor->intakes;
+      $quizzes = Auth::user()->quizzes;
+      $intakes = Auth::user()->intakes;
+      $programs = Auth::user()->programs;
+      $instructor = Auth::user();
 
       return view ('InstructorHome', compact('instructor','programs', 'modules', 'quizzes', 'intakes'));
 
