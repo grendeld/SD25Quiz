@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use DB;
+use Auth;
 use Illuminate\Http\Request;
 use App\Student;
 use App\Intake;
@@ -13,19 +14,26 @@ use App\Test;
 
 class StudentsController extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('auth:students');
+  }
 
   public function main()
     {   //config(['app.timezone' => 'America/Winnipeg']);
-      $id=3;
+      //dd(Auth::user());
+      //Auth::user();
         // $quizId=1;
         //$programs = Program::find($id);
         // $quizzes = Quiz::find($quizId);
-        $student = Student::find($id);
+        $student = Auth::user();
+
+        $tests = Auth::user()->Tests;
         //$intakes = $student->intake;
-        $tests = Test::where('StudentID','=', $id)
+        /*$tests = Test::where('StudentID','=', $id)
                      ->where('StartDateTime','<',date("Y/m/d H:i:s"))
                      ->where('StopDateTime','=',null)
-          ->get();
+          ->get();*/
 
         return view ('StudentHome', compact('student','tests'));
 

@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class Student extends Authenticatable
 {
   use Notifiable;
-  
+
     protected $primaryKey = 'StudentID';
     protected $fillable=['FirstName','LastName','Photo','IntakeID','id','email', 'password'];
     public $timestamps = false;
@@ -22,4 +22,7 @@ public function Intake ()
   return $this->belongsTo('App\Intake','IntakeID','IntakeID');
 }
 
+public function Tests(){
+  return $this->hasMany('App\Test','StudentID','StudentID');
+  }
 }
