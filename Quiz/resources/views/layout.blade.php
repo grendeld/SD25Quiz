@@ -7,6 +7,8 @@
       <meta name="keywords" content="">
       <meta name="csrf-token" content="{{ csrf_token() }}">
       <link rel="stylesheet" href="/css/styles.css">
+      <link rel="stylesheet" href="/css/adminstyles.css">
+      <link rel="stylesheet" href="/css/ModuleBuilder.css">
       <link rel="stylesheet" href="/css/bootstrap.min.css">
       <link rel="stylesheet" href="/css/bootstrap.css">
       <link rel="stylesheet" href="/css/bootstrap-grid.css">
@@ -25,33 +27,44 @@
     <body>
 
         <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-9 banner">
 
-                <a href="/adminHome">AdminHome</a>
-                <a href="/instructorHome">InstructorHome</a>
-                <a href="/StudentHome">StudentHome</a>
+            <div class="row MainMenu">
+              <div class="selectPanell">
+                <div class="col-md-12">
+                  <div class="col-md-9"></div>
+                  <div class="col-md-3">
+                    {{date("Y/m/d H:i:s")}}
+                    {{config('app.timezone')}}
+                  </div>
 
-
-              </div>
-
-              <div class="col-md-3">
-                {{date("Y/m/d H:i:s")}}
-                {{config('app.timezone')}}
-
-                        <a href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();">
-                            Logout
+                </div>
+                  <div class="col-md-2">
+                    <img src="images/quizowl.png" height="150" width="150"/>
+                  </div>
+                  <div class="col-md-8">
+                      <p style="font-size:82px;">Quizard</p>
+                  </div>
+                  <div class="col-md-2 ">
+                    <a href="{{ route('logout') }}" class="InstructMenu"
+                        onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                          <span class="MainMenuItem">
+                            <h5 style="text-decoration:none;"><b>Log Out</b></h5>
+                          </span>
                         </a>
-
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
+                              {{ csrf_field() }}
                         </form>
+                  </div>
 
-                </ul>
               </div>
+
+
+
             </div>
+
+
+    </div>
 
 
 @yield('content')
