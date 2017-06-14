@@ -4,6 +4,12 @@
   @section ('header')
   <title>InstructorHome</title>
   <link rel="icon" href="images/cap.ico">
+  <style>
+  @font-face{
+    font-family:"marzo-w00-regular";
+    src: url("https://static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/e947b76a-edcf-4519-bc3d-c2da35865717.woff");
+    }
+  </style>
   <!--[if IE]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
@@ -19,28 +25,36 @@
             <div class="col-md-3 TopMenuInstructor">
                     <button class="InstructMenu" onclick="modulebuilder(event, 'moduleTABcontainer')" id="Modulebuilder">
     	             		<span>
-    	               		<h4>Create Modules</h4>
+    	               		<h4><font face="marzo-w00-regular, fantasy">
+                          Create Modules
+                      </font></h4>
     	             		</span>
     	             	</button>
             </div>
             <div class="col-md-3 TopMenuInstructor">
                     <button class="InstructMenu" onclick="quizbuilder(event, 'quizadminTABcontainer')" id="Quizbuilder">
                       <span>
-                        <h4>Quiz Admin</h4>
+                        <h4><font face="marzo-w00-regular, fantasy">
+                          Quiz Admin
+                      </font></h4>
                       </span>
                     </button>
             </div>
             <div class="col-md-3 TopMenuInstructor">
                     <button class="InstructMenu" onclick="quizviewshare(event, 'quizshareTABcontainer')" id="QuizView">
                       <span>
-                        <h4>View Quizes</h4>
+                        <h4><font face="marzo-w00-regular, fantasy">
+                          View Quizzes
+                      </font></h4>
                       </span>
                     </button>
             </div>
             <div class="col-md-3 TopMenuInstructor">
                     <button class="InstructMenu" onclick="quizdeploy(event, 'quizdeployTABcontainer')" id="QuizDeploy">
                       <span>
-                        <h4>Deploy Quiz</h4>
+                        <h4><font face="marzo-w00-regular, fantasy">
+                          Deploy Quiz
+                      </font></h4>
                       </span>
                     </button>
             </div>

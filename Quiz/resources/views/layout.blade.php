@@ -45,7 +45,7 @@
 
                 </div>
                   <div class="col-md-2">
-                    <img src="images/quizowl.png" height="150" width="150"/>
+                    <img src="images/owlEdit1.png" height="150" width="150"/>
                   </div>
                   <div class="col-md-8">
                       <p style="font-size:82px;"><font face="marzo-w00-regular, fantasy">
@@ -57,7 +57,9 @@
                         onclick="event.preventDefault();
                                  document.getElementById('logout-form').submit();">
                           <span class="MainMenuItem">
-                            <h5 style="text-decoration:none;"><b>Log Out</b></h5>
+                            <h5 ><font face="marzo-w00-regular, fantasy">
+                              Log Out
+                          </font></h5>
                           </span>
                         </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
