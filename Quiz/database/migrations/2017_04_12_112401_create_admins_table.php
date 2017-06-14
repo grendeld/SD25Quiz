@@ -17,8 +17,6 @@ class CreateAdminsTable extends Migration
             $table->increments('AdminID')->unique();
             $table->string('FirstName');
             $table->string('LastName');
-            $table->integer('id')->unsigned()->nullable();
-            $table->foreign('id')->references('id')->on('users');
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
