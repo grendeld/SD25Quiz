@@ -20,6 +20,12 @@
 <script type="text/javascript" src="js/quizAPP.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
 
+<style>
+@font-face{
+  font-family:"marzo-w00-regular";
+  src: url("https://static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/e947b76a-edcf-4519-bc3d-c2da35865717.woff");
+  }
+</style>
 
 @yield('header')
 <title>SD25Quize app</title>
@@ -42,7 +48,9 @@
                     <img src="images/quizowl.png" height="150" width="150"/>
                   </div>
                   <div class="col-md-8">
-                      <p style="font-size:82px;">Quizard</p>
+                      <p style="font-size:82px;"><font face="marzo-w00-regular, fantasy">
+                        Quizard
+                    </font></p>
                   </div>
                   <div class="col-md-2 ">
                     <a href="{{ route('logout') }}" class="InstructMenu"

@@ -19,8 +19,7 @@ class InstructorsController extends Controller
   }
     public function main()
     {
-      dd(Auth::user());
-
+      //dd(Auth::user());
 
      $modules = array();
       foreach(Auth::user()->programs as $p)
