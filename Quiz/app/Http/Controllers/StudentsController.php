@@ -81,13 +81,13 @@ return $result;
     return view ('student', compact('students'));
   }
 
-public function IntakeStudents()
-{
-$IntakeID=$_GET['IntakeID'];
-$intake= Intake::find($IntakeID);
-$students=$intake->students;
-return $students;
-}
+// public function IntakeStudents()
+// {
+// $IntakeID=$_GET['IntakeID'];
+// $intake= Intake::find($IntakeID);
+// $students=$intake->students;
+// return $students;
+// }
 
 public function newStudent()
 {

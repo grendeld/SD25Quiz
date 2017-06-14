@@ -144,13 +144,13 @@ public function IntakeQuiz()
 {
   $IntakeID=$_GET['IntakeID'];
   $intake= Intake::find($IntakeID);
-  //$modules = Program::find($intake->ProgramID)->modules;
    $intakequizzes = DB::table('quizzes')
                ->join('modules','modules.ModuleID','=','quizzes.ModuleID')
                ->select('quizzes.*')
                ->where('modules.ProgramID','=',$intake->ProgramID)
                ->get();
     return $intakequizzes;
+  
 
 }
 

@@ -30,8 +30,6 @@ function quizviewshare() {
 
         if(currentView)
           currentView.fadeOut(100);
-
-
 }
 
 function quizdeploy() {
@@ -120,15 +118,21 @@ function PublicQuizListView(){
 function getQuizzesAndStudents(){
   var ddl = document.getElementById("selectIntake");
   var intake = ddl.options[ddl.selectedIndex].value;
-  //var doc = document.getElementById("divStudents");
+
 $("#divStudentsForTest").empty();
 $("#divQuizForTest").empty();
+intake = JSON.parse(intake);
+console.dir(intake);
+for(student of intake.students)
+{
+$("#divStudentsForTest").append("<br/><input type='checkbox' name='CheckedStudent' onclick = 'StudentChecked()' value = '"+student.StudentID+"'/> " + student.FirstName +" "+ student.LastName +"<br/>");
 
+}
 
 $.ajax({
 url:'/getQuizList',
 type:'get',
-data:{'IntakeID':intake},
+data:{'IntakeID':intake.IntakeID},
 success:function(data){
   $.each(data,function(i,item){
     $("#divQuizForTest").append("<input type='radio' name='SelectedQuiz' onclick = 'StudentChecked()' value='" + item.QuizID + "'/> "+ item.QuizName + "<br/>");
@@ -136,17 +140,16 @@ success:function(data){
 }
 });
 
-
-    $.ajax({
-    url:'/getStudents',
-    type:'get',
-    data:{'IntakeID':intake},
-    success:function(data){
-      $.each(data,function(i,item){
-        $("#divStudentsForTest").append("<br/><input type='checkbox' name='CheckedStudent' onclick = 'StudentChecked()' value = '"+item.StudentID+"'/> " + item.FirstName +" "+ item.LastName +"<br/>");
-      });
-    }
-  });
+  //   $.ajax({
+  //   url:'/getStudents',
+  //   type:'get',
+  //   data:{'IntakeID':intake},
+  //   success:function(data){
+  //     $.each(data,function(i,item){
+  //       $("#divStudentsForTest").append("<br/><input type='checkbox' name='CheckedStudent' onclick = 'StudentChecked()' value = '"+item.StudentID+"'/> " + item.FirstName +" "+ item.LastName +"<br/>");
+  //     });
+  //   }
+  // });
 }
 
 
