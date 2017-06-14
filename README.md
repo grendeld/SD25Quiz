@@ -1,8 +1,9 @@
 # SD25Quiz
 TO LOGIN: Instructor - Use: "Doug@gmail.com", password
           Student - Use: "Jane@gmail.com", password
-You can also use any login email/password that we put in the seeder.
-No login for admin at the moment - admin pages can be viewed after logged in as instructor for now.
+          Admin - "Belle@gmail.com", password
+You can also use any login email/password that we put in the seeder found in the database folder
+
 
 Quiz Application
 -------
