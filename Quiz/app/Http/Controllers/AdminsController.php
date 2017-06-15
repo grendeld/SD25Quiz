@@ -11,6 +11,11 @@ use App\Intake;
 class AdminsController extends Controller
 {
 
+  public function __construct()
+  {
+    $this->middleware('auth:admins');
+  }
+
 public function main(){
 $instructors = Instructor::all();
 $programs = Program::all();

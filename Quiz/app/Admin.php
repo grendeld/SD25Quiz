@@ -9,7 +9,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class Admin extends Authenticatable
 {
   use Notifiable;
-    protected $fillable=['AdminName','email', 'password'];
+    protected $primaryKey='AdminID';
+    protected $fillable=['FirstName','LastName','id','email', 'password'];
     protected $hidden = [
         'password', 'remember_token',
     ];

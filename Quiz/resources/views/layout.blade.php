@@ -69,13 +69,17 @@
 
               </div>
 
-
-
             </div>
 
 
     </div>
-
+       @if(Auth::guard('admins')->check())
+         Hello {{Auth::guard('admins')->user()->FirstName}}
+        @elseif(Auth::guard('instructors')->check())
+          Hello {{Auth::guard('instructors')->user()->FirstName}}
+        @elseif(Auth::guard('students')->check())
+          Hello {{Auth::guard('students')->user()->FirstName}}
+        @endif
 
 @yield('content')
 @yield('footer')

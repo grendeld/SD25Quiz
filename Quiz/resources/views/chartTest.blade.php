@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <script type="text/javascript" src="d3/d3.min.js"></script>
+  <link rel="icon" href="images/cap.ico">
   <style>
 
   #buttonPlace{
@@ -53,11 +54,11 @@
 <script>
 
   var barSvg = d3.select("svg"),
-      margin = {top: 65, right: 20, bottom: 20, left: 65},
+      margin = {top: 65, right: 20, bottom: 30, left: 65},
       width = +barSvg.attr("width") - margin.left - margin.right,
       height = +barSvg.attr("height") - margin.top - margin.bottom;
 
-  var x = d3.scaleBand().rangeRound([0, width]).padding(0.1),
+  var x = d3.scaleBand().rangeRound([0, width]).padding(0.2),
       y = d3.scaleLinear().rangeRound([height, 0]);
 
   var g = barSvg.append('g')
@@ -96,12 +97,16 @@ function showPrograms(){
     g.append("g")
        .attr("class", "axis_axis--x")
        .attr("transform","translate(0," + height + ")")
-       .call(d3.axisBottom(x));
+       .call(d3.axisBottom(x))
+       .attr("font-size","20px")
+       .attr("font-family","Raleway");
 
     g.append("g")
        .attr("class", "axis axis--y")
        .call(d3.axisLeft(y).ticks(5))
-       .append("text")
+       .attr("font-size","16px")
+       .attr("font-family","Raleway")
+       .append("text") //TODO appeding text not working, discover correct code/format
        .attr("transform","rotate(-90)")
        .attr("y",6)
        .attr("dy","0.72em")
@@ -133,7 +138,8 @@ function showPrograms(){
 
       toolTip.select('.x').html(d.x);
       toolTip.select('.y').html(d.y);
-      toolTip.style('display', 'block');
+      toolTip.style('display', 'block')
+      .attr("font-family","Raleway");
             });
 
     bars.on('mouseout', function(d) {
