@@ -11,6 +11,7 @@ use App\Intake;
 use App\Program;
 use App\Test;
 use DB;
+use Auth;
 
 class QuizController extends Controller
 {
@@ -50,6 +51,7 @@ $tests= DB::table('tests')
     //$quiz->Description = $request ->Description;
     $quiz->ModuleID = $request->ModuleID;
     $quiz->Active = "No";
+    $quiz->InstructorID = Auth::user()->InstructorID;
     $quiz->save($request->all());
 
     return back();
@@ -61,44 +63,37 @@ public function newQA (Request $request, $quizID)
 
 if ($request->QuestionID =="new") // Create New Question
       {
-      $question=Question::create(array('QuizID'=>$quizID, 'Question' => $request->Question, 'CorrectAnswer'=>0));
+      $question=Question::create(array('QuizID'=>$quizID, 'Question' => $request->Question));
 
-      $option1=Answer::create(array('QuestionID'=>$question->QuestionID, 'Answer'=>$request->Option1));
-      $option2=Answer::create(array('QuestionID'=>$question->QuestionID, 'Answer'=>$request->Option2));
-      $option3=Answer::create(array('QuestionID'=>$question->QuestionID, 'Answer'=>$request->Option3));
-      $option4=Answer::create(array('QuestionID'=>$question->QuestionID, 'Answer'=>$request->Option4));
-
-      switch($request->Correct){
-        case 'A':
-        $question->CorrectAnswer = $option1->AnswerID;
-        break;
-        case 'B':
-        $question->CorrectAnswer = $option2->AnswerID;
-        break;
-        case 'C':
-        $question->CorrectAnswer = $option3->AnswerID;
-        break;
-        case 'D':
-        $question->CorrectAnswer = $option4->AnswerID;
-        break;
+      foreach($request->Answer as $answer){
+          $question->answers()->save(new Answer(['Answer'=>$answer]));
       }
       $question->save();
+    
 }
 else // Edit existing question
 {
   $question=Question::find($request->QuestionID);
   $question->Question = $request->Question;
-
-  if ($request->txtCorrectAnswer != ''){ $question->CorrectAnswer = $request->txtCorrectAnswer;}
-
-  $question->save();
-
-  $answer1=Answer::find($request->Option1ID)->update(['Answer' => $request->Option1]);
-  $answer2=Answer::find($request->Option2ID)->update(['Answer' => $request->Option2]);
-  $answer3=Answer::find($request->Option3ID)->update(['Answer' => $request->Option3]);
-  $answer4=Answer::find($request->Option4ID)->update(['Answer' => $request->Option4]);
+    
+  foreach($request->Answer as $key => $answer){
+      if(isset($question->answers[$key])){
+          
+          $question->answers[$key]->update(['Answer'=>$answer]);
+      }
+      else{
+          $question->answers()->save(new Answer(['Answer'=>$answer]));
+      }
+  }
+    for($key++;$key < count($question->answers);$key++){
+        $question->answers[$key]->delete();
+    }
+    $question->save();
 
 }
+    if($request->correct){
+        $question->correctAnswer()->associate($question->answers[$request->correct])->save();
+    }
       return back();
      }
 

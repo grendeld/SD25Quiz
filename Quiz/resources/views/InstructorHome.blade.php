@@ -104,6 +104,35 @@
                   <!---TEMPLATE LIST VIEW START--->
                   <div id="TemplateListViewTABcontainer">
 Templates:
+                      <div id="divQuizzez">
+<h1>Quizzes:</h1>
+<hr>
+<table>
+  <tr>
+    <th>Program</th>
+    <th>Module</th>
+    <th>Quiz</th>
+    <th>Description</th>
+    <th>Active</th>
+  </tr>
+
+@foreach(Auth::user()->quizzes as $q)
+  <tr>
+    <td>{{$q->Module->Program->ProgramName}}</td>
+    <td>{{$q->Module->ModuleName}}</td>
+    <td>{{$q->QuizName}}</td>
+    <td>{{$q->Description}}</td>
+    <td>{{$q->Active}}</td>
+    <td><a href="/quiz/{{$q->QuizID}}">Show Quiz</a></td>
+    <td><a href="/quiz/{{$q->QuizID}}/delete">Delete Quiz</a></td>
+  </tr>
+@endforeach
+</table>
+
+<button onclick="return showNewQuiz()">Add new quiz</button>
+
+<hr>
+</div>
                   </div>
                   <!---TEMPLATE LIST VIEW END--->
                   <!----QUESTIONANSWER BUILDER START---->
