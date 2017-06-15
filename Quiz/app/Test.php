@@ -19,6 +19,10 @@ class Test extends Model
       {
       return $this->hasMany('App\Response','TestID','TestID');
       }
+public function Student()
+{
+    return $this->belongsTo(Student::class,'StudentID','StudentID');
+}
 
   
 }
