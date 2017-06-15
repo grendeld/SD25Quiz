@@ -4,7 +4,7 @@
       <div class="modbuildcontainer">
           <div class="modbuild">
             <div class="QMSelectors">
-              <input type="button" id="MymoduleView" value="My Modules"
+              <input type="button" class="quizbutton" id="MymoduleView" value="My Modules"
               onclick="javascript: MyModulesView();"/>
             </div>
           </div>
@@ -14,24 +14,23 @@
               <form method="POST" action="/newModule">
                 {{method_field('PUT')}}
                 <label for="ProgramID">Program:</label>
-              <select name='ProgramID'>
+              <select class="quizbuttonn" name='ProgramID'>
                 @foreach($programs as $p)
                   <option value="{{$p->ProgramID}}"> {{$p->ProgramName}}</option>
                 @endforeach
               </select>
+              <br/><br/>
               <label for="modulename">Module Name: </label>
               <input type="text" name="ModuleName" id="moduleName"/>
             </div>
             <div class="QMSelectorss">
-              <input type="submit"  value="Add Module" id="btnModuleEnter"/>
+              <input type="submit" class="quizbutton"  value="Add Module" id="btnModuleEnter"/>
             </div>
             {!! csrf_field() !!}
           </form>
           </div>
           <div class="modbuild">
-            <div class="QMSelectors">
-              <p>saved module name here</p>
-            </div>
+
           </div>
 
       </div>

@@ -35,8 +35,9 @@
                     <button class="InstructMenu" onclick="quizbuilder(event, 'quizadminTABcontainer')" id="Quizbuilder">
                       <span>
                         <h4><font face="marzo-w00-regular, fantasy">
-                          Quiz Admin
+                           Create Quiz
                       </font></h4>
+
                       </span>
                     </button>
             </div>
@@ -44,7 +45,7 @@
                     <button class="InstructMenu" onclick="quizviewshare(event, 'quizshareTABcontainer')" id="QuizView">
                       <span>
                         <h4><font face="marzo-w00-regular, fantasy">
-                          View Quizzes
+                          Edit Quizzes
                       </font></h4>
                       </span>
                     </button>
@@ -105,11 +106,9 @@
 Templates:
                   </div>
                   <!---TEMPLATE LIST VIEW END--->
-                  <!---QUIZ LIST VIEW START--->
-                  <div id="QuizListViewTABcontainer">
-Quizzes:
-                  </div>
-                  <!---QUIZ LIST VIEW END--->
+                  <!----QUESTIONANSWER BUILDER START---->
+                  @include('instructor.QAbuilder')
+                  <!------QUESTIONANSWER BUILDER END---->
                   <!---STUDENT LIST VIEW START---->
                   <div id="StudentListViewTABcontainer">
 

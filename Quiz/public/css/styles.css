@@ -406,6 +406,62 @@ div.selectPanell a:active{
    width:50%;
    float: left;
 }
+
+/*latest quiz edit styles*/
+.quiizeditt{
+    height: auto;
+    overflow: auto;
+    width: 40%;
+    margin-bottom: 3em;
+    margin-top: 1em;
+    background-color: rgb(169, 204, 227);
+}
+.quizeditquestiontop{
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    padding: 30px;
+    background-color:rgba(229, 232, 232  ,0.9);
+    margin-bottom: 10px;
+}
+.quizeditanswerrcell{
+    height: 12em;
+    width: 100%;
+
+}
+.quizeditAnswerlist{
+    height: 100%;
+    width: 60%;
+    float: left;
+    margin-bottom: 2em;
+}
+.quizeditbuttons{
+  height: 100%;
+  width: 40%;
+  float: left;
+}
+.questioncontrol{
+  width: 100%;
+  height: 50%;
+  float: left;
+}
+
+.editquiztop{
+  height: 6em;
+  width:auto;
+}
+.editcontroll{
+  height: 100%;
+  float: left;
+  width: 10%;
+}
+
+.quiznamedescrip{
+  margin-left: 20px;
+}
+/*latest quiz edit styles end*/
+
+
 .QeditAnswers{
   height: auto;
   width: 50%;
@@ -445,43 +501,44 @@ div.selectPanell a:active{
   float: left;
 
 }
-
 .QuizListCell{
   background-color: rgba(170, 183, 184 ,0.2);
   border-width: 1px;
   border-style: solid;
   border-color: black;
-  height: 10em;
-  width: 100%;
+  height: 4em;
+  width: 80%;
   color: black;
   padding: 5px;
   margin-top: 5px;
 }
-.QuizListCellName_Mod{
+.QuizListCellName{
+  height: 100%;
+  padding: 10px;
+  float: left;
+  width:50%;
+}
+.QuizListCellSelect{
+  padding: 10px;
   height: 100%;
   float: left;
-  width:59%;
-  background-color: rgba(234, 237, 237 ,0.7);
-
+  width:10%;
 }
+
+.QuizListCellActive{
+  padding: 10px;
+  height: 100%;
+  float: left;
+  width:40%;
+}
+
+
 .QuizListCellControl{
   height: 100%;
   float: left;
   width:38%;
 }
-.QuizListCellSelect{
-  padding: 2px;
-  height: 50%;
-  float: left;
-  width:100%;
-  border-bottom-width: 1px;
-  border-bottom-color: black;
-  border-bottom-style: solid;
-  border-right-color: black;
-  border-right-style: solid;
-  border-right-width: 1px;
 
-}
 .QuizDetail{
   background-color: rgba(213, 219, 219  ,0.7);
   border-bottom-width: 1px;
@@ -851,13 +908,15 @@ div.selectPanell a:active{
 }
 .QBsections3{
     height:auto;
+    overflow: auto;
     width: auto;
     padding: 20px;
-    background-color: rgb(234, 242, 248) ;
+    background-color:rgb(123, 204, 227);
 }
 
 .QBsections4{
     height:auto;
+    overflow: auto;
     width: auto;
     padding: 20px;
     background-color: rgb(234,242,248);

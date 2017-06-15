@@ -4,46 +4,70 @@
 <!-- Show Quiz with questions and answers -->
 <div id="divQuiz">
 <div id="divQuizHead">
-<h1>{{$quiz->QuizName}}</h1>
-<p>{{$quiz->Description}}</p>
-<button onclick="return showEditQuiz()">Edit Quiz</button> <form method="get"> <button formaction="/quiz/{{$quiz->QuizID}}/copy">Copy Quiz</button> </form>
+
+<h2>{{$quiz->QuizName}}</h2>
+<br/>
+<h5>{{$quiz->Description}}</h5>
+<br/>
+<div class="editquiztop">
+  <div class="editcontroll">
+    <button class="quizbutton" onclick="return showEditQuiz()">Edit Quiz</button> <form method="get">
+  </div>
+  <div class="editcontroll">
+    <button class="quizbutton" formaction="/quiz/{{$quiz->QuizID}}/copy">Copy Quiz</button> </form>
+  </div>
 </div>
 
+</div>
+<div class="quiznamedescrip">
 <form name="edit" action="/quiz/{{$quiz->QuizID}}/editQuiz" method="post" style="display:none">
-  Quiz Name:<br/>
-  <input type="text" name="QuizName" value="{{$quiz->QuizName}}"/><br/>
-  Description:<br/>
-  <textarea name="Description" rows="3" cols="30">{{$quiz->Description}}</textarea><br/>
-  <button type="submit">Save</button>
-  <button type="button" onclick="return hideEditQuiz()">Cancel</button>
+  <h4>Quiz Name:</h4><br/>
+  <input type="text" name="QuizName" value="{{$quiz->QuizName}}"/><br/><br/>
+  <h4>Description:</h4><br/>
+  <textarea name="Description" rows="3" cols="30">{{$quiz->Description}}</textarea><br/><br/>
+  <button class="quizbutton" type="submit">Save</button>
+  <button class="quizbutton" type="button" onclick="return hideEditQuiz()">Cancel</button>
 {{method_field('PATCH')}}
 {!! csrf_field() !!}
 </form>
-
-
-<table>
-@foreach($questions as $q)
-  <tr>
-    <td>{{$q->Question}}</td>
-    <td>
-        <ul>
-        @foreach($answers as $a)
-        @if($a->QuestionID == $q->QuestionID)
-        <li <?php //if($a->AnswerID == $q->CorrectAnswer) echo('style="color:red;"'); ?> >{{$a->Answer}}</li>
-        @endif
-        @endforeach
-      </ul>
-      </td>
-<td><button id="EditQuestion" type="button" name="edit" style="display:none" onclick="return showEditQA({{$q->QuestionID}})">Edit question</button></td>
-<td><form method="get"><button id = "DeleteQuestion" type="submit" name="edit" style="display:none" formaction="/question/{{$q->QuestionID}}/delete">Delete question</button></form></td>
-  </tr>
-@endforeach
-</table>
-<button name="edit" style="display:none" onclick="return showNewQA()">Add new question</button>
+</div>
+<div class="quiizeditt">
+  @foreach($questions as $q)
+      <div class="quizeditquestiontop">
+              <h3>{{$q->Question}}</h3>
+      </div>
+      <div class="quizeditanswerrcell">
+            <div class="quizeditAnswerlist">
+                <ul>
+                  @foreach($answers as $a)
+                    @if($a->QuestionID == $q->QuestionID)
+                    <li <?php //if($a->AnswerID == $q->CorrectAnswer) echo('style="color:red;"'); ?> >{{$a->Answer}}</li>
+                  @endif
+                  @endforeach
+                </ul>
+            </div>
+            <div class="quizeditbuttons">
+                <div class="questioncontrol">
+                      <button class="quizbutton" id="EditQuestion"
+                      type="button" name="edit" style="display:none"
+                      onclick="return showEditQA({{$q->QuestionID}})">Edit</button>
+                </div>
+                <div class="questioncontrol">
+                        <form method="get">
+                        <button class="quizbutton" id = "DeleteQuestion"
+                        type="submit" name="edit" style="display:none"
+                        formaction="/question/{{$q->QuestionID}}/delete">Delete</button>
+                        </form>
+                </div>
+            </div>
+      </div>
+  @endforeach
+</div>
+<button name="edit" class="quizbutton" style="display:none" onclick="return showNewQA()">Add new question</button>
 </div>
 
 <!-- Add or edit question with answers -->
-<div id="divNewQA" style="display:none;">
+<div id="divNewQA" style="display:none;" class="AdminTables">
 <form action="/quiz/{{$quiz->QuizID}}/newQA" method="post" name="formQA">
 
               <table>

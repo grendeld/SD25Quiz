@@ -19,25 +19,7 @@ input[type=checkbox]
 .quizViewNextpanel{
     background-color: darkgrey;
 }
-.QuizListCell{
-  background-color: rgba(160,160,160,0.5);
-  height: 4em;
-  width: auto;
-  color: black;
-  padding: 10px;
-  margin-top: 5px;
-}
-.QuizListCellName{
-  height: 100%;
-  float: left;
-  width:40%;
-}
-.QuizListCellSelect{
-  padding: 10px;
-  height: 100%;
-  float: left;
-  width:10%;
-}
+
 .MyquizViewSection{
     height:6em;
     width: 100%;

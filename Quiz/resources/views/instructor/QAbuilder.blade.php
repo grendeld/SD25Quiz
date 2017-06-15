@@ -2,7 +2,7 @@
     <h3>Create Question Set</h3>
     <!---QUESTIONSET SECTION START--->
     <form class="" action="index.html" method="post">
-    <div class="Question">
+    <div class="AdminPanell">
       <p>Enter Your Question Below</p>
       <textarea cols="50" row="5" placeholder="Question"></textarea>
     </div>
@@ -11,7 +11,7 @@
         <style>
             ol#list{
                 display:inline;
-                
+
             }
         ol#list li{
     list-style: none;
@@ -20,7 +20,7 @@ height: 4em;
 width: 100%;
 float: left;
     counter-increment: myIndex;
-            
+
 }
 
 ol#list li:before{
@@ -96,7 +96,7 @@ color: inherit;
       <div class="AnswerTextInput">
         <input type="text" placeholder="correct answer" style="width:150px; margin-right:20px;" id="correctAnswer"/>
       </div>
-        <input type="Button" value="Next Q&A" id="enterQuestion"
+        <input type="Button" class="quizbutton" value="Next Q&A" id="enterQuestion"
         onclick="javascript: QnASetView();"/>
     </div>
 

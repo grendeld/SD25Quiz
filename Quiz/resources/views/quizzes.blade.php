@@ -3,7 +3,7 @@
 @section ('content')
 
 
-<div id="divQuizzez">
+<div id="divQuizzez" class="AdminTables">
 <h1>Quizzes:</h1>
 <hr>
 <table>
@@ -22,13 +22,13 @@
     <td>{{$q->QuizName}}</td>
     <td>{{$q->Description}}</td>
     <td>{{$q->Active}}</td>
-    <td><a href="/quiz/{{$q->QuizID}}">Show Quiz</a></td>
-    <td><a href="/quiz/{{$q->QuizID}}/delete">Delete Quiz</a></td>
+    <td><a href="/quiz/{{$q->QuizID}}" class="quizbutton">Edit</a></td>
+    <td><a href="/quiz/{{$q->QuizID}}/delete" class="quizbutton">Delete</a></td>
   </tr>
 @endforeach
 </table>
-
-<button onclick="return showNewQuiz()">Add new quiz</button>
+<br/>
+<button class="quizbutton" onclick="return showNewQuiz()">back</button>
 
 <hr>
 <h1>Tests:</h1>

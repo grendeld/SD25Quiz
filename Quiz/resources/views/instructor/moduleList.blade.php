@@ -7,8 +7,8 @@
 <h4> My Modules:</h4>
   <form method="POST" name="formModuleList">
     {!! csrf_field() !!}
-    <button type="button" name="button" onclick="return showModuleEdit()">Edit</button>
-    <button type="submit" name="button" formaction="/moduleDelete">Delete</button>
+    <button type="button" class="quizbutton" name="button" onclick="return showModuleEdit()">Edit</button>
+    <button type="submit" name="button" class="quizbutton" formaction="/moduleDelete">Delete</button>
     <div class="moduleListcontainer" id="moduleListcontainer">
       @foreach($modules as $m)
 
@@ -37,15 +37,15 @@
     <input type="text" name="ModuleName" id="txtModuleName"/>
     <input type="hidden" name="ModuleID" id="txtModuleID">
     <h3>Active:</h3>
-  <select name='Active'>
+  <select class="quizbuttonn" name='Active'>
     <option id='None' value='None'>Select</option>
     <option id='optionYes' value='Yes'>Yes</option>
     <option id='optionNo' value='No'>No</option>
   </select>
   <br/>
-    <button type="submit" name="button"
+    <button type="submit" class="quizbutton" name="button"
     formaction="/moduleSave" >Save</button>
-    <button type="button" onclick="return hideModuleEdit()" name="button">Cancel</button>
+    <button type="button" class="quizbutton" onclick="return hideModuleEdit()" name="button">Cancel</button>
   </form>
 </div>
 
