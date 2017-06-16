@@ -21,7 +21,6 @@ class CreateResponsesTable extends Migration
             $table->foreign('QuestionID')->references('QuestionID')->on('questions');
             $table->integer('AnswerID')->unsigned();
             $table->foreign('AnswerID')->references('AnswerID')->on('answers');
-            $table->integer('Correct');
         });
     }
 

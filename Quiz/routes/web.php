@@ -118,6 +118,15 @@ Route::get('test/Page/{int}',function($int){
 Route::post('test/Page',function(){
     \App\Test\Providers\TestProvider::create()->answer($_POST["answer"]?? null);
     return view('student.question');});
+Route::post('test/Save',function(){
+    if(\App\Test\Providers\TestProvider::create()->save()){
+       return redirect('/StudentHome');
+    }
+    else{
+        $error= "sorry bud";
+       return back()->with('error','Sorry bud');
+    }
+});
 //Security
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

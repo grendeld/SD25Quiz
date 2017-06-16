@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Response extends Model
 {
   protected $primaryKey = 'ResponseID';
-  protected $fillable=['TestID','StudentID','StartDateTime','StopDateTime'];
+  protected $fillable=['TestID','QuestionID','AnswerID'];
   public $timestamps = false;
 
   public function Test()

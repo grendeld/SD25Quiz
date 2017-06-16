@@ -41,13 +41,16 @@
 </script>
 @stop
 @section ('content')
+@if(session('error'))
+<h1>{{session('error')}}</h1>
+@endif
  <div class="row">
                 <div class="col-md-4">
                       <div class="TestQuestionSelect" style="overflow:auto;">
                             <p>Question Set</p>
 
                             <div class="TestListTop">
-                              <input type="button" id="SubmitTest" value="Submit Test"/>
+                              <input type="submit" form="saveTest" id="SubmitTest" value="Submit Test"/>
                             </div>
                         @foreach($provider->questions() as $key => $question)
                             <div class="TestListCell" questionId='{{$key}}' onclick="getQuestion(this)">
@@ -66,6 +69,9 @@
                             </div>
 
                       </div>
+                <form id='saveTest' action='/test/Save' method="post">
+                    {{ csrf_field() }}
+     </form>
 
                 <div class="col-md-8">
                       <div class="QuestionPanell">
