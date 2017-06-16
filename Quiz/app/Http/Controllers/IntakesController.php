@@ -10,7 +10,7 @@ class IntakesController extends Controller
 {
   public function __construct()
   {
-    $this->middleware('auth:instructors');
+    $this->middleware('auth:admins');
   }
 
     public function show()

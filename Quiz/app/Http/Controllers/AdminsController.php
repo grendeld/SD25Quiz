@@ -24,6 +24,7 @@ $intakes = Intake::all();
   return view('AdminHome',compact ('instructors', 'programs', 'intakes'));
 }
 
+
 public function InstrIntAdd(){
 
 $instructor=Instructor::find($_GET['InstructorID']);

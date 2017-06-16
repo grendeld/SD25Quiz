@@ -2,7 +2,6 @@
 @section ('header')
 <title>Admin home</title>
 <link rel="stylesheet" href="css/adminstyles.css">
-<script type="text/javascript" src="js/adminHome.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
 <link rel="icon" href="images/cap.ico">
@@ -34,74 +33,41 @@
   text-decoration: underline;
 }
 
+width:220px;
 #imgStudent{
-  width:200px;
   height: 250px;
 }
-
-
-
 </style>
-</head>
+
+
+
+<script>
+window.onload = function(){
+  <?php
+  if (isset ($_GET["p"]))
+  switch ($_GET["p"])
+  {
+    case "1" :
+          echo "showProgramsPanel();";
+          break;
+    case "2" :
+          echo "showInstructorsPanel();";
+          break;
+    case "3":
+          echo "showIntakesPanel();";
+          break;
+    case "4":
+          echo "showStudentsPanel();";
+          break;
+      }
+  ?>
+};
+</script>
+
 @stop
+
 @section ('content')
 
-
-<!---ADMIN HOME MENU START--->
-<div class="row">
-  <div class="selectPanel">
-      <div class="col-md-3 TopMenuInstructor">
-              <button class="InstructMenu"
-              onclick="javascript: showProgramsPanel()">
-                  <span>
-                      <h4>Programs</h4>
-                  </span>
-              </button>
-      </div>
-      <!--<div class="col-md-3">
-        <input type="button" value="Programs"
-        onclick="javascript: showProgramsPanel()"/>
-      </div>-->
-      <div class="col-md-3 TopMenuInstructor">
-              <button class="InstructMenu"
-              onclick="javascript: showInstructorsPanel()">
-                  <span>
-                      <h4>Instructors</h4>
-                  </span>
-              </button>
-      </div>
-      <!---<div class="col-md-3">
-          <input type="button" value="Instructors"
-          onclick="javascript: showInstructorsPanel()" />
-      </div>--->
-      <div class="col-md-3 TopMenuInstructor">
-              <button class="InstructMenu"
-              onclick="javascript: showIntakesPanel()">
-                  <span>
-                      <h4>Intakes</h4>
-                  </span>
-              </button>
-      </div>
-      <!---<div class="col-md-3">
-          <input type="button" value="Intakes"
-          onclick="javascript: showIntakesPanel()"/>
-      </div>--->
-      <div class="col-md-3 TopMenuInstructor">
-              <button class="InstructMenu"
-              onclick="javascript: showStudentsPanel()">
-                  <span>
-                      <h4>Students</h4>
-                  </span>
-              </button>
-      </div>
-      <!---<div class="col-md-3">
-          <input type="button" value="Students"
-          onclick="javascript: showStudentsPanel()"/>
-      </div>--->
-
-  </div>
-</div>
-  <!----ADMIN HOME MENU END--->
             <!---PANEL SELECT AREA START--->
             <div class="col-md-4 AdminLeftSide">
                 <div class="col-md-12 AdminSidePanelInput">
@@ -249,27 +215,6 @@
               <button onclick ="javascript:AddInstructorIntake(Intake_to_edit.value)">Add</button>
             </div>
           </div>
-
-
-
-<!-- <div id="divIntakes" style="display:none">
-  <button onclick="javascript:Add_new_intake()">Add new intake</button>
-  <table>
-    <tr>
-      <th>Intake</th><th>Program</th>
-    </tr>
-    @foreach($intakes as $in)
-      <tr>
-        <td>{{$in->IntakeName}}</td><td>{{$in->program->ProgramName}}</td>
-        <td><button onclick="javascript:divOneIntakeShow({{$in->load('students')}})">Students</button></td>
-      </tr>
-      @endforeach
-  </table>
-</div> -->
-
-
-
-
 
               <div id="dialog" title="Message"></div>
 </div>

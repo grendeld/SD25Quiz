@@ -16,7 +16,7 @@ class StudentsController extends Controller
 {
   public function __construct()
   {
-    $this->middleware('auth:students');
+    //$this->middleware(['auth:students']);
   }
 
   public function main()
@@ -81,13 +81,6 @@ return $result;
     return view ('student', compact('students'));
   }
 
-// public function IntakeStudents()
-// {
-// $IntakeID=$_GET['IntakeID'];
-// $intake= Intake::find($IntakeID);
-// $students=$intake->students;
-// return $students;
-// }
 
 public function newStudent()
 {

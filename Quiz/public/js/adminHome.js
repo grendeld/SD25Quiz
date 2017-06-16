@@ -1,46 +1,46 @@
 
-var currentPanel = null;
-var currentDiv = null;
-
-function showProgramsPanel()
-{
-  if(currentDiv)
-  currentDiv.fadeOut(100);
-
-  if(currentPanel)
-      currentPanel.fadeOut(100);
-        currentPanel = $("#ProgramsPanel").fadeIn(10);
-}
-
-function showInstructorsPanel()
-{
-  if(currentDiv)
-  currentDiv.fadeOut(100);
-
-  if(currentPanel)
-      currentPanel.fadeOut(100);
-        currentPanel = $("#InstructorsPanel").fadeIn(10);
-}
-
-function showIntakesPanel()
-{
-  if(currentDiv)
-  currentDiv.fadeOut(100);
-
-  if(currentPanel)
-      currentPanel.fadeOut(100);
-        currentPanel = $("#IntakesPanel").fadeIn(10);
-}
-
-function showStudentsPanel()
-{
-  if(currentDiv)
-  currentDiv.fadeOut(100);
-
-  if(currentPanel)
-      currentPanel.fadeOut(100);
-        currentPanel = $("#StudentsPanel").fadeIn(10);
-}
+// var currentPanel = null;
+// var currentDiv = null;
+//
+// function showProgramsPanel()
+// {
+//   if(currentDiv)
+//   currentDiv.fadeOut(100);
+//
+//   if(currentPanel)
+//       currentPanel.fadeOut(100);
+//         currentPanel = $("#ProgramsPanel").fadeIn(10);
+// }
+//
+// function showInstructorsPanel()
+// {
+//   if(currentDiv)
+//   currentDiv.fadeOut(100);
+//
+//   if(currentPanel)
+//       currentPanel.fadeOut(100);
+//         currentPanel = $("#InstructorsPanel").fadeIn(10);
+// }
+//
+// function showIntakesPanel()
+// {
+//   if(currentDiv)
+//   currentDiv.fadeOut(100);
+//
+//   if(currentPanel)
+//       currentPanel.fadeOut(100);
+//         currentPanel = $("#IntakesPanel").fadeIn(10);
+// }
+//
+// function showStudentsPanel()
+// {
+//   if(currentDiv)
+//   currentDiv.fadeOut(100);
+//
+//   if(currentPanel)
+//       currentPanel.fadeOut(100);
+//         currentPanel = $("#StudentsPanel").fadeIn(10);
+// }
 
 
 function divProgramShow(programJSONstring)

@@ -39,11 +39,12 @@
                 <div class="col-md-12">
                   <div class="col-md-9"></div>
                   <div class="col-md-3">
-                    {{date("Y/m/d H:i:s")}}
-                    {{config('app.timezone')}}
+
+
                   </div>
 
                 </div>
+
                   <div class="col-md-2">
                     <img src="images/owlEdit1.png" height="150" width="150"/>
                   </div>
@@ -51,35 +52,54 @@
                       <p style="font-size:82px;"><font face="marzo-w00-regular, fantasy">
                         Quizard
                     </font></p>
+
                   </div>
-                  <div class="col-md-2 ">
+  <div class="col-md-2 ">
+    {{date("Y/m/d H:i:s")}}
+    <br/><br/>
+                  @if(Auth::guard('admins')->check())
+                    Hello {{Auth::guard('admins')->user()->FirstName}}
+                   @elseif(Auth::guard('instructors')->check())
+                     Hello {{Auth::guard('instructors')->user()->FirstName}}
+                   @elseif(Auth::guard('students')->check())
+                     Hello {{Auth::guard('students')->user()->FirstName}}
+                   @endif
+
+
+
                     <a href="{{ route('logout') }}" class="InstructMenu"
                         onclick="event.preventDefault();
                                  document.getElementById('logout-form').submit();">
                           <span class="MainMenuItem">
-                            <h5 ><font face="marzo-w00-regular, fantasy">
+                            <h5 >
+
+                            <font face="marzo-w00-regular, fantasy">
                               Log Out
                           </font></h5>
                           </span>
                         </a>
+
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                               {{ csrf_field() }}
                         </form>
+
+
                   </div>
 
               </div>
 
             </div>
+            @if (Auth::guard('admins')->user())
+            @include('AdminMenu')
+            @endif
 
+
+            @if (Auth::guard('instructors')->user())
+            @include('InstructorMenu')
+            @endif
 
     </div>
-       @if(Auth::guard('admins')->check())
-         Hello {{Auth::guard('admins')->user()->FirstName}}
-        @elseif(Auth::guard('instructors')->check())
-          Hello {{Auth::guard('instructors')->user()->FirstName}}
-        @elseif(Auth::guard('students')->check())
-          Hello {{Auth::guard('students')->user()->FirstName}}
-        @endif
+
 
 @yield('content')
 @yield('footer')

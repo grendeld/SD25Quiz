@@ -2,8 +2,9 @@
 
 @section ('content')
 
-<div id="divEditStudent">
 
+
+<div id="divEditStudent">
 
 <h1>Edit Student</h1>
 
