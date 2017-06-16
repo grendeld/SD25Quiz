@@ -8,7 +8,7 @@
 
 <h1>Edit Student</h1>
 
-<form method = "POST" action ="../student/{{$student->StudentID}}/edit">
+<form method = "POST" action ="../student/{{$student->StudentID}}/edit" enctype="multipart/form-data">
 {{method_field('PATCH')}}
 <table>
 <tr>
@@ -66,5 +66,7 @@ Intake Id
 
 {!! csrf_field() !!}
 </form>
+
+
 
 @stop

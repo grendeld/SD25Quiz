@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Response extends Model
 {
   protected $primaryKey = 'ResponseID';
-  protected $fillable=['TestID','QuestionID','AnswerID'];
+  protected $fillable=['TestID','QuestionID','AnswerID','Correct'];
   public $timestamps = false;
 
   public function Test()
@@ -15,6 +15,6 @@ class Response extends Model
           return $this->belongsTo(Test::class,'TestID','TestID');
       }
 
-    
+
 
 }

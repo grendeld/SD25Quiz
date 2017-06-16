@@ -26,9 +26,10 @@ class StudentsController extends Controller
         // $quizId=1;
         //$programs = Program::find($id);
         // $quizzes = Quiz::find($quizId);
-        $student = Auth::user();
 
-        $tests = Auth::user()->Tests;
+        $student = Auth::guard('students')->user();
+
+        $tests = $student->Tests;
         //$intakes = $student->intake;
         /*$tests = Test::where('StudentID','=', $id)
                      ->where('StartDateTime','<',date("Y/m/d H:i:s"))
@@ -114,6 +115,26 @@ public function showedit($id )
 public function edit(Request $request , $id )
 
     { $student = Student::find($id);
+
+
+$uploaddir = 'images/';
+$uploadfile = $uploaddir . basename($_FILES['Photo']['name']);
+
+move_uploaded_file($_FILES['Photo']['tmp_name'], $uploadfile);
+
+//echo "<p>";
+
+// if (move_uploaded_file($_FILES['Photo']['tmp_name'], $uploadfile)) {
+//   echo "File is valid, and was successfully uploaded.\n";
+// } else {
+//    echo "Upload failed";
+// }
+//
+// echo "</p>";
+// echo '<pre>';
+// echo 'Here is some more debugging info:';
+// print_r($_FILES);
+// print "</pre>";
 
       $student->update($request->all());
       return redirect('/adminHome');
