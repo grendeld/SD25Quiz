@@ -67,6 +67,6 @@ Intake Id
 {!! csrf_field() !!}
 </form>
 
-
+<<<< save image to db
 
 @stop

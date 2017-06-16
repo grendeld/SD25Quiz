@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DB;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use App\Student;
 use App\Intake;
 use App\Program;
@@ -115,28 +116,34 @@ public function showedit($id )
 public function edit(Request $request , $id )
 
     { $student = Student::find($id);
-
-
-$uploaddir = 'images/';
-$uploadfile = $uploaddir . basename($_FILES['Photo']['name']);
-
-move_uploaded_file($_FILES['Photo']['tmp_name'], $uploadfile);
-
-//echo "<p>";
-
-// if (move_uploaded_file($_FILES['Photo']['tmp_name'], $uploadfile)) {
-//   echo "File is valid, and was successfully uploaded.\n";
-// } else {
-//    echo "Upload failed";
-// }
+// try {
 //
-// echo "</p>";
-// echo '<pre>';
-// echo 'Here is some more debugging info:';
-// print_r($_FILES);
-// print "</pre>";
+// $uploaddir = 'images/';
+// $uploadfile = $uploaddir . basename($_FILES['Photo']['name']);
+// move_uploaded_file($_FILES['Photo']['tmp_name'], $uploadfile);
+// }
+// catch (FileNotFoundException $e)
+// {
+// }
+
+if ($request->hasFile('Photo')) {
+    if($request->file('Photo')->isValid()) {
+        try {
+            $file = $request->file('Photo');
+            $name = $file->getClientOriginalName();
+            $request->file('Photo')->move("storage/", $name);
+            //$request->file('Photo') = $name;
+
+        } catch (Illuminate\Filesystem\FileNotFoundException $e) {
+
+        }
+    }
+}
+
+//<<<< save image to db
 
       $student->update($request->all());
+
       return redirect('/adminHome');
 
     }
