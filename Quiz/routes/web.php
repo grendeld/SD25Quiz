@@ -113,11 +113,14 @@ Route::get('/test/Student/{id}','QuizController@TakeTest'); //Student side
 // ------------Should be in a controller
 Route::get('test/Page',function(){ return view('student.question');});
 Route::get('test/Page/{int}',function($int){
-    $quest = \App\Test\Providers\TestProvider::create()->get($int);
+        $quest = \App\Test\Providers\TestProvider::create()->get($int);
+ 
+    
     return view('student.question',compact('quest'));});
 Route::post('test/Page',function(){
-    \App\Test\Providers\TestProvider::create()->answer($_POST["answer"]?? null);
-    return view('student.question');});
+    $provider = \App\Test\Providers\TestProvider::create();
+    if($provider->answer($_POST["answer"]?? null));
+    return view('student.question',['quest'=>$provider->next()]);});
 Route::post('test/Save',function(){
     if(\App\Test\Providers\TestProvider::create()->save()){
        return redirect('/StudentHome');

@@ -82,6 +82,9 @@ class TestProvider{
         $this->currentQuestion = 0;
         return $this->questions[0];
     }
+    function current(){
+        return $this->questions[$this->currentQuestion];
+    }
     /*
         <Purpose>
             Checks if all questions are answered

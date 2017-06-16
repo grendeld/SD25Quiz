@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <?php $question = ($get = isset($quest)? $quest : session()->get("testProvider")->next());?>
+    <?php $question = ($get = isset($quest)? $quest : session()->get("testProvider")->current());?>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
