@@ -177,11 +177,15 @@ window.onload = function(){
 
                 <div id="divStudent" style="display:none">
                   <h3 id='h3StudentName'></h3>
+                  <div id="divEmail"></div>
                   <br/>
                   <img id='imgStudent'/>
+                  <br/>
+                  <br/>
 
                   <button class="quizbutton" onclick="javascript:EditStudent()">Edit Student</button>
                   <button class="quizbutton" onclick="javascript:DeleteStudent()"> Delete Student</button>
+                  <br/>
                 </div>
 
 

@@ -155,8 +155,10 @@ function divStudentShow(student)
   if(currentDiv)
       currentDiv.fadeOut(100);
         currentDiv = $("#divStudent").fadeIn(10);
+        divEmail.innerHTML = student.email;
    h3StudentName.innerHTML = student.FirstName + ' ' + student.LastName;
    imgStudent.src = 'storage/' + student.Photo;
+
    stud = student;
 }
 

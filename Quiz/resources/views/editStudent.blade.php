@@ -31,10 +31,19 @@ Last Name:
 
 <tr>
 <td>
+Email:
+</td>
+<td>
+<textarea name="email">{{$student->email}}</textarea>
+</td>
+</tr>
+
+<tr>
+<td>
 Photo
 </td>
 <td>
-<img width='50' height='50' src='/storage/{{$student->Photo}}'/></td>
+<img width='100' height='100' src='/storage/{{$student->Photo}}'/></td>
 </td>
 </tr>
 
@@ -67,6 +76,6 @@ Intake Id
 {!! csrf_field() !!}
 </form>
 
-<<<< save image to db
+
 
 @stop

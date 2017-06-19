@@ -17,7 +17,9 @@ class StudentsController extends Controller
 {
   public function __construct()
   {
-    //$this->middleware(['auth:students']);
+    $this->middleware('auth:students',['except'=> 'StudentSearch']);
+    $this->middleware('auth:admins',['only'=> 'StudentSearch']);
+
   }
 
   public function main()
@@ -116,16 +118,6 @@ public function showedit($id )
 public function edit(Request $request , $id )
 
     { $student = Student::find($id);
-// try {
-//
-// $uploaddir = 'images/';
-// $uploadfile = $uploaddir . basename($_FILES['Photo']['name']);
-// move_uploaded_file($_FILES['Photo']['tmp_name'], $uploadfile);
-// }
-// catch (FileNotFoundException $e)
-// {
-// }
-
 if ($request->hasFile('Photo')) {
     if($request->file('Photo')->isValid()) {
         try {
@@ -133,16 +125,16 @@ if ($request->hasFile('Photo')) {
             $name = $file->getClientOriginalName();
             $request->file('Photo')->move("storage/", $name);
             //$request->file('Photo') = $name;
-
         } catch (Illuminate\Filesystem\FileNotFoundException $e) {
 
         }
     }
 }
 
-//<<<< save image to db
-
+//save image to db
       $student->update($request->all());
+      $student->Photo = $name;
+      $student->save();
 
       return redirect('/adminHome');
 
