@@ -107,9 +107,10 @@ class TestProvider{
     
     function save(){
         if($this->isComplete()){
+            $studentID = Auth::guard('students')->user()->StudentID;
             $test = Test::find($this->testId);
             foreach($this->questions as $question){
-                $test->Responses()->save(new Response(['QuestionID'=> $question->id, 'AnswerID' =>$question->response, 'Correct' => 1]));
+                $test->Responses()->save(new Response(['QuestionID'=> $question->id, 'AnswerID' =>$question->response, 'StudentID' => $studentID]));
             }
             session()->forget('testProvider');
             return true;
