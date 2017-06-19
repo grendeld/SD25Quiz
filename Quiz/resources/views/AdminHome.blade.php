@@ -10,6 +10,10 @@
 <![endif]-->
 
 <style >
+@font-face{
+  font-family:"marzo-w00-regular";
+  src: url("https://static.parastorage.com/services/third-party/fonts/user-site-fonts/fonts/e947b76a-edcf-4519-bc3d-c2da35865717.woff");
+  }
 .divSearchResult:empty{
   border:none;
 }

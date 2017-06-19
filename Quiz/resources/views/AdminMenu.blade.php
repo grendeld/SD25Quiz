@@ -9,7 +9,9 @@
               <button class="InstructMenu"
               onclick="javascript: showProgramsPanel()">
                   <span>
-                      <h4>Programs</h4>
+                    <font face="marzo-w00-regular, fantasy">
+                        <h4>Programs</h4>
+                  </font>
                   </span>
               </button>
       </div>
@@ -21,7 +23,9 @@
               <button class="InstructMenu"
               onclick="javascript: showInstructorsPanel()">
                   <span>
-                      <h4>Instructors</h4>
+                    <font face="marzo-w00-regular, fantasy">
+                        <h4>Instructors</h4>
+                  </font>
                   </span>
               </button>
       </div>
@@ -33,7 +37,9 @@
               <button class="InstructMenu"
               onclick="javascript: showIntakesPanel()">
                   <span>
-                      <h4>Intakes</h4>
+                    <font face="marzo-w00-regular, fantasy">
+                        <h4>Intakes</h4>
+                  </font>
                   </span>
               </button>
       </div>
@@ -45,7 +51,9 @@
               <button class="InstructMenu"
               onclick="javascript: showStudentsPanel()">
                   <span>
-                      <h4>Students</h4>
+                    <font face="marzo-w00-regular, fantasy">
+                        <h4>Students</h4>
+                  </font>
                   </span>
               </button>
       </div>

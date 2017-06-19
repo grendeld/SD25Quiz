@@ -17,6 +17,9 @@
   }
   .bar{
     fill:rgba(80,73,113,1);
+    /*when this is added it displaces the tooltip, check d3 event.Layer, invetigage!!! */
+    /*-webkit-filter: drop-shadow( 9px 0px 3px rgba(0,0,0,.5) );
+    filter: drop-shadow( 9px 0px 3px rgba(0,0,0,.5) );*/
   }
   .bar:hover{
     fill:rgba(192,182,207,1);
