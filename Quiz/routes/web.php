@@ -26,7 +26,7 @@ Route::post('/saveTemplate','QuizController@saveTemplate');
 Route::post('/moduleSave', 'ModulesController@saveModule');
 //Route::get('/getStudents','StudentsController@IntakeStudents');
 Route::get('/getQuizList','QuizController@IntakeQuiz');
-Route::get('/startTest','QuizController@StartTest');
+Route::post('/startTest','QuizController@StartTest');
 
 //AdminHome
 Route::get('/adminHome', 'AdminsController@main');

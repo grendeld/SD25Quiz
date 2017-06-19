@@ -18,8 +18,6 @@ class CreateTestsTable extends Migration
           $table->increments('TestID');
           $table->integer('QuizID')->unsigned();
           $table->foreign('QuizID')->references('QuizID')->on('quizzes');
-          $table->integer('StudentID')->unsigned();
-          $table->foreign('StudentID')->references('StudentID')->on('students');
           $table->DateTime('StartDateTime');
           $table->DateTime('StopDateTime')->nullable();
 

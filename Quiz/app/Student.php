@@ -23,6 +23,6 @@ public function Intake ()
 }
 
 public function Tests(){
-  return $this->hasMany('App\Test','StudentID','StudentID');
+  return $this->belongsToMany('App\Test','TestStudent','StudentID','TestID');
   }
 }

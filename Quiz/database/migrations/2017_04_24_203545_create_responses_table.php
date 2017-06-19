@@ -16,9 +16,11 @@ class CreateResponsesTable extends Migration
         Schema::create('responses', function (Blueprint $table) {
             $table->increments('ResponseID');
             $table->integer('TestID')->unsigned();
-            $table->foreign('TestID')->references('QuestionID')->on('questions');
+            $table->foreign('TestID')->references('TestID')->on('tests');
             $table->integer('QuestionID')->unsigned();
             $table->foreign('QuestionID')->references('QuestionID')->on('questions');
+            $table->integer('StudentID')->unsigned();
+          $table->foreign('StudentID')->references('StudentID')->on('students');
             $table->integer('AnswerID')->unsigned();
             $table->foreign('AnswerID')->references('AnswerID')->on('answers');
         });

@@ -149,14 +149,20 @@ public function IntakeQuiz()
 
 }
 
-public function StartTest()
+public function StartTest(Request $request)
 {
+    //dd($request);
   date_default_timezone_set('America/Winnipeg');
-  $test = Test::create(array('StudentID'=>$_GET['StudentID'],
-                                  'QuizID'=>$_GET['QuizID'],
-                                'StartDateTime'=>\Carbon\Carbon::now()
-                        )    );
-  return "done";
+  $test = Test::create(array(
+        'QuizID'=>$request->SelectedQuiz,
+        'StartDateTime'=>\Carbon\Carbon::now()
+                        ));
+    foreach($request->CheckedStudent as $s){
+        $student = \App\Student::find($s);
+        $test->students()->attach($student);
+    }
+    //dd($request->SelectedQuiz);
+  return redirect("test/Instructor/".$request->SelectedQuiz);
 }
 
 public function CheckQuiz()

@@ -1,4 +1,4 @@
-﻿
+
 var currentPanel = null;
 var currentView = null;
 
@@ -125,7 +125,7 @@ intake = JSON.parse(intake);
 console.dir(intake);
 for(student of intake.students)
 {
-$("#divStudentsForTest").append("<br/><input type='checkbox' name='CheckedStudent' onclick = 'StudentChecked()' value = '"+student.StudentID+"'/> " + student.FirstName +" "+ student.LastName +"<br/>");
+$("#divStudentsForTest").append("<br/><input type='checkbox' name='CheckedStudent[]' onclick = 'StudentChecked()' value = '"+student.StudentID+"'/> " + student.FirstName +" "+ student.LastName +"<br/>");
 
 }
 
@@ -155,7 +155,7 @@ success:function(data){
 
 function StudentChecked()
 {
-  var checkboxes = document.getElementsByName('CheckedStudent');
+  var checkboxes = document.getElementsByName('CheckedStudent[]');
   CheckedStudentsID = [];
 
 for (var i = 0; i<checkboxes.length; i++)
@@ -188,23 +188,6 @@ function ShowStartButton()
 
 function StartTest()
 {
-
-for (var i=0; i<CheckedStudentsID.length; i++)
-{
-  $.ajax({
-  url:'/startTest',
-  type:'get',
-  data:{'QuizID':SelectedQuizID, 'StudentID':CheckedStudentsID[i].value},
-  success:function(data){
-     alert(data);
      window.location.href = "test/Instructor/" + SelectedQuizID;
-  }
-});
-
-}
-
-
-
-
 
 }

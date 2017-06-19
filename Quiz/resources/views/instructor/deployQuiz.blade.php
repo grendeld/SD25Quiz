@@ -9,7 +9,7 @@
 }]);
     @endforeach
     </select>
-    <form name = "formDeployTest">
+    <form name = "formDeployTest" action='/startTest' method='post'>
 <h3>Quizzes:</h3>
 
     <div id="divQuizForTest">
@@ -21,7 +21,8 @@
 
     </div>
 
-    <button type="button" onclick='javascript: StartTest();' id="btnStart" style="display:none;">Start test</button>
+    <button type="submit" onclick='javascript: StartTest();' id="btnStart" style="display:none;">Start test</button>
+        {{ csrf_field() }}
 
 </form>
 </div>
