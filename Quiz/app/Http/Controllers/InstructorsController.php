@@ -16,11 +16,12 @@ class InstructorsController extends Controller
   public function __construct()
   {
     $this->middleware('auth:instructors');
+
   }
+
+
     public function main()
     {
-      //dd(Auth::user());
-
      $modules = array();
       foreach(Auth::user()->programs as $p)
        {
@@ -29,16 +30,57 @@ class InstructorsController extends Controller
           array_push($modules,$m);
          }
        }
-
-
       $quizzes = Auth::user()->quizzes;
       $intakes = Auth::user()->intakes;
       $programs = Auth::user()->programs;
       $instructor = Auth::user();
-
       return view ('InstructorHome', compact('instructor','programs', 'modules', 'quizzes', 'intakes'));
-
     }
+
+
+
+    public function modules()
+    {
+      $programs = Auth::user()->programs;
+
+      $modules = array();
+       foreach($programs as $p)
+        {
+           foreach($p->modules as $m)
+           {
+           array_push($modules,$m);
+          }
+        }
+
+      return view ('instructor.moduleContainer', compact('programs','modules'));
+    }
+
+    public function newQuiz()
+    {
+      $programs = Auth::user()->programs;
+
+      $modules = array();
+       foreach($programs as $p)
+        {
+           foreach($p->modules as $m)
+           {
+           array_push($modules,$m);
+          }
+        }
+
+      return view ('instructor.quizAdmin', compact('programs','modules'));
+    }
+
+    public function deploy()
+    {
+      $intakes = Auth::user()->intakes;
+
+
+      return view ('instructor.deployQuiz', compact('intakes'));
+    }
+
+
+
 
 
 

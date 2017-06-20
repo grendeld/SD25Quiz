@@ -1,4 +1,9 @@
-<div id="quizadminTABcontainer">
+@extends('layout')
+
+@section ('content')
+
+
+<div id="quizadminTABcontainer" style="display:block">
   <!---TEMPLATE SELECT START--->
   <div class="TemplateSelectcontainer" id="TemplateSelectcontainer">
 
@@ -18,8 +23,8 @@
                 <div class="QBsections1">
                   <h4>Build Template</h4>
                       <div class="QBSelectors">
-                        <select class="quizbuttonn" id="QModuleSelect" name="ModuleID">
-                          <option value=" ">--Select Module--</option>
+                        <select class="quizbuttonn" id="QModuleSelect" name="ModuleID" required>
+                          <option value=" " disabled >--Select Module--</option>
                           @foreach($modules as $m)
                           <option value="{{$m->ModuleID}}">{{$m->ModuleName}}</option>
                           @endforeach
@@ -28,7 +33,7 @@
 
                       <div class="QBSelectors">
                         <label for="testname">Quiz Name: </label>
-                        <input type="text" id="testName" name="QuizName"/>
+                        <input type="text" id="testName" name="QuizName" required/>
                       </div>
                 </div>
               </div>
@@ -64,27 +69,10 @@
 
     <!----TEMPLATE EDIT START ?????---->
     <div class="templatebuildcontainer" id="templatebuildcontainer">
-        <div class="QBsections4 ">
-          <div class="QBSelectorss">
-              <h4 style="text-align: center;">PLACE QUIZ NAME HERE</h4>
-          </div>
-        </div>
-        <div class="QBsections4 questionSetup">
-            <div class="QBSegment">
-              <h4>Selected Question Here</h4>
-              <ul>
-                  <li>Matching Answer#1</li>
-                  <li>Matching Answer#2</li>
-                  <li>Matching Answer#3</li>
-                  <li>Matching Answer#4</li>
-              </ul>
-              <p>Correct Answer</p>
-              <input type="button" class="quizbutton" value="Remove" id="QuestionRemove"/>
-              <input type="button" class="quizbutton" value="Replace" id="QuestionReplace"/>
-            </div>
-        </div>
     </div>
     <!---TEMPLATE EDIT END--->
 
 
 </div>
+
+@stop

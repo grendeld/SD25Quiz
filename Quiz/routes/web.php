@@ -50,7 +50,9 @@ Route::get('/charts',function(){ return view('chartTest');});
 //function(){return "test";}
 
 
-
+Route::get('/modules','InstructorsController@modules');
+Route::get('/quizzes', 'QuizController@showAll');
+Route::get('/deploy', 'InstructorsController@deploy');
 
 
 
@@ -75,8 +77,8 @@ Route::patch('/{program}/{module}', 'ModulesController@edit');
 Route::post('/program/{program}/newModule', 'ModulesController@NewModule');
 Route::put('/newModule','ModulesController@AddModule');
 //---Quizzes
-Route::get('/quizzes', 'QuizController@showAll');
 Route::get('/quiz/{quiz}','QuizController@showOne');
+Route::get('/newQuiz','InstructorsController@NewQuiz');
 Route::post('/newQuiz','QuizController@saveTemplate');
 Route::post('/quiz/{quiz}/newQA', 'QuizController@newQA');
 Route::patch('/quiz/{quiz}/editQuiz', 'QuizController@EditQuiz');
@@ -114,8 +116,8 @@ Route::get('/test/Student/{id}','QuizController@TakeTest'); //Student side
 Route::get('test/Page',function(){ return view('student.question');});
 Route::get('test/Page/{int}',function($int){
         $quest = \App\Test\Providers\TestProvider::create()->get($int);
- 
-    
+
+
     return view('student.question',compact('quest'));});
 Route::post('test/Page',function(){
     $provider = \App\Test\Providers\TestProvider::create();

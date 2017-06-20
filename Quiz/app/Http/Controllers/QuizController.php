@@ -15,6 +15,12 @@ use Auth;
 
 class QuizController extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('auth:instructors');
+
+  }
+
     public function showAll()
     {
 $quizzes=DB::table('quizzes')
@@ -28,7 +34,7 @@ $tests= DB::table('tests')
                 ->join('quizzes', 'tests.QuizID', '=', 'quizzes.QuizID')
                 ->select('tests.*', 'quizzes.QuizName')
                 ->get();
-      return view('quizzes',compact('quizzes', 'tests','modules'));
+      return view('instructor.quizzes',compact('quizzes', 'tests','modules'));
     }
 
     public function showOne($q)
@@ -69,16 +75,16 @@ if ($request->QuestionID =="new") // Create New Question
           $question->answers()->save(new Answer(['Answer'=>$answer]));
       }
       $question->save();
-    
+
 }
 else // Edit existing question
 {
   $question=Question::find($request->QuestionID);
   $question->Question = $request->Question;
-    
+
   foreach($request->Answer as $key => $answer){
       if(isset($question->answers[$key])){
-          
+
           $question->answers[$key]->update(['Answer'=>$answer]);
       }
       else{
@@ -145,7 +151,7 @@ public function IntakeQuiz()
                ->where('modules.ProgramID','=',$intake->ProgramID)
                ->get();
     return $intakequizzes;
-  
+
 
 }
 

@@ -28,7 +28,7 @@
 @endforeach
 </table>
 <br/>
-<button class="quizbutton" onclick="return showNewQuiz()">back</button>
+
 
 <hr>
 <h1>Tests:</h1>

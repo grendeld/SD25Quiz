@@ -1,4 +1,9 @@
-<div id="quizdeployTABcontainer">
+
+@extends('layout')
+
+@section ('content')
+
+<div id="quizdeployTABcontainer" style="display:block">
 
   My intakes:
   <select class="" name="" id="selectIntake" autocomplete="off" onchange="javascript:getQuizzesAndStudents()">
@@ -26,3 +31,5 @@
 
 </form>
 </div>
+
+@stop
