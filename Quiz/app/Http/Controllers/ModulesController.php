@@ -9,16 +9,25 @@ use DB;
 
 class ModulesController extends Controller
 {
-  
+
   public function deleteModule() //new // Set module inactive
   {
     if (isset($_POST['ModID']))
-    {
+  {
 
     $id=$_POST['ModID'];
+    $module = Module::where('ModuleID',$id);
 
-      Module::where('ModuleID',$id) -> update(['Active'=>'No']);
+    $quizzes_in_module = DB::table('quizzes')->where('ModuleID','=',$id)->count();
+    if ($quizzes_in_module > 0)
+    {
+      $module-> update(['Active'=>'No']);
     }
+    else
+    {
+      $module->delete();
+    }
+  }
     return back();
   }
 

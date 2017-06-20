@@ -2,6 +2,8 @@
 
 @section ('content')
 
+<div id="moduleTABcontainer" style="display:block">
+
 <!---MODULE LIST VIEW START--->
 <br/>
 <h4> My Modules:</h4>
@@ -51,7 +53,7 @@
   <button type="button" class="quizbutton" onclick="return hideModuleEdit()" name="button">Cancel</button>
 </form>
 </div>
-
+</div>
 
 
 
@@ -65,17 +67,18 @@
               <form method="POST" action="/newModule">
                 {{method_field('PUT')}}
                 <label for="ProgramID">Program:</label>
-              <select class="quizbuttonn" name='ProgramID'>
+              <select class="quizbuttonn" name='ProgramID' required>
                 @foreach($programs as $p)
                   <option value="{{$p->ProgramID}}"> {{$p->ProgramName}}</option>
                 @endforeach
               </select>
               <br/><br/>
               <label for="modulename">Module Name: </label>
-              <input type="text" name="ModuleName" id="moduleName"/>
+              <input type="text" name="ModuleName" id="moduleName" required/>
             </div>
             <div class="QMSelectorss">
               <input type="submit" class="quizbutton"  value="Add Module" id="btnModuleEnter"/>
+              <button type="button" class="quizbutton" onclick="return hideModuleAdd()" name="button">Cancel</button>
             </div>
             {!! csrf_field() !!}
           </form>
@@ -104,6 +107,7 @@
   }
   //ModuleListViewTABcontainer.style.display = "none";
   divModuleEdit.style.display = "block";
+  moduleTABcontainer.style.display = "none";
   txtModuleName.value = name;
   txtModuleID.value = id;
 
@@ -112,7 +116,7 @@
 
   function saveModuleEdit()
   {
-  ModuleListViewTABcontainer.style.display = "block";
+  //ModuleListViewTABcontainer.style.display = "block";
   divModuleEdit.style.display = "none";
   return true;
   }
@@ -120,11 +124,19 @@
 function showModuleAdd()
 {
   divModuleAdd.style.display = "block";
+  moduleTABcontainer.style.display = "none";
+}
+
+function hideModuleAdd()
+{
+moduleTABcontainer.style.display = "block";
+divModuleAdd.style.display = "none";
+return false;
 }
 
   function hideModuleEdit()
   {
-  ModuleListViewTABcontainer.style.display = "block";
+  moduleTABcontainer.style.display = "block";
   divModuleEdit.style.display = "none";
   return false;
   }

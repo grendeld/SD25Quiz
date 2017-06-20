@@ -4,13 +4,18 @@
 
 
 
+
 <div id="divQuizzez" class="AdminTables">
+  <div >
+    <input type="submit" class="quizbutton" onclick="showNewQuiz()" value="Create New Quiz" />
+  </div>
+<br/>
 <h1>Quizzes:</h1>
 <hr>
+
 <table>
   <tr>
-    <th>Program</th>
-    <th>Module</th>
+
     <th>Quiz</th>
     <th>Description</th>
     <th>Active</th>
@@ -18,8 +23,6 @@
 
 @foreach($quizzes as $q)
   <tr>
-    <td>{{$q->ProgramName}}</td>
-    <td>{{$q->ModuleName}}</td>
     <td>{{$q->QuizName}}</td>
     <td>{{$q->Description}}</td>
     <td>{{$q->Active}}</td>
@@ -30,28 +33,7 @@
 </table>
 <br/>
 
-<div class="QMSelectorss">
-  <input type="submit" class="quizbutton" onclick="showNewQuiz()" value="Add Quiz" />
-</div>
 
-<hr>
-<h1>Tests:</h1>
-<hr>
-<table>
-  <tr>
-    <th>Quiz</th>
-    <th>Start</th>
-    <th>Stop</th>
-  </tr>
-@foreach($tests as $t)
-<tr>
-  <td>{{$t->QuizName}}</td>
-  <td>{{$t->StartDateTime}}</td>
-  <td>{{$t->StopDateTime}}</td>
-</tr>
-@endforeach
-</table>
-<hr>
 </div>
 
 

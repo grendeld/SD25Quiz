@@ -29,11 +29,22 @@ $quizzes=DB::table('quizzes')
               ->select('quizzes.*','modules.ModuleID','modules.ModuleName','programs.ProgramName')
               ->get();
 
-$modules=Module::all();
+//$modules=Module::all();
 $tests= DB::table('tests')
                 ->join('quizzes', 'tests.QuizID', '=', 'quizzes.QuizID')
                 ->select('tests.*', 'quizzes.QuizName')
                 ->get();
+
+                $programs = Auth::user()->programs;
+
+                $modules = array();
+                 foreach($programs as $p)
+                  {
+                     foreach($p->modules as $m)
+                     {
+                     array_push($modules,$m);
+                    }
+                  }
       return view('instructor.quizzes',compact('quizzes', 'tests','modules'));
     }
 

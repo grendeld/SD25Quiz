@@ -41,7 +41,7 @@
                 </button>
         </div>
         <div class="col-md-3 TopMenuInstructor">
-                <button class="InstructMenu" >
+                <button class="InstructMenu" onclick = "window.location.href = '/tests'">
                   <span>
                     <h4><font face="marzo-w00-regular, fantasy">
                       Reports

@@ -101,7 +101,5 @@
 
 @yield('content')
 @yield('footer')
-<hr>
-footer from Master Page
     </body>
 </html>

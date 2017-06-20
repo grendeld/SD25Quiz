@@ -51,8 +51,10 @@ Route::get('/charts',function(){ return view('chartTest');});
 
 
 Route::get('/modules','InstructorsController@modules');
-Route::get('/quizzes', 'QuizController@showAll');
+Route::get('/quizzes', 'InstructorsController@quizzes');
 Route::get('/deploy', 'InstructorsController@deploy');
+Route::get('/tests', 'InstructorsController@tests');
+
 
 
 

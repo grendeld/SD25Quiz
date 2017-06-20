@@ -5,6 +5,7 @@ use DB;
 use Auth;
 use App\Instructor;
 use App\Program;
+use App\Test;
 use App\Module;
 use App\Intake;
 use App\Quiz;
@@ -55,21 +56,22 @@ class InstructorsController extends Controller
       return view ('instructor.moduleContainer', compact('programs','modules'));
     }
 
-    public function newQuiz()
+    public function quizzes()
     {
-      $programs = Auth::user()->programs;
-
       $modules = array();
-       foreach($programs as $p)
-        {
-           foreach($p->modules as $m)
-           {
-           array_push($modules,$m);
-          }
+     foreach(Auth::user()->programs as $p)
+      {
+         foreach($p->modules as $m)
+         {
+         array_push($modules,$m);
         }
+      }
+     $quizzes = Auth::user()->quizzes;
 
-      return view ('instructor.quizAdmin', compact('programs','modules'));
+      return view ('instructor.quizzes', compact('programs','modules', 'quizzes'));
     }
+
+    
 
     public function deploy()
     {
@@ -77,6 +79,15 @@ class InstructorsController extends Controller
 
 
       return view ('instructor.deployQuiz', compact('intakes'));
+    }
+
+    public function tests()
+    {
+      //$tests = Auth::user()->intakes;
+      $tests=Test::all();
+
+
+      return view ('instructor.tests', compact('tests'));
     }
 
 
