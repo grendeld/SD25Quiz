@@ -180,7 +180,8 @@ public function StartTest(Request $request)
         $test->students()->attach($student);
     }
     //dd($request->SelectedQuiz);
-  return redirect("test/Instructor/".$request->SelectedQuiz);
+    session(['currentTest' => $test->TestID]);
+  return redirect("test/Instructor");
 }
 
 public function CheckQuiz()
@@ -199,13 +200,26 @@ public function CheckQuiz()
 public function TakeTest(int $id){
     //dd("hey");
         $provider = \App\Test\Providers\TestProvider::create($id);
+    if(!session()->has('port'))
+        {
+             $port = \WatchDog\Server::connect($provider->getTestId());
+            session(['port' => $port]);
+        }
 
     return view('student.test',compact('provider'));
 }
 
-public function ControlTest(int $id){
- $quiz = Quiz::find($id);
-   return view ('instructor.test',compact('quiz'));
+public function ControlTest(){
+    if(session()->has('currentTest')){
+        if(!session()->has('port'))
+        {
+             $port = \WatchDog\Server::connect(session('currentTest'),uniqid(),false);
+            session(['port' => $port]);
+        }
+        
+    }
+    
+   return view ('instructor.test');
  }
 
 }

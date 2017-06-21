@@ -114,7 +114,7 @@ Route::get('/instructorIntake', 'InstructorIntakesController@show');
 Route::get('/instructorIntake/add', function(){ return view('newInstructorIntake');});
 Route::post('/instructorIntake/add', 'InstructorIntakesController@create');
 //Pages for doing test
-Route::get('/test/Instructor/{id}','QuizController@ControlTest');//Instructor side
+Route::get('/test/Instructor','QuizController@ControlTest');//Instructor side
 Route::get('/test/Student/{id}','QuizController@TakeTest'); //Student side
 // ------------Should be in a controller
 Route::get('test/Page',function(){ return view('student.question');});

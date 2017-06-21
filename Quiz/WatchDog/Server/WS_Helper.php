@@ -8,8 +8,10 @@
             TCP_KEEPCNT = 6,
             KEEP_ALIVE = 1;
 		public static function handshake(&$socket){
-                $data = socket_read($socket,1024);
-                echo $data;
+                //$data = socket_read($socket,2048);
+            echo "\n\n\r\r\nCalling Read\n\n\r\r\n";
+                $data = self::read($socket);
+                echo "\n\n\r\r\n$data\n\n\r\r\n";
         		$headers = explode("\r\n",$data);
                 preg_match("/\/id\/(?<id>[0-9]+)/",$data,$match);
                 preg_match("/SocketID=(?<SocketID>[0-9a-zA-Z]+)/",$data,$SockMatch);
@@ -40,6 +42,22 @@
         		socket_write($socket,$return);
                 return ["socketID" => $SocketID,"ID" => $match["id"]];
 		}
+        public static function read($socket){
+            $response ="";
+            $rec = socket_recv($socket , $buf , 50,0);
+            do{
+                echo "\n\nStuck right here\n\n";
+                echo $buf;
+                $response .= $buf;
+            } while(($rec = socket_recv($socket , $buf , 50, MSG_DONTWAIT)) != 0 && $rec !== false);
+            $errorcode = socket_last_error($socket);
+        $errormsg = socket_strerror($errorcode);
+            socket_clear_error($socket);
+            var_dump($errormsg);
+            var_dump($socket);
+            var_dump($rec);
+            return $response;
+        }
         
         public static function encodeMessage($mess, string $type){
             switch($type){
@@ -84,7 +102,9 @@
             $bit1 = ord(substr($message,0,1));
             $bit2 = ord(substr($message,1,1));
             $lastFrame = $bit1 >> 7;
+            
             $opcode = $bit1 & 15;
+            echo "\n\nOpcode is $bit1 and $opcode\n\n";
             $masked = (boolean)($bit2 >> 7);
             $payLen = $bit2 & 127;
             if($payLen < 126){
@@ -112,6 +132,7 @@
             {
                 case 0:
                     $type = "cont";
+                    break;
                 case 1:
                     $type = "text";
                     break;
@@ -130,7 +151,7 @@
                     return array($type,microtime());
                     break;
             }
-            
+            var_dump($type);
             return array($type,$payLoad);
         
         //echo "$lastFrame\n$opcode\n$masked\n$payLen";

@@ -148,6 +148,9 @@ class TestProvider{
     function getCurrentQuestionP(){
         return $this->currentQuestion;
     }
+    function getTestID(){
+        return $this->testId;
+    }
     
 }
 ?>

@@ -139,11 +139,19 @@ foreach($res as $r){
             else{
                 foreach($read as $key => $value){
                     if(socket_last_error($value) > 0){
+                          $errorcode = socket_last_error($value);
+        $errormsg = socket_strerror($errorcode);
+                        var_dump($errormsg);
                         socket_close($value);
                         unset($this->sockets[$key]);
                     }
-                    $message = socket_read($value,1024);
+                    else{
+                                      var_dump($value);
+                    var_dump($read);
+                    var_dump($this->sockets);
+                        $message = WS_Helper::read($value);
                     $this->processMessage($message,$key,$value);
+                    } 
                 }
             }
             if(count($this->sockets) <= 2)
@@ -163,7 +171,9 @@ foreach($res as $r){
         list($type,$message) = WS_Helper::decodeMessage($mess);
         if($type == "text")
         {
-            echo "\n\n\n$message\n\n\n";
+            echo "\n\n\nThis is the message guys ::\n$message\n\n\n";
+            $hexstr = unpack('H*', $message);
+            var_dump($hexstr);
             $messageBlock = json_decode($message);
             switch($messageBlock->type){
                 case "broadcast":
@@ -178,13 +188,16 @@ foreach($res as $r){
         }
     }
     function broadcast(string $mess){
+        echo "\n\nbroadcasting\n\n";
+        var_dump($this->clients);
         $message = new messageBlock(null,"instructor","broadcast",$mess);
         $mess = json_encode($message);
         $mess = WS_Helper::encodeMessage($mess,"text");
-        //foreach($this->clients as $key => $value){
-          //  $r = $clients[$key];
-            //socket_write($r->socket,$mess);
-        //}
+        foreach($this->clients as $key => $value){
+            $r = $this->clients[$key];
+            //var_dump($r->socket);
+            socket_write($r->socket,$mess);
+        }
     }
     private function findClientById($id){
         global $clients;
