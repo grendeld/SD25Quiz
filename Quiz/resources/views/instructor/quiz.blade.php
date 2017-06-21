@@ -11,22 +11,36 @@
 <br/>
 <div class="editquiztop">
   <div class="editcontroll">
-    <button class="quizbutton" onclick="return showEditQuiz()">Edit Quiz</button> <form method="get">
+    <button class="quizbutton" onclick="return showEditQuiz({{$quiz}},{{$quiz->Tests->count()}})">Edit Quiz</button> <form method="get">
   </div>
   <div class="editcontroll">
     <button class="quizbutton" formaction="/quiz/{{$quiz->QuizID}}/copy">Copy Quiz</button> </form>
   </div>
+  <div class="editcontroll">
+    <button class="quizbutton" onclick = "window.location.href = '/quizzes'">Back</button> </form>
+  </div>
+
+
+
 </div>
 
 </div>
 <div class="quiznamedescrip">
 <form name="edit" action="/quiz/{{$quiz->QuizID}}/editQuiz" method="post" style="display:none">
   <h4>Quiz Name:</h4><br/>
-  <input type="text" name="QuizName" value="{{$quiz->QuizName}}"/><br/><br/>
+  <input type="text" name="QuizName" value="{{$quiz->QuizName}}" required/><br/><br/>
   <h4>Description:</h4><br/>
-  <textarea name="Description" rows="3" cols="30">{{$quiz->Description}}</textarea><br/><br/>
+  <textarea name="Description" rows="3" cols="30" required>{{$quiz->Description}}</textarea><br/><br/>
+  <h4>Active:</h4>
+  <select class="quizbuttonn" name='Active' required>
+    <option id='optionYes' value='Yes' @if($quiz->Active == "Yes") {{"selected"}} @endif >Yes</option>
+    <option id='optionNo' value='No' @if($quiz->Active == "No") {{"selected"}} @endif >No</option>
+  </select>
+<br/><br/>
   <button class="quizbutton" type="submit">Save</button>
   <button class="quizbutton" type="button" onclick="return hideEditQuiz()">Cancel</button>
+  <br/><hr><br/>
+  <button name="edit" class="quizbutton" style="display:none" onclick="return showNewQA()">Add new question</button>
 {{method_field('PATCH')}}
 {!! csrf_field() !!}
 </form>
@@ -61,7 +75,6 @@
       </div>
   @endforeach
 </div>
-<button name="edit" class="quizbutton" style="display:none" onclick="return showNewQA()">Add new question</button>
 </div>
 
 <!-- Add or edit question with answers -->
@@ -73,7 +86,7 @@
       <style>
             ol#list{
                 display:inline;
-                
+
             }
         ol#list li{
     list-style: none;
@@ -82,7 +95,7 @@ height: 4em;
 width: 100%;
 float: left;
     counter-increment: myIndex;
-            
+
 }
 
 ol#list li:before{
@@ -125,7 +138,7 @@ color: inherit;
                 var q = document.createElement('input');
                 q.setAttribute('type','text');
                 q.setAttribute('name','Answer[]');
-                
+
                 q.setAttribute('placeholder','Next Option');
                 if(input){
                     var z = document.createElement('input');
@@ -180,16 +193,37 @@ color: inherit;
 <!--                                        JAVASCRIPT                                                         -->
 <script type="text/javascript">
 
-function showEditQuiz()
+function showEditQuiz(quiz,tests_count)
 {
-divQuizHead.style.display = "none";
+  if (tests_count > 0)
+{
+  dialog.setAttribute("title","EditQuiz");
+  dialog.innerHTML = "Cannot modify deployed quiz. Do you want to create a new version?";
+  $( "#dialog" ).dialog({
+   modal:true,
+   buttons: [
+     { text: "No",
+       click: function() {
+         $( this ).dialog( "close" );
+       }},
 
-var x = document.getElementsByName("edit");
-
-for (var i = 0; i < x.length; i++)
- {
+       { text:"Yes",
+     click:function(){
+       $( this ).dialog( "close" );
+       window.location.replace('/quiz/' + quiz.QuizID + '/copy');
+     }}
+   ] // buttons
+   });
+} else {
+  divQuizHead.style.display = "none";
+  var x = document.getElementsByName("edit");
+  for (var i = 0; i < x.length; i++)
+  {
    x[i].style.display = "block";
   }
+ }
+
+
 
 }
 
@@ -245,7 +279,7 @@ if(!Question){
 for(an of questions[offset].answers){
     console.log(an);
     console.log(questions[offset].correct_answer);
-    
+
     var som = createItem(an.Answer,(an.AnswerID == questions[offset].correct_answer));
     if(!list){
                     var list = document.getElementById('list');
@@ -269,6 +303,33 @@ divQuiz.style.display = "block";
 divNewQA.style.display = "none";
 return false;
 }
+
+function EditQuiz(){
+
+
+if (prog.modules.length>0){
+  }
+  else{
+    dialog.innerHTML = "Delete program " + prog.ProgramName + "?";
+    $( "#dialog" ).dialog({
+     modal:true,
+     buttons: [
+       { text: "No",
+         click: function() {
+           $( this ).dialog( "close" );
+         }},
+         { text:"Yes",
+       click:function(){
+         $( this ).dialog( "close" );
+         window.location.replace('program/' + prog.ProgramID + '/delete');
+       }}
+     ] // buttons
+     });
+  }
+}
+
+
+
 </script>
 
 @stop

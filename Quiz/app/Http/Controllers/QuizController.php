@@ -22,32 +22,32 @@ class QuizController extends Controller
 
   }
 
-    public function showAll()
-    {
-$quizzes=DB::table('quizzes')
-              ->join('modules','quizzes.ModuleID','=','modules.ModuleID')
-              ->join('programs','modules.ProgramID','=','programs.ProgramID')
-              ->select('quizzes.*','modules.ModuleID','modules.ModuleName','programs.ProgramName')
-              ->get();
-
-//$modules=Module::all();
-$tests= DB::table('tests')
-                ->join('quizzes', 'tests.QuizID', '=', 'quizzes.QuizID')
-                ->select('tests.*', 'quizzes.QuizName')
-                ->get();
-
-                $programs = Auth::user()->programs;
-
-                $modules = array();
-                 foreach($programs as $p)
-                  {
-                     foreach($p->modules as $m)
-                     {
-                     array_push($modules,$m);
-                    }
-                  }
-      return view('instructor.quizzes',compact('quizzes', 'tests','modules'));
-    }
+//     public function showAll()
+//     {
+// $quizzes=DB::table('quizzes')
+//               ->join('modules','quizzes.ModuleID','=','modules.ModuleID')
+//               ->join('programs','modules.ProgramID','=','programs.ProgramID')
+//               ->select('quizzes.*','modules.ModuleID','modules.ModuleName','programs.ProgramName')
+//               ->get();
+//
+// //$modules=Module::all();
+// $tests= DB::table('tests')
+//                 ->join('quizzes', 'tests.QuizID', '=', 'quizzes.QuizID')
+//                 ->select('tests.*', 'quizzes.QuizName')
+//                 ->get();
+//
+//                 $programs = Auth::user()->programs;
+//
+//                 $modules = array();
+//                  foreach($programs as $p)
+//                   {
+//                      foreach($p->modules as $m)
+//                      {
+//                      array_push($modules,$m);
+//                     }
+//                   }
+//       return view('instructor.quizzes',compact('quizzes', 'tests','modules'));
+//     }
 
     public function showOne($q)
     {
@@ -58,7 +58,7 @@ $tests= DB::table('tests')
                 ->select('answers.*'/*,'questions.CorrectAnswer'*/)
                 ->where('questions.QuizID','=', $q)
                 ->get();
-      return view('quiz',compact('quiz','questions','answers'));
+      return view('instructor.quiz',compact('quiz','questions','answers'));
 
     }
 
@@ -118,7 +118,9 @@ else // Edit existing question
 
 public function EditQuiz(Request $request, $quizID)
 {
-Quiz::find($quizID)->update(['QuizName' => $request->QuizName, 'Description' => $request->Description]);
+Quiz::find($quizID)->update(['QuizName' => $request->QuizName,
+                          'Description' => $request->Description,
+                            'Active' => $request->Active]);
     return back();
 }
 
@@ -135,7 +137,19 @@ public function DeleteQuestion(Question $question)
 
 public function deleteQuiz(Quiz $quiz)
 {
-  $quiz->delete();
+  $questions_in_quiz = $quiz->Questions->count();
+  $tests = $quiz->Tests->count();
+  //dd($tests);
+
+  if ($questions_in_quiz > 0 or $tests > 0)
+  {
+    $quiz-> update(['Active'=>'No']);
+  }
+  else
+  {
+    $quiz->delete();
+  }
+
   return back();
 }
 
@@ -150,19 +164,35 @@ public function copyQuiz(Quiz $quiz)
   $quizCopy->ParentQuizID = $quiz->QuizID;
   $quizCopy->save();
 
+  foreach($quiz->questions as $q)
+  {$qCopy = $q->replicate();
+    $qCopy->QuizID = $quizCopy->QuizID;
+    $qCopy->save();
+  foreach($q->answers as $a)
+  {$aCopy = $a->replicate();
+    $aCopy->QuestionID = $qCopy->QuestionID;
+    $aCopy->save();
+  }
+  }
+
   return redirect('/quizzes');
 }
 
 public function IntakeQuiz()
 {
+  if(isset($_GET['IntakeID']))
+  {
   $IntakeID=$_GET['IntakeID'];
   $intake= Intake::find($IntakeID);
-   $intakequizzes = DB::table('quizzes')
+  $intakequizzes = DB::table('quizzes')
                ->join('modules','modules.ModuleID','=','quizzes.ModuleID')
                ->select('quizzes.*')
                ->where('modules.ProgramID','=',$intake->ProgramID)
+               ->where('quizzes.Active','=','Yes')
                ->get();
+
     return $intakequizzes;
+  }
 
 
 }
@@ -221,5 +251,19 @@ public function ControlTest(){
     
    return view ('instructor.test');
  }
+
+public function toggleActive()
+{
+  $quiz = Quiz::find($_GET["q"]);
+  if ($quiz->Active == "Yes")
+  {
+    $quiz-> update(['Active'=>'No']);
+  }
+  else {
+    $quiz-> update(['Active'=>'Yes']);
+  }
+  return $quiz->Active;
+
+}
 
 }

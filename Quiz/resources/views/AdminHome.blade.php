@@ -224,7 +224,6 @@ window.onload = function(){
             </div>
           </div>
 
-              <div id="dialog" title="Message"></div>
 </div>
             <!---PANEL VIEW AREA END--->
 </div>

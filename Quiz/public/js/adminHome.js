@@ -50,8 +50,6 @@ function divProgramShow(programJSONstring)
         currentDiv = $("#divProgram").fadeIn(10);
 
   program = JSON.parse(programJSONstring);
-
-
   h3ProgramName.innerHTML = program.ProgramName ;
   list= document.getElementById('ModulesList');
   list.innerHTML = '';
@@ -64,7 +62,6 @@ function divProgramShow(programJSONstring)
 
 function divInstructorShow(instructorJSONstring)
 {
-
   if(currentDiv)
       currentDiv.fadeOut(100);
         currentDiv = $("#divInstructor").fadeIn(10);

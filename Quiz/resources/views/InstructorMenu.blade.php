@@ -1,4 +1,7 @@
 <script type="text/javascript" src="js/quizAPP.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+
 
 <div class="row">
     <div class="selectPanel">

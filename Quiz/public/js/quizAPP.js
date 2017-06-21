@@ -1,118 +1,118 @@
 
-var currentPanel = null;
-var currentView = null;
+//var currentPanel = null;
+//var currentView = null;
 
-function modulebuilder() {
-    if(currentPanel)
-        currentPanel.fadeOut(100);
-          currentPanel = $("#moduleTABcontainer").fadeIn(400);
-
-        if(currentView)
-          currentView.fadeOut(100);
-}
-
-function quizbuilder() {
-
-    if(currentPanel)
-        currentPanel.fadeOut(100);
-         currentPanel =    $("#quizadminTABcontainer").fadeIn(400);
-
-    if(currentView)
-       currentView.fadeOut(100);
-
-
-}
-
-function quizviewshare() {
-    if(currentPanel)
-        currentPanel.fadeOut(100);
-        currentPanel =     $("#quizshareTABcontainer").fadeIn(400);
-
-        if(currentView)
-          currentView.fadeOut(100);
-}
-
-function quizdeploy() {
-    if(currentPanel)
-        currentPanel.fadeOut(100);
-
-            currentPanel = $("#quizdeployTABcontainer").fadeIn(400);
-
-            if(currentView)
-              currentView.fadeOut(100);
-
-}
-
-
-
-
-function QnABuilder() {
-
-            $("#TemplateSelectcontainer").fadeOut(400);
-              $("#templateViewcontainer").fadeOut(400);
-            $("#QuestionbuildContainer").fadeIn(400);
-
-}
-
-function QnASetView() {
-
-            $("#QuestionListViewTABcontainer").fadeIn(400);
-
-}
-
-function openTemplate() {
-    $(function () {
-        $("#saveQnA").click(function () {
-            $("#QuestionbuildContainer").fadeOut(400);
-            $("#QnAcreatePanel").fadeOut(400);
-            $("#quizCreateStart").fadeOut(400);
-            $("#createQuizButton").fadeOut(400);
-            $("#templatebuildcontainer").fadeIn(400);
-            $("#quizSavecontainer").fadeIn(400);
-        });
-    });
-
-}
-
-function templateView(){
-//if(currentPanel)
-        //currentPanel.fadeOut(100);
-        if(currentView)
-          currentView.fadeOut(100);
-        currentView = $("#TemplateListViewTABcontainer").fadeIn(400);
-}
-
-function MyModulesView(){
- //if(currentPanel)
-        //currentPanel.fadeOut(100);
-        if(currentView)
-          currentView.fadeOut(100);
-        currentView = $("#ModuleListViewTABcontainer").fadeIn(400);
-
-
-}
-
-
-
-function ViewMyQuizes(){
-  $(function(){
-    $("#ListMyQuizes").click(function(){
-      $("#moduleTABcontainer").fadeOut(400);
-      $("#quizadminTABcontainer").fadeOut(400);
-      $("#QuizListViewTABcontainer").fadeIn(400);
-    });
-  });
-
-}
-
-function PublicQuizListView(){
-  $(function(){
-      $("#ViewPublicQuizes").click(function(){
-          $("#MySelectedQuiz").fadeOut(400);
-          $("#SelectedPublicQuiz").fadeIn(400);
-      });
-  });
-}
+// function modulebuilder() {
+//     if(currentPanel)
+//         currentPanel.fadeOut(100);
+//           currentPanel = $("#moduleTABcontainer").fadeIn(400);
+//
+//         if(currentView)
+//           currentView.fadeOut(100);
+// }
+//
+// function quizbuilder() {
+//
+//     if(currentPanel)
+//         currentPanel.fadeOut(100);
+//          currentPanel =    $("#quizadminTABcontainer").fadeIn(400);
+//
+//     if(currentView)
+//        currentView.fadeOut(100);
+//
+//
+// }
+//
+// function quizviewshare() {
+//     if(currentPanel)
+//         currentPanel.fadeOut(100);
+//         currentPanel =     $("#quizshareTABcontainer").fadeIn(400);
+//
+//         if(currentView)
+//           currentView.fadeOut(100);
+// }
+//
+// function quizdeploy() {
+//     if(currentPanel)
+//         currentPanel.fadeOut(100);
+//
+//             currentPanel = $("#quizdeployTABcontainer").fadeIn(400);
+//
+//             if(currentView)
+//               currentView.fadeOut(100);
+//
+// }
+//
+//
+//
+//
+// function QnABuilder() {
+//
+//             $("#TemplateSelectcontainer").fadeOut(400);
+//               $("#templateViewcontainer").fadeOut(400);
+//             $("#QuestionbuildContainer").fadeIn(400);
+//
+// }
+//
+// function QnASetView() {
+//
+//             $("#QuestionListViewTABcontainer").fadeIn(400);
+//
+// }
+//
+// function openTemplate() {
+//     $(function () {
+//         $("#saveQnA").click(function () {
+//             $("#QuestionbuildContainer").fadeOut(400);
+//             $("#QnAcreatePanel").fadeOut(400);
+//             $("#quizCreateStart").fadeOut(400);
+//             $("#createQuizButton").fadeOut(400);
+//             $("#templatebuildcontainer").fadeIn(400);
+//             $("#quizSavecontainer").fadeIn(400);
+//         });
+//     });
+//
+// }
+//
+// function templateView(){
+// //if(currentPanel)
+//         //currentPanel.fadeOut(100);
+//         if(currentView)
+//           currentView.fadeOut(100);
+//         currentView = $("#TemplateListViewTABcontainer").fadeIn(400);
+// }
+//
+// function MyModulesView(){
+//  //if(currentPanel)
+//         //currentPanel.fadeOut(100);
+//         if(currentView)
+//           currentView.fadeOut(100);
+//         currentView = $("#ModuleListViewTABcontainer").fadeIn(400);
+//
+//
+// }
+//
+//
+//
+// function ViewMyQuizes(){
+//   $(function(){
+//     $("#ListMyQuizes").click(function(){
+//       $("#moduleTABcontainer").fadeOut(400);
+//       $("#quizadminTABcontainer").fadeOut(400);
+//       $("#QuizListViewTABcontainer").fadeIn(400);
+//     });
+//   });
+//
+// }
+//
+// function PublicQuizListView(){
+//   $(function(){
+//       $("#ViewPublicQuizes").click(function(){
+//           $("#MySelectedQuiz").fadeOut(400);
+//           $("#SelectedPublicQuiz").fadeIn(400);
+//       });
+//   });
+// }
 
 
 function getQuizzesAndStudents(){
@@ -140,16 +140,6 @@ success:function(data){
 }
 });
 
-  //   $.ajax({
-  //   url:'/getStudents',
-  //   type:'get',
-  //   data:{'IntakeID':intake},
-  //   success:function(data){
-  //     $.each(data,function(i,item){
-  //       $("#divStudentsForTest").append("<br/><input type='checkbox' name='CheckedStudent' onclick = 'StudentChecked()' value = '"+item.StudentID+"'/> " + item.FirstName +" "+ item.LastName +"<br/>");
-  //     });
-  //   }
-  // });
 }
 
 

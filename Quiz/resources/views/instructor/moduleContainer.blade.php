@@ -52,7 +52,7 @@
         </div>
         <br/>
         <button type="button" class="quizbutton" name="button" onclick="return showModuleEdit()">Edit</button>
-        <button type="submit"  class="quizbutton" name="button" formaction="/moduleDelete">Delete</button>
+        <button type="submit"  class="quizbutton" name="button" formaction="/moduleDelete">Delete/Hide</button>
 
 
       </form>

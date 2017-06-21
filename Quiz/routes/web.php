@@ -19,14 +19,20 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index');
 
-//Route::get('/', 'InstructorsController@main');
-Route::get('/instructorHome', 'InstructorsController@main');
+
+//InstructorHome
+Route::get('/instructorHome', 'InstructorsController@modules');
+Route::get('/modules','InstructorsController@modules');
+Route::get('/quizzes', 'InstructorsController@quizzes');
+Route::get('/deploy', 'InstructorsController@deploy');
+Route::get('/tests', 'InstructorsController@tests');
 Route::post('/moduleDelete','ModulesController@deleteModule');
 Route::post('/saveTemplate','QuizController@saveTemplate');
 Route::post('/moduleSave', 'ModulesController@saveModule');
-//Route::get('/getStudents','StudentsController@IntakeStudents');
 Route::get('/getQuizList','QuizController@IntakeQuiz');
 Route::post('/startTest','QuizController@StartTest');
+Route::get('/quizToggleActive','QuizController@toggleActive');
+
 
 //AdminHome
 Route::get('/adminHome', 'AdminsController@main');
@@ -51,11 +57,6 @@ Route::get('/testOK','d3@getAllStudentMarksByQuiz');
 
 //function(){return "test";}
 
-
-Route::get('/modules','InstructorsController@modules');
-Route::get('/quizzes', 'InstructorsController@quizzes');
-Route::get('/deploy', 'InstructorsController@deploy');
-Route::get('/tests', 'InstructorsController@tests');
 
 
 
@@ -82,7 +83,7 @@ Route::post('/program/{program}/newModule', 'ModulesController@NewModule');
 Route::put('/newModule','ModulesController@AddModule');
 //---Quizzes
 Route::get('/quiz/{quiz}','QuizController@showOne');
-Route::get('/newQuiz','InstructorsController@NewQuiz');
+//Route::get('/newQuiz','InstructorsController@NewQuiz');
 Route::post('/newQuiz','QuizController@saveTemplate');
 Route::post('/quiz/{quiz}/newQA', 'QuizController@newQA');
 Route::patch('/quiz/{quiz}/editQuiz', 'QuizController@EditQuiz');
@@ -99,9 +100,9 @@ Route::get('/newStudent', 'StudentsController@newStudent');
 Route::get('/student/{student}','StudentsController@showedit');
 
 //---Instructor
-Route::get('/instructor', 'InstructorsController@show');
-Route::get('/instructor/add', function(){ return view('newInstructor');});
-Route::post('/instructor/add', 'InstructorsController@create');
+//Route::get('/instructor', 'InstructorsController@show');
+//Route::get('/instructor/add', function(){ return view('newInstructor');});
+//Route::post('/instructor/add', 'InstructorsController@create');
 //---Intake
 Route::get('/intake', 'IntakesController@show');
 Route::get('/intake/add', function(){ return view('newIntake');});

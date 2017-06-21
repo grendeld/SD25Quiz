@@ -13,7 +13,7 @@
   </tr>
 @foreach($tests as $t)
 <tr>
-  <td>{{$t->QuizName}}</td>
+  <td>{{$t->quiz->QuizName}}</td>
   <td>{{$t->StartDateTime}}</td>
   <td>{{$t->StopDateTime}}</td>
 </tr>

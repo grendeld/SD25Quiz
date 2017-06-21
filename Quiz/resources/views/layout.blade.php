@@ -13,7 +13,6 @@
       <link rel="stylesheet" href="/css/bootstrap.css">
       <link rel="stylesheet" href="/css/bootstrap-grid.css">
       <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
-
 <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 <link rel="icon" href="images/cap.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -96,5 +95,6 @@
 
 @yield('content')
 @yield('footer')
+<div id="dialog" title="Message"></div>
     </body>
 </html>
