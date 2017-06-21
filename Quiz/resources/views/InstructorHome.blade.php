@@ -20,10 +20,11 @@
     ?>
   <div class="container-fluid">
 
-    
+
 
         <!---INSTRUCTOR HOME PAGE START--->
-        <div class="row">
+        <div class="row BKG">
+
             <!---WORK AREA START--->
             <div class="col-md-6">
               <div class="workarea">
@@ -63,31 +64,31 @@
                   <!---QUESTIONLIST VIEW END--->
                   <!---TEMPLATE LIST VIEW START--->
                   <div id="TemplateListViewTABcontainer">
-Templates:
+                    Templates:
                       <div id="divQuizzez">
-<h1>Quizzes:</h1>
-<hr>
-<table>
-  <tr>
-    <th>Program</th>
-    <th>Module</th>
-    <th>Quiz</th>
-    <th>Description</th>
-    <th>Active</th>
-  </tr>
+                          <h1>Quizzes:</h1>
+                          <hr>
+                          <table>
+                            <tr>
+                              <th>Program</th>
+                              <th>Module</th>
+                              <th>Quiz</th>
+                              <th>Description</th>
+                              <th>Active</th>
+                            </tr>
 
-@foreach(Auth::user()->quizzes as $q)
-  <tr>
-    <td>{{$q->Module->Program->ProgramName}}</td>
-    <td>{{$q->Module->ModuleName}}</td>
-    <td>{{$q->QuizName}}</td>
-    <td>{{$q->Description}}</td>
-    <td>{{$q->Active}}</td>
-    <td><a href="/quiz/{{$q->QuizID}}">Show Quiz</a></td>
-    <td><a href="/quiz/{{$q->QuizID}}/delete">Delete Quiz</a></td>
-  </tr>
-@endforeach
-</table>
+                          @foreach(Auth::user()->quizzes as $q)
+                            <tr>
+                              <td>{{$q->Module->Program->ProgramName}}</td>
+                              <td>{{$q->Module->ModuleName}}</td>
+                              <td>{{$q->QuizName}}</td>
+                              <td>{{$q->Description}}</td>
+                              <td>{{$q->Active}}</td>
+                              <td><a href="/quiz/{{$q->QuizID}}">Show Quiz</a></td>
+                              <td><a href="/quiz/{{$q->QuizID}}/delete">Delete Quiz</a></td>
+                            </tr>
+                          @endforeach
+                          </table>
 
 <button onclick="return showNewQuiz()">Add new quiz</button>
 

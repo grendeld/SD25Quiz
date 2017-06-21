@@ -34,28 +34,21 @@
         <div class="container-fluid">
 
             <div class="row MainMenu">
+
               <div class="selectPanell">
-                <div class="col-md-12">
-                  <div class="col-md-9"></div>
-                  <div class="col-md-3">
 
+                  <div class="col-md-10 layoutbkg">
+                      <!--<img src="images/owlEdit1.png" class="scale-image"/>-->
 
-                  </div>
-
-                </div>
-
-                  <div class="col-md-2">
-                    <img src="images/owlEdit1.png" height="150" width="150"/>
-                  </div>
-                  <div class="col-md-8">
-                      <p style="font-size:82px;"><font face="marzo-w00-regular, fantasy">
+                      <p style="font-size:82px;"><font face="marzo-w00-regular, fantasy" style="color:black; padding-left:3em;">
                         Quizard
                     </font></p>
-
                   </div>
-  <div class="col-md-2 ">
-    {{date("Y/m/d H:i:s")}}
-    <br/><br/>
+
+
+                <div class="col-md-2 ">
+                  {{date("Y/m/d H:i:s")}}
+                  <br/>
                   @if(Auth::guard('admins')->check())
                     Hello {{Auth::guard('admins')->user()->FirstName}}
                    @elseif(Auth::guard('instructors')->check())
@@ -72,9 +65,9 @@
                           <span class="MainMenuItem">
                             <h5 >
 
-                            <font face="marzo-w00-regular, fantasy">
+                            <font face="marzo-w00-regular, fantasy" style="color:black;"><strong>
                               Log Out
-                          </font></h5>
+                          </strong></font></h5>
                           </span>
                         </a>
 
@@ -84,6 +77,7 @@
 
 
                   </div>
+
 
               </div>
 

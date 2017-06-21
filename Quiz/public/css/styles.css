@@ -76,6 +76,37 @@ body {
 }
 /*NEW LARAVEL FORMATTING START */
 
+.BKG{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(46, 134, 193);
+    background: -webkit-linear-gradient(-75deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
+    background: -o-linear-gradient(-75deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
+    background: -moz-linear-gradient(-75deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
+    background: linear-gradient(-75deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
+
+}
+.Panelbkg{
+    background-color: rgba(254,254,254,0.6);
+    margin-top: 2em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    padding-top: 5px;
+    padding-left: 1em;
+    padding-bottom: 0.5em;
+    padding-right: 1em;
+
+}
+
+.layoutbkg{
+  background-image: url(../images/owlEdit1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 10em;
+  width: auto;
+}
+
 .BannerTop{
     background-color: rgba(160,160,160,0.2);
     height: 6rem;
@@ -151,11 +182,12 @@ text-decoration: none;
 
 .MainMenu{
 
-  background-color: rgba(169, 204, 227, 0.2);
+
   border-bottom-style: solid;
   border-bottom-width: 2px;
-  border-bottom-color: darkgrey;
+  border-bottom-color: black;
   text-decoration: none;
+
 
 }
 
@@ -177,6 +209,9 @@ text-decoration: none;
 
 }
 
+.AdminTables{
+    padding-left: 2em;
+}
 
 .AdminTables th{
     background-color: rgb(169, 204, 227);
@@ -201,9 +236,15 @@ text-decoration: none;
 }
 
 .selectPanel{
+  z-index: 10;
   width: 100%;
   height: 4rem;
-  background-color: rgb(234, 242, 248);
+  background-color: rgb(46, 134, 193);
+  background: -webkit-linear-gradient(-90deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
+  background: -o-linear-gradient(-90deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
+  background: -moz-linear-gradient(-90deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
+  background: linear-gradient(-90deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
+
 
 }
 .selectPanelll{
@@ -213,11 +254,16 @@ text-decoration: none;
 
 }
 .selectPanell{
+
   width: 100%;
-  height: auto;
+  height: 10em;
   overflow: auto;
   text-decoration: none;
-  background-color: rgba(170,180,190,0.2);
+  background-color: rgb(46, 134, 193);
+  background: -webkit-linear-gradient(-90deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
+  background: -o-linear-gradient(-90deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
+  background: -moz-linear-gradient(-90deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
+  background: linear-gradient(-90deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
 
 }
 
@@ -228,7 +274,14 @@ div.selectPanel button{
     height:4rem;
     width:100%;
     float:left;
-    border: none;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-left-color: rgba(160, 160, 160, 0.9);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: rgba(160, 160, 160, 0.9);
+    border-top:none;
+    border-bottom: none;
     background-color:rgba(213, 219, 219  ,0.6);
     -webkit-transition: background .5s ease-out;
     -moz-transition: background .5s ease-out;
@@ -269,7 +322,7 @@ div.selectPanell a{
     border-style: solid;
     border-width: 1px;
     border-color: black;
-    background-color:rgba(213, 219, 219  ,0.7);
+    background-color: rgba(169, 204, 227,0.5);
     -webkit-transition: background .5s ease-out;
     -moz-transition: background .5s ease-out;
     -o-transition: background .5s ease-out;

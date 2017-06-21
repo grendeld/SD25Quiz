@@ -11,6 +11,43 @@
   padding: 30px;
 }
 
+.ModListCell{
+  background-color: rgba(170, 183, 184 ,0.9);
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  height: 4em;
+  width: 100%;
+  color: black;
+  padding: 5px;
+  margin-top: 5px;
+
+}
+
+.ModListCellSelect{
+  padding: 10px;
+  height: 100%;
+  float: left;
+  width:5%;
+
+}
+
+.ModListCellName{
+  padding: 10px;
+  height: 100%;
+  float: left;
+  width:50%;
+}
+
+.ModListCellActive{
+  padding: 10px;
+  height: 100%;
+  float: left;
+  width:25%;
+}
+
+
+
 .QMSelectors{
   height: auto;
   overflow: auto;

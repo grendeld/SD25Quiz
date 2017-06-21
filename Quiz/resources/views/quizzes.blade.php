@@ -4,7 +4,7 @@
 
 
 <div id="divQuizzez" class="AdminTables">
-<h1>Quizzes:</h1>
+<h1>Quizze:</h1>
 <hr>
 <table>
   <tr>
