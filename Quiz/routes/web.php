@@ -46,6 +46,7 @@ Route::get('/StudentHome', 'StudentsController@main');
 Route::get('/intakesd3','d3@getIntakes');
 Route::get('/programByType','d3@getProgramsByType');
 Route::get('/charts',function(){ return view('chartTest');});
+Route::get('/testOK','d3@getAllStudentMarksByQuiz');
 
 //function(){return "test";}
 

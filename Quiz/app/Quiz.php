@@ -9,7 +9,7 @@ class Quiz extends Model
   protected $table = 'quizzes';
   protected $primaryKey = 'QuizID';
   protected $fillable=['QuizName','Description','ModuleID','InstructorID','Active'];
-  
+
   public function Module()
       {
           return $this->belongsTo(Module::class,'ModuleID','ModuleID');
@@ -24,7 +24,5 @@ class Quiz extends Model
           {
           return $this->belongsTo('App\Instructor','InstructorID','InstructorID');
           }
-
-
 
 }
