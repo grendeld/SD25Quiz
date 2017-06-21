@@ -9,6 +9,7 @@ Quiz Application
 -------
 
 Intended use is for academic institutions.
-Ability for instructors to create questions and answers, save as a quiz, import intakes(students),deploy quizes as tests, save results to database(under construction), view data in dynamic charts(under construction).
+Functionality for 'instructors' to create questions and answers, save as a quiz, import intakes(students),deploy quizes as tests, save results to database, view data in dynamic charts(under construction).
+Functionality for 'students' to view profile and take a deployed quiz.
 Using PHP, web sockets, laravel framework, D3 library, bootstrap.
 
