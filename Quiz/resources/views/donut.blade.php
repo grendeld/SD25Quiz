@@ -214,7 +214,7 @@ Added drop-shadow -->
 
 });
 
-//going for shadow, not using, styles with css instead
+//original code for shadow, not using, styled with css instead
  /*var defs = mySvg.append('defs')
 
  var clipPath = defs.append('clipPath')

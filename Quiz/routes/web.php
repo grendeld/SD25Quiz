@@ -42,7 +42,7 @@ Route::post('/newintake','IntakesController@create');
 Route::get('/StudentHome', 'StudentsController@main');
 
 
-//d3/charts Routes
+//d3 Routes
 Route::get('/intakesd3','d3@getIntakes');
 Route::get('/programByType','d3@getProgramsByType');
 Route::get('/charts',function(){ return view('chartTest');});

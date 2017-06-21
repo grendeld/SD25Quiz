@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <script type="text/javascript" src="d3/d3.min.js"></script>
   <link rel="icon" href="images/cap.ico">
+  <link rel="stylesheet" href="/css/styles.css">
   <script>
   function testOK (){
     return"/testOK";
@@ -54,10 +55,8 @@
   <div id="buttonPlace">
     <button type="button" onclick="showIntakes()">View Intakes</button>
     <button type="button" onclick="showPrograms()">View Progams by Type</button>
-    <button type="button" onclick="showAllClassTest()">test</button>
-    <select>
-    </select>
-    <!--<button type="button" onclick="showQuiz1()">View Quiz 1 Marks</button> -->
+    <button type="button" onclick="showAllClassTest()">View Test 2 Scores</button>
+
   </div>
   <div id="reuseChart">
     <svg width="920" height="550"></svg>
@@ -100,6 +99,7 @@
 function showPrograms(){
   d3.json("/programByType", updateBar)
 }
+
 function showAllClassTest(){
   d3.json("/testOK",updateBar)
 }

@@ -17,7 +17,8 @@ class QuizController extends Controller
 {
   public function __construct()
   {
-    $this->middleware('auth:instructors');
+    $this->middleware('auth:instructors',['except'=>'TakeTest']);
+    $this->middleware('auth:students',['only'=>'TakeTest']);
 
   }
 

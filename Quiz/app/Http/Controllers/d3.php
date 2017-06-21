@@ -25,14 +25,15 @@ class d3 extends Controller
 
     public function getAllStudentMarksByQuiz()
     {
-
-    return DB::select(DB::raw('Select COUNT(students.StudentID) FROM students
+      return DB::select(DB::raw(' Select students.StudentID, COUNT(students.StudentID)/(select COUNT(questions.QuizID) FROM tests
+    INNER join questions on tests.QuizID=questions.QuizID where TestID = 2
+    GROUP BY questions.QuizID)*100 as y,CONCAT(students.FirstName,students.LastName) AS x FROM students
     LEFT JOIN responses ON responses.StudentID = students.StudentID
     LEFT JOIN tests ON responses.TestID = tests.TestID
     LEFT JOIN questions ON tests.QuizID = questions.QuizID
-    WHERE tests.TestID = 2 AND responses.AnswerID=questions.CorrectAnswerID GROUP BY students.StudentID'));
+    WHERE tests.TestID = 2 AND responses.AnswerID=questions.CorrectAnswerID
+    GROUP BY students.StudentID,students.FirstName,students.LastName'));
 
-    return DB::select(DB::raw('select COUNT(questions.QuizID) FROM tests INNER join questions on tests.QuizID=questions.QuizID where TestID = 2 GROUP BY questions.QuizID'));
     }
 
 
