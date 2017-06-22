@@ -46,7 +46,9 @@
   width:25%;
 }
 
-
+.moduleNew{
+  padding:2em;
+}
 
 .QMSelectors{
   height: auto;
@@ -61,7 +63,23 @@
 .QMSelectorss{
   height:100%;
   float: left;
-  width: 20%;
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+  width: 50%;
+=======
+  width: 40%;
+>>>>>>> Stashed changes
+=======
+  width: 40%;
+>>>>>>> Stashed changes
+=======
+  width: 40%;
+>>>>>>> Stashed changes
+=======
+  width: 40%;
+>>>>>>> Stashed changes
 }
 .modlistCell{
   height: 6em;

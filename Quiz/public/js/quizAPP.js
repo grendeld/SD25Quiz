@@ -125,7 +125,7 @@ intake = JSON.parse(intake);
 console.dir(intake);
 for(student of intake.students)
 {
-$("#divStudentsForTest").append("<br/><input type='checkbox' name='CheckedStudent[]' onclick = 'StudentChecked()' value = '"+student.StudentID+"'/> " + student.FirstName +" "+ student.LastName +"<br/>");
+$("#divStudentsForTest").append("<br/><input type='checkbox' name='CheckedStudent[]' onclick = 'StudentChecked()' value = '"+student.StudentID+"'/> " + student.FirstName +" "+ student.LastName +"<br/><br/>");
 
 }
 
@@ -135,7 +135,7 @@ type:'get',
 data:{'IntakeID':intake.IntakeID},
 success:function(data){
   $.each(data,function(i,item){
-    $("#divQuizForTest").append("<input type='radio' name='SelectedQuiz' onclick = 'StudentChecked()' value='" + item.QuizID + "'/> "+ item.QuizName + "<br/>");
+    $("#divQuizForTest").append("<br/><input type='radio' name='SelectedQuiz' onclick = 'StudentChecked()' value='" + item.QuizID + "'/> "+ item.QuizName + "<br/><br/>");
  });
 }
 });

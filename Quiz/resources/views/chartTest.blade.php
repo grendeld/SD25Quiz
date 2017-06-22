@@ -24,7 +24,7 @@
   }
   .bar{
     fill:rgba(80,73,113,1);
-    /*when this is added it displaces the tooltip, check d3 event.Layer, invetigage!!! */
+    /*when -webkit for shadow is added it displaces the tooltip, check d3 event.Layer, invetigage!!! */
     /*-webkit-filter: drop-shadow( 9px 0px 3px rgba(0,0,0,.5) );
     filter: drop-shadow( 9px 0px 3px rgba(0,0,0,.5) );*/
   }
@@ -52,16 +52,48 @@
   </style>
 </head>
 <body>
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+  <div class="container-fluid">
+    <div class="row">
+
+
+
+          <div id="buttonPlace">
+            <button class="quizbutton" type="button" onclick="showIntakes()">Intakes</button>
+            <button class="quizbutton" type="button" onclick="showPrograms()">Progams by Type</button>
+            <button class="quizbutton" type="button" onclick="showAllClassTest()">Test => Scores</button>
+
+          </div>
+
+=======
   <div id="buttonPlace">
     <button type="button" onclick="showIntakes()">View Intakes</button>
     <button type="button" onclick="showPrograms()">View Progams by Type</button>
     <button type="button" onclick="showAllClassTest()">View Test 2 Scores</button>
+  
+>>>>>>> Stashed changes
 
+
+          <div id="reuseChart">
+            <svg width="460" height="275"></svg>
+          </div>
+          <p id="testQ"></p>
+
+
+    </div>
+=======
+  <div id="buttonPlace">
+    <button class="quizbutton" type="button" onclick="showIntakes()">View Intakes</button>
+    <button class="quizbutton" type="button" onclick="showPrograms()">View Progams by Type</button>
+    <!--<button type="button" onclick="showQuiz1()">View Quiz 1 Marks</button> -->
   </div>
   <div id="reuseChart">
     <svg width="920" height="550"></svg>
+>>>>>>> Stashed changes
   </div>
-  <p id="testQ"></p>
+
+
 </body>
 <script>
 

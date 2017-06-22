@@ -28,7 +28,7 @@
           <td>{{$q->Description}}</td>
           <td><span id="Active{{$q->QuizID}}" class="quizbutton" onclick="toggleActive({{$q}})">{{$q->Active}}</span></td>
           <td><button type="button" onclick="window.location.href='/quiz/{{$q->QuizID}}'" class="quizbutton">View</button>
-          <button type="button" onclick="deleteQuiz({{$q}},{{$q->Tests->count()}})" class="quizbutton">Delete/Hide</button></td>
+          <button type="button" onclick="deleteQuiz({{$q}},{{$q->Tests->count()}})" class="quizbutton">Delete</button></td>
         </tr>
       @endforeach
       </table>
@@ -122,7 +122,7 @@ function toggleActive(quiz){
 
 function deleteQuiz(quiz,tests_count){
 
-alert(tests_count);
+//alert(tests_count);
    if (tests_count > 0)
  {
    dialog.setAttribute("title","Delete Quiz");
@@ -139,16 +139,26 @@ alert(tests_count);
         $( this ).dialog( "close" );
         window.location.replace('/quiz/' + quiz.QuizID + '/delete');
       }}
-    ] // buttons
+    ] // end buttons
     });
- }
- // else {
-//   divQuizHead.style.display = "none";
-//   var x = document.getElementsByName("edit");
-//   for (var i = 0; i < x.length; i++)
-//   {
-//    x[i].style.display = "block";
-//   }
+ }else{
+   dialog.setAttribute("title","Delete Quiz");
+   dialog.innerHTML = "Do you want to delete quiz " + quiz.QuizName + "?";
+   $( "#dialog" ).dialog({
+    modal:true,
+    buttons: [
+      { text: "No",
+        click: function() {
+          $( this ).dialog( "close" );
+        }},
+        { text:"Yes",
+      click:function(){
+        $( this ).dialog( "close" );
+        window.location.replace('/quiz/' + quiz.QuizID + '/delete');
+      }}
+    ] // end buttons
+    });
+ }//end if
 }
 
 

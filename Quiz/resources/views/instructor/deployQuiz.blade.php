@@ -3,6 +3,7 @@
 
 @section ('content')
 
+
 <div class="container-fluid">
   <div class="row BKG">
       <div class="col-md-2"></div>
@@ -18,6 +19,7 @@
         }]);
             @endforeach
             </select>
+            <br/><br/>
             <form name = "formDeployTest" action='/startTest' method='post'>
         <h3>Quizzes:</h3>
 
@@ -30,14 +32,14 @@
 
             </div>
 
-            <button type="submit" onclick='javascript: StartTest();' id="btnStart" style="display:none;">Start test</button>
+            <button class="quizbutton" type="submit" onclick='javascript: StartTest();' id="btnStart" style="display:none;">Start test</button>
                 {{ csrf_field() }}
 
         </form>
         </div>
-      </div>
-      <div class="col-md-2"></div>
+        <div class="col-md-2"></div>
+    </div>
   </div>
-</div>
+
 
 @stop

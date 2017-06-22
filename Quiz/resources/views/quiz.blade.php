@@ -2,9 +2,9 @@
 
 @section ('content')
 <div class="container-fluid">
-  <div class="row BKG">
-    <div class="col-md-1"></div>
-    <div class="col-md-10 Panelbkg">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
       <!-- Show Quiz with questions and answers -->
       <div id="divQuiz">
       <div id="divQuizHead">
@@ -69,51 +69,61 @@
       </div>
 
       <!-- Add or edit question with answers -->
-      <div id="divNewQA" style="display:none;" class="AdminTables">
+      <div id="divNewQA" style="display:none;" class="AdminTables Panelbkg">
+        <h3>Question Editor:</h3><br/><br/>
       <form action="/quiz/{{$quiz->QuizID}}/newQA" method="post" name="formQA">
 
+                   <textarea id="Question" type="textarea" rows="5" cols="50" row="5" placeholder="Question" name="Question"></textarea>
+                    <input id = 'QuestionID' type="hidden" name="QuestionID" value="new">
+            <style>
+                  ol#list{
+                      display:inline;
 
-             <textarea id="Question" type="textarea" rows="5" cols="50" row="5" placeholder="Question" name="Question"></textarea>
-              <input id = 'QuestionID' type="hidden" name="QuestionID" value="new">
-      <style>
-            ol#list{
-                display:inline;
+                  }
+              ol#list li{
+          list-style: none;
+                  margin-top: 5px;
+      height: 4em;
+      width: 100%;
+      float: left;
+          counter-increment: myIndex;
 
+      }
+
+      ol#list li:before{
+          content:counter(myIndex,upper-alpha)" ";
+          font-size: 1.75rem;
+          margin-bottom: 0.5rem;
+      font-family: inherit;
+      font-weight: 500;
+      line-height: 1.1;
+      color: inherit;
+
+      }
+              </style>
+          <div>
+              <ol id="list">
+              </ol>
+              </div>
+              <script>
+            var list = document.getElementById('list');
+            function loader(textBox){
+                      if(!list){
+                          var list = document.getElementById('list');
+                      }
+                      textBox.oninput = null;
+                      list.appendChild(createItem());
+                      var q = [document.createElement('button'),
+                              document.createElement('input')];
+                      q[0].setAttribute('class','btn btn-danger btn-sm');
+                      q[0].innerHTML="Delete";
+                      q[0].setAttribute('onclick','del(this)');
+                      q[1].setAttribute('type','radio');
+                      q[1].setAttribute('name','correct');
+                      var par = textBox.parentElement;
+                      par.insertBefore(q[1],textBox);
+                      par.appendChild(q[0]);
             }
-        ol#list li{
-    list-style: none;
-            margin-top: 5px;
-height: 4em;
-width: 100%;
-float: left;
-    counter-increment: myIndex;
-
-}
-
-        </style>
-    <div>
-        <ol id="list">
-        </ol>
-        </div>
-        <script>
-			var list = document.getElementById('list');
-			function loader(textBox){
-                if(!list){
-                    var list = document.getElementById('list');
-                }
-                textBox.oninput = null;
-                list.appendChild(createItem());
-                var q = [document.createElement('button'),
-                        document.createElement('input')];
-                q[0].setAttribute('class','btn btn-danger btn-sm');
-                q[0].innerHTML="Delete";
-                q[0].setAttribute('onclick','del(this)');
-                q[1].setAttribute('type','radio');
-                q[1].setAttribute('name','correct');
-                var par = textBox.parentElement;
-                par.insertBefore(q[1],textBox);
-                par.appendChild(q[0]);
-			}
                   function createItem(input,correct){
                       console.log(correct);
                       var item = document.createElement('li');
@@ -167,49 +177,29 @@ float: left;
           </script>
           <!---ANSWERSET SECTION END--->
           <!---CORRECTANSWERSET SECTION START--->
-        <button type="submit" onclick="sub()">Save</button>   <button onclick="return hideNewQA()">Cancel</button>
+        <button class="quizbutton" type="submit" onclick="sub()">Save</button>
+        <button class="quizbutton" onclick="return hideNewQA()">Cancel</button>
         {!! csrf_field() !!}
       </form>
       </div>
-
     </div>
-    <div class="col-md-1"></div>
-  <div>
+    <div class="col-md-3"></div>
+  </div>
 </div>
+
 <!--                                        JAVASCRIPT                                                         -->
 <script type="text/javascript">
 
-function showEditQuiz(quiz,tests_count)
+function showEditQuiz()
 {
-  if (tests_count > 0)
-{
-  dialog.setAttribute("title","EditQuiz");
-  dialog.innerHTML = "Cannot modify deployed quiz. Do you want to create a new version?";
-  $( "#dialog" ).dialog({
-   modal:true,
-   buttons: [
-     { text: "No",
-       click: function() {
-         $( this ).dialog( "close" );
-       }},
+divQuizHead.style.display = "none";
 
-       { text:"Yes",
-     click:function(){
-       $( this ).dialog( "close" );
-       window.location.replace('/quiz/' + quiz.QuizID + '/copy');
-     }}
-   ] // buttons
-   });
-} else {
-  divQuizHead.style.display = "none";
-  var x = document.getElementsByName("edit");
-  for (var i = 0; i < x.length; i++)
-  {
+var x = document.getElementsByName("edit");
+
+for (var i = 0; i < x.length; i++)
+ {
    x[i].style.display = "block";
   }
- }
-
-
 
 }
 
@@ -289,33 +279,6 @@ divQuiz.style.display = "block";
 divNewQA.style.display = "none";
 return false;
 }
-
-function EditQuiz(){
-
-
-if (prog.modules.length>0){
-  }
-  else{
-    dialog.innerHTML = "Delete program " + prog.ProgramName + "?";
-    $( "#dialog" ).dialog({
-     modal:true,
-     buttons: [
-       { text: "No",
-         click: function() {
-           $( this ).dialog( "close" );
-         }},
-         { text:"Yes",
-       click:function(){
-         $( this ).dialog( "close" );
-         window.location.replace('program/' + prog.ProgramID + '/delete');
-       }}
-     ] // buttons
-     });
-  }
-}
-
-
-
 </script>
 
 @stop
