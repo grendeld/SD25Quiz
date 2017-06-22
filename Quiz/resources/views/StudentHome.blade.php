@@ -9,86 +9,85 @@
 @stop
 @section ('content')
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<div class="container-fluid BKG">
-<div class="row">
-  <div class="col-md-1"></div>
-  <div class="col-md-10 Panelbkg">
+  <div class="container-fluid BKG">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10 Panelbkg">
+            <div class="col-md-3">
+              <img width='200' height='250' src='storage/{{$student->Photo}}'/>
+            </div>
 =======
-=======
->>>>>>> Stashed changes
 <div class="container-fluid">
 <div class="row BKG">
 
->>>>>>> Stashed changes
           <div class="col-md-3">
-            <img width='200' height='250' src='storage/{{$student->Photo}}'/>
-          </div>
-
-          <div class="col-md-3">
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-            <h3>{{$student->FirstName}} {{$student->LastName}}</h3>
-            <br/>
-            <h5>StudentID: {{$student->StudentID}}</h5> <br/>
-=======
-            <h3>{{$student->FirstName}} {{$student->LastName}}</h3><br/>
-
-            <h5>StudentID: {{$student->StudentID}} </h5><br/>
+          <img width='200' height='250' src='storage/{{$student->Photo}}'/>
 >>>>>>> Stashed changes
-            <h5>Program: {{$student->intake->program->ProgramName}}</h5> <br/>
-            <h5>Intake: {{$student->intake->IntakeName}}</h5>
-          </div>
 
-          <div class="col-md-12">
+            <div class="col-md-3">
+              <h3>{{$student->FirstName}} {{$student->LastName}}</h3>
+              <br/>
+              <h5>StudentID: {{$student->StudentID}}</h5> <br/>
+              <h5>Program: {{$student->intake->program->ProgramName}}</h5> <br/>
+              <h5>Intake: {{$student->intake->IntakeName}}</h5>
+            </div>
+
 <<<<<<< Updated upstream
-            <div class="AdminTables">
-              <h4>Available quizzes:</h4>
+            <div class="col-md-12">
+              <div class="AdminTables">
+                <h4>Available quizzes:</h4>
 
-              <table>
-                <tr>
+                <table>
+                  <tr>
+                    <th>
+                      Quiz
+                    </th>
+                    <th>
+                      Name
+                    </th>
                   <th>
-                    Quiz
-                  </th>
-                  <th>
-                    Name
-                  </th>
-                <th>
 
-                </th>
-              </tr>
-              @foreach($tests as $t)
-                <tr>
-                    <td>
-                      {{$t->TestID}}
-                    </td>
-                    <td>
-                      {{$t->quiz->QuizName}}
-                    </td>
-                    <td>
-                      <input type="button" onclick = "StartQuiz({{$t->TestID}})" value="Start Quiz" />
-                    </td>
+                  </th>
                 </tr>
-              @endforeach
-            </table>
-          </div>
+                @foreach($tests as $t)
+                  <tr>
+                      <td>
+                        {{$t->TestID}}
+                      </td>
+                      <td>
+                        {{$t->quiz->QuizName}}
+                      </td>
+                      <td>
+                        <input type="button" onclick = "StartQuiz({{$t->TestID}})" value="Start Quiz" />
+                      </td>
+                  </tr>
+                @endforeach
+              </table>
+            </div>
 
-              <hr>
-          </div>
-        <div class="col-md-1"></div>
-        </div>
-      </div>
+                <hr>
+            </div>
+          <div class="col-md-1"></div>
 =======
-=======
+          <div class="col-md-3">
             <h3>{{$student->FirstName}} {{$student->LastName}}</h3><br/>
 
             <h5>StudentID: {{$student->StudentID}} </h5><br/>
             <h5>Program: {{$student->intake->program->ProgramName}}</h5> <br/>
             <h5>Intake: {{$student->intake->IntakeName}}</h5>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+          </div>
+        </div>
+  </div>
+
+<<<<<<< Updated upstream
+=======
+=======
           </div>
 
-          <div class="col-md-12">
 >>>>>>> Stashed changes
+          <div class="col-md-12">
           <br/>
           <hr>
           <h4>Available quizzes:</h4>
@@ -102,11 +101,11 @@
           <hr>
           </div>
     </div>
+</div>
 <<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
-</div>
 
       @stop
 
