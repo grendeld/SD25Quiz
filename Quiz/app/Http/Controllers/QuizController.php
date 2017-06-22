@@ -137,16 +137,24 @@ public function DeleteQuestion(Question $question)
 
 public function deleteQuiz(Quiz $quiz)
 {
-  $questions_in_quiz = $quiz->Questions->count();
-  $tests = $quiz->Tests->count();
+  $questions_count = $quiz->Questions->count();
+  $tests_count = $quiz->Tests->count();
   //dd($tests);
 
-  if ($questions_in_quiz > 0 or $tests > 0)
+  if ($tests_count > 0)
   {
     $quiz-> update(['Active'=>'No']);
   }
   else
   {
+    if ($questions_count > 0){
+      foreach($quiz->questions as $question){
+        foreach ($question->answers as $answer) {
+          $answer->delete();
+        }
+        $question->delete();
+      }
+     }
     $quiz->delete();
   }
 
@@ -156,11 +164,10 @@ public function deleteQuiz(Quiz $quiz)
 public function copyQuiz(Quiz $quiz)
 {
   $quizCopy = $quiz->replicate();
-  //$quizcopy -> push();
   $newName = $quiz->QuizName."_".($quiz->Version + 1);
   $NewID=$quizCopy->QuizID;
   $quizCopy->QuizName = $newName;
-  $quizCopy->Version = ($quiz->Version + 1);
+  $quiz->update(['Version' => $quiz->Version ++ ]);
   $quizCopy->ParentQuizID = $quiz->QuizID;
   $quizCopy->save();
 
@@ -172,6 +179,9 @@ public function copyQuiz(Quiz $quiz)
   {$aCopy = $a->replicate();
     $aCopy->QuestionID = $qCopy->QuestionID;
     $aCopy->save();
+    if($q->CorrectAnswerID == $a->AnswerID)
+    {$qCopy->update(['CorrectAnswerID' => $aCopy->AnswerID]);}
+
   }
   }
 
@@ -246,9 +256,9 @@ public function ControlTest(){
              $port = \WatchDog\Server::connect(session('currentTest'),uniqid(),false);
             session(['port' => $port]);
         }
-        
+
     }
-    
+
    return view ('instructor.test');
  }
 
