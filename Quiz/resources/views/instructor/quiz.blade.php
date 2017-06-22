@@ -2,9 +2,9 @@
 
 @section ('content')
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
+  <div class="row BKG">
+    <div class="col-md-1"></div>
+    <div class="col-md-10 Panelbkg">
       <!-- Show Quiz with questions and answers -->
       <div id="divQuiz">
       <div id="divQuizHead">
@@ -69,15 +69,27 @@
       </div>
 
       <!-- Add or edit question with answers -->
-      <div id="divNewQA" style="display:none;" class="AdminTables Panelbkg">
-        <h3>Question Editor:</h3><br/><br/>
+      <div id="divNewQA" style="display:none;" class="AdminTables">
       <form action="/quiz/{{$quiz->QuizID}}/newQA" method="post" name="formQA">
 
-                   <textarea id="Question" type="textarea" rows="5" cols="50" row="5" placeholder="Question" name="Question"></textarea>
-                    <input id = 'QuestionID' type="hidden" name="QuestionID" value="new">
-            <style>
-                  ol#list{
-                      display:inline;
+
+             <textarea id="Question" type="textarea" rows="5" cols="50" row="5" placeholder="Question" name="Question"></textarea>
+              <input id = 'QuestionID' type="hidden" name="QuestionID" value="new">
+      <style>
+            ol#list{
+                display:inline;
+
+            }
+        ol#list li{
+    list-style: none;
+            margin-top: 5px;
+height: 4em;
+width: 100%;
+float: left;
+    counter-increment: myIndex;
+
+}
+>>>>>>> 07b8dd4a7c72c87aa171567a3af39774121253a8:Quiz/resources/views/instructor/quiz.blade.php
 
                   }
               ol#list li{
@@ -88,6 +100,7 @@
       float: left;
           counter-increment: myIndex;
 
+<<<<<<< HEAD:Quiz/resources/views/quiz.blade.php
       }
 
       ol#list li:before{
@@ -123,6 +136,81 @@
                       var par = textBox.parentElement;
                       par.insertBefore(q[1],textBox);
                       par.appendChild(q[0]);
+=======
+}
+        </style>
+    <div>
+        <ol id="list">
+        </ol>
+        </div>
+        <script>
+			var list = document.getElementById('list');
+			function loader(textBox){
+                if(!list){
+                    var list = document.getElementById('list');
+                }
+                textBox.oninput = null;
+                list.appendChild(createItem());
+                var q = [document.createElement('button'),
+                        document.createElement('input')];
+                q[0].setAttribute('class','btn btn-danger btn-sm');
+                q[0].innerHTML="Delete";
+                q[0].setAttribute('onclick','del(this)');
+                q[1].setAttribute('type','radio');
+                q[1].setAttribute('name','correct');
+                var par = textBox.parentElement;
+                par.insertBefore(q[1],textBox);
+                par.appendChild(q[0]);
+			}
+            function createItem(input,correct){
+                console.log(correct);
+                var item = document.createElement('li');
+                var q = document.createElement('input');
+                q.setAttribute('type','text');
+                q.setAttribute('name','Answer[]');
+
+                q.setAttribute('placeholder','Next Option');
+                if(input){
+                    var z = document.createElement('input');
+                    var x= document.createElement('button');
+                    x.setAttribute('class','btn btn-danger btn-sm');
+                x.innerHTML="Delete";
+                x.setAttribute('onclick','del(this)');
+                z.setAttribute('type','radio');
+                z.setAttribute('name','correct');
+                    if(correct)
+                    z.setAttribute('checked','checked');
+                //par.insertBefore(q[1],textBox);
+                //par.appendChild(q[0]);
+                    q.value = input;
+                    item.appendChild(z);
+                    item.appendChild(q);
+                    item.appendChild(x);
+                    return item;
+                }
+                else{
+                    q.setAttribute('oninput','loader(this)');
+                }
+                item.appendChild(q);
+                return item;
+            }
+            function del(check){
+                var li = check.parentElement;
+                var ul = li.parentElement;
+                li.parentElement.removeChild(li);
+            }
+            function sub(){
+                var radio = document.getElementsByName('correct');
+                for(rad in radio){
+                    if(radio[rad].checked == true)
+                        {
+                            radio[rad].value = rad;
+                            break;
+                        }
+                }
+                var par = radio[0].parentElement.parentElement;
+                par.removeChild(par.lastElementChild);
+>>>>>>> 07b8dd4a7c72c87aa171567a3af39774121253a8:Quiz/resources/views/instructor/quiz.blade.php
             }
                   function createItem(input,correct){
                       console.log(correct);
@@ -177,29 +265,49 @@
           </script>
           <!---ANSWERSET SECTION END--->
           <!---CORRECTANSWERSET SECTION START--->
-        <button class="quizbutton" type="submit" onclick="sub()">Save</button>
-        <button class="quizbutton" onclick="return hideNewQA()">Cancel</button>
+        <button type="submit" onclick="sub()">Save</button>   <button onclick="return hideNewQA()">Cancel</button>
         {!! csrf_field() !!}
       </form>
       </div>
-    </div>
-    <div class="col-md-3"></div>
-  </div>
-</div>
 
+    </div>
+    <div class="col-md-1"></div>
+  <div>
+</div>
 <!--                                        JAVASCRIPT                                                         -->
 <script type="text/javascript">
 
-function showEditQuiz()
+function showEditQuiz(quiz,tests_count)
 {
-divQuizHead.style.display = "none";
+  if (tests_count > 0)
+{
+  dialog.setAttribute("title","EditQuiz");
+  dialog.innerHTML = "Cannot modify deployed quiz. Do you want to create a new version?";
+  $( "#dialog" ).dialog({
+   modal:true,
+   buttons: [
+     { text: "No",
+       click: function() {
+         $( this ).dialog( "close" );
+       }},
 
-var x = document.getElementsByName("edit");
-
-for (var i = 0; i < x.length; i++)
- {
+       { text:"Yes",
+     click:function(){
+       $( this ).dialog( "close" );
+       window.location.replace('/quiz/' + quiz.QuizID + '/copy');
+     }}
+   ] // buttons
+   });
+} else {
+  divQuizHead.style.display = "none";
+  var x = document.getElementsByName("edit");
+  for (var i = 0; i < x.length; i++)
+  {
    x[i].style.display = "block";
   }
+ }
+
+
 
 }
 
@@ -279,6 +387,33 @@ divQuiz.style.display = "block";
 divNewQA.style.display = "none";
 return false;
 }
+
+function EditQuiz(){
+
+
+if (prog.modules.length>0){
+  }
+  else{
+    dialog.innerHTML = "Delete program " + prog.ProgramName + "?";
+    $( "#dialog" ).dialog({
+     modal:true,
+     buttons: [
+       { text: "No",
+         click: function() {
+           $( this ).dialog( "close" );
+         }},
+         { text:"Yes",
+       click:function(){
+         $( this ).dialog( "close" );
+         window.location.replace('program/' + prog.ProgramID + '/delete');
+       }}
+     ] // buttons
+     });
+  }
+}
+
+
+
 </script>
 
 @stop

@@ -18,6 +18,7 @@
         }]);
             @endforeach
             </select>
+            <br/><br/>
             <form name = "formDeployTest" action='/startTest' method='post'>
         <h3>Quizzes:</h3>
 
@@ -29,8 +30,13 @@
             <div id="divStudentsForTest" >
 
             </div>
+<<<<<<< Updated upstream
             <br/>
             <button type="submit" onclick='javascript: StartTest();' id="btnStart" style="display:none;">Start test</button>
+=======
+
+            <button class="quizbutton" type="submit" onclick='javascript: StartTest();' id="btnStart" style="display:none;">Start test</button>
+>>>>>>> Stashed changes
                 {{ csrf_field() }}
 
         </form>

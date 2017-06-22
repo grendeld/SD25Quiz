@@ -24,5 +24,9 @@ class Quiz extends Model
           {
           return $this->belongsTo('App\Instructor','InstructorID','InstructorID');
           }
+  public function Tests()
+  {
+    return $this->hasMany('App\Test','QuizID','QuizID');
+  }
 
 }

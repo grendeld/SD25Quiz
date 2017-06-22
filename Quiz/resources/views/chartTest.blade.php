@@ -52,6 +52,7 @@
   </style>
 </head>
 <body>
+<<<<<<< Updated upstream
   <div class="container-fluid">
     <div class="row">
 
@@ -73,6 +74,15 @@
 
 
     </div>
+=======
+  <div id="buttonPlace">
+    <button class="quizbutton" type="button" onclick="showIntakes()">View Intakes</button>
+    <button class="quizbutton" type="button" onclick="showPrograms()">View Progams by Type</button>
+    <!--<button type="button" onclick="showQuiz1()">View Quiz 1 Marks</button> -->
+  </div>
+  <div id="reuseChart">
+    <svg width="920" height="550"></svg>
+>>>>>>> Stashed changes
   </div>
 
 

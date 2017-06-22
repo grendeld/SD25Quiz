@@ -8,23 +8,36 @@
 </head>
 @stop
 @section ('content')
+<<<<<<< Updated upstream
 <div class="container-fluid BKG">
 <div class="row">
   <div class="col-md-1"></div>
   <div class="col-md-10 Panelbkg">
+=======
+<div class="container-fluid">
+<div class="row BKG">
+
+>>>>>>> Stashed changes
           <div class="col-md-3">
             <img width='200' height='250' src='storage/{{$student->Photo}}'/>
           </div>
 
           <div class="col-md-3">
+<<<<<<< Updated upstream
             <h3>{{$student->FirstName}} {{$student->LastName}}</h3>
             <br/>
             <h5>StudentID: {{$student->StudentID}}</h5> <br/>
+=======
+            <h3>{{$student->FirstName}} {{$student->LastName}}</h3><br/>
+
+            <h5>StudentID: {{$student->StudentID}} </h5><br/>
+>>>>>>> Stashed changes
             <h5>Program: {{$student->intake->program->ProgramName}}</h5> <br/>
             <h5>Intake: {{$student->intake->IntakeName}}</h5>
           </div>
 
           <div class="col-md-12">
+<<<<<<< Updated upstream
             <div class="AdminTables">
               <h4>Available quizzes:</h4>
 
@@ -61,6 +74,21 @@
         <div class="col-md-1"></div>
         </div>
       </div>
+=======
+          <br/>
+          <hr>
+          <h4>Available quizzes:</h4>
+          @foreach($tests as $t)
+          {{$t->TestID}}
+          {{$t->quiz->QuizName}}<input class="quizbutton" type="button" onclick = "StartQuiz({{$t->TestID}})" value="Start Quiz" />
+          <br/>
+          @endforeach
+
+          <br/>
+          <hr>
+          </div>
+    </div>
+>>>>>>> Stashed changes
 </div>
 
       @stop

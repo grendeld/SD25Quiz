@@ -77,9 +77,14 @@ body {
 /*NEW LARAVEL FORMATTING START */
 
 .BKG{
+<<<<<<< Updated upstream
     min-height: 80vh;
     height: auto;
     overflow: auto;
+=======
+    height: 90vh;
+  
+>>>>>>> Stashed changes
     background-color: rgb(46, 134, 193);
     background: -webkit-linear-gradient(-75deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
     background: -o-linear-gradient(-75deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
@@ -93,18 +98,24 @@ body {
     border-style: solid;
     border-width: 1px;
     border-color: black;
+<<<<<<< Updated upstream
     padding:2em;
+=======
+    padding: 2em;
+
+>>>>>>> Stashed changes
 
 }
 
 .layoutbkg{
   background-image: url(../images/owlEdit1.png);
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   height: 14em;
   width: auto;
 }
 
+<<<<<<< Updated upstream
 .BannerTop{
   height:3rem;
   width:100%;
@@ -114,6 +125,19 @@ body {
   border-style: solid;
   border-width: 1px;
   border-color: black;
+=======
+.usernameView{
+  height:3rem;
+  width:100%;
+  float:left;
+  padding:10px;
+  margin-top: 15px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  background-color: rgba(169, 204, 227,0.5);
+  font-weight: bold;
+>>>>>>> Stashed changes
 
 }
 

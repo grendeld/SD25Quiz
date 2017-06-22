@@ -26,9 +26,9 @@
         <tr>
           <td>{{$q->QuizName}}</td>
           <td>{{$q->Description}}</td>
-          <td>{{$q->Active}}</td>
-          <td><a href="/quiz/{{$q->QuizID}}" class="quizbutton">Edit</a>
-          <a href="/quiz/{{$q->QuizID}}/delete" class="quizbutton">Delete</a></td>
+          <td><span id="Active{{$q->QuizID}}" class="quizbutton" onclick="toggleActive({{$q}})">{{$q->Active}}</span></td>
+          <td><button type="button" onclick="window.location.href='/quiz/{{$q->QuizID}}'" class="quizbutton">View</button>
+          <button type="button" onclick="deleteQuiz({{$q}},{{$q->Tests->count()}})" class="quizbutton">Delete/Hide</button></td>
         </tr>
       @endforeach
       </table>
@@ -101,7 +101,57 @@
 <div class="col-md-1"></div>
 </div>
 </div>
+
+
+
+
 <script type="text/javascript">
+
+function toggleActive(quiz){
+
+  $.ajax({
+    url:'/quizToggleActive',
+    type:'get',
+    data:{'q':quiz.QuizID},
+    success:function(data)
+    {alert(data);
+      document.getElementById("Active" + quiz.QuizID).innerHTML=data;
+    }
+    });
+}
+
+function deleteQuiz(quiz,tests_count){
+
+alert(tests_count);
+   if (tests_count > 0)
+ {
+   dialog.setAttribute("title","Delete Quiz");
+   dialog.innerHTML = "Cannot delete deployed quiz. Do you want to hide it?";
+   $( "#dialog" ).dialog({
+    modal:true,
+    buttons: [
+      { text: "No",
+        click: function() {
+          $( this ).dialog( "close" );
+        }},
+        { text:"Yes",
+      click:function(){
+        $( this ).dialog( "close" );
+        window.location.replace('/quiz/' + quiz.QuizID + '/delete');
+      }}
+    ] // buttons
+    });
+ }
+ // else {
+//   divQuizHead.style.display = "none";
+//   var x = document.getElementsByName("edit");
+//   for (var i = 0; i < x.length; i++)
+//   {
+//    x[i].style.display = "block";
+//   }
+}
+
+
 
 function showNewQuiz(){
 divQuizzez.style.display = "none";
