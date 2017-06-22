@@ -10,11 +10,7 @@
 @section ('content')
 <div class="container-fluid">
 <div class="row">
-        <div class="banner">
-
-          top banner display logged in username, program-name and date<br/>
-          TEST SESSION PAGE and LOG OUT PAGE - link buttons will be here
-        </div>
+    
 
 
 

@@ -52,16 +52,30 @@
   </style>
 </head>
 <body>
-  <div id="buttonPlace">
-    <button type="button" onclick="showIntakes()">View Intakes</button>
-    <button type="button" onclick="showPrograms()">View Progams by Type</button>
-    <button type="button" onclick="showAllClassTest()">View Test 2 Scores</button>
+  <div class="container-fluid">
+    <div class="row">
 
+
+
+          <div id="buttonPlace">
+            <button class="quizbutton" type="button" onclick="showIntakes()">Intakes</button>
+            <button class="quizbutton" type="button" onclick="showPrograms()">Progams by Type</button>
+            <button class="quizbutton" type="button" onclick="showAllClassTest()">Test => Scores</button>
+
+          </div>
+
+
+
+          <div id="reuseChart">
+            <svg width="460" height="275"></svg>
+          </div>
+          <p id="testQ"></p>
+
+
+    </div>
   </div>
-  <div id="reuseChart">
-    <svg width="920" height="550"></svg>
-  </div>
-  <p id="testQ"></p>
+
+
 </body>
 <script>
 

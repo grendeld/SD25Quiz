@@ -10,52 +10,49 @@
 
       <!---MODULE LIST VIEW START--->
       <br/>
+      <div class="AdminTables">
       <h1> My Modules:</h1>
-      <form method="POST" name="formModuleList">
-        {!! csrf_field() !!}
+              <form method="POST" name="formModuleList">
+                {!! csrf_field() !!}
 
-        <div class="moduleListcontainer" id="moduleListcontainer">
+                <div class="moduleListcontainer" id="moduleListcontainer">
+                        <table>
+                          <tr>
 
-<div class="AdminTables">
-        <table>
-          <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Active</th>
+                            <th>
+                              <button type="button" class="quizbutton"
+                              name="button" onclick="return showModuleAdd()">
+                              Add new module
+                              </button>
+                            </th>
+                          </tr>
+                          @foreach($modules as $m)
+                          <tr>
+                            <td>
+                              <input  type="radio" name="ModID" value="{{$m->ModuleID}}" id="ModuleListItem" required />
+                            </td>
+                            <td>
+                              {{$m->ModuleName}}
+                            </td>
+                            <td>
+                              Active: {{$m->Active}}
+                            </td>
+                            <td></td>
+                          </tr>
+                        @endforeach
+                        </table>
 
-            <th></th>
-            <th>Name</th>
-            <th>Active</th>
-            <th>
-              <button type="button" class="quizbutton"
-              name="button" onclick="return showModuleAdd()">
-              Add new module
-              </button>
-            </th>
-          </tr>
-          @foreach($modules as $m)
-          <tr>
-            <td>
-              <input  type="radio" name="ModID" value="{{$m->ModuleID}}" id="ModuleListItem" required />
-            </td>
-            <td>
-              {{$m->ModuleName}}
-            </td>
-            <td>
-              Active: {{$m->Active}}
-            </td>
-            <td></td>
-          </tr>
-        @endforeach
-        </table>
+                  </div>
+                  <br/>
 
-  </div>
+                <button type="button" class="quizbutton" name="button" onclick="return showModuleEdit()">Edit</button>
+                <button type="submit"  class="quizbutton" name="button" formaction="/moduleDelete">Delete</button>
+              </div>
 
-
-        </div>
-        <br/>
-        <button type="button" class="quizbutton" name="button" onclick="return showModuleEdit()">Edit</button>
-        <button type="submit"  class="quizbutton" name="button" formaction="/moduleDelete">Delete</button>
-
-
-      </form>
+              </form>
       </div>
 
       <div id="divModuleEdit" style="display:none">
@@ -100,10 +97,11 @@
                     <label for="modulename">Module Name: </label>
                     <input type="text" name="ModuleName" id="moduleName" required/>
                   </div>
-                  <div class="QMSelectorss">
+                  <br/><br/>
+
                     <input type="submit" class="quizbutton"  value="Add Module" id="btnModuleEnter"/>
                     <button type="button" class="quizbutton" onclick="return hideModuleAdd()" name="button">Cancel</button>
-                  </div>
+
                   {!! csrf_field() !!}
                 </form>
                 </div>

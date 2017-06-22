@@ -29,7 +29,7 @@
             <div id="divStudentsForTest" >
 
             </div>
-
+            <br/>
             <button type="submit" onclick='javascript: StartTest();' id="btnStart" style="display:none;">Start test</button>
                 {{ csrf_field() }}
 

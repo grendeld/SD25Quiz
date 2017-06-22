@@ -38,18 +38,20 @@
 
               <div class="selectPanell">
 
-                  <div class="col-md-10 layoutbkg">
+                  <div class="col-md-10">
                       <!--<img src="images/owlEdit1.png" class="scale-image"/>-->
-
                       <p style="font-size:82px;"><font face="marzo-w00-regular, fantasy" style="color:black; padding-left:3em;">
                         Quizard
                     </font></p>
                   </div>
 
 
-                <div class="col-md-2 ">
+                <div class="col-md-2">
+                  <div class="BannerTop">
                   {{date("Y/m/d H:i:s")}}
+                </div>
                   <br/>
+                  <div class="BannerTop">
                   @if(Auth::guard('admins')->check())
                     Hello {{Auth::guard('admins')->user()->FirstName}}
                    @elseif(Auth::guard('instructors')->check())
@@ -57,7 +59,7 @@
                    @elseif(Auth::guard('students')->check())
                      Hello {{Auth::guard('students')->user()->FirstName}}
                    @endif
-
+                 </div>
 
 
                     <a href="{{ route('logout') }}" class="InstructMenu"
