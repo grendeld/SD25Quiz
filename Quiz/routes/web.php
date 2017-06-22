@@ -54,7 +54,10 @@ Route::get('/programByType','d3@getProgramsByType');
 Route::get('/charts',function(){ return view('chartTest');});
 Route::get('/donut',function(){return view('donut');});
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Route::get('/testOK','d3@getAllStudentMarksByQuiz');
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 

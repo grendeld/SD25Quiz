@@ -9,11 +9,14 @@
 @stop
 @section ('content')
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <div class="container-fluid BKG">
 <div class="row">
   <div class="col-md-1"></div>
   <div class="col-md-10 Panelbkg">
 =======
+=======
+>>>>>>> Stashed changes
 <div class="container-fluid">
 <div class="row BKG">
 
@@ -23,6 +26,7 @@
           </div>
 
           <div class="col-md-3">
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
             <h3>{{$student->FirstName}} {{$student->LastName}}</h3>
             <br/>
@@ -75,6 +79,16 @@
         </div>
       </div>
 =======
+=======
+            <h3>{{$student->FirstName}} {{$student->LastName}}</h3><br/>
+
+            <h5>StudentID: {{$student->StudentID}} </h5><br/>
+            <h5>Program: {{$student->intake->program->ProgramName}}</h5> <br/>
+            <h5>Intake: {{$student->intake->IntakeName}}</h5>
+          </div>
+
+          <div class="col-md-12">
+>>>>>>> Stashed changes
           <br/>
           <hr>
           <h4>Available quizzes:</h4>
@@ -88,6 +102,9 @@
           <hr>
           </div>
     </div>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 </div>
 

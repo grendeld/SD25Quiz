@@ -31,8 +31,13 @@
 
             </div>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             <br/>
             <button type="submit" onclick='javascript: StartTest();' id="btnStart" style="display:none;">Start test</button>
+=======
+
+            <button class="quizbutton" type="submit" onclick='javascript: StartTest();' id="btnStart" style="display:none;">Start test</button>
+>>>>>>> Stashed changes
 =======
 
             <button class="quizbutton" type="submit" onclick='javascript: StartTest();' id="btnStart" style="display:none;">Start test</button>

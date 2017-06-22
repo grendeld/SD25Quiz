@@ -2,6 +2,7 @@
 
 @section ('content')
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <div class="container-fluid BKG">
   <div class="row">
     <div class="col-md-12 Panelbkg">
@@ -27,6 +28,8 @@
 </table>
 <hr>
 =======
+=======
+>>>>>>> Stashed changes
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-1"></div>
@@ -60,6 +63,9 @@
     <div class="col-md-1"></div>
   </div>
 </div>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 

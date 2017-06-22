@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 
 
@@ -40,6 +41,8 @@
 <input type="text" id="text" />
         <button type="button" onclick="sendMes(this);">Send</button>
 =======
+=======
+>>>>>>> Stashed changes
 <!DOCTYPE html>
 <html lang="{{ config('app.locale') }}">
 
@@ -79,4 +82,7 @@
 </div>
 </body>
 </html>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

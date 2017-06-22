@@ -155,8 +155,11 @@
                   </form>
                   </div>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             </div>
 =======
+=======
+>>>>>>> Stashed changes
                   <br/><br/>
                   <div class="QMSelectorss">
                     <input type="submit" class="quizbutton"  value="Add Module" id="btnModuleEnter"/>

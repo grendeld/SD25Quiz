@@ -59,6 +59,9 @@
                 </div>
                   <br/>
                 <div class="usernameView">
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
                   @if(Auth::guard('admins')->check())
                     Hello {{Auth::guard('admins')->user()->FirstName}}
