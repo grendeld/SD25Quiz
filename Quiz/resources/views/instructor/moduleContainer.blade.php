@@ -2,19 +2,7 @@
 
 @section ('content')
 
-<<<<<<< Updated upstream
-    <div class="container-fluid">
-      <div class="row BKG">
-        <div class="col-md-2"></div>
-        <div class="col-md-8 Panelbkg">
-          <div id="moduleTABcontainer" style="display:block">
 
-          <!---MODULE LIST VIEW START--->
-          <div class="AdminTables">
-          <h1> My Modules:</h1>
-          <form method="POST" name="formModuleList">
-            {!! csrf_field() !!}
-=======
 <div class="container-fluid">
   <div class="row BKG">
     <div class="col-md-2"></div>
@@ -26,42 +14,6 @@
       <h1> My Modules:</h1>
       <form method="POST" name="formModuleList">
         {!! csrf_field() !!}
-
-        <div class="moduleListcontainer" id="moduleListcontainer">
-
-<div class="AdminTables">
-        <table>
-          <tr>
-
-            <th></th>
-            <th>Name</th>
-            <th>Active</th>
-            <th>
-              <button type="button" class="quizbutton"
-              name="button" onclick="return showModuleAdd()">
-              Add new module
-              </button>
-            </th>
-          </tr>
-          @foreach($modules as $m)
-          <tr>
-            <td>
-              <input  type="radio" name="ModID" value="{{$m->ModuleID}}" id="ModuleListItem" required />
-            </td>
-            <td>
-              {{$m->ModuleName}}
-            </td>
-            <td>
-              Active: {{$m->Active}}
-            </td>
-            <td></td>
-          </tr>
-        @endforeach
-        </table>
-
-  </div>
-
->>>>>>> Stashed changes
 
             <div class="moduleListcontainer" id="moduleListcontainer">
 
@@ -123,40 +75,6 @@
                 <button type="button" class="quizbutton" onclick="return hideModuleEdit()" name="button">Cancel</button>
               </form>
           </div>
-
-
-
-<<<<<<< Updated upstream
-=======
-        <!---MODULE BUILDER START--->
-        <div id="divModuleAdd" style="display:none" >
-
-
-                  <div class="QMSelectorsss">
-                    <br/>
-                    <h3>Add New Module:</h3>
-                    <form method="POST" action="/newModule">
-                      {{method_field('PUT')}}
-                      <label for="ProgramID">Program:</label>
-                    <select class="quizbuttonn" name='ProgramID' required>
-                      @foreach($programs as $p)
-                        <option value="{{$p->ProgramID}}"> {{$p->ProgramName}}</option>
-                      @endforeach
-                    </select>
-                    <br/><br/>
-                    <label for="modulename">Module Name: </label>
-                    <input type="text" name="ModuleName" id="moduleName" required/>
-                  </div>
-                  <br/><br/>
-                  <div class="QMSelectorss">
-                    <input type="submit" class="quizbutton"  value="Add Module" id="btnModuleEnter"/>
-                    <button type="button" class="quizbutton" onclick="return hideModuleAdd()" name="button">Cancel</button>
-                  </div>
-                  {!! csrf_field() !!}
-                </form>
-                </div>
-          </div>
->>>>>>> Stashed changes
 
             <!---MODULE BUILDER START--->
             <div id="divModuleAdd" style="display:none" >

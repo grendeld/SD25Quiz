@@ -43,32 +43,12 @@
                         Quizard
                     </font></p>
                   </div>
-
-
-<<<<<<< Updated upstream
                 <div class="col-md-2">
                   <div class="BannerTop">
                   {{date("Y/m/d H:i:s")}}
                 </div>
                   <br/>
                   <div class="BannerTop">
-=======
-                <div class="col-md-2 ">
-                  <div class="usernameView">
-                  {{date("Y/m/d H:i:s")}}
-                </div>
-                  <br/>
-                <div class="usernameView">
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
                   @if(Auth::guard('admins')->check())
                     Hello {{Auth::guard('admins')->user()->FirstName}}
                    @elseif(Auth::guard('instructors')->check())

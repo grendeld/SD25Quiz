@@ -89,55 +89,7 @@ float: left;
     counter-increment: myIndex;
 
 }
->>>>>>> 07b8dd4a7c72c87aa171567a3af39774121253a8:Quiz/resources/views/instructor/quiz.blade.php
 
-                  }
-              ol#list li{
-          list-style: none;
-                  margin-top: 5px;
-      height: 4em;
-      width: 100%;
-      float: left;
-          counter-increment: myIndex;
-
-<<<<<<< HEAD:Quiz/resources/views/quiz.blade.php
-      }
-
-      ol#list li:before{
-          content:counter(myIndex,upper-alpha)" ";
-          font-size: 1.75rem;
-          margin-bottom: 0.5rem;
-      font-family: inherit;
-      font-weight: 500;
-      line-height: 1.1;
-      color: inherit;
-
-      }
-              </style>
-          <div>
-              <ol id="list">
-              </ol>
-              </div>
-              <script>
-            var list = document.getElementById('list');
-            function loader(textBox){
-                      if(!list){
-                          var list = document.getElementById('list');
-                      }
-                      textBox.oninput = null;
-                      list.appendChild(createItem());
-                      var q = [document.createElement('button'),
-                              document.createElement('input')];
-                      q[0].setAttribute('class','btn btn-danger btn-sm');
-                      q[0].innerHTML="Delete";
-                      q[0].setAttribute('onclick','del(this)');
-                      q[1].setAttribute('type','radio');
-                      q[1].setAttribute('name','correct');
-                      var par = textBox.parentElement;
-                      par.insertBefore(q[1],textBox);
-                      par.appendChild(q[0]);
-=======
-}
         </style>
     <div>
         <ol id="list">
@@ -162,56 +114,6 @@ float: left;
                 par.insertBefore(q[1],textBox);
                 par.appendChild(q[0]);
 			}
-            function createItem(input,correct){
-                console.log(correct);
-                var item = document.createElement('li');
-                var q = document.createElement('input');
-                q.setAttribute('type','text');
-                q.setAttribute('name','Answer[]');
-
-                q.setAttribute('placeholder','Next Option');
-                if(input){
-                    var z = document.createElement('input');
-                    var x= document.createElement('button');
-                    x.setAttribute('class','btn btn-danger btn-sm');
-                x.innerHTML="Delete";
-                x.setAttribute('onclick','del(this)');
-                z.setAttribute('type','radio');
-                z.setAttribute('name','correct');
-                    if(correct)
-                    z.setAttribute('checked','checked');
-                //par.insertBefore(q[1],textBox);
-                //par.appendChild(q[0]);
-                    q.value = input;
-                    item.appendChild(z);
-                    item.appendChild(q);
-                    item.appendChild(x);
-                    return item;
-                }
-                else{
-                    q.setAttribute('oninput','loader(this)');
-                }
-                item.appendChild(q);
-                return item;
-            }
-            function del(check){
-                var li = check.parentElement;
-                var ul = li.parentElement;
-                li.parentElement.removeChild(li);
-            }
-            function sub(){
-                var radio = document.getElementsByName('correct');
-                for(rad in radio){
-                    if(radio[rad].checked == true)
-                        {
-                            radio[rad].value = rad;
-                            break;
-                        }
-                }
-                var par = radio[0].parentElement.parentElement;
-                par.removeChild(par.lastElementChild);
->>>>>>> 07b8dd4a7c72c87aa171567a3af39774121253a8:Quiz/resources/views/instructor/quiz.blade.php
-            }
                   function createItem(input,correct){
                       console.log(correct);
                       var item = document.createElement('li');
