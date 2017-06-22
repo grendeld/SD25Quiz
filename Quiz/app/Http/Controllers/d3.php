@@ -7,6 +7,13 @@ use DB;
 
 class d3 extends Controller
 {
+
+  /*public function main()
+  {
+
+    $tests = Auth::user()->tests;
+
+  }*/
     //returns number of students per intake -CB
     public function getIntakes()
     {

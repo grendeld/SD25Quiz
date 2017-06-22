@@ -24,7 +24,7 @@
   }
   .bar{
     fill:rgba(80,73,113,1);
-    /*when this is added it displaces the tooltip, check d3 event.Layer, invetigage!!! */
+    /*when -webkit for shadow is added it displaces the tooltip, check d3 event.Layer, invetigage!!! */
     /*-webkit-filter: drop-shadow( 9px 0px 3px rgba(0,0,0,.5) );
     filter: drop-shadow( 9px 0px 3px rgba(0,0,0,.5) );*/
   }
@@ -53,6 +53,7 @@
 </head>
 <body>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   <div class="container-fluid">
     <div class="row">
 
@@ -65,6 +66,13 @@
 
           </div>
 
+=======
+  <div id="buttonPlace">
+    <button type="button" onclick="showIntakes()">View Intakes</button>
+    <button type="button" onclick="showPrograms()">View Progams by Type</button>
+    <button type="button" onclick="showAllClassTest()">View Test 2 Scores</button>
+  
+>>>>>>> Stashed changes
 
 
           <div id="reuseChart">
