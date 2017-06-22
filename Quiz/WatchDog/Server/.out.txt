@@ -1,0 +1,1 @@
+PHP Parse error:  syntax error, unexpected 'const' (T_CONST), expecting variable (T_VARIABLE) in /home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/WS_Helper.php on line 6
