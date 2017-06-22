@@ -149,11 +149,19 @@ foreach($res as $r){
                                       var_dump($value);
                     var_dump($read);
                     var_dump($this->sockets);
-                        $message = WS_Helper::read($value);
-                    $this->processMessage($message,$key,$value);
+                        $message = socket_read($value,1024);
+                        if(strlen($message) <= 1){
+                           socket_close($value);
+                        unset($this->sockets[$key]); 
+                        }
+                        else{
+                            $this->processMessage($message,$key,$value);
+                        }
                     } 
                 }
             }
+            $c = count($this->sockets);
+            echo "\n\nwe have this many sockets open $c\n\n\n";
             if(count($this->sockets) <= 2)
                 break;
         }
@@ -185,6 +193,10 @@ foreach($res as $r){
                             socket_write($this->sockets["instructor"], WS_Helper::encodeMessage(json_encode($messageBlock),"text"));
                     break;
             }
+        }
+        else if($type == "close"){
+            socket_close($socket);
+            unset($this->sockets[$key]);
         }
     }
     function broadcast(string $mess){

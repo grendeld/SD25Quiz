@@ -1,11 +1,27 @@
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 
 
+<!DOCTYPE html>
+<html lang="{{ config('app.locale') }}">
 
-<script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/adminstyles.css">
+  <link rel="stylesheet" href="/css/ModuleBuilder.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/bootstrap-grid.css">
+  <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery-3.2.1.min.js"></script>\
+    <script>
             var ws;
     //window.onload= function(){
 
@@ -36,65 +52,26 @@
             this.type = type;
             this.data = data;
         }
+    function closeTest(self,time){
+        
+    }
 </script>
-<h1>{{session('currentTest')}}</h1> is running
-<!-- Dynamic Pie Chart goes somewhere here -->
-<h1>Hello</h1>
-<input type="text" id="text" />
-        <button type="button" onclick="sendMes(this);">Send</button>
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-<!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="csrf-token" content="{{ csrf_token() }}">
-  <link rel="stylesheet" href="/css/styles.css">
-  <link rel="stylesheet" href="/css/adminstyles.css">
-  <link rel="stylesheet" href="/css/ModuleBuilder.css">
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/css/bootstrap.css">
-  <link rel="stylesheet" href="/css/bootstrap-grid.css">
-  <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
-
-  <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery-3.2.1.min.js"></script>
 </head>
 <body>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
-          <h1>{{$quiz->QuizName}}</h1> is running
+          <h1>{{\App\Test::find(session('currentTest'))->Quiz->QuizName}}</h1> is running
 
         </div>
         <div class="col-md-4 AdminLeftSide">
               lknljbkbjh
         </div>
         <div class="col-md-8 AdminProgramsView">
-
+            <input type='text'/>
+<button type="button" onclick="sendMes(this);">Send</button>
         </div>
     </div>
 </div>
 </body>
 </html>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
