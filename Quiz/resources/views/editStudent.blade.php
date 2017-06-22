@@ -40,6 +40,16 @@ Email:
 
 <tr>
 <td>
+Password:
+</td>
+<td>
+<textarea name="password">{{$student->password}}</textarea>
+</td>
+</tr>
+
+
+<tr>
+<td>
 Photo
 </td>
 <td>
@@ -55,12 +65,12 @@ Photo
 
 <tr>
 <td>
-Intake Id
+Intake:
 </td>
 <td>
- <select name='IntakeID' required>
+ <select name='IntakeID'>
    @foreach ($intakes as $i)
-   <option value="{{$i->IntakeID}}">
+   <option value="{{$i->IntakeID}}" @if($student->IntakeID == $i->IntakeID) {{"selected"}} @endif>
      {{$i->IntakeName}}
    </option>
  @endforeach
@@ -70,7 +80,7 @@ Intake Id
 </table>
 <br/>
 <button type="submit" formaction="/student/{{$student->StudentID}}/edit">Save changes</button>
-<button type = "button" onclick="window.location.href='/adminHome'">Cancel</button>
+<a class="btn btn-default" href="/adminHome" role="button">Cancel</a>
 {{method_field('PATCH')}}
 
 {!! csrf_field() !!}

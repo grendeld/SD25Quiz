@@ -39,6 +39,7 @@ Route::get('/adminHome', 'AdminsController@main');
 Route::get('/InstrIntAdd','AdminsController@InstrIntAdd');
 Route::get('/InstrIntRemove','AdminsController@InstrIntRemove');
 Route::get('/instructor/add', function(){ return view('newInstructor');});
+Route::post('/instructor/add', 'InstructorsController@create');
 Route::get('/instructor/{instructor}', 'InstructorsController@showedit');
 Route::patch('/instructor/{instructor}/edit', 'InstructorsController@edit');
 Route::get('/instructor/{instructor}/delete', 'InstructorsController@delete');
@@ -93,7 +94,7 @@ Route::get('/quiz/{quiz}/delete','QuizController@deleteQuiz');
 
 //---Students
 Route::get('/student','StudentsController@StudentSearch');
-Route::put('/student', 'StudentsController@create');
+Route::post('/student/add', 'StudentsController@create');
 Route::patch('/student/{student}/edit', 'StudentsController@edit');
 Route::delete('/student','StudentsController@delete');
 Route::get('/newStudent', 'StudentsController@newStudent');
@@ -102,7 +103,7 @@ Route::get('/student/{student}','StudentsController@showedit');
 //---Instructor
 //Route::get('/instructor', 'InstructorsController@show');
 //Route::get('/instructor/add', function(){ return view('newInstructor');});
-//Route::post('/instructor/add', 'InstructorsController@create');
+
 //---Intake
 Route::get('/intake', 'IntakesController@show');
 Route::get('/intake/add', function(){ return view('newIntake');});

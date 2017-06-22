@@ -68,7 +68,7 @@ function divInstructorShow(instructorJSONstring)
 
  instructor = JSON.parse(instructorJSONstring);
 
-  h3instructorName.innerHTML = instructor.FirstName + ' ' + instructor.LastName;
+  h3instructorName.innerHTML = instructor.FirstName + ' ' + instructor.LastName+'<br/>'+instructor.email;
 
   list= document.getElementById('IntakesList');
   list.innerHTML = '';
@@ -149,11 +149,12 @@ $('#divSearchResult').empty();
 
 function divStudentShow(student)
 {
+
   if(currentDiv)
       currentDiv.fadeOut(100);
         currentDiv = $("#divStudent").fadeIn(10);
-        divEmail.innerHTML = student.email;
-   h3StudentName.innerHTML = student.FirstName + ' ' + student.LastName;
+      //  divEmail.innerHTML = student.email;
+   h3StudentName.innerHTML = student.FirstName + ' ' + student.LastName+'<br/>'+student.email+'<br/>'+student.IntakeID;
    imgStudent.src = 'storage/' + student.Photo;
 
    stud = student;

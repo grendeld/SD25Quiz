@@ -26,14 +26,31 @@ Last Name:
 <textarea name="LastName">{{$instructor->LastName}}</textarea>
 </td>
 </tr>
+
+<tr>
+<td>
+Email:
+</td>
+<td>
+<textarea name="email">{{$instructor->email}}</textarea>
+</td>
+</tr>
+
+<tr>
+<td>
+Password:
+</td>
+<td>
+<textarea name="password">{{$instructor->password}}</textarea>
+</td>
+</tr>
 </table>
 <br/>
 <button type="submit" formaction="/instructor/{{$instructor->InstructorID}}/edit">Save changes</button>
-<button type="submit" form="Cancel" formaction="/adminHome">Cancel</button>
+<a class="btn btn-default" href="/adminHome" role="button">Cancel</a>
 {{method_field('PATCH')}}
 
 {!! csrf_field() !!}
 </form>
-<form method="get" id="Cancel">
-</form>
+
 @stop
