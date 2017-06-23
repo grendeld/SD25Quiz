@@ -245,6 +245,9 @@ public function TakeTest(int $id){
              $port = \WatchDog\Server::connect($provider->getTestId());
             session(['port' => $port]);
         }
+    if(!session()->has('startTime')){
+        session(['startTime'=>time()]);
+    }
 
     return view('student.test',compact('provider'));
 }
