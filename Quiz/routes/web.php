@@ -55,6 +55,13 @@ Route::get('/programByType','d3@getProgramsByType');
 Route::get('/charts',function(){ return view('chartTest');});
 Route::get('/donut',function(){return view('donut');});
 Route::get('/testOK','d3@getAllStudentMarksByQuiz');
+<<<<<<< HEAD
+
+
+
+
+=======
+>>>>>>> 675d34342a1ab9451e2bc2d6ea21ccc91bb0fdb7
 //function(){return "test";}
 
 
@@ -129,6 +136,8 @@ Route::post('test/Page',function(){
     return view('student.question',['quest'=>$provider->next()]);});
 Route::post('test/Save',function(){
     if(\App\Test\Providers\TestProvider::create()->save()){
+        session()->forget('startTime');
+        session()->forget('port');
        return redirect('/StudentHome');
     }
     else{
