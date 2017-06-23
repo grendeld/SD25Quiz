@@ -20,7 +20,7 @@ class CreateQuizzesTable extends Migration
           $table->string('Description')->default('No description');
           $table->integer('ModuleID')->unsigned();
           $table->foreign('ModuleID')->references('ModuleID')->on('modules');
-          $table->string('Active');
+          $table->string('Active')->default('No');
           $table->timestamps();
 
         });
@@ -33,7 +33,7 @@ class CreateQuizzesTable extends Migration
      */
     public function down()
     {
-        
+
         Schema::dropIfExists('quizzes');
     }
 }

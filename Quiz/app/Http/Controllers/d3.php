@@ -8,12 +8,14 @@ use DB;
 class d3 extends Controller
 {
 
-  /*public function main()
+  public function getTests()
   {
 
-    $tests = Auth::user()->tests;
+     $tests = \App\Test::all();
 
-  }*/
+    return view('chartTest',['tests' => $tests]);
+
+  }
     //returns number of students per intake -CB
     public function getIntakes()
     {
@@ -30,16 +32,17 @@ class d3 extends Controller
       ->groupby('x')->get()->toJson();
     }
 
-    public function getAllStudentMarksByQuiz()
+    public function getAllStudentMarksByQuiz($tValue)
     {
-      return DB::select(DB::raw(' Select students.StudentID, COUNT(students.StudentID)/(select COUNT(questions.QuizID) FROM tests
-    INNER join questions on tests.QuizID=questions.QuizID where TestID = 2
+      //dd($tValue);
+      return DB::select(DB::raw(" Select students.StudentID, COUNT(students.StudentID)/(select COUNT(questions.QuizID) FROM tests
+    INNER join questions on tests.QuizID=questions.QuizID where TestID = $tValue
     GROUP BY questions.QuizID)*100 as y,CONCAT(students.FirstName,students.LastName) AS x FROM students
     LEFT JOIN responses ON responses.StudentID = students.StudentID
     LEFT JOIN tests ON responses.TestID = tests.TestID
     LEFT JOIN questions ON tests.QuizID = questions.QuizID
-    WHERE tests.TestID = 2 AND responses.AnswerID=questions.CorrectAnswerID
-    GROUP BY students.StudentID,students.FirstName,students.LastName'));
+    WHERE tests.TestID = $tValue AND responses.AnswerID=questions.CorrectAnswerID
+    GROUP BY students.StudentID,students.FirstName,students.LastName"));
 
     }
 
