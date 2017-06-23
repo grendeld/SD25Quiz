@@ -95,7 +95,8 @@
                 <div class="col-md-4">
                       <div class="TestQuestionSelect" style="overflow:auto;">
                             <p>Question Set</p>
-
+                            <p id="timeElapse"></p>
+                             
                             <div class="TestListTop">
                               <input type="submit" form="saveTest" id="SubmitTest" value="Submit Test"/>
                             </div>
@@ -122,7 +123,22 @@
 
                 <div class="col-md-8">
                       <div class="QuestionPanell">
-                        <iframe src="/test/Page/" class="questionframe"/>
+                          <iframe src="/test/Page/" class="questionframe"> </iframe>
                       </div>
                 </div>
+     <script>
+        var timeElapse = document.getElementById("timeElapse");
+         var dif = (new Date()) -(new Date({{session('startTime')*1000}}));
+         var counter;
+                                 (counter = new Date(0,0,0,0,0,0)).setMilliseconds(counter.getMilliseconds() + dif);
+         function setTime(){
+             timeElapse.innerHTML = counter.getHours() + ":" + counter.getMinutes() + ":" + counter.getSeconds();
+         }
+         setTime();
+         setInterval(function(){
+             counter.setSeconds(counter.getSeconds() +1);
+             setTime();
+         },1000);
+     </script>
+  
 @stop

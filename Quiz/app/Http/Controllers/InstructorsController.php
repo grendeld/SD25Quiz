@@ -16,8 +16,9 @@ class InstructorsController extends Controller
 {
   public function __construct()
   {
-    $this->middleware('auth:instructors');
-
+    //$this->middleware('auth:instructors');
+    $this->middleware('auth:instructors', ['except'=> ['create','showedit','edit','delete']]);
+    $this->middleware('auth:admins',['only'=>['create','showedit','edit','delete']]);
   }
 
 private function getmodules($filter=false)
@@ -118,12 +119,15 @@ private function getmodules($filter=false)
 
 
   public function create(Request $request) //newInstructor
+
     {
-      Instructor::firstOrCreate(
-        ['FirstName' => $request->FirstName,'LastName' => $request->LastName]
-      );
-      //return back();
-      //redirect('/adminHome');
+      $instructor = new Instructor;
+      $instructor->FirstName = $request->FirstName;
+      $instructor->LastName = $request->LastName;
+     $instructor->email = $request->email;
+     $instructor->password = 'password';
+     $instructor->save();
+    return redirect('/adminHome');
     }
 
 

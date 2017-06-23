@@ -4,8 +4,8 @@
 
 <h1>Add Student</h1>
 
-<form method = "POST" action ="/student">
-  {{method_field('PUT')}}
+<form method = "POST" action ="/student/add">
+
 <table>
 <tr>
 <td>
@@ -25,7 +25,23 @@ Last Name:
 </td>
 </tr>
 
+<tr>
+<td>
+Email:
+</td>
+<td>
+<textarea name="email" required ></textarea>
+</td>
+</tr>
 
+<tr>
+<td>
+Password:
+</td>
+<td>
+<label for="password">password</label>
+</td>
+</tr>
 
 
 <tr>
@@ -36,7 +52,7 @@ Photo:
 <input type='file' name='Photo' id='fileUpLoad'/>
 <tr>
 <td>
-Intake Id
+Intake:
 </td>
 <td>
 <select name='IntakeID' required>
@@ -50,7 +66,7 @@ Intake Id
   </tr>
 </table>
   <button type = 'submit'>submit</button>
-  <a href="/adminHome">Back</a>
+  <a class="btn btn-default" href="/adminHome" role="button">Cancel</a>
 
 {!! csrf_field() !!}
 </form>
