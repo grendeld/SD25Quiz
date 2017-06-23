@@ -1,7 +1,11 @@
 @extends('layout')
 
 @section ('content')
-
+  <div class="container-fluid">
+    <div class="row BKG">
+      <div class="col-md-2"></div>
+      <div class="col-md-8 Panelbkg">
+        <div class="AdminTables">
 <h1>Add Student</h1>
 
 <form method = "POST" action ="/student/add">
@@ -55,7 +59,7 @@ Photo:
 Intake:
 </td>
 <td>
-<select name='IntakeID' required>
+<select class="quizbuttonn" name='IntakeID' required>
   @foreach ($intakes as $i)
   <option value="{{$i->IntakeID}}">
     {{$i->IntakeName}}
@@ -65,9 +69,16 @@ Intake:
   </td>
   </tr>
 </table>
-  <button type = 'submit'>submit</button>
-  <a class="btn btn-default" href="/adminHome" role="button">Cancel</a>
+<br/><br/>
+  <button class="quizbutton" type = 'submit'>submit</button>
+  <a class="btn btn-default quizbutton" href="/adminHome" role="button">Cancel</a>
 
 {!! csrf_field() !!}
 </form>
+</div>
+</div>
+<div class="col-md-2"></div>
+
+</div>
+<div>
 @stop

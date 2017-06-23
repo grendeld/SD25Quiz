@@ -46,8 +46,8 @@
 function divProgramShow(programJSONstring)
 {
   if(currentDiv)
-      currentDiv.fadeOut(100);
-        currentDiv = $("#divProgram").fadeIn(10);
+      currentDiv.fadeOut(300);
+        currentDiv = $("#divProgram").fadeIn(250);
 
   program = JSON.parse(programJSONstring);
   h3ProgramName.innerHTML = program.ProgramName ;
@@ -63,8 +63,8 @@ function divProgramShow(programJSONstring)
 function divInstructorShow(instructorJSONstring)
 {
   if(currentDiv)
-      currentDiv.fadeOut(100);
-        currentDiv = $("#divInstructor").fadeIn(10);
+      currentDiv.fadeOut(300);
+        currentDiv = $("#divInstructor").fadeIn(250);
 
  instructor = JSON.parse(instructorJSONstring);
 
@@ -85,8 +85,8 @@ function divInstructorShow(instructorJSONstring)
 function divIntakeShow(intake)
 {
   if(currentDiv)
-      currentDiv.fadeOut(100);
-        currentDiv = $("#divIntake").fadeIn(10);
+      currentDiv.fadeOut(300);
+        currentDiv = $("#divIntake").fadeIn(250);
 
   intake = JSON.parse(intake);
   //$("#divIntake").slideDown(100);
@@ -151,8 +151,8 @@ function divStudentShow(student)
 {
 
   if(currentDiv)
-      currentDiv.fadeOut(100);
-        currentDiv = $("#divStudent").fadeIn(10);
+      currentDiv.fadeOut(300);
+        currentDiv = $("#divStudent").fadeIn(250);
       //  divEmail.innerHTML = student.email;
    h3StudentName.innerHTML = student.FirstName + ' ' + student.LastName+'<br/>'+student.email+'<br/>'+student.IntakeID;
    imgStudent.src = 'storage/' + student.Photo;

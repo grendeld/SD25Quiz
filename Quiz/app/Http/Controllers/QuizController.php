@@ -256,7 +256,7 @@ public function ControlTest(){
     if(session()->has('currentTest')){
         if(!session()->has('port'))
         {
-             $port = \WatchDog\Server::connect(session('currentTest'),uniqid(),false);
+             $port = @\WatchDog\Server::connect(session('currentTest'),uniqid(),false);
             session(['port' => $port]);
         }
 

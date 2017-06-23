@@ -11,8 +11,13 @@
 
 <div class="container-fluid">
   <div class="row BKG">
+
       <div class="col-md-1"></div>
       <div class="col-md-10 Panelbkg">
+          <div class="col-md-12">
+            <h4>Student Home</h4>
+          </div>
+          <br/><br/>
           <div class="col-md-3">
             <img width='200' height='250' src='storage/{{$student->Photo}}'/>
           </div>
@@ -23,6 +28,7 @@
             <h5>Program: {{$student->intake->program->ProgramName}}</h5> <br/>
             <h5>Intake: {{$student->intake->IntakeName}}</h5>
           </div>
+          <div class="col-md-12 Spacer"></div>
           <div class="col-md-12">
             <div class="AdminTables">
               <h4>Available quizzes:</h4>
@@ -48,7 +54,7 @@
                       {{$t->quiz->QuizName}}
                     </td>
                     <td>
-                      <input type="button" onclick = "StartQuiz({{$t->TestID}})" value="Start Quiz" />
+                      <input class="quizbutton" type="button" onclick = "StartQuiz({{$t->TestID}})" value="Start Quiz" />
                     </td>
                 </tr>
               @endforeach

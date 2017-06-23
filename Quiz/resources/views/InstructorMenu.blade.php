@@ -8,9 +8,9 @@
         <div class="col-md-3 TopMenuInstructor">
                 <button class="InstructMenu" onclick = "window.location.href = '/modules'" id="Modulebuilder">
                   <span>
-                    <h4><font face="marzo-w00-regular, fantasy">
+                    <h4><font face="marzo-w00-regular, fantasy" style="color:black;"><strong>
                       Modules
-                  </font></h4>
+                  </strong></font></h4>
                   </span>
                 </button>
         </div>
@@ -28,27 +28,27 @@
         <div class="col-md-3 TopMenuInstructor">
                 <button class="InstructMenu" onclick = "window.location.href = '/quizzes'" id="QuizView">
                   <span>
-                    <h4><font face="marzo-w00-regular, fantasy">
+                    <h4><font face="marzo-w00-regular, fantasy" style="color:black;"><strong>
                       Quizzes
-                  </font></h4>
+                  </strong></font></h4>
                   </span>
                 </button>
         </div>
         <div class="col-md-3 TopMenuInstructor">
                 <button class="InstructMenu" onclick = "window.location.href = '/deploy'" id="QuizDeploy">
                   <span>
-                    <h4><font face="marzo-w00-regular, fantasy">
+                    <h4><font face="marzo-w00-regular, fantasy" style="color:black;"><strong>
                       Deploy Quiz
-                  </font></h4>
+                  </strong></font></h4>
                   </span>
                 </button>
         </div>
         <div class="col-md-3 TopMenuInstructor">
                 <button class="InstructMenu" onclick = "window.location.href = '/tests'">
                   <span>
-                    <h4><font face="marzo-w00-regular, fantasy">
+                    <h4><font face="marzo-w00-regular, fantasy" style="color:black;"><strong>
                       Reports
-                  </font></h4>
+                  </strong></font></h4>
                   </span>
                 </button>
         </div>

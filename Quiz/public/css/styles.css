@@ -97,6 +97,16 @@ body {
 
 }
 
+.Panelbkgg{
+  height: 11em;
+  background-color: rgba(254,254,254,0.6);
+  margin-top: 2em;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  padding:3em;
+}
+
 .layoutbkg{
   background-image: url(../images/owlEdit1.png);
   background-size: cover;
@@ -115,6 +125,10 @@ body {
   border-width: 1px;
   border-color: black;
 
+}
+
+.Spacer{
+  height: 3em;
 }
 
 .divNewQAA{

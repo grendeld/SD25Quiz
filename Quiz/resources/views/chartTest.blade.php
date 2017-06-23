@@ -31,6 +31,9 @@
   .bar:hover{
     fill:rgba(192,182,207,1);
   }
+
+
+
   .tooltip {
     position: absolute;
     width: 100px;
@@ -52,47 +55,23 @@
   </style>
 </head>
 <body>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  <div class="container-fluid">
+
+
     <div class="row">
-
-
 
           <div id="buttonPlace">
             <button class="quizbutton" type="button" onclick="showIntakes()">Intakes</button>
             <button class="quizbutton" type="button" onclick="showPrograms()">Progams by Type</button>
             <button class="quizbutton" type="button" onclick="showAllClassTest()">Test => Scores</button>
-
           </div>
-
-=======
-  <div id="buttonPlace">
-    <button type="button" onclick="showIntakes()">View Intakes</button>
-    <button type="button" onclick="showPrograms()">View Progams by Type</button>
-    <button type="button" onclick="showAllClassTest()">View Test 2 Scores</button>
-  
->>>>>>> Stashed changes
-
-
+            <br/><br/>
           <div id="reuseChart">
-            <svg width="460" height="275"></svg>
+            <svg width="920" height="550"></svg>
           </div>
           <p id="testQ"></p>
 
-
     </div>
-=======
-  <div id="buttonPlace">
-    <button class="quizbutton" type="button" onclick="showIntakes()">View Intakes</button>
-    <button class="quizbutton" type="button" onclick="showPrograms()">View Progams by Type</button>
-    <!--<button type="button" onclick="showQuiz1()">View Quiz 1 Marks</button> -->
-  </div>
-  <div id="reuseChart">
-    <svg width="920" height="550"></svg>
->>>>>>> Stashed changes
-  </div>
-
+  
 
 </body>
 <script>

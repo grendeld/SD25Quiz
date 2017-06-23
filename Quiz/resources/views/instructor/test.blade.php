@@ -43,7 +43,7 @@
     //};
             function sendMes(self){
                 var mes = self.previousElementSibling.value;
-                
+
                 ws.send(JSON.stringify(new Message(null,null,"broadcast",mes)));
             }
             function Message(from,to,type,data){
@@ -53,23 +53,24 @@
             this.data = data;
         }
     function closeTest(self,time){
-        
+
     }
 </script>
 </head>
 <body>
 <div class="container-fluid">
-    <div class="row">
+    <div class="row BKG">
         <div class="col-md-12">
           <h1>{{\App\Test::find(session('currentTest'))->Quiz->QuizName}}</h1> is running
 
         </div>
         <div class="col-md-4 AdminLeftSide">
-              lknljbkbjh
+
         </div>
         <div class="col-md-8 AdminProgramsView">
             <input type='text'/>
 <button type="button" onclick="sendMes(this);">Send</button>
+            @include('chartTest')
         </div>
     </div>
 </div>

@@ -27,7 +27,7 @@
           </div>
         </div>
         <div class="col-md-9"></div>
-
+            @include('chartTest')
       </div>
     </div>
   </div>
