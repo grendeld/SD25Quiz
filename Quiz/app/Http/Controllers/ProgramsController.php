@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use DB;
 use Illuminate\Http\Request;
 use App\Program;
+use App\Intake;
 
 class ProgramsController extends Controller
 {

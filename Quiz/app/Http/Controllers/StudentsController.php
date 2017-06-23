@@ -17,8 +17,11 @@ class StudentsController extends Controller
 {
   public function __construct()
   {
-    $this->middleware('auth:students',['except'=> 'StudentSearch']);
-    $this->middleware('auth:admins',['only'=> 'StudentSearch']);
+    {
+
+      $this->middleware('auth:admins', ['except'=> 'main']);
+      $this->middleware('auth:students',['only'=>'main']);
+    }
 
   }
 
@@ -99,6 +102,8 @@ public function newStudent()
       $student = new Student;
       $student->FirstName = $request->FirstName;
       $student->LastName = $request->LastName;
+      $student->email = $request->email;
+      $student->password = 'password';
      $student->IntakeID = $request->IntakeID;
 
      if(isset($request->Photo))
@@ -116,25 +121,23 @@ public function showedit($id )
     }
 
 public function edit(Request $request , $id )
-
-    { $student = Student::find($id);
+    {
+      $student = Student::find($id);
 if ($request->hasFile('Photo')) {
-    if($request->file('Photo')->isValid()) {
         try {
             $file = $request->file('Photo');
             $name = $file->getClientOriginalName();
             $request->file('Photo')->move("storage/", $name);
-            //$request->file('Photo') = $name;
-        } catch (Illuminate\Filesystem\FileNotFoundException $e) {
-
-        }
-    }
+            //save image to db
+            $student->update($request->all());
+            $student->Photo = $name;
+            $student->save();
+        } catch (Illuminate\Filesystem\FileNotFoundException $e) {}
 }
-
-//save image to db
-      $student->update($request->all());
-      $student->Photo = $name;
-      $student->save();
+else{
+        $student->update($request->all());
+        $student->save();
+}
 
       return redirect('/adminHome');
 

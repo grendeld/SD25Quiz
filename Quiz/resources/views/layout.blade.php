@@ -47,6 +47,7 @@
                   <div class="BannerTop">
                   {{date("Y/m/d H:i:s")}}
                 </div>
+                    
                   <br/>
                   <div class="BannerTop">
                   @if(Auth::guard('admins')->check())
@@ -97,4 +98,12 @@
 @yield('footer')
 <div id="dialog" title="Message"></div>
     </body>
+    <script>
+        var dateDiv = document.getElementsByClassName("BannerTop")[0];
+        var time = new Date(dateDiv.innerHTML);
+        setInterval(function(){
+         time.setSeconds(time.getSeconds() +1);
+            dateDiv.innerHTML = time.getFullYear() + "/" + (((mon = time.getMonth()+1) < 10)? ("0" + mon): mon ) + "/" + (((d = time.getDate()) < 10)? ("0" + d): d ) + " " + (((h = time.getHours()) < 10)? ("0" + h): h )+ ":" + (((m = time.getMinutes()) < 10)? ("0" + m): m) + ":" + (((s = time.getSeconds()) < 10)? ("0" + s): s);
+        },1000);
+    </script>
 </html>
