@@ -242,7 +242,7 @@ public function TakeTest(int $id){
         $provider = \App\Test\Providers\TestProvider::create($id);
     if(!session()->has('port'))
         {
-             $port = \WatchDog\Server::connect($provider->getTestId());
+             $port = @\WatchDog\Server::connect($provider->getTestId());
             session(['port' => $port]);
         }
     if(!session()->has('startTime')){

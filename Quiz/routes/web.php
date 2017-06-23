@@ -129,6 +129,8 @@ Route::post('test/Page',function(){
     return view('student.question',['quest'=>$provider->next()]);});
 Route::post('test/Save',function(){
     if(\App\Test\Providers\TestProvider::create()->save()){
+        session()->forget('startTime');
+        session()->forget('port');
        return redirect('/StudentHome');
     }
     else{
