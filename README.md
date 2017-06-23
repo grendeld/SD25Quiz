@@ -1,7 +1,7 @@
 # SD25Quiz
 TO LOGIN: Instructor - User: "Doug@gmail.com", Password: password<br>
-          Student - User: "Jane@gmail.com", Password: password
-          Admin - User: "Belle@gmail.com",Password: password
+          Student - User: "Jane@gmail.com", Password: password<br>
+          Admin - User: "Belle@gmail.com",Password: password<br>
 You can also use any login email/password that we put in the seeder found in the database folder
 
 
