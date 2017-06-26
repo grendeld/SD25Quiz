@@ -1,4 +1,5 @@
 <!DOCtype html>
+<?php $tests = \App\Test::all(); ?>
 <!-- DATA DRIVEN DOCUMENT VIEW FOR REPORTS -->
 <html>
 <head>
