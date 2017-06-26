@@ -59,20 +59,20 @@
 </head>
 <body>
 <div class="container-fluid">
+
     <div class="row BKG">
         <div class="col-md-12">
-          <h1>{{\App\Test::find(session('currentTest'))->Quiz->QuizName}}</h1> is running
+          <h1>{{\App\Test::find(session('currentTest'))->Quiz->QuizName}}</h1> 
 
         </div>
-        <div class="col-md-4 AdminLeftSide">
+        <div class="col-md-4 Panelbkg">
 
         </div>
-        <div class="col-md-8 AdminProgramsView">
-            <input type='text'/>
-<button type="button" onclick="sendMes(this);">Send</button>
-            @include('chartTest')
+        <div class="col-md-8 Panelbkg">
+
         </div>
     </div>
+
 </div>
 </body>
 </html>

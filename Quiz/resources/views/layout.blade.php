@@ -45,9 +45,9 @@
                   </div>
                 <div class="col-md-2">
                   <div class="BannerTop">
-                  {{date("Y/m/d H:i:s")}}
+                  {{date("F j, Y, g:i a")}}
                 </div>
-                    
+
                   <br/>
                   <div class="BannerTop">
                   @if(Auth::guard('admins')->check())

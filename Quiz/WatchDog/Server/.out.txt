@@ -1457,3 +1457,1683 @@ Returning
 
 
 
+
+
+
+ProcessID = 1
+
+
+
+
+
+5277
+
+
+
+
+
+
+
+trying to Die!!!
+
+
+
+
+
+
+
+0
+
+
+
+
+
+ProcessID = 5276
+
+
+
+
+
+Before loop ProcessID = 5279 My Id:5279 My Parent:5278 My Process SessionID:5279
+
+
+
+
+Connecting
+
+PHP Warning:  unlink(/home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/sockets/19.sock): No such file or directory in /home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/Server.php on line 250
+at handshake
+
+
+
+Calling Read
+
+
+
+
+Stuck right here
+
+GET / HTTP/1.1
+Host: 127.0.0.1:42024
+User-Agent:
+
+Stuck right here
+
+ Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:54.0) 
+
+Stuck right here
+
+Gecko/20100101 Firefox/54.0
+Accept: text/html,app
+
+Stuck right here
+
+lication/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+
+Stuck right here
+
+
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding
+
+Stuck right here
+
+: gzip, deflate
+Sec-WebSocket-Version: 13
+Origin
+
+Stuck right here
+
+: http://127.0.0.1:8000
+Sec-WebSocket-Extensions:
+
+Stuck right here
+
+ permessage-deflate
+Sec-WebSocket-Key: 4AApyUz7Xe
+
+Stuck right here
+
+8mwxwuilQjQA==
+Cookie: XSRF-TOKEN=eyJpdiI6Ik12VW9
+
+Stuck right here
+
+EeVFGUnc3RTNqcDBHOVdjZ1E9PSIsInZhbHVlIjoiZHE5T3I3c
+
+Stuck right here
+
+WFUWkdXRGRiZzhIcUhkWWlhK2YrR1dsWlhlcm5ERWdDZDJFSlp
+
+Stuck right here
+
+tR0g3ejdodDU3N3dSWG9tNmFTUGJKZ3lTMkpCXC84dmhDMDh1U
+
+Stuck right here
+
+lpyQXlRPT0iLCJtYWMiOiI3NzBhNDY4ZmQyYjhhMzZhM2Q5NWJ
+
+Stuck right here
+
+hOTkwMmI5MjlmNTY1MWI5MDdmNGMyNDYzZjNjYTEzYThhMTczN
+
+Stuck right here
+
+WZlYjk3In0%3D; laravel_session=eyJpdiI6IkpiVHlVcmN
+
+Stuck right here
+
+yUDd2VjVNMlIwNWJ1b1E9PSIsInZhbHVlIjoiR3JYeGZ6UEdZR
+
+Stuck right here
+
+mg5TVdXbWExdXNFdzJoc2dyajNnb3VGaCtIdytcL2ZVSWVhcUl
+
+Stuck right here
+
+ZR1RDdG1nN0x3SjJnYXFzSHBCVlhxWUV6bzN1bnBYRzRzWDNne
+
+Stuck right here
+
+UJ3PT0iLCJtYWMiOiJkMjA2NzgzNGUyN2M0YTY1MmE0ZjdjZTN
+
+Stuck right here
+
+kZGRiOWZmMGRmZTI1ZDgwNDNlYmMzOWM1MTU1Y2RiOGNmMzI4N
+
+Stuck right here
+
+TZiIn0%3D
+Connection: keep-alive, Upgrade
+Pragma
+
+Stuck right here
+
+: no-cache
+Cache-Control: no-cache
+Upgrade: webs
+
+Stuck right here
+
+ocket
+
+string(32) "Resource temporarily unavailable"
+resource(10) of type (Socket)
+bool(false)
+
+
+
+GET / HTTP/1.1
+Host: 127.0.0.1:42024
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:54.0) Gecko/20100101 Firefox/54.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Sec-WebSocket-Version: 13
+Origin: http://127.0.0.1:8000
+Sec-WebSocket-Extensions: permessage-deflate
+Sec-WebSocket-Key: 4AApyUz7Xe8mwxwuilQjQA==
+Cookie: XSRF-TOKEN=eyJpdiI6Ik12VW9EeVFGUnc3RTNqcDBHOVdjZ1E9PSIsInZhbHVlIjoiZHE5T3I3cWFUWkdXRGRiZzhIcUhkWWlhK2YrR1dsWlhlcm5ERWdDZDJFSlptR0g3ejdodDU3N3dSWG9tNmFTUGJKZ3lTMkpCXC84dmhDMDh1UlpyQXlRPT0iLCJtYWMiOiI3NzBhNDY4ZmQyYjhhMzZhM2Q5NWJhOTkwMmI5MjlmNTY1MWI5MDdmNGMyNDYzZjNjYTEzYThhMTczNWZlYjk3In0%3D; laravel_session=eyJpdiI6IkpiVHlVcmNyUDd2VjVNMlIwNWJ1b1E9PSIsInZhbHVlIjoiR3JYeGZ6UEdZRmg5TVdXbWExdXNFdzJoc2dyajNnb3VGaCtIdytcL2ZVSWVhcUlZR1RDdG1nN0x3SjJnYXFzSHBCVlhxWUV6bzN1bnBYRzRzWDNneUJ3PT0iLCJtYWMiOiJkMjA2NzgzNGUyN2M0YTY1MmE0ZjdjZTNkZGRiOWZmMGRmZTI1ZDgwNDNlYmMzOWM1MTU1Y2RiOGNmMzI4NTZiIn0%3D
+Connection: keep-alive, Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+Upgrade: websocket
+
+
+
+
+PHP Notice:  Undefined index: SocketID in /home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/WS_Helper.php on line 18
+array(0) {
+}
+
+
+
+
+Sec-WebSocket-Key: 4AApyUz7Xe8mwxwuilQjQA==PHP Notice:  Undefined index: id in /home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/WS_Helper.php on line 43
+string(13) "5950856b3bf49"
+Instructor connected
+
+
+we have this many sockets open 3
+
+
+resource(10) of type (Socket)
+array(1) {
+  ["instructor"]=>
+  resource(10) of type (Socket)
+}
+array(3) {
+  ["main"]=>
+  resource(7) of type (Socket)
+  ["port"]=>
+  resource(9) of type (Socket)
+  ["instructor"]=>
+  resource(10) of type (Socket)
+}
+
+
+Opcode is 136 and 8
+
+string(5) "close"
+
+
+we have this many sockets open 2
+
+
+PHP Warning:  socket_close(): supplied resource is not a valid Socket resource in /home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/Server.php on line 174
+opened class
+
+
+
+
+
+
+Returning
+
+
+
+
+
+
+
+
+
+ProcessID = 1
+
+
+
+
+
+8931
+
+
+
+
+
+
+
+trying to Die!!!
+
+
+
+
+
+
+
+0
+
+
+
+
+
+ProcessID = 1
+
+
+
+
+
+Before loop ProcessID = 8933 My Id:8933 My Parent:8932 My Process SessionID:8933
+
+
+
+
+Connecting
+
+PHP Warning:  unlink(/home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/sockets/25.sock): No such file or directory in /home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/Server.php on line 250
+at handshake
+
+
+
+Calling Read
+
+
+
+
+Stuck right here
+
+GET / HTTP/1.1
+Host: 127.0.0.1:39551
+Connection:
+
+Stuck right here
+
+ Upgrade
+Pragma: no-cache
+Cache-Control: no-cach
+
+Stuck right here
+
+e
+Upgrade: websocket
+Origin: http://127.0.0.1:80
+
+Stuck right here
+
+00
+Sec-WebSocket-Version: 13
+User-Agent: Mozilla
+
+Stuck right here
+
+/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML
+
+Stuck right here
+
+, like Gecko) Chrome/59.0.3071.109 Safari/537.36
+
+
+Stuck right here
+
+Accept-Encoding: gzip, deflate, br
+Accept-Languag
+
+Stuck right here
+
+e: en-GB,en-US;q=0.8,en;q=0.6
+Cookie: XSRF-TOKEN=
+
+Stuck right here
+
+eyJpdiI6IjF6MklHOFlpTENJbXpoOGFEaG1WSUE9PSIsInZhbH
+
+Stuck right here
+
+VlIjoiV1E5dkI3MXN6b3BpeHJKeG1UbGEzdVduaEc1STV3bzBG
+
+Stuck right here
+
+Q3ZSVHM2OG1ybDIyTkl4K1wvZDZrSTkyVWNWaHJ1OExFbXFIdV
+
+Stuck right here
+
+RiME8zdkxOY0w5eUhMUzhnPT0iLCJtYWMiOiI0OTQ5MDk0MGEz
+
+Stuck right here
+
+NjI0NGVjZjExNWVkZDU2MjVmNzJiNWE3YmIzYWI3MjFiNTM2OD
+
+Stuck right here
+
+k2NjU3ZGFiNDY5ODk2ODE3In0%3D; laravel_session=eyJp
+
+Stuck right here
+
+diI6IkYrd3owaUdLWEpBNGZqVmduYktjdEE9PSIsInZhbHVlIj
+
+Stuck right here
+
+oiVEZHdlpla0JVTDdCb1wvUGV1ckRLdW9oMVE3WG9BNEI5cHpt
+
+Stuck right here
+
+aHNJeXAxT2JJVk1WeWNUTWg4aU5WZjYxMHNNWnR2VmQwZ1wvNl
+
+Stuck right here
+
+wvZklscWN5UnNDUkxcL2xBPT0iLCJtYWMiOiJiOTc4YmQ5ZTdm
+
+Stuck right here
+
+NWU2OTZjZTFhNmUzMzQ1YmU5ZWFjMzM2MmU2Yjc0OGJmM2QwN2
+
+Stuck right here
+
+UwMWU1ZmE1OTU0ZmFlNWNjIn0%3D
+Sec-WebSocket-Key: G
+
+Stuck right here
+
+Dmh6ugK8ApmOR/abTSv4g==
+Sec-WebSocket-Extensions:
+
+Stuck right here
+
+ permessage-deflate; client_max_window_bits
+
+string(32) "Resource temporarily unavailable"
+resource(10) of type (Socket)
+bool(false)
+
+
+
+GET / HTTP/1.1
+Host: 127.0.0.1:39551
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+Upgrade: websocket
+Origin: http://127.0.0.1:8000
+Sec-WebSocket-Version: 13
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.109 Safari/537.36
+Accept-Encoding: gzip, deflate, br
+Accept-Language: en-GB,en-US;q=0.8,en;q=0.6
+Cookie: XSRF-TOKEN=eyJpdiI6IjF6MklHOFlpTENJbXpoOGFEaG1WSUE9PSIsInZhbHVlIjoiV1E5dkI3MXN6b3BpeHJKeG1UbGEzdVduaEc1STV3bzBGQ3ZSVHM2OG1ybDIyTkl4K1wvZDZrSTkyVWNWaHJ1OExFbXFIdVRiME8zdkxOY0w5eUhMUzhnPT0iLCJtYWMiOiI0OTQ5MDk0MGEzNjI0NGVjZjExNWVkZDU2MjVmNzJiNWE3YmIzYWI3MjFiNTM2ODk2NjU3ZGFiNDY5ODk2ODE3In0%3D; laravel_session=eyJpdiI6IkYrd3owaUdLWEpBNGZqVmduYktjdEE9PSIsInZhbHVlIjoiVEZHdlpla0JVTDdCb1wvUGV1ckRLdW9oMVE3WG9BNEI5cHptaHNJeXAxT2JJVk1WeWNUTWg4aU5WZjYxMHNNWnR2VmQwZ1wvNlwvZklscWN5UnNDUkxcL2xBPT0iLCJtYWMiOiJiOTc4YmQ5ZTdmNWU2OTZjZTFhNmUzMzQ1YmU5ZWFjMzM2MmU2Yjc0OGJmM2QwN2UwMWU1ZmE1OTU0ZmFlNWNjIn0%3D
+Sec-WebSocket-Key: GDmh6ugK8ApmOR/abTSv4g==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+
+
+
+
+PHP Notice:  Undefined index: SocketID in /home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/WS_Helper.php on line 18
+array(0) {
+}
+
+
+
+
+Sec-WebSocket-Key: GDmh6ugK8ApmOR/abTSv4g==PHP Notice:  Undefined index: id in /home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/WS_Helper.php on line 43
+string(13) "5950a08c7cced"
+Instructor connected
+
+
+we have this many sockets open 3
+
+
+resource(10) of type (Socket)
+array(1) {
+  ["instructor"]=>
+  resource(10) of type (Socket)
+}
+array(3) {
+  ["main"]=>
+  resource(7) of type (Socket)
+  ["port"]=>
+  resource(9) of type (Socket)
+  ["instructor"]=>
+  resource(10) of type (Socket)
+}
+
+
+Opcode is 136 and 8
+
+string(5) "close"
+
+
+we have this many sockets open 2
+
+
+PHP Warning:  socket_close(): supplied resource is not a valid Socket resource in /home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/Server.php on line 174
+opened class
+
+
+
+
+
+
+Returning
+
+
+
+
+
+
+
+
+
+ProcessID = 1
+
+
+
+
+
+3082
+
+
+
+
+
+
+
+trying to Die!!!
+
+
+
+
+
+
+
+0
+
+
+
+
+
+ProcessID = 3081
+
+
+
+
+
+Before loop ProcessID = 3084 My Id:3084 My Parent:3083 My Process SessionID:3084
+
+
+
+
+Connecting
+
+PHP Warning:  unlink(/home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/sockets/28.sock): No such file or directory in /home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/Server.php on line 250
+at handshake
+
+
+
+Calling Read
+
+
+
+
+Stuck right here
+
+GET / HTTP/1.1
+Host: 127.0.0.1:38326
+User-Agent:
+
+Stuck right here
+
+ Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:54.0) 
+
+Stuck right here
+
+Gecko/20100101 Firefox/54.0
+Accept: text/html,app
+
+Stuck right here
+
+lication/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+
+Stuck right here
+
+
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding
+
+Stuck right here
+
+: gzip, deflate
+Sec-WebSocket-Version: 13
+Origin
+
+Stuck right here
+
+: http://127.0.0.1:8000
+Sec-WebSocket-Extensions:
+
+Stuck right here
+
+ permessage-deflate
+Sec-WebSocket-Key: K8N1MBvp5o
+
+Stuck right here
+
+IXQ/fUbmxGDQ==
+Cookie: XSRF-TOKEN=eyJpdiI6Im9EazJ
+
+Stuck right here
+
+kSUZ0SDA5UlBudCt5aWl4VlE9PSIsInZhbHVlIjoiOTVPUlVaR
+
+Stuck right here
+
+m1uaE5SVlhSMGtKaEpNN2pTNFFtQno1UUlSM0lOSDVXeno1U0F
+
+Stuck right here
+
+tQUdUZHdvaFwvMWxXd0VlY0RjUlNzZXVldUZhSWZBNExPRjhPR
+
+Stuck right here
+
+norbyt3PT0iLCJtYWMiOiJmNjliODdhYWE1MzY5YWIxNWYwZjR
+
+Stuck right here
+
+kMDUxZjFiNzFmNWZkM2ZhMDc2MjY0NDY0Y2IzMTQ3ZWJmOGZkO
+
+Stuck right here
+
+TYzYmMyIn0%3D; laravel_session=eyJpdiI6InEyMElnMTQ
+
+Stuck right here
+
+zQnhJYnFaTks3TlVVVmc9PSIsInZhbHVlIjoiQ2JIcytTTlUrO
+
+Stuck right here
+
+WhlZlwvV0lIMHhxTnYzN0psZWkzUExPQkFtVGFsU05mOG1SS3V
+
+Stuck right here
+
+TSE1aMnVwdDZiNEdPQjhQU0xVS0VaVTZMV2VoRmlhMzJ1Ymw2N
+
+Stuck right here
+
+HFBPT0iLCJtYWMiOiJlMWIzN2Y2MGRkODIwMzE2MTczM2ZhOGU
+
+Stuck right here
+
+zNjZmM2NiODBhZTJiMmM1MDJhN2M3NWFjZjZmZWUzYTRlMGQxZ
+
+Stuck right here
+
+WVhIn0%3D
+Connection: keep-alive, Upgrade
+Pragma
+
+Stuck right here
+
+: no-cache
+Cache-Control: no-cache
+Upgrade: webs
+
+Stuck right here
+
+ocket
+
+string(32) "Resource temporarily unavailable"
+resource(10) of type (Socket)
+bool(false)
+
+
+
+GET / HTTP/1.1
+Host: 127.0.0.1:38326
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:54.0) Gecko/20100101 Firefox/54.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Sec-WebSocket-Version: 13
+Origin: http://127.0.0.1:8000
+Sec-WebSocket-Extensions: permessage-deflate
+Sec-WebSocket-Key: K8N1MBvp5oIXQ/fUbmxGDQ==
+Cookie: XSRF-TOKEN=eyJpdiI6Im9EazJkSUZ0SDA5UlBudCt5aWl4VlE9PSIsInZhbHVlIjoiOTVPUlVaRm1uaE5SVlhSMGtKaEpNN2pTNFFtQno1UUlSM0lOSDVXeno1U0FtQUdUZHdvaFwvMWxXd0VlY0RjUlNzZXVldUZhSWZBNExPRjhPRnorbyt3PT0iLCJtYWMiOiJmNjliODdhYWE1MzY5YWIxNWYwZjRkMDUxZjFiNzFmNWZkM2ZhMDc2MjY0NDY0Y2IzMTQ3ZWJmOGZkOTYzYmMyIn0%3D; laravel_session=eyJpdiI6InEyMElnMTQzQnhJYnFaTks3TlVVVmc9PSIsInZhbHVlIjoiQ2JIcytTTlUrOWhlZlwvV0lIMHhxTnYzN0psZWkzUExPQkFtVGFsU05mOG1SS3VTSE1aMnVwdDZiNEdPQjhQU0xVS0VaVTZMV2VoRmlhMzJ1Ymw2NHFBPT0iLCJtYWMiOiJlMWIzN2Y2MGRkODIwMzE2MTczM2ZhOGUzNjZmM2NiODBhZTJiMmM1MDJhN2M3NWFjZjZmZWUzYTRlMGQxZWVhIn0%3D
+Connection: keep-alive, Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+Upgrade: websocket
+
+
+
+
+PHP Notice:  Undefined index: SocketID in /home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/WS_Helper.php on line 18
+array(0) {
+}
+
+
+
+
+Sec-WebSocket-Key: K8N1MBvp5oIXQ/fUbmxGDQ==PHP Notice:  Undefined index: id in /home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/WS_Helper.php on line 43
+string(13) "59511d73d93f8"
+Instructor connected
+
+
+we have this many sockets open 3
+
+
+resource(10) of type (Socket)
+array(1) {
+  ["instructor"]=>
+  resource(10) of type (Socket)
+}
+array(3) {
+  ["main"]=>
+  resource(7) of type (Socket)
+  ["port"]=>
+  resource(9) of type (Socket)
+  ["instructor"]=>
+  resource(10) of type (Socket)
+}
+
+
+Opcode is 136 and 8
+
+string(5) "close"
+
+
+we have this many sockets open 2
+
+
+PHP Warning:  socket_close(): supplied resource is not a valid Socket resource in /home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/Server.php on line 174
+opened class
+
+
+
+
+
+
+Returning
+
+
+
+
+
+
+
+
+
+ProcessID = 1
+
+
+
+
+
+4064
+
+
+
+
+
+
+
+trying to Die!!!
+
+
+
+
+
+
+
+0
+
+
+
+
+
+ProcessID = 4063
+
+
+
+
+
+Before loop ProcessID = 4066 My Id:4066 My Parent:4065 My Process SessionID:4066
+
+
+
+
+Connecting
+
+PHP Warning:  unlink(/home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/sockets/29.sock): No such file or directory in /home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/Server.php on line 250
+at handshake
+
+
+
+Calling Read
+
+
+
+
+Stuck right here
+
+GET / HTTP/1.1
+Host: 127.0.0.1:50487
+User-Agent:
+
+Stuck right here
+
+ Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:54.0) 
+
+Stuck right here
+
+Gecko/20100101 Firefox/54.0
+Accept: text/html,app
+
+Stuck right here
+
+lication/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+
+Stuck right here
+
+
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding
+
+Stuck right here
+
+: gzip, deflate
+Sec-WebSocket-Version: 13
+Origin
+
+Stuck right here
+
+: http://127.0.0.1:8000
+Sec-WebSocket-Extensions:
+
+Stuck right here
+
+ permessage-deflate
+Sec-WebSocket-Key: gWcXKbZy6i
+
+Stuck right here
+
+pEwBDniyAC+Q==
+Cookie: XSRF-TOKEN=eyJpdiI6InBJUEd
+
+Stuck right here
+
+UQ01hV01URGRcLzloSENBQ1wvUT09IiwidmFsdWUiOiJ3UzRGZ
+
+Stuck right here
+
+3FVOThtTVwvSG04SjBzYkw4cnQ3Y004c1EzdkRaNm1IdTVsZ3Z
+
+Stuck right here
+
+5aWpRR0pzQWVNaWVSNUMxRkxcL0xJZzFuTHFqTjFKRkVsaVlBM
+
+Stuck right here
+
+HVIWnVLUWhBPT0iLCJtYWMiOiI3YjhjM2I0NWMzNWE2N2RlN2Y
+
+Stuck right here
+
+1YWI5YTcwZmJiY2JjMGNkMTk3N2UwMTRlYmViYjdkMmM4OTIzZ
+
+Stuck right here
+
+jk1N2U3NTJkIn0%3D; laravel_session=eyJpdiI6IkNzMXZ
+
+Stuck right here
+
+vVWlqeGM3WEs5OHFBclBxMEE9PSIsInZhbHVlIjoieXdYaFVmU
+
+Stuck right here
+
+klcL3YweVFMVWNBR0d6Wmp4OTZsOVhjajZiK2d3aVU4bXFWMW9
+
+Stuck right here
+
+5S1wvbkxXRHExcmtxNlJZXC85akd0ZE8rbiszZU1aOTN4Q0l3T
+
+Stuck right here
+
+1wvSHlhVW9RPT0iLCJtYWMiOiJjYjJkNzJhNTI2MDgzNGJkMWE
+
+Stuck right here
+
+0MTE5ZGIzNTlmY2ZkNzZmNTg0ZGVjMzgwOTg3YTczMGY5NjcxM
+
+Stuck right here
+
+jdjMzg2MTk4In0%3D; SocketID=59511d73d93f8
+Connect
+
+Stuck right here
+
+ion: keep-alive, Upgrade
+Pragma: no-cache
+Cache-
+
+Stuck right here
+
+Control: no-cache
+Upgrade: websocket
+
+string(32) "Resource temporarily unavailable"
+resource(10) of type (Socket)
+bool(false)
+
+
+
+GET / HTTP/1.1
+Host: 127.0.0.1:50487
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:54.0) Gecko/20100101 Firefox/54.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Sec-WebSocket-Version: 13
+Origin: http://127.0.0.1:8000
+Sec-WebSocket-Extensions: permessage-deflate
+Sec-WebSocket-Key: gWcXKbZy6ipEwBDniyAC+Q==
+Cookie: XSRF-TOKEN=eyJpdiI6InBJUEdUQ01hV01URGRcLzloSENBQ1wvUT09IiwidmFsdWUiOiJ3UzRGZ3FVOThtTVwvSG04SjBzYkw4cnQ3Y004c1EzdkRaNm1IdTVsZ3Z5aWpRR0pzQWVNaWVSNUMxRkxcL0xJZzFuTHFqTjFKRkVsaVlBMHVIWnVLUWhBPT0iLCJtYWMiOiI3YjhjM2I0NWMzNWE2N2RlN2Y1YWI5YTcwZmJiY2JjMGNkMTk3N2UwMTRlYmViYjdkMmM4OTIzZjk1N2U3NTJkIn0%3D; laravel_session=eyJpdiI6IkNzMXZvVWlqeGM3WEs5OHFBclBxMEE9PSIsInZhbHVlIjoieXdYaFVmUklcL3YweVFMVWNBR0d6Wmp4OTZsOVhjajZiK2d3aVU4bXFWMW95S1wvbkxXRHExcmtxNlJZXC85akd0ZE8rbiszZU1aOTN4Q0l3T1wvSHlhVW9RPT0iLCJtYWMiOiJjYjJkNzJhNTI2MDgzNGJkMWE0MTE5ZGIzNTlmY2ZkNzZmNTg0ZGVjMzgwOTg3YTczMGY5NjcxMjdjMzg2MTk4In0%3D; SocketID=59511d73d93f8
+Connection: keep-alive, Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+Upgrade: websocket
+
+
+
+
+array(3) {
+  [0]=>
+  string(22) "SocketID=59511d73d93f8"
+  ["SocketID"]=>
+  string(13) "59511d73d93f8"
+  [1]=>
+  string(13) "59511d73d93f8"
+}
+
+
+
+
+Sec-WebSocket-Key: gWcXKbZy6ipEwBDniyAC+Q==PHP Notice:  Undefined index: id in /home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/WS_Helper.php on line 43
+string(13) "59511d73d93f8"
+Instructor connected
+
+
+we have this many sockets open 3
+
+
+resource(10) of type (Socket)
+array(1) {
+  ["instructor"]=>
+  resource(10) of type (Socket)
+}
+array(3) {
+  ["main"]=>
+  resource(7) of type (Socket)
+  ["port"]=>
+  resource(9) of type (Socket)
+  ["instructor"]=>
+  resource(10) of type (Socket)
+}
+
+
+Opcode is 136 and 8
+
+string(5) "close"
+
+
+we have this many sockets open 2
+
+
+PHP Warning:  socket_close(): supplied resource is not a valid Socket resource in /home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/Server.php on line 174
+opened class
+
+
+
+
+
+
+Returning
+
+
+
+
+
+
+
+
+
+ProcessID = 1
+
+
+
+
+
+4183
+
+
+
+
+
+
+
+trying to Die!!!
+
+
+
+
+
+
+
+0
+
+
+
+
+
+ProcessID = 4182
+
+
+
+
+
+Before loop ProcessID = 4185 My Id:4185 My Parent:4184 My Process SessionID:4185
+
+
+
+
+Connecting
+
+PHP Warning:  unlink(/home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/sockets/30.sock): No such file or directory in /home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/Server.php on line 250
+at handshake
+
+
+
+Calling Read
+
+
+
+
+Stuck right here
+
+GET / HTTP/1.1
+Host: 127.0.0.1:37249
+User-Agent:
+
+Stuck right here
+
+ Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:54.0) 
+
+Stuck right here
+
+Gecko/20100101 Firefox/54.0
+Accept: text/html,app
+
+Stuck right here
+
+lication/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+
+Stuck right here
+
+
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding
+
+Stuck right here
+
+: gzip, deflate
+Sec-WebSocket-Version: 13
+Origin
+
+Stuck right here
+
+: http://127.0.0.1:8000
+Sec-WebSocket-Extensions:
+
+Stuck right here
+
+ permessage-deflate
+Sec-WebSocket-Key: lI+ST8f+sp
+
+Stuck right here
+
+CrhPVzjMYiyA==
+Cookie: XSRF-TOKEN=eyJpdiI6ImVIUWJ
+
+Stuck right here
+
+zVnJwTnErazJDMXdWVE9JTWc9PSIsInZhbHVlIjoiRGdrb01TU
+
+Stuck right here
+
+nhYejRJMjhKSHV0VVRlNm9UZW1MMjVUNWRBT3FXalpLc0d4RmJ
+
+Stuck right here
+
+ISFowTXJmUE1Xd0g3WWJDS3Z6d2FOaG80cDRcL1Vrd2hpakIzd
+
+Stuck right here
+
+XBkMHpnPT0iLCJtYWMiOiJiYTM5MDJmOTFiMGE3ZDE5ZmNjMTY
+
+Stuck right here
+
+yZmMyZGUxOWRmZTQ2ZmE0YjJhYzRlMmUxMmQxNTVmNTQzZjBkO
+
+Stuck right here
+
+GZiNDZkIn0%3D; laravel_session=eyJpdiI6ImNUQ3FWWHB
+
+Stuck right here
+
+NeFYzUjhUanloYk1USGc9PSIsInZhbHVlIjoiVXp2bW1DV1NBT
+
+Stuck right here
+
+FQ3MmxiZHhkcFl1bnAxZURHbUFQaUgxOVFPZWZRMDJnVThCU0d
+
+Stuck right here
+
+LWW91YTdad3M2WnF1dWZJdjhGelFwWEV3THJLZUdNMittWFBlR
+
+Stuck right here
+
+3c9PSIsIm1hYyI6IjI4YTMwYzE5ZjlmYTdiN2U2OGIyOWVhM2M
+
+Stuck right here
+
+wZWUzNTBhNDMzOTVkZTkzOGEwMjNiNmUyZTc1YzBkMWQwYWI5M
+
+Stuck right here
+
+DYifQ%3D%3D; SocketID=59511d73d93f8
+Connection: k
+
+Stuck right here
+
+eep-alive, Upgrade
+Pragma: no-cache
+Cache-Contro
+
+Stuck right here
+
+l: no-cache
+Upgrade: websocket
+
+string(32) "Resource temporarily unavailable"
+resource(10) of type (Socket)
+bool(false)
+
+
+
+GET / HTTP/1.1
+Host: 127.0.0.1:37249
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:54.0) Gecko/20100101 Firefox/54.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Sec-WebSocket-Version: 13
+Origin: http://127.0.0.1:8000
+Sec-WebSocket-Extensions: permessage-deflate
+Sec-WebSocket-Key: lI+ST8f+spCrhPVzjMYiyA==
+Cookie: XSRF-TOKEN=eyJpdiI6ImVIUWJzVnJwTnErazJDMXdWVE9JTWc9PSIsInZhbHVlIjoiRGdrb01TUnhYejRJMjhKSHV0VVRlNm9UZW1MMjVUNWRBT3FXalpLc0d4RmJISFowTXJmUE1Xd0g3WWJDS3Z6d2FOaG80cDRcL1Vrd2hpakIzdXBkMHpnPT0iLCJtYWMiOiJiYTM5MDJmOTFiMGE3ZDE5ZmNjMTYyZmMyZGUxOWRmZTQ2ZmE0YjJhYzRlMmUxMmQxNTVmNTQzZjBkOGZiNDZkIn0%3D; laravel_session=eyJpdiI6ImNUQ3FWWHBNeFYzUjhUanloYk1USGc9PSIsInZhbHVlIjoiVXp2bW1DV1NBTFQ3MmxiZHhkcFl1bnAxZURHbUFQaUgxOVFPZWZRMDJnVThCU0dLWW91YTdad3M2WnF1dWZJdjhGelFwWEV3THJLZUdNMittWFBlR3c9PSIsIm1hYyI6IjI4YTMwYzE5ZjlmYTdiN2U2OGIyOWVhM2MwZWUzNTBhNDMzOTVkZTkzOGEwMjNiNmUyZTc1YzBkMWQwYWI5MDYifQ%3D%3D; SocketID=59511d73d93f8
+Connection: keep-alive, Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+Upgrade: websocket
+
+
+
+
+array(3) {
+  [0]=>
+  string(22) "SocketID=59511d73d93f8"
+  ["SocketID"]=>
+  string(13) "59511d73d93f8"
+  [1]=>
+  string(13) "59511d73d93f8"
+}
+
+
+
+
+Sec-WebSocket-Key: lI+ST8f+spCrhPVzjMYiyA==PHP Notice:  Undefined index: id in /home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/WS_Helper.php on line 43
+string(13) "59511d73d93f8"
+Instructor connected
+
+
+we have this many sockets open 3
+
+
+resource(10) of type (Socket)
+array(1) {
+  ["instructor"]=>
+  resource(10) of type (Socket)
+}
+array(3) {
+  ["main"]=>
+  resource(7) of type (Socket)
+  ["port"]=>
+  resource(9) of type (Socket)
+  ["instructor"]=>
+  resource(10) of type (Socket)
+}
+
+
+Opcode is 136 and 8
+
+string(5) "close"
+
+
+we have this many sockets open 2
+
+
+PHP Warning:  socket_close(): supplied resource is not a valid Socket resource in /home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/Server.php on line 174
+opened class
+
+
+
+
+
+
+Returning
+
+
+
+
+
+
+
+
+
+ProcessID = 1
+
+
+
+
+
+4423
+
+
+
+
+
+
+
+trying to Die!!!
+
+
+
+
+
+
+
+0
+
+
+
+
+
+ProcessID = 4422
+
+
+
+
+
+Before loop ProcessID = 4425 My Id:4425 My Parent:4424 My Process SessionID:4425
+
+
+
+
+Connecting
+
+PHP Warning:  unlink(/home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/sockets/31.sock): No such file or directory in /home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/Server.php on line 250
+at handshake
+
+
+
+Calling Read
+
+
+
+
+Stuck right here
+
+GET / HTTP/1.1
+Host: 127.0.0.1:56867
+User-Agent:
+
+Stuck right here
+
+ Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:54.0) 
+
+Stuck right here
+
+Gecko/20100101 Firefox/54.0
+Accept: text/html,app
+
+Stuck right here
+
+lication/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+
+Stuck right here
+
+
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding
+
+Stuck right here
+
+: gzip, deflate
+Sec-WebSocket-Version: 13
+Origin
+
+Stuck right here
+
+: http://127.0.0.1:8000
+Sec-WebSocket-Extensions:
+
+Stuck right here
+
+ permessage-deflate
+Sec-WebSocket-Key: fq3/mbQndi
+
+Stuck right here
+
+Rcc5Ld330cGQ==
+Cookie: XSRF-TOKEN=eyJpdiI6ImdsaVR
+
+Stuck right here
+
+pczl3N0pGcEFTWFQxMlpwdEE9PSIsInZhbHVlIjoidFwvbW9Kb
+
+Stuck right here
+
+VwvN0hJRVFZRkRsbEtwMFJmdUlKa3hBaU80bUgwaVMxVnVaaml
+
+Stuck right here
+
+3RWxTd0JucFJIT0lHdDRrRXNXdHhOXC9OWUc4WVRaQk90ZGpFZ
+
+Stuck right here
+
+Dg0K3VGcUE9PSIsIm1hYyI6IjMwNjU3MDA0NzVlNWRmYjI0OGR
+
+Stuck right here
+
+hM2MwMmVjMWQ5YWYwYTMxNGU3MjBhNjA4MWYyYzNhOTAyZWRiM
+
+Stuck right here
+
+zg3MThjMjgifQ%3D%3D; laravel_session=eyJpdiI6IjZXN
+
+Stuck right here
+
+2V5cXhoUVNHcTlqOU9ZNG1WSGc9PSIsInZhbHVlIjoiWFNLWVZ
+
+Stuck right here
+
+SbHgwSU9veVh1N3RsTlI3SlVMY1NWXC96RVhJSEdIWEFKOUt4a
+
+Stuck right here
+
+mJFT05KVDBxOU51bFdkY1lvdjViYmsxdXpWM204Q1p3a1RVeEh
+
+Stuck right here
+
+LdzBoZ0NRPT0iLCJtYWMiOiJiMDc4NGU5OTE2YjZhOWNmZGRkM
+
+Stuck right here
+
+zlkNzA4NTMwMDJmY2Q4NTZlYTY0ODhlMWI4NjZhNGJmNTlmNTU
+
+Stuck right here
+
+5ZmFmNTYyIn0%3D; SocketID=59511d73d93f8
+Connectio
+
+Stuck right here
+
+n: keep-alive, Upgrade
+Pragma: no-cache
+Cache-Co
+
+Stuck right here
+
+ntrol: no-cache
+Upgrade: websocket
+
+string(32) "Resource temporarily unavailable"
+resource(10) of type (Socket)
+bool(false)
+
+
+
+GET / HTTP/1.1
+Host: 127.0.0.1:56867
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:54.0) Gecko/20100101 Firefox/54.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Sec-WebSocket-Version: 13
+Origin: http://127.0.0.1:8000
+Sec-WebSocket-Extensions: permessage-deflate
+Sec-WebSocket-Key: fq3/mbQndiRcc5Ld330cGQ==
+Cookie: XSRF-TOKEN=eyJpdiI6ImdsaVRpczl3N0pGcEFTWFQxMlpwdEE9PSIsInZhbHVlIjoidFwvbW9KbVwvN0hJRVFZRkRsbEtwMFJmdUlKa3hBaU80bUgwaVMxVnVaaml3RWxTd0JucFJIT0lHdDRrRXNXdHhOXC9OWUc4WVRaQk90ZGpFZDg0K3VGcUE9PSIsIm1hYyI6IjMwNjU3MDA0NzVlNWRmYjI0OGRhM2MwMmVjMWQ5YWYwYTMxNGU3MjBhNjA4MWYyYzNhOTAyZWRiMzg3MThjMjgifQ%3D%3D; laravel_session=eyJpdiI6IjZXN2V5cXhoUVNHcTlqOU9ZNG1WSGc9PSIsInZhbHVlIjoiWFNLWVZSbHgwSU9veVh1N3RsTlI3SlVMY1NWXC96RVhJSEdIWEFKOUt4amJFT05KVDBxOU51bFdkY1lvdjViYmsxdXpWM204Q1p3a1RVeEhLdzBoZ0NRPT0iLCJtYWMiOiJiMDc4NGU5OTE2YjZhOWNmZGRkMzlkNzA4NTMwMDJmY2Q4NTZlYTY0ODhlMWI4NjZhNGJmNTlmNTU5ZmFmNTYyIn0%3D; SocketID=59511d73d93f8
+Connection: keep-alive, Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+Upgrade: websocket
+
+
+
+
+array(3) {
+  [0]=>
+  string(22) "SocketID=59511d73d93f8"
+  ["SocketID"]=>
+  string(13) "59511d73d93f8"
+  [1]=>
+  string(13) "59511d73d93f8"
+}
+
+
+
+
+Sec-WebSocket-Key: fq3/mbQndiRcc5Ld330cGQ==PHP Notice:  Undefined index: id in /home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/WS_Helper.php on line 43
+string(13) "59511d73d93f8"
+Instructor connected
+
+
+we have this many sockets open 3
+
+
+resource(10) of type (Socket)
+array(1) {
+  ["instructor"]=>
+  resource(10) of type (Socket)
+}
+array(3) {
+  ["main"]=>
+  resource(7) of type (Socket)
+  ["port"]=>
+  resource(9) of type (Socket)
+  ["instructor"]=>
+  resource(10) of type (Socket)
+}
+
+
+Opcode is 136 and 8
+
+string(5) "close"
+
+
+we have this many sockets open 2
+
+
+PHP Warning:  socket_close(): supplied resource is not a valid Socket resource in /home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/Server.php on line 174
+opened class
+
+
+
+
+
+
+Returning
+
+
+
+
+
+
+
+
+
+ProcessID = 1
+
+
+
+
+
+4785
+
+
+
+
+
+
+
+trying to Die!!!
+
+
+
+
+
+
+
+0
+
+
+
+
+
+ProcessID = 4784
+
+
+
+
+
+Before loop ProcessID = 4787 My Id:4787 My Parent:4786 My Process SessionID:4787
+
+
+
+
+Connecting
+
+PHP Warning:  unlink(/home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/sockets/32.sock): No such file or directory in /home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/Server.php on line 250
+at handshake
+
+
+
+Calling Read
+
+
+
+
+Stuck right here
+
+GET / HTTP/1.1
+Host: 127.0.0.1:33941
+User-Agent:
+
+Stuck right here
+
+ Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:54.0) 
+
+Stuck right here
+
+Gecko/20100101 Firefox/54.0
+Accept: text/html,app
+
+Stuck right here
+
+lication/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+
+Stuck right here
+
+
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding
+
+Stuck right here
+
+: gzip, deflate
+Sec-WebSocket-Version: 13
+Origin
+
+Stuck right here
+
+: http://127.0.0.1:8000
+Sec-WebSocket-Extensions:
+
+Stuck right here
+
+ permessage-deflate
+Sec-WebSocket-Key: SMl43O+wvZ
+
+Stuck right here
+
+/CPw8KWbiAew==
+Cookie: XSRF-TOKEN=eyJpdiI6IkVVcEZ
+
+Stuck right here
+
+vUTNrRG5xVWM4RXNnQVBTRmc9PSIsInZhbHVlIjoia2V3SWU5M
+
+Stuck right here
+
+FQ4MVBkZEg1QVwvUlJodzFlRHVSZnVtbzVmR3NPZmJieHM0SVB
+
+Stuck right here
+
+TcDgzcCt4RlFrZHhwS2NPeFwvTExIXC9LQlhMRVoreHdGZ1lmQ
+
+Stuck right here
+
+3RHbnFMbVE9PSIsIm1hYyI6ImE4YzUyZGI0YzZhOGE1MzBjNzY
+
+Stuck right here
+
+yNjdkMjhlY2IxZDgxYzdmN2VjZDNjYzJkYWI4NDhlYWI5NzYxM
+
+Stuck right here
+
+TU5MGY2ODkifQ%3D%3D; laravel_session=eyJpdiI6IjhEZ
+
+Stuck right here
+
+lwvWHNvNElUUlwvOTYrdEZFaExqUT09IiwidmFsdWUiOiJwQUZ
+
+Stuck right here
+
+Palg0V0F3Q0h0bUc1Q2hYSlQwSlA5ZGw1TFFwTEN6WE1OM3V0R
+
+Stuck right here
+
+XFkRjJGNndKM08yMFh5R0g4SzRjWmVNb3d3NUdmS0Q0QlROWFR
+
+Stuck right here
+
+Nc0RyczIxdz09IiwibWFjIjoiNjI4OTg3OGY1YjBiYjBjYjg1N
+
+Stuck right here
+
+DM2NDBkMzU4YTk5ZTg2OTQ1Yzg0YWRhNTJjMTBhNmNhNDhkMGY
+
+Stuck right here
+
+yMTYyMmE1MSJ9; SocketID=59511d73d93f8
+Connection:
+
+Stuck right here
+
+ keep-alive, Upgrade
+Pragma: no-cache
+Cache-Cont
+
+Stuck right here
+
+rol: no-cache
+Upgrade: websocket
+
+string(32) "Resource temporarily unavailable"
+resource(10) of type (Socket)
+bool(false)
+
+
+
+GET / HTTP/1.1
+Host: 127.0.0.1:33941
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:54.0) Gecko/20100101 Firefox/54.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Sec-WebSocket-Version: 13
+Origin: http://127.0.0.1:8000
+Sec-WebSocket-Extensions: permessage-deflate
+Sec-WebSocket-Key: SMl43O+wvZ/CPw8KWbiAew==
+Cookie: XSRF-TOKEN=eyJpdiI6IkVVcEZvUTNrRG5xVWM4RXNnQVBTRmc9PSIsInZhbHVlIjoia2V3SWU5MFQ4MVBkZEg1QVwvUlJodzFlRHVSZnVtbzVmR3NPZmJieHM0SVBTcDgzcCt4RlFrZHhwS2NPeFwvTExIXC9LQlhMRVoreHdGZ1lmQ3RHbnFMbVE9PSIsIm1hYyI6ImE4YzUyZGI0YzZhOGE1MzBjNzYyNjdkMjhlY2IxZDgxYzdmN2VjZDNjYzJkYWI4NDhlYWI5NzYxMTU5MGY2ODkifQ%3D%3D; laravel_session=eyJpdiI6IjhEZlwvWHNvNElUUlwvOTYrdEZFaExqUT09IiwidmFsdWUiOiJwQUZPalg0V0F3Q0h0bUc1Q2hYSlQwSlA5ZGw1TFFwTEN6WE1OM3V0RXFkRjJGNndKM08yMFh5R0g4SzRjWmVNb3d3NUdmS0Q0QlROWFRNc0RyczIxdz09IiwibWFjIjoiNjI4OTg3OGY1YjBiYjBjYjg1NDM2NDBkMzU4YTk5ZTg2OTQ1Yzg0YWRhNTJjMTBhNmNhNDhkMGYyMTYyMmE1MSJ9; SocketID=59511d73d93f8
+Connection: keep-alive, Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+Upgrade: websocket
+
+
+
+
+array(3) {
+  [0]=>
+  string(22) "SocketID=59511d73d93f8"
+  ["SocketID"]=>
+  string(13) "59511d73d93f8"
+  [1]=>
+  string(13) "59511d73d93f8"
+}
+
+
+
+
+Sec-WebSocket-Key: SMl43O+wvZ/CPw8KWbiAew==PHP Notice:  Undefined index: id in /home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/WS_Helper.php on line 43
+string(13) "59511d73d93f8"
+Instructor connected
+
+
+we have this many sockets open 3
+
+
+resource(10) of type (Socket)
+array(1) {
+  ["instructor"]=>
+  resource(10) of type (Socket)
+}
+array(3) {
+  ["main"]=>
+  resource(7) of type (Socket)
+  ["port"]=>
+  resource(9) of type (Socket)
+  ["instructor"]=>
+  resource(10) of type (Socket)
+}
+
+
+Opcode is 136 and 8
+
+string(5) "close"
+
+
+we have this many sockets open 2
+
+
+PHP Warning:  socket_close(): supplied resource is not a valid Socket resource in /home/stanamon/SD25Git/SD25Quiz-master/SD25Quiz/Quiz/WatchDog/Server/Server.php on line 174
+opened class
+
+
+
+
+
+
+Returning
+
+
+
+
+
+

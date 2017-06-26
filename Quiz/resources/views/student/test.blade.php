@@ -16,7 +16,7 @@
 <script>
             var ws;
 	var write;
-           
+
         window.onblur = function(){
             ws.send(JSON.stringify(new Message(null,null,"Focus","false")));
         };
@@ -31,7 +31,7 @@
             window.onbeforeunload = function(){
                 ws.send(JSON.stringify(new Message(null,null,"Page","left page")));
                 //ws.close();
-              return false;  
+              return false;
             };
 	write=document.getElementById("sum");
         ws = new WebSocket("ws://{{Request::server ("SERVER_NAME")}}:{{session('port')['port']}}/id/{{Auth::guard('students')->user()->StudentID}}");
@@ -96,10 +96,11 @@
                       <div class="TestQuestionSelect" style="overflow:auto;">
                             <p>Question Set</p>
                             <p id="timeElapse"></p>
-                             
+
                             <div class="TestListTop">
                               <input type="submit" form="saveTest" id="SubmitTest" value="Submit Test"/>
                             </div>
+                            <br/><br/>
                         @foreach($provider->questions() as $key => $question)
                             <div class="TestListCell" questionId='{{$key}}' onclick="getQuestion(this)">
                                 <div class="TestQuestionName" >
@@ -140,5 +141,5 @@
              setTime();
          },1000);
      </script>
-  
+
 @stop
