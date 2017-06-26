@@ -9,3 +9,5 @@ Homestead.json
 Homestead.yaml
 .env
 /WatchDog/Server/.out.txt
+/WatchDog/Server/sockets/*
+
