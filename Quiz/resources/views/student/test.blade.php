@@ -132,7 +132,8 @@
          var counter;
                                  (counter = new Date(0,0,0,0,0,0)).setMilliseconds(counter.getMilliseconds() + dif);
          function setTime(){
-             timeElapse.innerHTML = counter.getHours() + ":" + counter.getMinutes() + ":" + counter.getSeconds();
+             timeElapse.innerHTML = (((h = counter.getHours())<10)? ("0" + h): h )+ ":" + (((m = counter.getMinutes())<10)? ("0"+m) : m )+ ":" + (((s =counter.getSeconds())<10) ? ("0"+
+             s) : s);
          }
          setTime();
          setInterval(function(){
