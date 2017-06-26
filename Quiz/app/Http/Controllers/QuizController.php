@@ -52,13 +52,13 @@ class QuizController extends Controller
     public function showOne($q)
     {
       $quiz=Quiz::find($q);
-      $questions=Question::where('QuizID','=',$q)->get();
+      /*$questions=Question::where('QuizID','=',$q)->get();
       $answers=DB::table('answers')
                 ->join('questions', 'answers.QuestionID', '=', 'questions.QuestionID')
-                ->select('answers.*'/*,'questions.CorrectAnswer'*/)
+                ->select('answers.*'/*,'questions.CorrectAnswer')
                 ->where('questions.QuizID','=', $q)
-                ->get();
-      return view('instructor.quiz',compact('quiz','questions','answers'));
+                ->get();*/
+      return view('instructor.quiz',compact('quiz'));
 
     }
 
@@ -118,9 +118,9 @@ else // Edit existing question
 
 public function EditQuiz(Request $request, $quizID)
 {
+  //dd($request);
 Quiz::find($quizID)->update(['QuizName' => $request->QuizName,
-                          'Description' => $request->Description,
-                            'Active' => $request->Active]);
+                          'Description' => $request->Description]);
     return back();
 }
 

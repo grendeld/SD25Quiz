@@ -57,21 +57,25 @@
 <body>
 
 
-    <div class="row">
 
-          <div id="buttonPlace">
-            <button class="quizbutton" type="button" onclick="showIntakes()">Intakes</button>
-            <button class="quizbutton" type="button" onclick="showPrograms()">Progams by Type</button>
-            <button class="quizbutton" type="button" onclick="showAllClassTest()">Test => Scores</button>
-          </div>
-            <br/><br/>
-          <div id="reuseChart">
-            <svg width="920" height="550"></svg>
-          </div>
-          <p id="testQ"></p>
+  <div id="buttonPlace">
+    <button class="quizbutton" type="button" onclick="showIntakes()">View Intakes</button>
+    <button class="quizbutton" type="button" onclick="showPrograms()">View Progams by Type</button>
+    <select class="quizbuttonn" name="" id="selectTest" autocomplete="off" onchange="showAllClassTest(this)">
+      <option value="0" selected disabled> Choose Test </option>
+      @foreach($tests as $t)
+      <option value="{{$t}}">{{$t->TestID}}</option>
 
-    </div>
-  
+
+      @endforeach
+    </select>
+  </div>
+  <div id="reuseChart">
+    <svg width="920" height="550"></svg>
+
+  </div>
+
+
 
 </body>
 <script>
@@ -111,8 +115,9 @@ function showPrograms(){
   d3.json("/programByType", updateBar)
 }
 
-function showAllClassTest(){
-  d3.json("/testOK",updateBar)
+function showAllClassTest(value){
+  var testId = value.options[value.selectedIndex].innerHTML;
+  d3.json("/testOK/"+testId,updateBar)
 }
 
   function updateBar(error, data){
