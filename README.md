@@ -21,6 +21,7 @@ Functionality<br>
 Allow instructor to add a student to an intake<br>
 Put funtionality and dynamic report on instructor/test page
 <br>
+Keep tab selected on navbar highlighted<br>
 Student Page<br>
 Only display available tests and not past tests
 <br>
