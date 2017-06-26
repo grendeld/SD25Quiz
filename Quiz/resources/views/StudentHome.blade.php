@@ -5,7 +5,6 @@
 
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-</head>
 @stop
 @section ('content')
 
@@ -27,6 +26,43 @@
             <h5>StudentID: {{$student->StudentID}}</h5> <br/>
             <h5>Program: {{$student->intake->program->ProgramName}}</h5> <br/>
             <h5>Intake: {{$student->intake->IntakeName}}</h5>
+          <img width='200' height='250' src='storage/{{$student->Photo}}'/>
+
+            <div class="col-md-12">
+              <div class="AdminTables">
+                <h4>Available quizzes:</h4>
+
+                <table>
+                  <tr>
+                    <th>
+                      Quiz
+                    </th>
+                    <th>
+                      Name
+                    </th>
+                  <th>
+
+                  </th>
+                </tr>
+                @foreach($tests as $t)
+                  <tr>
+                      <td>
+                        {{$t->TestID}}
+                      </td>
+                      <td>
+                        {{$t->quiz->QuizName}}
+                      </td>
+                      <td>
+                        <input type="button" onclick = "StartQuiz({{$t->TestID}})" value="Start Quiz" />
+                      </td>
+                  </tr>
+                @endforeach
+              </table>
+            </div>
+
+                <hr>
+            </div>
+          <div class="col-md-1"></div>
           </div>
           <div class="col-md-12 Spacer"></div>
           <div class="col-md-12">
@@ -96,7 +132,7 @@ function CheckQuiz()
           }(test);
 
           $('#divCheckResult').append(p);
-          $(location).attr('href', 'http://127.0.0.1:8000/test/Student')
+          $(location).attr('href', '/test/Student')
         });
 
       }
