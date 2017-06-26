@@ -97,7 +97,8 @@ body {
 }
 
 .Panelbkgg{
-  height: 11em;
+  height: 50vh;
+
   background-color: rgba(254,254,254,0.6);
   margin-top: 2em;
   border-style: solid;

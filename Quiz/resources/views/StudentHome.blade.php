@@ -26,8 +26,8 @@
             <h5>StudentID: {{$student->StudentID}}</h5> <br/>
             <h5>Program: {{$student->intake->program->ProgramName}}</h5> <br/>
             <h5>Intake: {{$student->intake->IntakeName}}</h5>
-          <img width='200' height='250' src='storage/{{$student->Photo}}'/>
-
+          </div>
+          <div class="col-md-12 Spacer"></div>
             <div class="col-md-12">
               <div class="AdminTables">
                 <h4>Available quizzes:</h4>
@@ -53,7 +53,7 @@
                         {{$t->quiz->QuizName}}
                       </td>
                       <td>
-                        <input type="button" onclick = "StartQuiz({{$t->TestID}})" value="Start Quiz" />
+                        <input class="quizbutton" type="button" onclick = "StartQuiz({{$t->TestID}})" value="Start Quiz" />
                       </td>
                   </tr>
                 @endforeach
@@ -64,42 +64,8 @@
             </div>
           <div class="col-md-1"></div>
           </div>
-          <div class="col-md-12 Spacer"></div>
-          <div class="col-md-12">
-            <div class="AdminTables">
-              <h4>Available quizzes:</h4>
 
-              <table>
-                <tr>
-                  <th>
-                    Quiz
-                  </th>
-                  <th>
-                    Name
-                  </th>
-                <th>
 
-                </th>
-              </tr>
-              @foreach($tests as $t)
-                <tr>
-                    <td>
-                      {{$t->TestID}}
-                    </td>
-                    <td>
-                      {{$t->quiz->QuizName}}
-                    </td>
-                    <td>
-                      <input class="quizbutton" type="button" onclick = "StartQuiz({{$t->TestID}})" value="Start Quiz" />
-                    </td>
-                </tr>
-              @endforeach
-            </table>
-          </div>
-          </div>
-      </div>
-      <div class="col-md-1"></div>
-  </div>
 </div>
 @stop
 
