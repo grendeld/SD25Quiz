@@ -70,7 +70,7 @@ $result = Student::where('FirstName','like','%'.$words[0].'%')
 }
 
 
-return $result;
+return $result->load('intake');
 //output the response
 
 }

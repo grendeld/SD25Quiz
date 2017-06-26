@@ -29,10 +29,14 @@
   background-color:grey;
 }
 
+.StudentsList:hover
+{
+  color:grey;
+}
 
-width:220px;
 #imgStudent{
   height: 250px;
+  width:220px;
 }
 </style>
 

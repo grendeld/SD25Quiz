@@ -1,48 +1,4 @@
 
-// var currentPanel = null;
-// var currentDiv = null;
-//
-// function showProgramsPanel()
-// {
-//   if(currentDiv)
-//   currentDiv.fadeOut(100);
-//
-//   if(currentPanel)
-//       currentPanel.fadeOut(100);
-//         currentPanel = $("#ProgramsPanel").fadeIn(10);
-// }
-//
-// function showInstructorsPanel()
-// {
-//   if(currentDiv)
-//   currentDiv.fadeOut(100);
-//
-//   if(currentPanel)
-//       currentPanel.fadeOut(100);
-//         currentPanel = $("#InstructorsPanel").fadeIn(10);
-// }
-//
-// function showIntakesPanel()
-// {
-//   if(currentDiv)
-//   currentDiv.fadeOut(100);
-//
-//   if(currentPanel)
-//       currentPanel.fadeOut(100);
-//         currentPanel = $("#IntakesPanel").fadeIn(10);
-// }
-//
-// function showStudentsPanel()
-// {
-//   if(currentDiv)
-//   currentDiv.fadeOut(100);
-//
-//   if(currentPanel)
-//       currentPanel.fadeOut(100);
-//         currentPanel = $("#StudentsPanel").fadeIn(10);
-// }
-
-
 function divProgramShow(programJSONstring)
 {
   if(currentDiv)
@@ -89,15 +45,24 @@ function divIntakeShow(intake)
         currentDiv = $("#divIntake").fadeIn(250);
 
   intake = JSON.parse(intake);
+
+  console.dir(intake);
   //$("#divIntake").slideDown(100);
   h3IntakeName.innerHTML = intake.IntakeName ;
   list=document.getElementById("StudentsList");
   list.innerHTML="";
-  for (var i=0; i<intake.students.length; i++)
+  // for (var i=0; i<intake.students.length; i++)
+  // {
+  //   list.innerHTML += ('<li onclick="javascript:test(' + intake.students[i] + ')">' + intake.students[i].FirstName + " " + intake.students[i].LastName + '</li>');
+  // }
+  for (student of intake.students)
   {
-    list.innerHTML += ('<li>' + intake.students[i].FirstName + " " + intake.students[i].LastName + '</li>');
+    list.innerHTML += ('<li class="StudentsList" onclick="javascript:divStudentShow(student)">' + student.FirstName + " " + student.LastName + '</li>');
   }
+int = intake;
+
 }
+
 
 function Add_new_intake()
 {
@@ -110,6 +75,8 @@ function hideDivNewIntake()
 {
 $("#divNewIntake").fadeOut(10);
 }
+
+
 
 function SearchStudent()
 {
@@ -134,8 +101,8 @@ $('#divSearchResult').empty();
               divStudentShow(object);
             }
           }(student);
-          p.innerHTML = student.FirstName + " " + student.LastName;
-          $('#divSearchResult').append(p);
+         p.innerHTML = student.FirstName + " " + student.LastName;
+         $('#divSearchResult').append(p);
         });
       }
       else
@@ -154,7 +121,13 @@ function divStudentShow(student)
       currentDiv.fadeOut(300);
         currentDiv = $("#divStudent").fadeIn(250);
       //  divEmail.innerHTML = student.email;
-   h3StudentName.innerHTML = student.FirstName + ' ' + student.LastName+'<br/>'+student.email+'<br/>'+student.IntakeID;
+   h3StudentName.innerHTML = student.FirstName + ' ' + student.LastName+'<br/>'+student.email+'<br/>';
+   if (student.intake){
+     h3StudentName.innerHTML += student.intake.IntakeName;
+   }
+   else {
+     h3StudentName.innerHTML += int.IntakeName;
+   }
    imgStudent.src = 'storage/' + student.Photo;
 
    stud = student;
