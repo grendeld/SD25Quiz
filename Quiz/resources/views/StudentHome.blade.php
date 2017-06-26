@@ -21,11 +21,11 @@
             <img width='200' height='250' src='storage/{{$student->Photo}}'/>
           </div>
           <div class="col-md-3">
-            <h3>{{$student->FirstName}} {{$student->LastName}}</h3>
+            <h3>{{@$student->FirstName}} {{@$student->LastName}}</h3>
             <br/>
-            <h5>StudentID: {{$student->StudentID}}</h5> <br/>
-            <h5>Program: {{$student->intake->program->ProgramName}}</h5> <br/>
-            <h5>Intake: {{$student->intake->IntakeName}}</h5>
+            <h5>StudentID: {{@$student->StudentID}}</h5> <br/>
+            <h5>Program: {{@$student->intake->program->ProgramName}}</h5> <br/>
+            <h5>Intake: {{@$student->intake->IntakeName}}</h5>
           </div>
           <div class="col-md-12 Spacer"></div>
             <div class="col-md-12">

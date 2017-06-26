@@ -78,7 +78,7 @@ class QuizController extends Controller
 
 public function newQA (Request $request, $quizID)
     {
-
+//dd($request);
 if ($request->QuestionID =="new") // Create New Question
       {
       $question=Question::create(array('QuizID'=>$quizID, 'Question' => $request->Question));
@@ -109,7 +109,7 @@ else // Edit existing question
     $question->save();
 
 }
-    if($request->correct){
+    if(isset($request->correct)){
         $question->correctAnswer()->associate($question->answers[$request->correct])->save();
     }
       return back();
