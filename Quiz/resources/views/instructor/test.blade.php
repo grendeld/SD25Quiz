@@ -62,14 +62,25 @@
 
     <div class="row BKG">
         <div class="col-md-12">
-          <h1>{{\App\Test::find(session('currentTest'))->Quiz->QuizName}}</h1> 
+          <h1>{{\App\Test::find(session('currentTest'))->Quiz->QuizName}}</h1>
 
         </div>
         <div class="col-md-4 Panelbkg">
-
+            <button type="button"  class="quizbutton">Send</button>
+            <br/><br/>
+            <textarea></textarea>
         </div>
         <div class="col-md-8 Panelbkg">
+          <div class="TestAnswerListCell">
+              <div class="TestAnswerName">
+                <img src="" height="75" width="100"/>
+              </div>
+              <div class="TestAnswerSelect">
 
+              </div>
+              <div class="Indicator"></div>
+
+          </div>
         </div>
     </div>
 

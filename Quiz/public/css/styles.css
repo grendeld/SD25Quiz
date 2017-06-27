@@ -266,6 +266,32 @@ text-decoration: none;
 	top:1px;
 }
 
+.StudentListTest{
+  height:8em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+
+}
+.STDimage{
+  float: left;
+  height: 100%;
+  width:50%;
+
+}
+
+.STDname{
+  float: left;
+  height: 100%;
+  width:40%;
+
+}
+
+.STDid{
+  float: left;
+  height: 100%;
+  width:10%;
+}
+
 .MainMenu{
 
   height: 11.5em;

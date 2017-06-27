@@ -37,13 +37,13 @@
 
               <div class="selectPanell">
 
-                  <div class="col-md-10 quizBKG">
+                  <div class="col-md-9 quizBKG">
                       <!--<img src="images/owlEdit1.png" class="scale-image"/>-->
                       <p style="font-size:82px;"><font face="marzo-w00-regular, fantasy" style="color:black; padding-left:3em;">
                         Quizard
                     </font></p>
                   </div>
-                <div class="col-md-2">
+                <div class="col-md-3">
                   <div class="BannerTop">
                   {{date("F j, Y, g:i:s a")}}
                 </div>
