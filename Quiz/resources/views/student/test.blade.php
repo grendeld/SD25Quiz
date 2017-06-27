@@ -6,11 +6,11 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <title>Student Testing Page</title>
-	<link rel="stylesheet" href="css/styles.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/bootstrap-grid.css">
-	<link rel="stylesheet" href="css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="/css/styles.css">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/bootstrap-grid.css">
+	<link rel="stylesheet" href="/css/bootstrap-grid.min.css">
 
 	<script src="js/bootstrap.min.js"></script>
 <script>
@@ -91,8 +91,8 @@
 @if(session('error'))
 <h1>{{session('error')}}</h1>
 @endif
- <div class="row">
-                <div class="col-md-4">
+ <div class="row BKGG">
+                <div class="col-md-4 Panelbbbkgg">
                       <div class="TestQuestionSelect" style="overflow:auto;">
                             <p>Question Set</p>
                             <p id="timeElapse"></p>

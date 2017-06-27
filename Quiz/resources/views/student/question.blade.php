@@ -7,12 +7,12 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <title>Student Testing Page</title>
-	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="/css/styles.css">
 
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/bootstrap-grid.css">
-	<link rel="stylesheet" href="css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/bootstrap-grid.css">
+	<link rel="stylesheet" href="/css/bootstrap-grid.min.css">
 
 	<script src="js/bootstrap.min.js"></script>
 
@@ -23,6 +23,7 @@
   <body>
     <div class="container-fluid">
       <div class="row BKG">
+        <div class="Panelbbbkg">
         <form method="post" action="/test/Page">
           <div class="QuestionPanel">
             <div class="col-md-7 TestQuestion">
@@ -63,6 +64,7 @@
           </div>
           </div>
         </form>
+      </div>
       </div>
     </div>
 

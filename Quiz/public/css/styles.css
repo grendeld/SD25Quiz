@@ -76,14 +76,14 @@ body {
 }
 /*NEW LARAVEL FORMATTING START */
 
-.BKG{
+.BKGG{
     min-height: 100vh;
 
     background-color: rgb(46, 134, 193);
-    background: -webkit-linear-gradient(-75deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
-    background: -o-linear-gradient(-75deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
-    background: -moz-linear-gradient(-75deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
-    background: linear-gradient(-75deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
+    background: -webkit-linear-gradient(-90deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
+    background: -o-linear-gradient(-90deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
+    background: -moz-linear-gradient(-90deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
+    background: linear-gradient(-90deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
 
 }
 
@@ -102,9 +102,62 @@ body {
 
 }
 
+.BKG{
+    min-height: 100vh;
+
+    background-color: rgb(46, 134, 193);
+    background: -webkit-linear-gradient(-75deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
+    background: -o-linear-gradient(-75deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
+    background: -moz-linear-gradient(-75deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
+    background: linear-gradient(-75deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
+
+}
+
+<<<<<<< Updated upstream
+.quizBKG{
+  margin-top: 30px;
+  background-image: url('../images/OWLBKG.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.frontBKG{
+
+  background-image: url('../images/OWLBKGfront.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+
+}
+
+=======
+>>>>>>> Stashed changes
 .Panelbkg{
     background-color: rgba(254,254,254,0.6);
     margin-top: 2em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    padding:2em;
+
+}
+
+.Panelbbbkg{
+    height:auto;
+    overflow: auto;
+    background-color: rgba(254,254,254,0.6);
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    padding:2em;
+
+}
+
+.Panelbbbkgg{
+    height:auto;
+    overflow: auto;
+    background-color: rgba(254,254,254,0.6);
+    margin-top: 3em;
     border-style: solid;
     border-width: 1px;
     border-color: black;
@@ -215,7 +268,7 @@ text-decoration: none;
 
 .MainMenu{
 
-
+  height: 11.5em;
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: black;
@@ -295,7 +348,7 @@ text-decoration: none;
 .selectPanell{
 
   width: 100%;
-  height: 14em;
+  height: 11.5em;
   overflow: auto;
   text-decoration: none;
   background-color: rgb(46, 134, 193);
