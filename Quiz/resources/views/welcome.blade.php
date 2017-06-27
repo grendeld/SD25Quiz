@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Quizard</title>
-
+        <link rel="stylesheet" href="/css/styles.css">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
@@ -79,13 +79,14 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+      <div class="BKG">
+        <div class="flex-center position-ref full-height frontBKG">
             @if (Route::has('login'))
                 <div class="top-right links">
-                    <a href="{{ url('/login') }}"><font face="marzo-w00-regular, fantasy">
+                    <a href="{{ url('/login') }}"><font face="marzo-w00-regular, fantasy" style="color:black;">
                       Login
                   </font></a>
-                    <a href="{{ url('/register') }}"><font face="marzo-w00-regular, fantasy">
+                    <a href="{{ url('/register') }}"><font face="marzo-w00-regular, fantasy" style="color:black;">
                       Register
                   </font></a>
                 </div>
@@ -93,11 +94,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                  <h1>
-                    <font face="marzo-w00-regular, fantasy">
+                  <h2>
+                    <font face="marzo-w00-regular, fantasy" style="margin-left:350px;">
                       Quizard
                   </font>
-                </h1>
+                </h2>
 
 
                 </div>
@@ -107,5 +108,6 @@
                 </div>
             </div>
         </div>
+      </div>
     </body>
 </html>

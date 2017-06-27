@@ -37,7 +37,7 @@
 
               <div class="selectPanell">
 
-                  <div class="col-md-10">
+                  <div class="col-md-10 quizBKG">
                       <!--<img src="images/owlEdit1.png" class="scale-image"/>-->
                       <p style="font-size:82px;"><font face="marzo-w00-regular, fantasy" style="color:black; padding-left:3em;">
                         Quizard
