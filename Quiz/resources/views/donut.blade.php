@@ -157,7 +157,7 @@ Added drop-shadow -->
      return 'translate(' + horz + ',' + vert + ')';
    });
 
-// removed semi-colon after strohe color to add...... (click function)
+// added...... (click function)
    legend.append('rect')
    .attr('height', legendRectSize)
    .attr('width', legendRectSize)

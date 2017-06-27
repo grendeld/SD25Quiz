@@ -62,7 +62,7 @@
 
     <div class="row BKG">
         <div class="col-md-12">
-          <h1>{{\App\Test::find(session('currentTest'))->Quiz->QuizName}}</h1> 
+          <h1>{{\App\Test::find(session('currentTest'))->Quiz->QuizName}}</h1>
 
         </div>
         <div class="col-md-4 Panelbkg">
