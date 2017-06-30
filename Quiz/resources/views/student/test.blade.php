@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="/css/bootstrap-grid.min.css">
 
 	<script src="js/bootstrap.min.js"></script>
+    
 <script>
             var ws;
 	var write;
@@ -53,6 +54,9 @@
                 var mes = self.previousElementSibling.value;
                 ws.send(mes);
             }
+        function sendSubmit(){
+            ws.send(JSON.stringify(new Message(null,null,"Test","Student Submitted Test")));
+        }
         function Message(from,to,type,data){
             this.from = from;
             this.to = to;
@@ -98,7 +102,7 @@
                             <p id="timeElapse"></p>
 
                             <div class="TestListTop">
-                              <input type="submit" form="saveTest" id="SubmitTest" value="Submit Test"/>
+                              <input type="submit" form="saveTest" id="SubmitTest" value="Submit Test" onclick="sendSubmit()"/>
                             </div>
                             <br/><br/>
                         @foreach($provider->questions() as $key => $question)

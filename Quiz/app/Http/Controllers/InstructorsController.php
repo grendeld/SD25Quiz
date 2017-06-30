@@ -158,5 +158,8 @@ private function getmodules($filter=false)
     return redirect('/adminHome');
 
   }
-
+     public function getStudent(Request $request){
+         //dd($request);
+        return \App\Student::find($request->StudentID);
+    }
 }

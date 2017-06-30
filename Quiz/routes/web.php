@@ -141,6 +141,7 @@ Route::post('test/Save',function(){
        return back()->with('error','Sorry bud');
     }
 });
+Route::post("getStudent","InstructorsController@getStudent");
 //Security
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

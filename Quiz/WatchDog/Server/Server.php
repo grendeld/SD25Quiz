@@ -247,10 +247,11 @@ foreach($res as $r){
         unlink("/tmp/$this->instructorID.sock");
     
         $this->portSock = socket_create(AF_UNIX,SOCK_STREAM,0);
-        unlink($this->domain);
+        @unlink($this->domain);
         socket_bind($this->portSock,$this->domain);
         socket_listen($this->portSock);
         socket_listen($this->mainSock);
+        echo "\n\npassed!!\n\n";
     }
 }
 class Client{
