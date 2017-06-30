@@ -28,6 +28,7 @@
         var studentPanel;
 
         ws = new patWeb("ws://{{Request::server ("SERVER_NAME")}}:{{session('port')['port']}}");
+        ws.addEventListener("connected",createDiv);
             function sendMes(self){
                 var mes = self.previousElementSibling.value;
 
@@ -42,8 +43,9 @@
     function closeTest(self,time){
 
     }
-    function createDiv(id){
+    function createDiv(dat){
         var divEl = [];
+        var id = dat.message.from;
         for(var i=0;i<4;i++){
             divEl.push(document.createElement("div"));
         }

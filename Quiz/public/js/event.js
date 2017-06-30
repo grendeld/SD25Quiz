@@ -69,7 +69,6 @@ ws.onmessage = function(mes){
 		switch(dat.type){
 			case "connected":
 				self.deployEvent({type:"connected",message:dat});
-				createDiv(dat.from);
 				break;
 			case "Focus":
 				self.deployEvent({type:"Focus",message:dat});
