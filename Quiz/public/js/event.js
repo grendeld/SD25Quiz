@@ -11,7 +11,7 @@ function deployEvent(event){
 if(listeners[event.type]){
 	for(var i in listeners[event.type]){
 		event.target = this;
-		listeners[event.type][i].call(null,event);		
+		listeners[event.type][i].call(null,event);
 	}
 }
 }
@@ -26,27 +26,27 @@ function panel(testCell,testAn,img,testSelect,indicator){
         img.setAttribute("width","100");
 
 	var self = this;
-this.__defineGetter__("TestAnswerListCell", 
+this.__defineGetter__("TestAnswerListCell",
 function(){
 	self.deployEvent("TestAnswerListCell");
 	return testCell;
 });
-this.__defineGetter__("TestAnswerName", 
+this.__defineGetter__("TestAnswerName",
 function(){
 	self.deployEvent("TestAnswerName");
 	return testAn;
 });
-this.__defineGetter__("photo", 
+this.__defineGetter__("photo",
 function(){
 	self.deployEvent("photo");
 	return img;
 });
-this.__defineGetter__("TestAnswerSelect", 
+this.__defineGetter__("TestAnswerSelect",
 function(){
 	self.deployEvent("TestAnswerSelect");
 	return testSelect;
 });
-this.__defineGetter__("Indicator", 
+this.__defineGetter__("Indicator",
 function(){
 	self.deployEvent("Indicator");
 	return indicator;
@@ -67,6 +67,7 @@ ws.onmessage = function(mes){
 	console.log(mes.data);
 	var dat = JSON.parse(mes.data);
 		switch(dat.type){
+			//NOTE list of potential events
 			case "connected":
 				self.deployEvent({type:"connected",message:dat});
 				break;
@@ -86,7 +87,6 @@ ws.onmessage = function(mes){
 function send(mes){
 	ws.send(JSON.stringify(new Message(null,null,"broadcast",mes)));
 }
- 
+
 
 }
-

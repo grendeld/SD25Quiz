@@ -1,18 +1,17 @@
-<!DOCtype html>
+
 <?php $tests = \App\Test::all(); ?>
 <!-- DATA DRIVEN DOCUMENT VIEW FOR REPORTS -->
-<html>
-<head>
-  <meta charset="utf-8">
+
+
   <script type="text/javascript" src="d3/d3.min.js"></script>
-  <link rel="icon" href="images/cap.ico">
+
   <link rel="stylesheet" href="/css/styles.css">
-  <script>
+  <!--<script>
   function testOK (){
     return"/testOK";
     console.log("/testOK");
   }
-  </script>
+</script>-->
   <style>
 
   #buttonPlace{
@@ -35,7 +34,7 @@
 
 
 
-  .tooltip {
+  .d3tooltip {
     position: absolute;
     width: 100px;
     height: auto;
@@ -54,8 +53,7 @@
     position: relative;
   }
   </style>
-</head>
-<body>
+
 
 
 
@@ -78,7 +76,7 @@
 
 
 
-</body>
+
 <script>
 
 
@@ -96,7 +94,7 @@
       //tooltip
       var toolTip = d3.select('#reuseChart')
       .append('div')
-      .attr('class','tooltip');
+      .attr('class','d3tooltip');
 
       toolTip.append('div')
       .attr('class','x'); //changed to x from 'IntakeName'
@@ -181,7 +179,7 @@ function showAllClassTest(value){
             });
 
     bars.on('mousemove', function(d) {
-           tooltip.style('top', (d3.event.layerY + 10) + 'px')
+           toolTip.style('top', (d3.event.layerY + 10) + 'px')
              .style('left', (d3.event.layerX + 10) + 'px');
          });
 
@@ -189,4 +187,3 @@ function showAllClassTest(value){
 
 
 </script>
-</html>

@@ -1,6 +1,7 @@
 
 
 <!DOCTYPE html>
+
 <html lang="{{ config('app.locale') }}">
 
 <head>
@@ -64,11 +65,11 @@
             studentPanel = document.getElementById("studentPanel");
         }
         studentPanel.appendChild(divEl[0]);
-        
-        
-        
+
+
+
     }
-    
+
     function getStudent(id){
         var httpX = new XMLHttpRequest();
         httpX.onreadystatechange = function(){
@@ -84,9 +85,9 @@
         httpX.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         httpX.setRequestHeader("X-CSRF-TOKEN","{{ csrf_token() }}");
         httpX.send("StudentID="+id);
-        
+
     }
-        
+
 </script>
 </head>
 <body>
@@ -105,7 +106,9 @@
         <div id="studentPanel" class="col-md-8 Panelbkg">
         </div>
     </div>
-
+</div>
+<div>
+<iframe src="/donut"></iframe>
 </div>
 </body>
 </html>
