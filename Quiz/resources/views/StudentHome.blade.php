@@ -5,34 +5,29 @@
 
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-</head>
 @stop
 @section ('content')
-<<<<<<< Updated upstream
-  <div class="container-fluid BKG">
-  <div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-10 Panelbkg">
-            <div class="col-md-3">
-              <img width='200' height='250' src='storage/{{$student->Photo}}'/>
-            </div>
-=======
+
 <div class="container-fluid">
-<div class="row BKG">
+  <div class="row BKG">
 
+      <div class="col-md-1"></div>
+      <div class="col-md-10 Panelbkg">
+          <div class="col-md-12">
+            <h4>Student Home</h4>
+          </div>
+          <br/><br/>
           <div class="col-md-3">
-          <img width='200' height='250' src='storage/{{$student->Photo}}'/>
->>>>>>> Stashed changes
-
-            <div class="col-md-3">
-              <h3>{{$student->FirstName}} {{$student->LastName}}</h3>
-              <br/>
-              <h5>StudentID: {{$student->StudentID}}</h5> <br/>
-              <h5>Program: {{$student->intake->program->ProgramName}}</h5> <br/>
-              <h5>Intake: {{$student->intake->IntakeName}}</h5>
-            </div>
-
-<<<<<<< Updated upstream
+            <img width='200' height='250' src='storage/{{$student->Photo}}'/>
+          </div>
+          <div class="col-md-3">
+            <h3>{{@$student->FirstName}} {{@$student->LastName}}</h3>
+            <br/>
+            <h5>StudentID: {{@$student->StudentID}}</h5> <br/>
+            <h5>Program: {{@$student->intake->program->ProgramName}}</h5> <br/>
+            <h5>Intake: {{@$student->intake->IntakeName}}</h5>
+          </div>
+          <div class="col-md-12 Spacer"></div>
             <div class="col-md-12">
               <div class="AdminTables">
                 <h4>Available quizzes:</h4>
@@ -58,7 +53,7 @@
                         {{$t->quiz->QuizName}}
                       </td>
                       <td>
-                        <input type="button" onclick = "StartQuiz({{$t->TestID}})" value="Start Quiz" />
+                        <input class="quizbutton" type="button" onclick = "StartQuiz({{$t->TestID}})" value="Start Quiz" />
                       </td>
                   </tr>
                 @endforeach
@@ -68,46 +63,9 @@
                 <hr>
             </div>
           <div class="col-md-1"></div>
-=======
-          <div class="col-md-3">
-            <h3>{{$student->FirstName}} {{$student->LastName}}</h3><br/>
-
-            <h5>StudentID: {{$student->StudentID}} </h5><br/>
-            <h5>Program: {{$student->intake->program->ProgramName}}</h5> <br/>
-            <h5>Intake: {{$student->intake->IntakeName}}</h5>
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
           </div>
-        </div>
-  </div>
-
-<<<<<<< Updated upstream
-=======
-=======
-          </div>
-
->>>>>>> Stashed changes
-          <div class="col-md-12">
-          <br/>
-          <hr>
-          <h4>Available quizzes:</h4>
-          @foreach($tests as $t)
-          {{$t->TestID}}
-          {{$t->quiz->QuizName}}<input class="quizbutton" type="button" onclick = "StartQuiz({{$t->TestID}})" value="Start Quiz" />
-          <br/>
-          @endforeach
-
-          <br/>
-          <hr>
-          </div>
-    </div>
 </div>
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-
-      @stop
+@stop
 
 
 <script>
@@ -138,7 +96,7 @@ function CheckQuiz()
           }(test);
 
           $('#divCheckResult').append(p);
-          $(location).attr('href', 'http://127.0.0.1:8000/test/Student')
+          $(location).attr('href', '/test/Student')
         });
 
       }

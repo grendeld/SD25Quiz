@@ -37,17 +37,17 @@
 
               <div class="selectPanell">
 
-                  <div class="col-md-10">
+                  <div class="col-md-9 quizBKG">
                       <!--<img src="images/owlEdit1.png" class="scale-image"/>-->
                       <p style="font-size:82px;"><font face="marzo-w00-regular, fantasy" style="color:black; padding-left:3em;">
                         Quizard
                     </font></p>
                   </div>
-                <div class="col-md-2">
+                <div class="col-md-3">
                   <div class="BannerTop">
-                  {{date("Y/m/d H:i:s")}}
+                  {{date("F j, Y, g:i:s a")}}
                 </div>
-                    
+
                   <br/>
                   <div class="BannerTop">
                   @if(Auth::guard('admins')->check())
@@ -101,9 +101,10 @@
     <script>
         var dateDiv = document.getElementsByClassName("BannerTop")[0];
         var time = new Date(dateDiv.innerHTML);
+        var monthsf = ["January","February","March","April","May","June","July","August","September","October","November","December"];
         setInterval(function(){
          time.setSeconds(time.getSeconds() +1);
-            dateDiv.innerHTML = time.getFullYear() + "/" + (((mon = time.getMonth()+1) < 10)? ("0" + mon): mon ) + "/" + (((d = time.getDate()) < 10)? ("0" + d): d ) + " " + (((h = time.getHours()) < 10)? ("0" + h): h )+ ":" + (((m = time.getMinutes()) < 10)? ("0" + m): m) + ":" + (((s = time.getSeconds()) < 10)? ("0" + s): s);
+            dateDiv.innerHTML = monthsf[time.getMonth()]+ " " + time.getDate() + ", "+  time.getFullYear() + ", " + (((h=time.getHours())>12)? (h-12):(h==0)?12:h)+ ":" + (((m = time.getMinutes()) < 10)? ("0" + m): m) + ":" + (((s = time.getSeconds()) < 10)? ("0" + s): s) + " " + ((h<12)?"am":"pm");
         },1000);
     </script>
 </html>

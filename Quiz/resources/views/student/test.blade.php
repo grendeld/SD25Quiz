@@ -6,17 +6,18 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <title>Student Testing Page</title>
-	<link rel="stylesheet" href="css/styles.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/bootstrap-grid.css">
-	<link rel="stylesheet" href="css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="/css/styles.css">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/bootstrap-grid.css">
+	<link rel="stylesheet" href="/css/bootstrap-grid.min.css">
 
 	<script src="js/bootstrap.min.js"></script>
+    
 <script>
             var ws;
 	var write;
-           
+
         window.onblur = function(){
             ws.send(JSON.stringify(new Message(null,null,"Focus","false")));
         };
@@ -31,7 +32,7 @@
             window.onbeforeunload = function(){
                 ws.send(JSON.stringify(new Message(null,null,"Page","left page")));
                 //ws.close();
-              return false;  
+              return false;
             };
 	write=document.getElementById("sum");
         ws = new WebSocket("ws://{{Request::server ("SERVER_NAME")}}:{{session('port')['port']}}/id/{{Auth::guard('students')->user()->StudentID}}");
@@ -53,6 +54,9 @@
                 var mes = self.previousElementSibling.value;
                 ws.send(mes);
             }
+        function sendSubmit(){
+            ws.send(JSON.stringify(new Message(null,null,"Test","Student Submitted Test")));
+        }
         function Message(from,to,type,data){
             this.from = from;
             this.to = to;
@@ -91,15 +95,16 @@
 @if(session('error'))
 <h1>{{session('error')}}</h1>
 @endif
- <div class="row">
-                <div class="col-md-4">
+ <div class="row BKGG">
+                <div class="col-md-4 Panelbbbkgg">
                       <div class="TestQuestionSelect" style="overflow:auto;">
                             <p>Question Set</p>
                             <p id="timeElapse"></p>
-                             
+
                             <div class="TestListTop">
-                              <input type="submit" form="saveTest" id="SubmitTest" value="Submit Test"/>
+                              <input type="submit" form="saveTest" id="SubmitTest" value="Submit Test" onclick="sendSubmit()"/>
                             </div>
+                            <br/><br/>
                         @foreach($provider->questions() as $key => $question)
                             <div class="TestListCell" questionId='{{$key}}' onclick="getQuestion(this)">
                                 <div class="TestQuestionName" >
@@ -132,7 +137,8 @@
          var counter;
                                  (counter = new Date(0,0,0,0,0,0)).setMilliseconds(counter.getMilliseconds() + dif);
          function setTime(){
-             timeElapse.innerHTML = counter.getHours() + ":" + counter.getMinutes() + ":" + counter.getSeconds();
+             timeElapse.innerHTML = (((h = counter.getHours())<10)? ("0" + h): h )+ ":" + (((m = counter.getMinutes())<10)? ("0"+m) : m )+ ":" + (((s =counter.getSeconds())<10) ? ("0"+
+             s) : s);
          }
          setTime();
          setInterval(function(){
@@ -140,5 +146,5 @@
              setTime();
          },1000);
      </script>
-  
+
 @stop

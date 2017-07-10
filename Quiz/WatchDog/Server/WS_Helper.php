@@ -38,7 +38,7 @@
             		"Sec-WebSocket-Accept: $accept\r\n".
                     ((!$SocketID)? "Set-Cookie: SocketID=".($SocketID = uniqid())."\r\n" : "").
             		"\r\n";
-        	//	echo $return;
+        		echo $return;
         		socket_write($socket,$return);
                 return ["socketID" => $SocketID,"ID" => $match["id"]];
 		}

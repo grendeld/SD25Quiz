@@ -53,4 +53,6 @@ public function showedit($id )
       $intake->delete();
       return redirect('/intake');
     }
+    
+   
 }

@@ -9,9 +9,9 @@
               <button class="InstructMenu"
               onclick="javascript: showProgramsPanel()">
                   <span>
-                    <font face="marzo-w00-regular, fantasy">
-                        <h4>Programs</h4>
-                  </font>
+                    <font face="marzo-w00-regular, fantasy" style="color:black;">
+                        <h4><strong>Programs</strong></h4>
+                    </font>
                   </span>
               </button>
       </div>
@@ -23,9 +23,10 @@
               <button class="InstructMenu"
               onclick="javascript: showInstructorsPanel()">
                   <span>
-                    <font face="marzo-w00-regular, fantasy">
-                        <h4>Instructors</h4>
-                  </font>
+                    <font face="marzo-w00-regular, fantasy" style="color:black;"><strong>
+
+                        <h4><strong>Instructors</strong></h4>
+                  </strong></font>
                   </span>
               </button>
       </div>
@@ -37,8 +38,9 @@
               <button class="InstructMenu"
               onclick="javascript: showIntakesPanel()">
                   <span>
-                    <font face="marzo-w00-regular, fantasy">
-                        <h4>Intakes</h4>
+                    <font face="marzo-w00-regular, fantasy" style="color:black;">
+
+                        <h4><strong>Intakes</strong></h4>
                   </font>
                   </span>
               </button>
@@ -51,9 +53,10 @@
               <button class="InstructMenu"
               onclick="javascript: showStudentsPanel()">
                   <span>
-                    <font face="marzo-w00-regular, fantasy">
-                        <h4>Students</h4>
-                  </font>
+                    <font face="marzo-w00-regular, fantasy" style="color:black;"><strong>
+
+                        <h4><strong>Students</strong></h4>
+                  </strong></font>
                   </span>
               </button>
       </div>

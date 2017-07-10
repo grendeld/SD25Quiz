@@ -75,11 +75,9 @@ body {
   display: none;
 }
 /*NEW LARAVEL FORMATTING START */
-
 .BKG{
-    min-height: 80vh;
-    height: auto;
-    overflow: auto;
+    min-height: 100vh;
+
     background-color: rgb(46, 134, 193);
     background: -webkit-linear-gradient(-75deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
     background: -o-linear-gradient(-75deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
@@ -87,6 +85,40 @@ body {
     background: linear-gradient(-75deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
 
 }
+.BKGG{
+    min-height: 100vh;
+
+    background-color: rgb(46, 134, 193);
+    background: -webkit-linear-gradient(-90deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
+    background: -o-linear-gradient(-90deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
+    background: -moz-linear-gradient(-90deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
+    background: linear-gradient(-90deg, rgba(169, 204, 227,0.2), rgba(46, 134, 193,1));
+
+}
+
+.quizBKG{
+  margin-top: 30px;
+  background-image: url('../images/OWLBKG.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.quizBKG{
+  margin-top: 30px;
+  background-image: url('../images/OWLBKG.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.frontBKG{
+
+  background-image: url('../images/OWLBKGfront.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+
+}
+
+
 .Panelbkg{
     background-color: rgba(254,254,254,0.6);
     margin-top: 2em;
@@ -95,6 +127,41 @@ body {
     border-color: black;
     padding:2em;
 
+}
+
+.Panelbbbkg{
+    height:auto;
+    overflow: auto;
+    background-color: rgba(254,254,254,0.6);
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    padding:2em;
+
+}
+
+.Panelbbbkgg{
+    height:auto;
+    overflow: auto;
+    background-color: rgba(254,254,254,0.6);
+    margin-top: 3em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    padding:2em;
+
+}
+
+.Panelbkgg{
+  height: 50vh;
+
+  background-color: rgba(254,254,254,0.6);
+  margin-top: 2em;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  padding:3em;
 }
 
 .layoutbkg{
@@ -115,6 +182,10 @@ body {
   border-width: 1px;
   border-color: black;
 
+}
+
+.Spacer{
+  height: 3em;
 }
 
 .divNewQAA{
@@ -183,9 +254,35 @@ text-decoration: none;
 	top:1px;
 }
 
+.StudentListTest{
+  height:8em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+
+}
+.STDimage{
+  float: left;
+  height: 100%;
+  width:50%;
+
+}
+
+.STDname{
+  float: left;
+  height: 100%;
+  width:40%;
+
+}
+
+.STDid{
+  float: left;
+  height: 100%;
+  width:10%;
+}
+
 .MainMenu{
 
-
+  height: 11.5em;
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: black;
@@ -265,7 +362,7 @@ text-decoration: none;
 .selectPanell{
 
   width: 100%;
-  height: 14em;
+  height: 11.5em;
   overflow: auto;
   text-decoration: none;
   background-color: rgb(46, 134, 193);
@@ -765,8 +862,8 @@ div.selectPanell a:active{
 }
 .QuestionPanel{
   height:100%;
-  width:100vw;
-  background-color: rgba(160,160,160,05);
+  width:100%;
+  background-color: rgba(170, 183, 184 ,0.6);
 }
 .QuestionPanell{
   height:auto;
@@ -873,7 +970,7 @@ div.selectPanell a:active{
 }
 .TestAnswerListCell{
     height: 15%;
-    width: 100%;
+
     padding: 5px;
     margin-top: 20px;
     overflow: auto;
@@ -889,7 +986,6 @@ div.selectPanell a:active{
     height: 100%;
     width: 20%;
     padding: 10px;
-
     float: left;
 }
 

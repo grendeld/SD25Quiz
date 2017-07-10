@@ -2,7 +2,7 @@
 
 @section ('content')
 
-
+<div class="AdminTables">
 <h1>Instructors Page</h1>
 <br/>
 <table>
@@ -38,5 +38,5 @@
 <a href="/instructor/add">Add new instructor</a>
 
 {!! csrf_field() !!}
-
-@stop 
+</div>
+@stop

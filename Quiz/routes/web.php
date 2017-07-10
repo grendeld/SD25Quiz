@@ -52,19 +52,15 @@ Route::get('/StudentHome', 'StudentsController@main');
 //d3 Routes
 Route::get('/intakesd3','d3@getIntakes');
 Route::get('/programByType','d3@getProgramsByType');
-Route::get('/charts',function(){ return view('chartTest');});
+//Route::get('/charts',function(){ return view('chartTest');});
 Route::get('/donut',function(){return view('donut');});
-Route::get('/testOK','d3@getAllStudentMarksByQuiz');
-<<<<<<< HEAD
 
 
+Route::get('/testOK/{testValue}','d3@getAllStudentMarksByQuiz');
+Route::get('/charts','d3@getTests');
 
 
-=======
->>>>>>> 675d34342a1ab9451e2bc2d6ea21ccc91bb0fdb7
 //function(){return "test";}
-
-
 
 
 
@@ -145,6 +141,7 @@ Route::post('test/Save',function(){
        return back()->with('error','Sorry bud');
     }
 });
+Route::post("getStudent","InstructorsController@getStudent");
 //Security
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');

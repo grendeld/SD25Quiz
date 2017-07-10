@@ -36,7 +36,7 @@
       </form>
       </div>
       <div class="quiizeditt">
-        @foreach($questions as $key => $q)
+        @foreach($quiz->questions as $key => $q)
             <div class="quizeditquestiontop">
                     <h3>{{$q->Question}}</h3>
             </div>
@@ -248,7 +248,7 @@ function showEditQA($QuestionID,offset){
 divQuiz.style.display = "none";
 divNewQA.style.display = "block";
 QuestionID.value = $QuestionID;
-var questions = <?php echo json_encode($questions); ?>;
+var questions = <?php echo json_encode($quiz->questions); ?>;
 
 //alert("Array QuestionID: "+ questions[0].QuestionID + f"QuestionID: " + $QuestionID);
     if(!list){

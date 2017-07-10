@@ -95,3 +95,26 @@
     background-color:rgba(215, 219, 221 ,0.7);
     padding: 50px;
 }
+
+#ProgramsPanel{
+  position: absolute;
+  top: 40px;
+  height: auto;
+}
+
+#InstructorsPanel{
+  position: absolute;
+  top: 40px;
+  height: auto;
+}
+
+#IntakesPanel{
+  position: absolute;
+  top: 40px;
+
+}
+
+#StudentsPanel{
+  position: absolute;
+  top: 30px;
+}

@@ -104,6 +104,8 @@ Added drop-shadow -->
 
 
    //data
+
+
    d3.csv('pieTestData.csv', function(error, dataset)
           {
             dataset.forEach(function(d)
@@ -157,7 +159,7 @@ Added drop-shadow -->
      return 'translate(' + horz + ',' + vert + ')';
    });
 
-// removed semi-colon after strohe color to add...... (click function)
+// added...... (click function)
    legend.append('rect')
    .attr('height', legendRectSize)
    .attr('width', legendRectSize)

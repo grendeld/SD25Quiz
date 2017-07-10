@@ -1,17 +1,17 @@
-<!DOCtype html>
+
+<?php $tests = \App\Test::all(); ?>
 <!-- DATA DRIVEN DOCUMENT VIEW FOR REPORTS -->
-<html>
-<head>
-  <meta charset="utf-8">
+
+
   <script type="text/javascript" src="d3/d3.min.js"></script>
-  <link rel="icon" href="images/cap.ico">
+
   <link rel="stylesheet" href="/css/styles.css">
-  <script>
+  <!--<script>
   function testOK (){
     return"/testOK";
     console.log("/testOK");
   }
-  </script>
+</script>-->
   <style>
 
   #buttonPlace{
@@ -31,7 +31,10 @@
   .bar:hover{
     fill:rgba(192,182,207,1);
   }
-  .tooltip {
+
+
+
+  .d3tooltip {
     position: absolute;
     width: 100px;
     height: auto;
@@ -50,51 +53,30 @@
     position: relative;
   }
   </style>
-</head>
-<body>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  <div class="container-fluid">
-    <div class="row">
 
 
 
-          <div id="buttonPlace">
-            <button class="quizbutton" type="button" onclick="showIntakes()">Intakes</button>
-            <button class="quizbutton" type="button" onclick="showPrograms()">Progams by Type</button>
-            <button class="quizbutton" type="button" onclick="showAllClassTest()">Test => Scores</button>
 
-          </div>
-
-=======
-  <div id="buttonPlace">
-    <button type="button" onclick="showIntakes()">View Intakes</button>
-    <button type="button" onclick="showPrograms()">View Progams by Type</button>
-    <button type="button" onclick="showAllClassTest()">View Test 2 Scores</button>
-  
->>>>>>> Stashed changes
-
-
-          <div id="reuseChart">
-            <svg width="460" height="275"></svg>
-          </div>
-          <p id="testQ"></p>
-
-
-    </div>
-=======
   <div id="buttonPlace">
     <button class="quizbutton" type="button" onclick="showIntakes()">View Intakes</button>
     <button class="quizbutton" type="button" onclick="showPrograms()">View Progams by Type</button>
-    <!--<button type="button" onclick="showQuiz1()">View Quiz 1 Marks</button> -->
+    <select class="quizbuttonn" name="" id="selectTest" autocomplete="off" onchange="showAllClassTest(this)">
+      <option value="0" selected disabled> Choose Test </option>
+      @foreach($tests as $t)
+      <option value="{{$t}}">{{$t->TestID}}</option>
+
+
+      @endforeach
+    </select>
   </div>
   <div id="reuseChart">
     <svg width="920" height="550"></svg>
->>>>>>> Stashed changes
+
   </div>
 
 
-</body>
+
+
 <script>
 
 
@@ -112,7 +94,7 @@
       //tooltip
       var toolTip = d3.select('#reuseChart')
       .append('div')
-      .attr('class','tooltip');
+      .attr('class','d3tooltip');
 
       toolTip.append('div')
       .attr('class','x'); //changed to x from 'IntakeName'
@@ -132,8 +114,9 @@ function showPrograms(){
   d3.json("/programByType", updateBar)
 }
 
-function showAllClassTest(){
-  d3.json("/testOK",updateBar)
+function showAllClassTest(value){
+  var testId = value.options[value.selectedIndex].innerHTML;
+  d3.json("/testOK/"+testId,updateBar)
 }
 
   function updateBar(error, data){
@@ -196,7 +179,7 @@ function showAllClassTest(){
             });
 
     bars.on('mousemove', function(d) {
-           tooltip.style('top', (d3.event.layerY + 10) + 'px')
+           toolTip.style('top', (d3.event.layerY + 10) + 'px')
              .style('left', (d3.event.layerX + 10) + 'px');
          });
 
@@ -204,4 +187,3 @@ function showAllClassTest(){
 
 
 </script>
-</html>
